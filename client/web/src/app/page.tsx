@@ -54,7 +54,7 @@ export default function Page() {
                 height={64}
                 src="/groq-logo.svg"
                 alt="Groq logo"
-                className="h-6 mt-1.5 w-auto"
+                className="h-5 mt-2 w-auto"
               />
             </a>
             <div>
