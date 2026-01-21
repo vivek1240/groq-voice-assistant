@@ -1,10 +1,17 @@
-from livekit.agents import JobContext, WorkerOptions, cli, JobProcess, AutoSubscribe
+from livekit.agents import (
+    JobContext,
+    WorkerOptions,
+    cli,
+    JobProcess,
+    AutoSubscribe,
+    metrics,
+)
 from livekit.agents.llm import (
     ChatContext,
     ChatMessage,
 )
-from livekit.agents.voice_assistant import VoiceAssistant
-from livekit.plugins import silero, cartesia, openai
+from livekit.agents.pipeline import VoicePipelineAgent
+from livekit.plugins import silero, groq
 
 from dotenv import load_dotenv
 
@@ -17,29 +24,39 @@ def prewarm(proc: JobProcess):
 
 async def entrypoint(ctx: JobContext):
     await ctx.connect(auto_subscribe=AutoSubscribe.AUDIO_ONLY)
+    await ctx.wait_for_participant()
 
     initial_ctx = ChatContext(
         messages=[
             ChatMessage(
                 role="system",
-                content="You are the Groq voice assistant. Be nice.",
+                content="You are the Groq voice assistant. Be nice. Your interaction with the user will via voice.",
             )
         ]
     )
 
-    assistant = VoiceAssistant(
+    agent = VoicePipelineAgent(
+        # to improve initial load times, use preloaded VAD
         vad=ctx.proc.userdata["vad"],
-        stt=openai.stt.STT.with_groq(),
-        llm=openai.LLM.with_groq(),
-        tts=cartesia.TTS(
-            voice="248be419-c632-4f23-adf1-5324ed7dbf1d",
-        ),
+        stt=groq.STT(),
+        llm=groq.LLM(),
+        tts=groq.TTS(voice="Cheyenne-PlayAI"),
         chat_ctx=initial_ctx,
     )
 
-    assistant.start(ctx.room)
-    await assistant.say("Hi there, how are you doing today?", allow_interruptions=True)
+    @agent.on("metrics_collected")
+    def _on_metrics_collected(mtrcs: metrics.AgentMetrics):
+        metrics.log_metrics(mtrcs)
+
+    agent.start(ctx.room)
+    await agent.say("Hello, how are you doing today?", allow_interruptions=True)
 
 
 if __name__ == "__main__":
-    cli.run_app(WorkerOptions(entrypoint_fnc=entrypoint, prewarm_fnc=prewarm))
+    cli.run_app(
+        WorkerOptions(
+            entrypoint_fnc=entrypoint,
+            prewarm_fnc=prewarm,
+            agent_name="groq-agent",
+        )
+    )
