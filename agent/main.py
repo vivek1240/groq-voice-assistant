@@ -1,6 +1,5 @@
 import logging
 import httpx
-import asyncio
 from datetime import datetime
 from typing import Annotated
 
@@ -19,11 +18,6 @@ from livekit.plugins import silero, groq
 
 load_dotenv()
 logger = logging.getLogger("voice-agent")
-
-
-# Global reference to agent for end call functionality
-_current_agent: VoicePipelineAgent | None = None
-_current_ctx: JobContext | None = None
 
 
 # Define function context for tool calling
@@ -162,7 +156,7 @@ class AssistantFnc(llm.FunctionContext):
         farewell_reason: Annotated[str, llm.TypeInfo(description="Brief reason for ending: 'user_goodbye' if user said bye/goodbye/see you, 'task_complete' if user's request is fully resolved, 'user_request' if user explicitly asked to end")] = "user_goodbye",
     ):
         """
-        End the voice conversation gracefully. Call this tool when:
+        Respond to user's farewell. Call this tool when:
         - User says goodbye, bye, see you, take care, have a good day, etc.
         - User says they're done, that's all, nothing else, I'm finished
         - User explicitly asks to end or hang up the call
@@ -170,25 +164,14 @@ class AssistantFnc(llm.FunctionContext):
         
         Do NOT call this just because you answered a question - only when the user signals they want to end.
         """
-        global _current_agent, _current_ctx
-        
         logger.info(f"End conversation triggered - reason: {farewell_reason}")
         
-        # Schedule the disconnection after the farewell message is spoken
-        async def delayed_disconnect():
-            await asyncio.sleep(3)  # Wait for farewell to be spoken
-            if _current_ctx:
-                logger.info("Disconnecting from room...")
-                await _current_ctx.room.disconnect()
-        
-        # Start the delayed disconnect task
-        asyncio.create_task(delayed_disconnect())
-        
         # Return farewell message based on reason
+        # Note: We don't disconnect programmatically - let the user click the X button
         farewells = {
-            "user_goodbye": "Goodbye! It was nice chatting with you. Take care!",
+            "user_goodbye": "Goodbye! It was nice chatting with you. Take care! You can click the X button to end the call.",
             "task_complete": "Great, I'm glad I could help! Goodbye and have a wonderful day!",
-            "user_request": "Alright, ending the call now. Goodbye!",
+            "user_request": "Alright! Goodbye, take care!",
         }
         
         return farewells.get(farewell_reason, "Goodbye! Have a great day!")
@@ -199,13 +182,8 @@ def prewarm(proc: JobProcess):
 
 
 async def entrypoint(ctx: JobContext):
-    global _current_agent, _current_ctx
-    
     # Initialize function context for tool calling
     fnc_ctx = AssistantFnc()
-    
-    # Store context globally for end_conversation tool
-    _current_ctx = ctx
     
     initial_ctx = llm.ChatContext().append(
         role="system",
@@ -239,9 +217,6 @@ async def entrypoint(ctx: JobContext):
         chat_ctx=initial_ctx,
         fnc_ctx=fnc_ctx,  # Enable tool calling
     )
-    
-    # Store agent globally
-    _current_agent = agent
 
     @agent.on("metrics_collected")
     def _on_metrics_collected(mtrcs: metrics.AgentMetrics):
