@@ -31,7 +31,7 @@ export function HomeInner() {
           name="description"
           content="Talk to the world's fastest AI voice assistant, powered by Groq"
         />
-        <meta name="og:title" content="Cerebras Voice" />
+        <meta name="og:title" content="Groq Toq" />
         <meta
           name="og:description"
           content="Talk to the world's fastest AI voice assistant, powered by Groq"
@@ -45,7 +45,7 @@ export function HomeInner() {
         <meta name="twitter:title" content="Groq Voice" />
         <meta
           name="twitter:description"
-          content="Talk to the world's fastest AI voice assistant, powered by Groq"
+          content="Talk to Groq - powered by Groq Whisper and Groq inference"
         />
         <meta property="twitter:image:width" content="1600" />
         <meta property="twitter:image:height" content="836" />

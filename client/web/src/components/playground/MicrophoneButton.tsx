@@ -51,7 +51,7 @@ export const MicrophoneButton = ({
       size="medium"
       className={`flex items-center justify-center gap-2 bg-white rounded-sm ${
         isSpaceBarPressed
-          ? "scale-90 border-cerebras-action-text border"
+          ? "scale-90 border-groq-action-text border"
           : "scale-100"
       }`}
       onClick={() => {}}
