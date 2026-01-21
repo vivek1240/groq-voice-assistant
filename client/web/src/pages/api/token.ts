@@ -35,7 +35,7 @@ export default async function handleToken(
       return;
     }
 
-    const roomName = `cerebras-${generateRandomAlphanumeric(
+    const roomName = `groq-toq-${generateRandomAlphanumeric(
       4
     )}-${generateRandomAlphanumeric(4)}`;
 

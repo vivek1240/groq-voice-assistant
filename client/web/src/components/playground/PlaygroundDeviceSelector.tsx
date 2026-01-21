@@ -71,8 +71,8 @@ export const PlaygroundDeviceSelector = ({
               }}
               className={`${
                 device.deviceId === deviceSelect.activeDeviceId
-                  ? "text-cerebras-action-text"
-                  : "text-cerebras-control-text"
+                  ? "text-groq-action-text"
+                  : "text-groq-control-text"
               } bg-white text-xs py-2 px-2 cursor-pointer hover:bg-[#eaeaeb]${roundedStyles}`}
               key={index}
             >
