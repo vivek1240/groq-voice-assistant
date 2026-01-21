@@ -12,10 +12,7 @@ import { TokenResult } from "../../lib/types";
 
 const apiKey = process.env.LIVEKIT_API_KEY;
 const apiSecret = process.env.LIVEKIT_API_SECRET;
-const livekitHost = process.env.NEXT_PUBLIC_LIVEKIT_URL!.replace(
-  "wss://",
-  "https://"
-);
+const livekitHost = process.env.LIVEKIT_URL!.replace("wss://", "https://");
 
 const roomService = new RoomServiceClient(livekitHost, apiKey, apiSecret);
 
