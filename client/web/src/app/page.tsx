@@ -141,7 +141,7 @@ function ControlBar(props: {
   }, []);
 
   return (
-    <div className="flex relative h-12">
+    <div className="flex relative">
       <AnimatePresence>
         {props.agentState === "disconnected" && (
           <motion.button
