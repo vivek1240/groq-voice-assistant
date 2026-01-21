@@ -246,12 +246,6 @@ async def entrypoint(ctx: JobContext):
     @agent.on("metrics_collected")
     def _on_metrics_collected(mtrcs: metrics.AgentMetrics):
         metrics.log_metrics(mtrcs)
-    
-    @agent.on("function_calls_collected")
-    def _on_function_calls(fnc_calls: list[llm.FunctionCall]):
-        """Log when the agent calls tools"""
-        for call in fnc_calls:
-            logger.info(f"🔧 Tool called: {call.name} with args: {call.arguments}")
 
     agent.start(ctx.room, participant)
     
@@ -269,5 +263,6 @@ if __name__ == "__main__":
         WorkerOptions(
             entrypoint_fnc=entrypoint,
             prewarm_fnc=prewarm,
+            agent_name="groq-agent",  # Must match client's agentName dispatch
         )
     )
