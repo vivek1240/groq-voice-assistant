@@ -171,7 +171,11 @@ const CircleChart = ({
   const [gap, setGap] = useState(15);
   const strokeWidth = 15;
   const averageVolume =
+  let averageVolume =
     frequencies.reduce((a, b) => a + b, 0) / frequencies.length;
+  if (isNaN(averageVolume)) {
+    averageVolume = 0;
+  }
   const normalizedVolume = Math.pow(averageVolume, 0.3);
   const numCircles = values.length;
   const size =
