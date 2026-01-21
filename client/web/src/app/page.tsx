@@ -117,10 +117,9 @@ function SimpleVoiceAssistant(props: {
         }}
       >
         <div
-          className="w-48 h-48 rounded-full bg-white"
+          className="w-48 h-48 rounded-full bg-white shadow-[inset_0px_-4px_20px_0px_rgba(0,0,0,0.5)]"
           style={{
             transform: `scale(${1 + volumes[0]})`,
-            boxShadow: `0 20px 30px 10px rgba(0, 0, 0, 0.1)`,
           }}
         ></div>
       </motion.div>
