@@ -136,24 +136,45 @@ function ControlBar(props: {
    * Note: This is only available on Scale plan, see {@link https://livekit.io/pricing | LiveKit Pricing} for more details.
    */
   const krisp = useKrispNoiseFilter();
+  const [connectingDots, setConnectingDots] = useState("");
+
   useEffect(() => {
     krisp.setNoiseFilterEnabled(true);
   }, []);
 
+  useEffect(() => {
+    if (props.agentState === "connecting") {
+      const interval = setInterval(() => {
+        setConnectingDots((prev) => (prev.length >= 3 ? "" : prev + "."));
+      }, 250);
+      return () => clearInterval(interval);
+    }
+  }, [props.agentState]);
+
   return (
-    <div className="flex relative">
+    <div className="flex relative h-12">
       <AnimatePresence>
-        {props.agentState === "disconnected" && (
+        {(props.agentState === "disconnected" ||
+          props.agentState === "connecting") && (
           <motion.button
             initial={{ opacity: 0, top: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0, top: "-10px" }}
+            exit={{ opacity: 0, top: "10px" }}
             transition={{ duration: 1, ease: [0.09, 1.04, 0.245, 1.055] }}
-            className="uppercase px-4 py-2 bg-transparent rounded-lg border border-white/20 hover:bg-white/10 transition-all duration-75 ease-out"
+            className="min-w-56 uppercase px-4 py-2 rounded-lg border border-white/20 bg-white/10 hover:bg-white/20 active:scale-[0.98] transition-all duration-75 ease-out"
             onClick={() => props.onConnectButtonClicked()}
           >
             <span className="text-white text-xs font-semibold tracking-widest">
-              Start a conversation
+              {props.agentState === "disconnected" ? (
+                "Start a conversation"
+              ) : (
+                <>
+                  Connecting
+                  <span className="inline-block w-4 text-left">
+                    {connectingDots}
+                  </span>
+                </>
+              )}
             </span>
           </motion.button>
         )}
@@ -165,7 +186,11 @@ function ControlBar(props: {
               initial={{ opacity: 0, top: "10px" }}
               animate={{ opacity: 1, top: 0 }}
               exit={{ opacity: 0, top: "-10px" }}
-              transition={{ duration: 0.4, ease: [0.09, 1.04, 0.245, 1.055] }}
+              transition={{
+                duration: 0.4,
+                ease: [0.09, 1.04, 0.245, 1.055],
+                delay: 0.25,
+              }}
               className="flex h-8 absolute left-1/2 -translate-x-1/2  justify-center"
             >
               <VoiceAssistantControlBar controls={{ leave: false }} />
