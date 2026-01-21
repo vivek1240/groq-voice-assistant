@@ -1,11 +1,12 @@
 import { generateRandomAlphanumeric } from "@/lib/util";
 import { NextApiRequest, NextApiResponse } from "next";
 
+import { RoomAgentDispatch, RoomConfiguration } from "@livekit/protocol";
 import {
-  AccessTokenOptions,
-  VideoGrant,
   AccessToken,
+  AccessTokenOptions,
   RoomServiceClient,
+  VideoGrant,
 } from "livekit-server-sdk";
 import { TokenResult } from "../../lib/types";
 
@@ -21,6 +22,13 @@ const roomService = new RoomServiceClient(livekitHost, apiKey, apiSecret);
 const createToken = (userInfo: AccessTokenOptions, grant: VideoGrant) => {
   const at = new AccessToken(apiKey, apiSecret, userInfo);
   at.addGrant(grant);
+  at.roomConfig = new RoomConfiguration({
+    agents: [
+      new RoomAgentDispatch({
+        agentName: "groq-agent",
+      }),
+    ],
+  });
   return at.toJwt();
 };
 
