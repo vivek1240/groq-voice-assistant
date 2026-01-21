@@ -36,7 +36,7 @@ export function HomeInner() {
           name="og:description"
           content="Talk to the world's fastest AI voice assistant, powered by Groq"
         />
-        <meta property="og:image" content="https://toq.vercel.app/og.png" />
+        <meta property="og:image" content="https://groq.livekit.io/og.png" />
         <meta name="twitter:site" content="@LiveKit"></meta>
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Groq Voice" />
