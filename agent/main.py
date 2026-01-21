@@ -40,7 +40,7 @@ async def entrypoint(ctx: JobContext):
         vad=ctx.proc.userdata["vad"],
         stt=groq.STT(),
         llm=groq.LLM(),
-        tts=groq.TTS(voice="Cheyenne-PlayAI"),
+        tts=groq.TTS(model="canopylabs/orpheus-v1-english", voice="autumn"),
         chat_ctx=initial_ctx,
     )
 
