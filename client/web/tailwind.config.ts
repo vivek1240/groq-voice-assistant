@@ -28,7 +28,7 @@ const groq = {
   "control-text": "#F55036",
   "content-bg-darker": "#EAEAEB",
   "button-bg": "#FFFFFF",
-  "button-text": "#000000",
+  "button-text": "#E92A0C",
 };
 
 const customColors = {

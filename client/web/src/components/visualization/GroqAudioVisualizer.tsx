@@ -21,31 +21,6 @@ type GroqAudioVisualizerProps = {
   gap: number;
 };
 
-/*
-<AgentVisualizer
-          state={animationState}
-          volumeBands={userVolumeBands}
-          options={{
-            animationOptions: { interval: 75, connectingRing: 3 },
-            baseStyle: {
-              width: '4px',
-              height: '4px',
-              borderRadius: '1px',
-            },
-            offStyle: {
-              backgroundColor: 'rgba(255, 255, 255, 0.2)',
-              transform: 'scale(1)',
-            },
-            onStyle: {
-              backgroundColor: 'rgba(255, 255, 255, 1)',
-              boxShadow: '0px 0px 10px 2px rgba(255, 255, 255, 0.4)',
-              transform: 'scale(1.25)',
-            },
-            gridSpacing: '12px',
-          }}
-        />
-*/
-
 export const GroqAudioVisualizer = ({
   state,
   frequencies,
@@ -118,39 +93,40 @@ export const GroqAudioVisualizer = ({
           opacity: 1,
         }}
         transition={{
-          delay: 1,
-          duration: 3,
+          duration: 2,
         }}
       >
-        <div
-          className="absolute top-0 left-0 w-full h-full z-10"
-          style={{
-            background:
-              "radial-gradient(50% 50% at 50% 50%, rgba(245, 80, 54, 1.0) 20%, rgba(245, 80, 54, 0.9) 40%, rgba(245, 80, 54, 0.0) 60%, rgba(245, 80, 54, 1) 100%)",
-            transform: "scale(1.01)",
-          }}
-        />
-        <AgentGridVisualizer
-          state={"speaking"}
-          volumeBands={summedFrequencies}
-          options={{
-            animationOptions: { interval: 75, connectingRing: 6 },
-            baseStyle: {
-              width: "4px",
-              height: "4px",
-              borderRadius: "2px",
-            },
-            offStyle: {
-              backgroundColor: "rgba(255, 255, 255, 0.5)",
-              transform: "scale(1)",
-            },
-            onStyle: {
-              backgroundColor: "rgba(255, 255, 255, 1)",
-              transform: "scale(1.25)",
-            },
-            gridSpacing: "12px",
-          }}
-        />
+        <div className="relative overflow-hidden w-[480px] h-[480px]">
+          <div
+            className="absolute top-0 left-0 w-full h-full z-10"
+            style={{
+              background:
+                "radial-gradient(50% 50% at 50% 50%, rgba(245, 80, 54, 1.0) 2%, rgba(245, 80, 54, 0.9) 40%, rgba(245, 80, 54, 0.0) 60%, rgba(245, 80, 54, 1) 100%)",
+            }}
+          />
+          <AgentGridVisualizer
+            key="visualizer"
+            state={"speaking"}
+            volumeBands={summedFrequencies}
+            options={{
+              animationOptions: { interval: 75, connectingRing: 3 },
+              baseStyle: {
+                width: "5px",
+                height: "5px",
+                borderRadius: "10px",
+              },
+              offStyle: {
+                backgroundColor: "rgba(0, 0, 0, 0.15)",
+                transform: "scale(1)",
+              },
+              onStyle: {
+                backgroundColor: "rgba(0, 0, 0, 0.2)",
+                transform: "scale(1.1)",
+              },
+              gridSpacing: "12px",
+            }}
+          />
+        </div>
       </motion.div>
     </div>
   );
@@ -196,35 +172,88 @@ const CircleChart = ({
       height={size}
       viewBox={`0 0 ${size} ${size}`}
       overflow="visible"
+      className="hovering-element"
     >
+      <g filter="url(#filter0_di_61_4534)">
+        <motion.circle
+          cx={size / 2}
+          cy={size / 2}
+          r={size * 0.1}
+          fill="white"
+          initial={{
+            opacity: 0,
+          }}
+          animate={{
+            r: isActive ? radiusBase * 0.75 : size * 0.2, // Animate between two sizes
+            opacity: 1,
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 150,
+            damping: 13,
+          }}
+          transform={`scale(${0.7 + 0.3 * averageVolume})`}
+          style={{
+            transformOrigin: "50% 50%",
+          }}
+        />
+      </g>
       <defs>
-        <linearGradient id="orange-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor="#FFF" />
-          <stop offset="20%" stopColor="#FFF" />
-          <stop offset="100%" stopColor="#FFF" />
-        </linearGradient>
+        <filter
+          id="filter0_di_61_4534"
+          x="0"
+          y="0"
+          width={size}
+          height={size}
+          scale={0.9 + 0.2 * averageVolume}
+          filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB"
+        >
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feColorMatrix
+            in="SourceAlpha"
+            type="matrix"
+            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            result="hardAlpha"
+          />
+          <feOffset dy="21" />
+          <feGaussianBlur stdDeviation="17" />
+          <feComposite in2="hardAlpha" operator="out" />
+          <feColorMatrix
+            type="matrix"
+            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.17 0"
+          />
+          <feBlend
+            mode="normal"
+            in2="BackgroundImageFix"
+            result="effect1_dropShadow_61_4534"
+          />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="effect1_dropShadow_61_4534"
+            result="shape"
+          />
+          <feColorMatrix
+            in="SourceAlpha"
+            type="matrix"
+            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            result="hardAlpha"
+          />
+          <feOffset dy={-4 + -8 * averageVolume} />
+          <feGaussianBlur stdDeviation={7 + 5 * averageVolume} />
+          <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+          <feColorMatrix
+            type="matrix"
+            values="0 0 0 0 0.933333 0 0 0 0 0.168627 0 0 0 0 0.0470588 0 0 0 0.66 0"
+          />
+          <feBlend
+            mode="normal"
+            in2="shape"
+            result="effect2_innerShadow_61_4534"
+          />
+        </filter>
       </defs>
-      <motion.circle
-        cx={size / 2}
-        cy={size / 2}
-        r={size * 0.1}
-        fill="url(#orange-gradient)"
-        animate={{
-          r: isActive ? radiusBase * 0.75 : size * 0.18, // Animate between two sizes
-          opacity: 1,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 150,
-          damping: 13,
-          delay: values.length * 0.1,
-        }}
-        transform={`scale(${0.9 + 0.2 * averageVolume})`}
-        style={{
-          transformOrigin: "50% 50%",
-          filter: "drop-shadow(0px 15px 28.1px rgba(125, 35, 5, 0.3))",
-        }}
-      />
     </svg>
   );
 };

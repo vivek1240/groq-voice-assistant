@@ -87,3 +87,19 @@ body {
     @apply h-full;
   }
 }
+
+@keyframes translateYUpDown {
+  0% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+.hovering-element {
+  animation: translateYUpDown 10s ease-in-out infinite;
+}
