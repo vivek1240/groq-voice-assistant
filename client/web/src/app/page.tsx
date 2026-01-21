@@ -152,7 +152,7 @@ function ControlBar(props: {
   }, [props.agentState]);
 
   return (
-    <div className="flex relative h-12">
+    <div className="relative h-12">
       <AnimatePresence>
         {(props.agentState === "disconnected" ||
           props.agentState === "connecting") && (
@@ -161,7 +161,7 @@ function ControlBar(props: {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, top: "10px" }}
             transition={{ duration: 1, ease: [0.09, 1.04, 0.245, 1.055] }}
-            className="min-w-56 uppercase px-4 py-2 rounded-lg border border-white/20 bg-white/10 hover:bg-white/20 active:scale-[0.98] transition-all duration-75 ease-out"
+            className="min-w-56 uppercase px-2 py-1.5 rounded-lg border border-white/20 bg-white/10 hover:bg-white/20 active:scale-[0.98] transition-all duration-75 ease-out"
             onClick={() => props.onConnectButtonClicked()}
           >
             <span className="text-white text-xs font-semibold tracking-widest">
