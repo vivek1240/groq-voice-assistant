@@ -8,7 +8,7 @@ type VisualizerState =
   | "speaking"
   | "thinking";
 
-type CerebrasAudioVisualizerProps = {
+type GroqAudioVisualizerProps = {
   state: VisualizerState;
   barWidth: number;
   minBarHeight: number;
@@ -20,13 +20,10 @@ type CerebrasAudioVisualizerProps = {
   gap: number;
 };
 
-const ringInactiveColor = "#E7E7E7";
-const ringActiveColor = "#FFCFBF";
-
-export const CerebrasAudioVisualizer = ({
+export const GroqAudioVisualizer = ({
   state,
   frequencies,
-}: CerebrasAudioVisualizerProps) => {
+}: GroqAudioVisualizerProps) => {
   const [isTabletOrSmaller, setIsTabletOrSmaller] = useState(false);
   const summedFrequencies = frequencies.map((bandFrequencies) => {
     const sum = (bandFrequencies as number[]).reduce((a, b) => a + b, 0);
@@ -82,7 +79,7 @@ export const CerebrasAudioVisualizer = ({
         state={state}
         values={[90, 110, 120, 90]}
         frequencies={summedFrequencies.slice(0, 4)}
-        radiusBase={isTabletOrSmaller ? 70 : 100}
+        radiusBase={isTabletOrSmaller ? 140 : 200}
       />
     </>
   );
@@ -128,55 +125,11 @@ const CircleChart = ({
     >
       <defs>
         <linearGradient id="orange-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor="#F15A29" />
-          <stop offset="20%" stopColor="#F15A29" />
-          <stop offset="100%" stopColor="#FF835B" />
+          <stop offset="0%" stopColor="#FFF" />
+          <stop offset="20%" stopColor="#FFF" />
+          <stop offset="100%" stopColor="#FFF" />
         </linearGradient>
       </defs>
-
-      {values.map((value, index) => {
-        const radius = radiusBase + index * (strokeWidth / 2 + gap);
-        const circumference = 2 * Math.PI * radius;
-        let halfCirc = circumference * 0.5;
-        const volumeThreshold = index * 0.25;
-        return (
-          <motion.circle
-            key={index}
-            cx={size / 2}
-            cy={size / 2}
-            fill="none"
-            strokeWidth={strokeWidth}
-            initial={{
-              strokeDasharray: `${halfCirc}, ${circumference}`,
-              r: radiusBase + index * (strokeWidth / 2 + gap),
-              stroke: ringInactiveColor,
-            }}
-            animate={
-              isActive
-                ? {
-                    strokeDasharray: `${halfCirc * 2}, ${circumference}`,
-                    r: radiusBase + index * (strokeWidth / 2 + gap),
-                    stroke:
-                      normalizedVolume > volumeThreshold
-                        ? ringActiveColor
-                        : ringInactiveColor,
-                  }
-                : {
-                    r: radiusBase + index * (strokeWidth / 2 + gap),
-                    strokeDasharray: `${halfCirc}, ${circumference}`,
-                  }
-            }
-            transition={{
-              duration: 1,
-              type: "spring",
-              stiffness: 90,
-              damping: 20,
-              delay: index * 0.1,
-            }}
-            transform={`rotate(${value} ${size / 2} ${size / 2})`}
-          />
-        );
-      })}
       <motion.circle
         cx={size / 2}
         cy={size / 2}
@@ -184,7 +137,7 @@ const CircleChart = ({
         fill="url(#orange-gradient)"
         animate={{
           r: isActive ? radiusBase * 0.75 : size * 0.18, // Animate between two sizes
-          opacity: isActive ? 1 : 0.0,
+          opacity: 1,
         }}
         transition={{
           type: "spring",

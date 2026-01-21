@@ -3,7 +3,7 @@
 import { LoadingSVG } from "@/components/button/LoadingSVG";
 import { PlaygroundHeader } from "@/components/playground/PlaygroundHeader";
 import { PlaygroundTile } from "@/components/playground/PlaygroundTile";
-import { CerebrasAudioVisualizer } from "../visualization/CerebrasAudioVisualizer";
+import { GroqAudioVisualizer } from "../visualization/GroqAudioVisualizer";
 import { useMultibandTrackVolume } from "@/hooks/useTrackVolume";
 import {
   useConnectionState,
@@ -133,7 +133,7 @@ export default function Playground({ onConnect }: PlaygroundProps) {
           />
           <Button
             state="destructive"
-            className="flex items-center justify-center px-3 rounded-xl"
+            className="flex items-center justify-center px-3 rounded-[4px]"
             size="medium"
             onClick={() => {
               onConnect(roomState === ConnectionState.Disconnected);
@@ -208,10 +208,11 @@ export default function Playground({ onConnect }: PlaygroundProps) {
         </motion.div>
       </div>
     );
+
     const visualizerContent = (
       <div className="flex flex-col items-center justify-space-between h-full w-full pb-12">
         <div className="h-full flex items-center">
-          <CerebrasAudioVisualizer
+          <GroqAudioVisualizer
             state={
               roomState === ConnectionState.Disconnected
                 ? "offline"

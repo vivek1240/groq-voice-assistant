@@ -26,15 +26,15 @@ export function HomeInner() {
   return (
     <>
       <Head>
-        <title>Cerebras Voice</title>
+        <title>Groq Toq</title>
         <meta
           name="description"
-          content="Talk to the world's fastest AI voice assistant, powered by Cerebras"
+          content="Talk to the world's fastest AI voice assistant, powered by Groq"
         />
         <meta name="og:title" content="Cerebras Voice" />
         <meta
           name="og:description"
-          content="Talk to the world's fastest AI voice assistant, powered by Cerebras"
+          content="Talk to the world's fastest AI voice assistant, powered by Groq"
         />
         <meta
           property="og:image"
@@ -42,14 +42,10 @@ export function HomeInner() {
         />
         <meta name="twitter:site" content="@LiveKit"></meta>
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Cerebras Voice" />
+        <meta name="twitter:title" content="Groq Voice" />
         <meta
           name="twitter:description"
-          content="Talk to the world's fastest AI voice assistant, powered by Cerebras"
-        />
-        <meta
-          property="twitter:image"
-          content="https://cerebras.vercel.app/og.png"
+          content="Talk to the world's fastest AI voice assistant, powered by Groq"
         />
         <meta property="twitter:image:width" content="1600" />
         <meta property="twitter:image:height" content="836" />
@@ -64,7 +60,7 @@ export function HomeInner() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main
-        className={`relative flex overflow-x-hidden flex-col justify-center items-center h-full w-full bg-cerebras-content-bg repeating-square-background`}
+        className={`relative flex overflow-x-hidden flex-col justify-center items-center h-full w-full bg-groq-content-bg repeating-square-background`}
       >
         <AnimatePresence>
           {toastMessage && (

@@ -49,7 +49,7 @@ export const MicrophoneButton = ({
     <Button
       state="dropdown"
       size="medium"
-      className={`flex items-center justify-center gap-2 bg-white rounded-xl ${
+      className={`flex items-center justify-center gap-2 bg-white rounded-sm ${
         isSpaceBarPressed
           ? "scale-90 border-cerebras-action-text border"
           : "scale-100"

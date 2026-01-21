@@ -20,27 +20,27 @@ export const Button: React.FC<ButtonProps> = ({
   switch (state) {
     case "secondary":
       buttonStyles =
-        "bg-transparent text-cerebras-control-text hover:text-cerebras-accent-text-active";
+        "bg-transparent text-groq-control-text hover:text-groq-accent-text-active";
       break;
 
     case "dropdown":
-      "bg-white rounded-full text-cerebras-accent-text hover:text-cerebras-accent-text-active";
+      "bg-white rounded-sm text-groq-accent-text hover:text-groq-accent-text-active";
       break;
 
     case "destructive":
-      buttonStyles = "bg-[#FFD1CC] text-cerebras-action-text";
+      buttonStyles = "bg-[#FFF] text-groq-action-text";
       break;
 
     default:
       buttonStyles =
-        "bg-cerebras-button-bg hover:bg-cerebras-button-bg/80 text-cerebras-button-text hover:border-cerebras-action-text rounded-[20px] border-[1px] uppercase";
+        "bg-groq-button-bg hover:bg-groq-button-bg/80 text-groq-button-text hover:border-groq-action-text rounded-[6px] border-[1px]";
       break;
   }
 
   let sizeStyles;
   switch (size) {
     case "large":
-      sizeStyles = "text-lg px-6 py-4 font-semibold tracking-wider";
+      sizeStyles = "text-[16px] px-6 py-4 font-regular";
       break;
 
     case "medium":
@@ -56,7 +56,7 @@ export const Button: React.FC<ButtonProps> = ({
     <button
       className={`active:translate-y-[2px] active:scale-[0.99] hover:-translate-y-[2px] flex flex-row ${
         disabled ? "pointer-events-none" : ""
-      } ${size} font-mono ${buttonStyles} ${sizeStyles} transition-all ease-out duration-250 ${className}`}
+      } ${size} ${buttonStyles} ${sizeStyles} transition-all ease-out duration-250 ${className}`}
       {...allProps}
     >
       {children}

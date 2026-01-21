@@ -17,23 +17,23 @@ const cartesia = {
   950: "#0c2565",
 };
 
-const cerebras = {
-  "accent-bg": "#201F23",
-  "content-bg": "#F1F1F2",
+const groq = {
+  "accent-bg": "#F55036",
+  "content-bg": "#F55036",
   "content-text": "#161519",
   "accent-text": "#a1a0a7",
   "action-text": "#F05A28",
   "accent-border": "rgba(240, 90, 40, 0.15)",
   "accent-text-active": "#f37f58",
-  "control-text": "#424049",
+  "control-text": "#F55036",
   "content-bg-darker": "#EAEAEB",
-  "button-bg": "#F15A29",
-  "button-text": "#FFF",
+  "button-bg": "#FFFFFF",
+  "button-text": "#F55036",
 };
 
 const customColors = {
   cartesia,
-  cerebras,
+  groq,
 };
 
 const config: Config = {

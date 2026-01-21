@@ -75,7 +75,7 @@ export const AgentMultibandAudioVisualizer = ({
 
         return (
           <div
-            className={`bg-cerebras-control-text ${
+            className={`bg-groq-control-text ${
               isCenter && state === "listening" ? "animate-pulse" : ""
             }`}
             key={"frequency-" + index}
