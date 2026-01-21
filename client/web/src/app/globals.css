@@ -13,6 +13,9 @@ html, body {
   @apply bg-groq-accent-bg;
 }
 
+[data-lk-theme="default"] {
+  --lk-accent-bg: #F55036;
+}
 
 .lk-agent-control-bar {
   @apply border-t-0 p-0 h-min mr-4;
