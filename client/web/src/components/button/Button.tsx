@@ -33,7 +33,7 @@ export const Button: React.FC<ButtonProps> = ({
 
     default:
       buttonStyles =
-        "bg-groq-button-bg hover:bg-groq-button-bg/80 text-groq-button-text hover:border-groq-action-text rounded-[6px] border-[1px]";
+        "bg-groq-button-bg hover:bg-groq-button-bg/90 text-groq-button-text hover:border-groq-action-text rounded-[6px] border-[1px]";
       break;
   }
 

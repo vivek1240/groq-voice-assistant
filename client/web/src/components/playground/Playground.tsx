@@ -187,7 +187,9 @@ export default function Playground({ onConnect }: PlaygroundProps) {
           <Button
             state="primary"
             size="large"
-            className="relative w-full text-base text-black"
+            className={`relative w-full text-base text-black ${
+              isLoading ? "pointer-events-none" : ""
+            }`}
             onClick={() => {
               onConnect(roomState === ConnectionState.Disconnected);
             }}
