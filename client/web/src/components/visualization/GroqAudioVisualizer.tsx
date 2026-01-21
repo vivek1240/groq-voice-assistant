@@ -170,7 +170,6 @@ const CircleChart = ({
   const [isActive, setIsActive] = useState(false);
   const [gap, setGap] = useState(15);
   const strokeWidth = 15;
-  const averageVolume =
   let averageVolume =
     frequencies.reduce((a, b) => a + b, 0) / frequencies.length;
   if (isNaN(averageVolume)) {
