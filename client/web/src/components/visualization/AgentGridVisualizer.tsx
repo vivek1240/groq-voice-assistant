@@ -33,6 +33,25 @@ export type AgentVisualizerOptions = {
   };
 };
 
+const normalizeFrequencies = (frequencies: number[]) => {
+  const normalizeDb = (value: number) => {
+    const minDb = -100;
+    const maxDb = -10;
+    let db = 1 - (Math.max(minDb, Math.min(maxDb, value)) * -1) / 100;
+    db = Math.sqrt(db);
+
+    return db;
+  };
+
+  // Normalize all frequency values
+  return frequencies.map((value) => {
+    if (value === -Infinity) {
+      return 0;
+    }
+    return normalizeDb(value);
+  });
+};
+
 export type AgentVisualizerProps = {
   style?: "grid" | "bar" | "radial" | "waveform";
   state: AgentState;
@@ -58,6 +77,9 @@ export const AgentGridVisualizer = ({
     options?.animationOptions
   );
 
+  const averageVolume =
+    volumeBands.reduce((a, b) => a + b, 0) / volumeBands.length;
+  const normalizedVolume = Math.pow(averageVolume, 0.8);
   const rowMidPoint = Math.floor(gridRows / 2.0);
   const volumeChunks = 1 / (rowMidPoint + 1);
 
@@ -83,7 +105,16 @@ export const AgentGridVisualizer = ({
               : distanceToMid * volumeChunks;
           let targetStyle;
           if (state !== "speaking") {
-            if (highlightedIndex?.x === x && highlightedIndex?.y === y) {
+            // Get distance from center
+            const distanceFromCenter = Math.sqrt(
+              Math.pow(rowMidPoint - x, 2) + Math.pow(rowMidPoint - y, 2)
+            );
+            const maxDistanceFromCenter = Math.sqrt(
+              Math.pow(rowMidPoint - 0, 2) + Math.pow(rowMidPoint - 0, 2)
+            );
+            const distanceFactor = distanceFromCenter / maxDistanceFromCenter;
+
+            if (normalizedVolume < distanceFactor) {
               targetStyle = {
                 transition: `all ${
                   (options?.animationOptions?.interval ?? 100) / 1000
@@ -99,7 +130,15 @@ export const AgentGridVisualizer = ({
               };
             }
           } else {
-            if (volumeBands[x] >= threshold) {
+            // Get distance from center
+            const distanceFromCenter = Math.sqrt(
+              Math.pow(rowMidPoint - x, 2) + Math.pow(rowMidPoint - y, 2)
+            );
+            const maxDistanceFromCenter = Math.sqrt(
+              Math.pow(rowMidPoint - 0, 2) + Math.pow(rowMidPoint - 0, 2)
+            );
+            const distanceFactor = distanceFromCenter / maxDistanceFromCenter;
+            if (distanceFactor < normalizedVolume) {
               targetStyle = onStyle;
             } else {
               targetStyle = offStyle;
