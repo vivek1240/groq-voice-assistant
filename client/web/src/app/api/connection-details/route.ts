@@ -1,4 +1,9 @@
-import { AccessToken, AccessTokenOptions, VideoGrant } from "livekit-server-sdk";
+import { RoomAgentDispatch, RoomConfiguration } from "@livekit/protocol";
+import {
+  AccessToken,
+  AccessTokenOptions,
+  VideoGrant,
+} from "livekit-server-sdk";
 import { NextResponse } from "next/server";
 
 // NOTE: you are expected to define the following environment variables in `.env.local`:
@@ -55,7 +60,10 @@ export async function GET() {
   }
 }
 
-function createParticipantToken(userInfo: AccessTokenOptions, roomName: string) {
+function createParticipantToken(
+  userInfo: AccessTokenOptions,
+  roomName: string
+) {
   const at = new AccessToken(API_KEY, API_SECRET, {
     ...userInfo,
     ttl: "15m",
@@ -68,5 +76,12 @@ function createParticipantToken(userInfo: AccessTokenOptions, roomName: string) 
     canSubscribe: true,
   };
   at.addGrant(grant);
+  at.roomConfig = new RoomConfiguration({
+    agents: [
+      new RoomAgentDispatch({
+        agentName: "groq-agent",
+      }),
+    ],
+  });
   return at.toJwt();
 }
