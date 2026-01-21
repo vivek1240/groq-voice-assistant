@@ -5,7 +5,7 @@ type PlaygroundHeader = {
 export const PlaygroundHeader = ({ height }: PlaygroundHeader) => {
   return (
     <div
-      className={`flex gap-4 pt-16 px-4 lg:px-8 text-cerebras-content-text w-full justify-center items-center shrink-0 bg-cerebras-content-bg`}
+      className={`relative z-50 flex gap-4 pt-16 px-4 lg:px-8 text-cerebras-content-text w-full justify-center items-center shrink-0 bg-cerebras-content-bg`}
       style={{
         height: height + "px",
       }}

@@ -50,7 +50,7 @@ const desktopMinBarHeight = 60;
 const mobileMaxBarHeight = 140;
 const mobileMinBarHeight = 48;
 const mobileBarWidth = 48;
-const barCount = 5;
+const barCount = 50;
 const defaultVolumes = Array.from({ length: barCount }, () => [0.0]);
 
 export default function Playground({ onConnect }: PlaygroundProps) {

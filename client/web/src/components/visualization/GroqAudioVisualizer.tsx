@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
+import { AgentGridVisualizer } from "./AgentGridVisualizer";
 
 type VisualizerState =
   | "offline"
@@ -19,6 +20,31 @@ type GroqAudioVisualizerProps = {
   borderRadius: number;
   gap: number;
 };
+
+/*
+<AgentVisualizer
+          state={animationState}
+          volumeBands={userVolumeBands}
+          options={{
+            animationOptions: { interval: 75, connectingRing: 3 },
+            baseStyle: {
+              width: '4px',
+              height: '4px',
+              borderRadius: '1px',
+            },
+            offStyle: {
+              backgroundColor: 'rgba(255, 255, 255, 0.2)',
+              transform: 'scale(1)',
+            },
+            onStyle: {
+              backgroundColor: 'rgba(255, 255, 255, 1)',
+              boxShadow: '0px 0px 10px 2px rgba(255, 255, 255, 0.4)',
+              transform: 'scale(1.25)',
+            },
+            gridSpacing: '12px',
+          }}
+        />
+*/
 
 export const GroqAudioVisualizer = ({
   state,
@@ -74,14 +100,59 @@ export const GroqAudioVisualizer = ({
   }, [state, summedFrequencies.length, thinkingDirection, thinkingIndex]);
 
   return (
-    <>
-      <CircleChart
-        state={state}
-        values={[90, 110, 120, 90]}
-        frequencies={summedFrequencies.slice(0, 4)}
-        radiusBase={isTabletOrSmaller ? 140 : 200}
-      />
-    </>
+    <div className="relative">
+      <div className="relative z-50">
+        <CircleChart
+          state={state}
+          values={[90, 110, 120, 90]}
+          frequencies={summedFrequencies.slice(0, 4)}
+          radiusBase={isTabletOrSmaller ? 140 : 200}
+        />
+      </div>
+      <motion.div
+        initial={{
+          opacity: 0,
+        }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        animate={{
+          opacity: 1,
+        }}
+        transition={{
+          delay: 1,
+          duration: 3,
+        }}
+      >
+        <div
+          className="absolute top-0 left-0 w-full h-full z-10"
+          style={{
+            background:
+              "radial-gradient(50% 50% at 50% 50%, rgba(245, 80, 54, 1.0) 20%, rgba(245, 80, 54, 0.9) 40%, rgba(245, 80, 54, 0.0) 60%, rgba(245, 80, 54, 1) 100%)",
+            transform: "scale(1.01)",
+          }}
+        />
+        <AgentGridVisualizer
+          state={"speaking"}
+          volumeBands={summedFrequencies}
+          options={{
+            animationOptions: { interval: 75, connectingRing: 6 },
+            baseStyle: {
+              width: "4px",
+              height: "4px",
+              borderRadius: "2px",
+            },
+            offStyle: {
+              backgroundColor: "rgba(255, 255, 255, 0.5)",
+              transform: "scale(1)",
+            },
+            onStyle: {
+              backgroundColor: "rgba(255, 255, 255, 1)",
+              transform: "scale(1.25)",
+            },
+            gridSpacing: "12px",
+          }}
+        />
+      </motion.div>
+    </div>
   );
 };
 
