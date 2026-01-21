@@ -1,5 +1,6 @@
 import logging
 import httpx
+import asyncio
 from datetime import datetime
 from typing import Annotated
 
@@ -18,6 +19,9 @@ from livekit.plugins import silero, groq
 
 load_dotenv()
 logger = logging.getLogger("voice-agent")
+
+# Global reference for shutdown
+_shutdown_event: asyncio.Event | None = None
 
 
 # Define function context for tool calling
@@ -156,7 +160,7 @@ class AssistantFnc(llm.FunctionContext):
         farewell_reason: Annotated[str, llm.TypeInfo(description="Brief reason for ending: 'user_goodbye' if user said bye/goodbye/see you, 'task_complete' if user's request is fully resolved, 'user_request' if user explicitly asked to end")] = "user_goodbye",
     ):
         """
-        Respond to user's farewell. Call this tool when:
+        End the voice conversation gracefully. Call this tool when:
         - User says goodbye, bye, see you, take care, have a good day, etc.
         - User says they're done, that's all, nothing else, I'm finished
         - User explicitly asks to end or hang up the call
@@ -164,17 +168,30 @@ class AssistantFnc(llm.FunctionContext):
         
         Do NOT call this just because you answered a question - only when the user signals they want to end.
         """
+        global _shutdown_event
+        
         logger.info(f"End conversation triggered - reason: {farewell_reason}")
         
+        # Signal shutdown after a delay (to let farewell be spoken)
+        if _shutdown_event:
+            asyncio.create_task(self._delayed_shutdown())
+        
         # Return farewell message based on reason
-        # Note: We don't disconnect programmatically - let the user click the X button
         farewells = {
-            "user_goodbye": "Goodbye! It was nice chatting with you. Take care! You can click the X button to end the call.",
+            "user_goodbye": "Goodbye! It was nice chatting with you. Take care!",
             "task_complete": "Great, I'm glad I could help! Goodbye and have a wonderful day!",
             "user_request": "Alright! Goodbye, take care!",
         }
         
         return farewells.get(farewell_reason, "Goodbye! Have a great day!")
+    
+    async def _delayed_shutdown(self):
+        """Wait for farewell to be spoken, then signal shutdown"""
+        global _shutdown_event
+        await asyncio.sleep(5)  # Wait 5 seconds for TTS to complete
+        if _shutdown_event:
+            logger.info("Setting shutdown event...")
+            _shutdown_event.set()
 
 
 def prewarm(proc: JobProcess):
@@ -182,6 +199,11 @@ def prewarm(proc: JobProcess):
 
 
 async def entrypoint(ctx: JobContext):
+    global _shutdown_event
+    
+    # Create shutdown event for graceful termination
+    _shutdown_event = asyncio.Event()
+    
     # Initialize function context for tool calling
     fnc_ctx = AssistantFnc()
     
@@ -231,6 +253,11 @@ async def entrypoint(ctx: JobContext):
         "What would you like to know?",
         allow_interruptions=True
     )
+    
+    # Wait for shutdown signal (triggered by end_conversation tool)
+    await _shutdown_event.wait()
+    logger.info("Shutdown signal received, disconnecting...")
+    await ctx.room.disconnect()
 
 
 if __name__ == "__main__":
