@@ -81,7 +81,7 @@ export const GroqAudioVisualizer = ({
           state={state}
           values={[90, 110, 120, 90]}
           frequencies={summedFrequencies.slice(0, 4)}
-          radiusBase={isTabletOrSmaller ? 140 : 200}
+          radiusBase={isTabletOrSmaller ? 110 : 200}
         />
       </div>
       <motion.div
@@ -96,7 +96,7 @@ export const GroqAudioVisualizer = ({
           duration: 2,
         }}
       >
-        <div className="relative overflow-hidden w-[480px] h-[480px]">
+        <div className="relative overflow-hidden w-[320px] h-[320px] lg:w-[480px] lg:h-[480px]">
           <div
             className="absolute top-0 left-0 w-full h-full z-10"
             style={{
