@@ -1,0 +1,56 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-01-23",
+  "currency": "USD",
+  "pricing": {
+    "stt": {
+      "whisper-large-v3-turbo": {
+        "price_per_minute": 0.02,
+        "description": "Groq Whisper Large v3 Turbo - Cost per minute of audio"
+      },
+      "whisper-large-v3": {
+        "price_per_minute": 0.025,
+        "description": "Groq Whisper Large v3 - Cost per minute of audio"
+      }
+    },
+    "llm": {
+      "llama-3.3-70b-versatile": {
+        "input_price_per_1k": 0.00059,
+        "output_price_per_1k": 0.00079,
+        "description": "Llama 3.3 70B - $0.59 per 1M input tokens, $0.79 per 1M output tokens"
+      },
+      "llama-3.1-8b-instant": {
+        "input_price_per_1k": 0.00005,
+        "output_price_per_1k": 0.00008,
+        "description": "Llama 3.1 8B Instant - $0.05 per 1M input tokens, $0.08 per 1M output tokens"
+      },
+      "mixtral-8x7b-32768": {
+        "input_price_per_1k": 0.00024,
+        "output_price_per_1k": 0.00024,
+        "description": "Mixtral 8x7B - $0.24 per 1M tokens (both input and output)"
+      }
+    },
+    "tts": {
+      "canopylabs/orpheus-v1-english": {
+        "price_per_character": 0.00001,
+        "description": "Orpheus v1 English - $0.01 per 1K characters"
+      },
+      "playai-tts": {
+        "price_per_character": 0.00001,
+        "description": "PlayAI TTS - $0.01 per 1K characters"
+      }
+    },
+    "vapi": {
+      "platform_cost": {
+        "price_per_minute": 0.05,
+        "description": "LiveKit/VAPI platform cost - Per minute of connection"
+      }
+    }
+  },
+  "notes": {
+    "groq_pricing": "Visit https://groq.com/pricing for latest Groq pricing",
+    "livekit_pricing": "Visit https://livekit.io/pricing for latest LiveKit pricing",
+    "update_frequency": "Update this file when pricing changes",
+    "token_estimation": "1 token ≈ 0.75 words or 4 characters (approximate)"
+  }
+}

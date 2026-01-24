@@ -1,0 +1,162 @@
+{
+  "call_id": "sample_call_001",
+  "start_timestamp": "2026-01-23T19:11:05.886273",
+  "end_timestamp": "2026-01-23T19:11:06.059215",
+  "duration_seconds": 0.1729419231414795,
+  "responses": [
+    {
+      "response_id": "sample_call_001_response_1",
+      "timestamp": "2026-01-23T19:11:05.886273",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 2.0,
+        "cost": 0.0006666666666666666,
+        "latency_ms": 13.60464096069336,
+        "transcript_length": 27,
+        "timestamp": "2026-01-23T19:11:05.899878"
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 170,
+        "output_tokens": 90,
+        "total_tokens": 260,
+        "input_cost": 0.00010030000000000001,
+        "output_cost": 7.11e-05,
+        "total_cost": 0.0001714,
+        "latency_ms": 10.263919830322266,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-23T19:11:05.910142"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.002,
+        "latency_ms": 10.579586029052734,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-23T19:11:05.920722"
+      },
+      "end_to_end_latency_ms": 34.44814682006836,
+      "total_cost": 0.0028380666666666665
+    },
+    {
+      "response_id": "sample_call_001_response_2",
+      "timestamp": "2026-01-23T19:11:05.931098",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 2.5,
+        "cost": 0.0008333333333333333,
+        "latency_ms": 10.429859161376953,
+        "transcript_length": 27,
+        "timestamp": "2026-01-23T19:11:05.941528"
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 195,
+        "output_tokens": 105,
+        "total_tokens": 300,
+        "input_cost": 0.00011505,
+        "output_cost": 8.295e-05,
+        "total_cost": 0.000198,
+        "latency_ms": 10.762453079223633,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-23T19:11:05.952290"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 230,
+        "cost": 0.0023000000000000004,
+        "latency_ms": 10.619640350341797,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-23T19:11:05.962910"
+      },
+      "end_to_end_latency_ms": 31.811952590942383,
+      "total_cost": 0.0033313333333333337
+    },
+    {
+      "response_id": "sample_call_001_response_3",
+      "timestamp": "2026-01-23T19:11:05.973502",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 3.0,
+        "cost": 0.001,
+        "latency_ms": 10.644674301147461,
+        "transcript_length": 27,
+        "timestamp": "2026-01-23T19:11:05.984147"
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 220,
+        "output_tokens": 120,
+        "total_tokens": 340,
+        "input_cost": 0.0001298,
+        "output_cost": 9.48e-05,
+        "total_cost": 0.0002246,
+        "latency_ms": 10.672330856323242,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-23T19:11:05.994819"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 260,
+        "cost": 0.0026000000000000003,
+        "latency_ms": 10.457754135131836,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-23T19:11:06.005592"
+      },
+      "end_to_end_latency_ms": 32.089948654174805,
+      "total_cost": 0.0038246
+    },
+    {
+      "response_id": "sample_call_001_response_4",
+      "timestamp": "2026-01-23T19:11:06.016511",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 3.5,
+        "cost": 0.0011666666666666668,
+        "latency_ms": 10.320901870727539,
+        "transcript_length": 27,
+        "timestamp": "2026-01-23T19:11:06.026832"
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 245,
+        "output_tokens": 135,
+        "total_tokens": 380,
+        "input_cost": 0.00014455000000000002,
+        "output_cost": 0.00010665,
+        "total_cost": 0.00025120000000000003,
+        "latency_ms": 10.713338851928711,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-23T19:11:06.037545"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 290,
+        "cost": 0.0029000000000000002,
+        "latency_ms": 10.802030563354492,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-23T19:11:06.048347"
+      },
+      "end_to_end_latency_ms": 31.836271286010742,
+      "total_cost": 0.004317866666666667
+    }
+  ],
+  "total_stt_cost": 0.003666666666666667,
+  "total_llm_cost": 0.0008452,
+  "total_tts_cost": 0.0098,
+  "total_vapi_cost": 0.00014411826928456624,
+  "total_cost": 0.014455984935951231,
+  "total_stt_duration": 11.0,
+  "total_llm_input_tokens": 830,
+  "total_llm_output_tokens": 450,
+  "total_tts_characters": 980,
+  "avg_stt_latency_ms": 11.250019073486328,
+  "avg_llm_latency_ms": 10.603010654449463,
+  "avg_tts_latency_ms": 10.614752769470215,
+  "avg_end_to_end_latency_ms": 32.54657983779907,
+  "vapi": {
+    "connection_duration_seconds": 0.1729419231414795,
+    "cost": 0.00014411826928456624,
+    "timestamp": "2026-01-23T19:11:06.059215"
+  }
+}
