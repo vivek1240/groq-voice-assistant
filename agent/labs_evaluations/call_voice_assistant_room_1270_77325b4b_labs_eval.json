@@ -1,0 +1,28 @@
+{
+  "call_id": "call_voice_assistant_room_1270_77325b4b",
+  "timestamp": "2026-01-24T15:01:29.785533",
+  "duration_seconds": 79.88261580467224,
+  "total_cost": 0.07979171983722687,
+  "core_metrics": {
+    "user_sentiment": "frustrated",
+    "call_summary": "The user expressed dissatisfaction with Mercola's at-home lab testing kits, stating they were not worthy and were causing nuisance in their life. The user then abruptly ended the conversation. The assistant attempted to be helpful but was cut off by the user.",
+    "query_resolved": false,
+    "escalation_required": true
+  },
+  "domain_metrics": {
+    "query_category": "general_inquiry",
+    "testing_phase": "pre_purchase"
+  },
+  "compliance_metrics": {
+    "medical_boundary_maintained": true,
+    "proper_disclaimer_given": null
+  },
+  "additional_info": {
+    "total_turns": 4,
+    "avg_latency_ms": 10152.398467063904,
+    "evaluation_method": "llm",
+    "evaluation_version": "1.0"
+  },
+  "notes": "The user's strong negative sentiment and abrupt ending of the conversation suggest a high level of frustration, which is a concern. The assistant's response was polite and professional, but the user did not give them a chance to fully address their concerns.",
+  "flags": []
+}

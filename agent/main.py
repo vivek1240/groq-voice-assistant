@@ -18,8 +18,10 @@ from livekit.agents import (
 from livekit.agents.pipeline import VoicePipelineAgent
 from livekit.plugins import silero, groq
 
-# Import cost tracker
+# Import cost tracker and evaluators
 from cost_tracker import CostTracker
+from call_evaluator import CallEvaluator, evaluate_call_automatically
+from labs_evaluator import LabsCallEvaluator, evaluate_labs_call_automatically
 
 # Import DuplexClosed if available (for error handling on Windows)
 try:
@@ -389,26 +391,59 @@ async def entrypoint(ctx: JobContext):
         def _on_agent_speech_committed(msg):
             """Capture agent's speech text for metrics"""
             try:
+                # Debug: Log the message structure
+                logger.debug(f"agent_speech_committed event: type={type(msg)}, dir={[attr for attr in dir(msg) if not attr.startswith('_')]}")
+                
                 agent_text = ""
                 if hasattr(msg, 'text'):
                     agent_text = msg.text
+                    logger.debug(f"Got agent text from 'text' attribute: {len(agent_text)} chars")
                 elif hasattr(msg, 'content'):
                     agent_text = msg.content
+                    logger.debug(f"Got agent text from 'content' attribute: {len(agent_text)} chars")
+                elif hasattr(msg, 'message'):
+                    agent_text = msg.message
+                    logger.debug(f"Got agent text from 'message' attribute: {len(agent_text)} chars")
                 elif isinstance(msg, str):
                     agent_text = msg
+                    logger.debug(f"Got agent text from string: {len(agent_text)} chars")
+                else:
+                    logger.warning(f"Could not extract agent text from message: {type(msg)}")
                 
                 tracking_state['current_agent_text'] = agent_text
                 
-                # Update LLM output token estimate if we haven't ended the response yet
-                if agent_text and cost_tracker.current_response:
-                    output_tokens = int(len(agent_text.split()) / 0.75)
-                    # Update the LLM metrics with better estimate
-                    if cost_tracker.current_response.llm:
-                        cost_tracker.current_response.llm.output_tokens = output_tokens
-                        cost_tracker.current_response.llm.calculate_cost()
+                # The response has already ended by the time this event fires
+                # So we need to update the LAST response in the call metrics
+                if agent_text and cost_tracker.call_metrics.responses:
+                    last_response = cost_tracker.call_metrics.responses[-1]
+                    
+                    # Update LLM metrics with actual response text
+                    if last_response.llm:
+                        last_response.llm.response_text = agent_text
+                        
+                        # Update output tokens based on actual text
+                        output_tokens = int(len(agent_text.split()) / 0.75)
+                        last_response.llm.output_tokens = output_tokens
+                        last_response.llm.calculate_cost()
+                        
+                        # Recalculate total cost for this response
+                        last_response.calculate_total_cost()
+                        
+                        # Add assistant message to conversation transcript
+                        if agent_text.strip():
+                            cost_tracker.call_metrics.conversation_transcript.append({
+                                "role": "assistant",
+                                "content": agent_text
+                            })
+                            logger.info(f"Added assistant response to transcript: {len(agent_text)} chars")
+                else:
+                    if not agent_text:
+                        logger.warning(f"No agent text to update")
+                    if not cost_tracker.call_metrics.responses:
+                        logger.warning(f"No responses in call metrics yet")
                 
             except Exception as e:
-                logger.error(f"Error capturing agent speech: {e}")
+                logger.error(f"Error capturing agent speech: {e}", exc_info=True)
         
         # Event handler for user speech to track activity and detect farewells
         @agent.on("user_speech_committed")
@@ -608,6 +643,59 @@ async def entrypoint(ctx: JobContext):
             logger.info(f"  - VAPI: ${summary['total_vapi_cost']:.6f}")
             logger.info(f"Metrics saved to: {metrics_file}")
             logger.info("=" * 80 + "\n")
+            
+            # AUTOMATIC EVALUATION - Trigger evaluation immediately after call ends
+            try:
+                logger.info("Starting automatic call evaluation...")
+                
+                # Use Labs-specific evaluator for comprehensive compliance tracking
+                # LLM evaluation provides accurate sentiment, intent, and compliance analysis
+                # Heuristic evaluation is faster but less accurate
+                use_llm = os.getenv("USE_LLM_EVALUATION", "true").lower() == "true"
+                eval_method = "LLM-based (intelligent)" if use_llm else "Heuristic-based (pattern matching)"
+                logger.info(f"Evaluation method: {eval_method}")
+                
+                # Prepare conversation data for LLM evaluation
+                conversation_data = None
+                if 'conversation_transcript' in summary and summary['conversation_transcript']:
+                    conversation_data = {
+                        'messages': summary['conversation_transcript']
+                    }
+                    logger.info(f"Captured {len(summary['conversation_transcript'])} conversation turns for evaluation")
+                
+                # Evaluate with conversation data for LLM-based analysis
+                labs_evaluation = evaluate_labs_call_automatically(
+                    summary, 
+                    conversation_data=conversation_data,
+                    use_llm=use_llm
+                )
+                
+                logger.info("\n" + "=" * 80)
+                logger.info("LABS MODULE CALL EVALUATION RESULTS")
+                logger.info("=" * 80)
+                logger.info("CORE METRICS:")
+                logger.info(f"  User Sentiment: {labs_evaluation.user_sentiment.value}")
+                logger.info(f"  Query Resolved: {labs_evaluation.query_resolved}")
+                logger.info(f"  Escalation Required: {labs_evaluation.escalation_required}")
+                logger.info(f"\nDOMAIN METRICS:")
+                logger.info(f"  Query Category: {labs_evaluation.query_category.value}")
+                logger.info(f"  Testing Phase: {labs_evaluation.testing_phase.value}")
+                logger.info(f"\nCOMPLIANCE METRICS:")
+                logger.info(f"  Medical Boundary Maintained: {labs_evaluation.medical_boundary_maintained}")
+                logger.info(f"  Proper Disclaimer Given: {labs_evaluation.proper_disclaimer_given}")
+                logger.info(f"\nCALL SUMMARY:")
+                logger.info(f"  {labs_evaluation.call_summary}")
+                
+                if labs_evaluation.flags:
+                    logger.warning(f"\nCOMPLIANCE FLAGS:")
+                    for flag in labs_evaluation.flags:
+                        logger.warning(f"  {flag}")
+                
+                logger.info(f"\nNotes: {labs_evaluation.notes}")
+                logger.info("=" * 80 + "\n")
+                
+            except Exception as eval_error:
+                logger.error(f"Error during automatic evaluation: {eval_error}", exc_info=True)
             
         except Exception as tracking_error:
             logger.error(f"Error finalizing cost tracking: {tracking_error}")
