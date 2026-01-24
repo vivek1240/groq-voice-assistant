@@ -1,0 +1,19 @@
+﻿================================================================================
+TESTING LLM-BASED EVALUATION
+================================================================================
+python : Traceback (most recent call last):
+At C:\Users\91626\AppData\Local\Temp\ps-script-2569d376-ec75-443c-8b37-8fef2268b04e.ps1:108 char:1
++ python test_llm_evaluation.py 2>&1 | Out-File -Encoding utf8 test_out ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\91626\Desktop\groq-voice-assistant\agent\test_llm_evaluation.py", line 230, in <module>
+    success = test_llm_evaluation()
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91626\Desktop\groq-voice-assistant\agent\test_llm_evaluation.py", line 146, in test_llm_evaluation
+    print("\u2705 GROQ_API_KEY found")
+  File "C:\Users\91626\anaconda3\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2705' in position 0: character maps to <undefined>

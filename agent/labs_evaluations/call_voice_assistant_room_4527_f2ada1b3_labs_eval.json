@@ -1,0 +1,28 @@
+{
+  "call_id": "call_voice_assistant_room_4527_f2ada1b3",
+  "timestamp": "2026-01-24T15:42:57.431649",
+  "duration_seconds": 49.79259371757507,
+  "total_cost": 0.0517060847646459,
+  "core_metrics": {
+    "user_sentiment": "neutral",
+    "call_summary": "The user initiated a call with the Mercola Health Coach voice assistant but did not ask any questions or request assistance. The user ended the call immediately after greeting the assistant. The assistant responded with a polite farewell message.",
+    "query_resolved": false,
+    "escalation_required": false
+  },
+  "domain_metrics": {
+    "query_category": "general_inquiry",
+    "testing_phase": "unknown"
+  },
+  "compliance_metrics": {
+    "medical_boundary_maintained": true,
+    "proper_disclaimer_given": null
+  },
+  "additional_info": {
+    "total_turns": 3,
+    "avg_latency_ms": 13586.881240208944,
+    "evaluation_method": "llm",
+    "evaluation_version": "1.0"
+  },
+  "notes": "The call was very brief and did not involve any specific inquiry or issue related to Mercola's at-home lab testing. The user did not provide any information that would require further assistance or escalation.",
+  "flags": []
+}

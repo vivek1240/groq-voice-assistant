@@ -140,6 +140,7 @@ class STTMetrics:
     latency_ms: float = 0.0
     transcript_length: int = 0
     timestamp: str = ""
+    transcript: str = ""  # Actual transcribed text
     
     def calculate_cost(self):
         """Calculate cost based on duration"""
@@ -162,6 +163,7 @@ class LLMMetrics:
     latency_ms: float = 0.0  # Time to first token
     total_generation_time_ms: float = 0.0
     timestamp: str = ""
+    response_text: str = ""  # Actual LLM response text
     
     def calculate_cost(self):
         """Calculate cost based on token usage"""
@@ -244,6 +246,9 @@ class CallMetrics:
     
     # Response tracking
     responses: List[ResponseMetrics] = field(default_factory=list)
+    
+    # Conversation transcript (for LLM evaluation)
+    conversation_transcript: List[Dict[str, str]] = field(default_factory=list)
     
     # Aggregated metrics
     total_stt_cost: float = 0.0
@@ -458,11 +463,19 @@ class CostTracker:
             duration_seconds=duration,
             latency_ms=latency,
             transcript_length=len(transcript),
+            transcript=transcript,  # Store actual transcript
             timestamp=datetime.now().isoformat()
         )
         stt_metrics.calculate_cost()
         
         self.current_response.stt = stt_metrics
+        
+        # Add user message to conversation transcript
+        if transcript.strip():
+            self.call_metrics.conversation_transcript.append({
+                "role": "user",
+                "content": transcript
+            })
         
         logger.debug(
             f"STT completed: duration={duration:.2f}s, latency={latency:.0f}ms, "
@@ -478,7 +491,7 @@ class CostTracker:
         self.llm_latency.start()
         logger.debug("LLM tracking started")
     
-    def end_llm(self, input_tokens: int, output_tokens: int, model: str):
+    def end_llm(self, input_tokens: int, output_tokens: int, model: str, response_text: str = ""):
         """
         End LLM tracking and record metrics
         
@@ -486,6 +499,7 @@ class CostTracker:
             input_tokens: Number of input tokens
             output_tokens: Number of output tokens
             model: LLM model used
+            response_text: Actual LLM response text (optional)
         """
         latency = self.llm_latency.end()
         
@@ -497,11 +511,15 @@ class CostTracker:
             input_tokens=input_tokens,
             output_tokens=output_tokens,
             latency_ms=latency,
+            response_text=response_text,  # Store actual response
             timestamp=datetime.now().isoformat()
         )
         llm_metrics.calculate_cost()
         
         self.current_response.llm = llm_metrics
+        
+        # Note: Assistant message is added to conversation transcript later
+        # when the actual response text is available (in agent_speech_committed handler)
         
         logger.debug(
             f"LLM completed: in={input_tokens} out={output_tokens} tokens, "
