@@ -55,6 +55,7 @@ export async function GET() {
   } catch (error) {
     if (error instanceof Error) {
       console.error(error);
+      
       return new NextResponse(error.message, { status: 500 });
     }
   }
@@ -76,12 +77,16 @@ function createParticipantToken(
     canSubscribe: true,
   };
   at.addGrant(grant);
+  
+  // Configure agent dispatch - specifically request our Mercola Health Coach agent
   at.roomConfig = new RoomConfiguration({
     agents: [
       new RoomAgentDispatch({
-        agentName: "groq-agent",
+        // Must match the agent_name in WorkerOptions in agent/main.py
+        agentName: "mercola-health-coach",
       }),
     ],
   });
+  
   return at.toJwt();
 }

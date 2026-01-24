@@ -20,11 +20,44 @@ In our testing, we were able to achieve the following latencies:
 6. populate `.env` with valid values for keys
 7. `python main.py dev`
 
+**On Windows (PowerShell):**
+1. `cd agent`
+2. `python -m venv .venv`
+3. `.venv\Scripts\Activate.ps1`
+4. `pip install -r requirements.txt`
+5. `copy .env.example .env`
+6. populate `.env` with valid values for keys
+7. `python main.py dev`
+
+**On Windows (Command Prompt):**
+1. `cd agent`
+2. `python -m venv .venv`
+3. `.venv\Scripts\activate.bat`
+4. `pip install -r requirements.txt`
+5. `copy .env.example .env`
+6. populate `.env` with valid values for keys
+7. `python main.py dev`
+
 ## Run web client in another console tab
 
+**On Linux/macOS:**
 1. `cd client/web`
 2. `pnpm i`
 3. `cp .env.example .env.local`
+4. populate `.env` with valid values for keys
+5. `pnpm dev`
+
+**On Windows (PowerShell):**
+1. `cd client/web`
+2. `pnpm i`
+3. `copy .env.example .env.local`
+4. populate `.env` with valid values for keys
+5. `pnpm dev`
+
+**On Windows (Command Prompt):**
+1. `cd client/web`
+2. `pnpm i`
+3. `copy .env.example .env.local`
 4. populate `.env` with valid values for keys
 5. `pnpm dev`
 

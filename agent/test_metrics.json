@@ -1,0 +1,128 @@
+{
+  "call_id": "test_call_001",
+  "start_timestamp": "2026-01-23T18:59:37.161993",
+  "end_timestamp": "2026-01-23T18:59:38.462646",
+  "duration_seconds": 1.3006536960601807,
+  "responses": [
+    {
+      "response_id": "test_call_001_response_1",
+      "timestamp": "2026-01-23T18:59:37.161993",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 3.5,
+        "cost": 0.0011666666666666668,
+        "latency_ms": 103.52325439453125,
+        "transcript_length": 29,
+        "timestamp": "2026-01-23T18:59:37.265516"
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 200,
+        "output_tokens": 100,
+        "total_tokens": 300,
+        "input_cost": 0.00011800000000000001,
+        "output_cost": 7.900000000000001e-05,
+        "total_cost": 0.00019700000000000002,
+        "latency_ms": 50.86159706115723,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-23T18:59:37.316377"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 250,
+        "cost": 0.0025,
+        "latency_ms": 80.72400093078613,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-23T18:59:37.397101"
+      },
+      "end_to_end_latency_ms": 235.1088523864746,
+      "total_cost": 0.0038636666666666667
+    },
+    {
+      "response_id": "test_call_001_response_2",
+      "timestamp": "2026-01-23T18:59:37.597624",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 4.5,
+        "cost": 0.0015,
+        "latency_ms": 100.53348541259766,
+        "transcript_length": 29,
+        "timestamp": "2026-01-23T18:59:37.698158"
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 250,
+        "output_tokens": 130,
+        "total_tokens": 380,
+        "input_cost": 0.0001475,
+        "output_cost": 0.0001027,
+        "total_cost": 0.0002502,
+        "latency_ms": 50.86994171142578,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-23T18:59:37.749028"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 300,
+        "cost": 0.003,
+        "latency_ms": 80.8115005493164,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-23T18:59:37.829839"
+      },
+      "end_to_end_latency_ms": 232.21492767333984,
+      "total_cost": 0.0047501999999999996
+    },
+    {
+      "response_id": "test_call_001_response_3",
+      "timestamp": "2026-01-23T18:59:38.030407",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 5.5,
+        "cost": 0.0018333333333333333,
+        "latency_ms": 100.71778297424316,
+        "transcript_length": 29,
+        "timestamp": "2026-01-23T18:59:38.131125"
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 300,
+        "output_tokens": 160,
+        "total_tokens": 460,
+        "input_cost": 0.000177,
+        "output_cost": 0.0001264,
+        "total_cost": 0.0003034,
+        "latency_ms": 50.53997039794922,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-23T18:59:38.181665"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 350,
+        "cost": 0.0035,
+        "latency_ms": 80.5668830871582,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-23T18:59:38.262232"
+      },
+      "end_to_end_latency_ms": 231.8246364593506,
+      "total_cost": 0.005636733333333333
+    }
+  ],
+  "total_stt_cost": 0.0045000000000000005,
+  "total_llm_cost": 0.0007506,
+  "total_tts_cost": 0.009,
+  "total_vapi_cost": 0.0010838780800501507,
+  "total_cost": 0.01533447808005015,
+  "total_stt_duration": 13.5,
+  "total_llm_input_tokens": 750,
+  "total_llm_output_tokens": 390,
+  "total_tts_characters": 900,
+  "avg_stt_latency_ms": 101.5915075937907,
+  "avg_llm_latency_ms": 50.75716972351074,
+  "avg_tts_latency_ms": 80.70079485575359,
+  "avg_end_to_end_latency_ms": 233.04947217305502,
+  "vapi": {
+    "connection_duration_seconds": 1.3006536960601807,
+    "cost": 0.0010838780800501507,
+    "timestamp": "2026-01-23T18:59:38.462646"
+  }
+}
