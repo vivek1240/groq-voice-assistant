@@ -1,0 +1,216 @@
+{
+  "call_id": "call_voice_assistant_room_7979_7688a626",
+  "start_timestamp": "2026-01-25T12:17:59.517758",
+  "end_timestamp": "2026-01-25T12:20:07.119525",
+  "duration_seconds": 127.60176753997803,
+  "responses": [
+    {
+      "response_id": "call_voice_assistant_room_7979_7688a626_response_1",
+      "timestamp": "2026-01-25T12:18:10.193587",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.1-8b-instant",
+        "input_tokens": 2000,
+        "output_tokens": 18,
+        "total_tokens": 2018,
+        "input_cost": 0.0001,
+        "output_cost": 1.44e-06,
+        "total_cost": 0.00010144,
+        "latency_ms": 0.0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-25T12:18:10.194598",
+        "response_text": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+      },
+      "tts": {
+        "model": "tts-1",
+        "characters_processed": 200,
+        "cost": 0.003,
+        "latency_ms": 4579.858303070068,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T12:18:14.774456"
+      },
+      "end_to_end_latency_ms": 4771.874189376831,
+      "total_cost": 0.00310144
+    },
+    {
+      "response_id": "call_voice_assistant_room_7979_7688a626_response_4",
+      "timestamp": "2026-01-25T12:18:40.701491",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "tts-1",
+        "characters_processed": 72,
+        "cost": 0.00108,
+        "latency_ms": 18375.449419021606,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T12:18:41.146055"
+      },
+      "end_to_end_latency_ms": 445.8277225494385,
+      "total_cost": 0.00108
+    },
+    {
+      "response_id": "call_voice_assistant_room_7979_7688a626_response_6",
+      "timestamp": "2026-01-25T12:19:00.498424",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "tts-1",
+        "characters_processed": 200,
+        "cost": 0.003,
+        "latency_ms": 10897.67074584961,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T12:19:00.957472"
+      },
+      "end_to_end_latency_ms": 462.11814880371094,
+      "total_cost": 0.003
+    },
+    {
+      "response_id": "call_voice_assistant_room_7979_7688a626_response_8",
+      "timestamp": "2026-01-25T12:19:22.010716",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "tts-1",
+        "characters_processed": 200,
+        "cost": 0.003,
+        "latency_ms": 11594.610214233398,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T12:19:22.460287"
+      },
+      "end_to_end_latency_ms": 451.0834217071533,
+      "total_cost": 0.003
+    },
+    {
+      "response_id": "call_voice_assistant_room_7979_7688a626_response_10",
+      "timestamp": "2026-01-25T12:19:40.791583",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "tts-1",
+        "characters_processed": 200,
+        "cost": 0.003,
+        "latency_ms": 7567.68798828125,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T12:19:41.241241"
+      },
+      "end_to_end_latency_ms": 449.6588706970215,
+      "total_cost": 0.003
+    },
+    {
+      "response_id": "call_voice_assistant_room_7979_7688a626_response_11",
+      "timestamp": "2026-01-25T12:19:46.140427",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 1.6,
+        "cost": 0.0005333333333333334,
+        "latency_ms": 7023.711681365967,
+        "transcript_length": 26,
+        "timestamp": "2026-01-25T12:19:47.815294",
+        "transcript": " Okay. Goodbye. Thank you."
+      },
+      "llm": {
+        "model": "llama-3.1-8b-instant",
+        "input_tokens": 2000,
+        "output_tokens": 41,
+        "total_tokens": 2041,
+        "input_cost": 0.0001,
+        "output_cost": 3.2800000000000004e-06,
+        "total_cost": 0.00010328,
+        "latency_ms": 10873.964786529541,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-25T12:19:46.141418",
+        "response_text": "Have a great day, and I hope you get your kit soon. Feel free to reach out if you have any other questions or need help with anything else. Take care!"
+      },
+      "tts": {
+        "model": "tts-1",
+        "characters_processed": 200,
+        "cost": 0.003,
+        "latency_ms": 8827.702283859253,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T12:19:54.970112"
+      },
+      "end_to_end_latency_ms": 8829.68544960022,
+      "total_cost": 0.0036366133333333335
+    },
+    {
+      "response_id": "call_voice_assistant_room_7979_7688a626_response_12",
+      "timestamp": "2026-01-25T12:19:56.067884",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.1-8b-instant",
+        "input_tokens": 2000,
+        "output_tokens": 24,
+        "total_tokens": 2024,
+        "input_cost": 0.0001,
+        "output_cost": 1.9200000000000003e-06,
+        "total_cost": 0.00010192,
+        "latency_ms": 8252.58994102478,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-25T12:19:56.068869",
+        "response_text": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+      },
+      "tts": {
+        "model": "tts-1",
+        "characters_processed": 150,
+        "cost": 0.0022500000000000003,
+        "latency_ms": 5336.922407150269,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T12:20:01.406864"
+      },
+      "end_to_end_latency_ms": 5339.140892028809,
+      "total_cost": 0.0023519200000000004
+    }
+  ],
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " I  Tell me about biomarkers."
+    },
+    {
+      "role": "user",
+      "content": " Tell me about how much time it will take to reach to get those panels."
+    },
+    {
+      "role": "user",
+      "content": " Okay, what should I do if I don't get those kit within a particular amount of time?"
+    },
+    {
+      "role": "user",
+      "content": " I'm finding,  I'm finding that they are out of the office, but they haven't reached my home."
+    },
+    {
+      "role": "user",
+      "content": " Okay. Goodbye. Thank you."
+    },
+    {
+      "role": "assistant",
+      "content": "Have a great day, and I hope you get your kit soon. Feel free to reach out if you have any other questions or need help with anything else. Take care!"
+    },
+    {
+      "role": "assistant",
+      "content": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+    }
+  ],
+  "total_stt_cost": 0.0005333333333333334,
+  "total_llm_cost": 0.0002052,
+  "total_tts_cost": 0.01833,
+  "total_livekit_cost": 0.021266961256663004,
+  "total_cost": 0.040335494589996336,
+  "total_stt_duration": 1.6,
+  "total_llm_input_tokens": 4000,
+  "total_llm_output_tokens": 65,
+  "total_tts_characters": 1222,
+  "avg_stt_latency_ms": 7023.711681365967,
+  "avg_llm_latency_ms": 9563.27736377716,
+  "avg_tts_latency_ms": 9597.128765923637,
+  "avg_end_to_end_latency_ms": 2964.198384966169,
+  "livekit": {
+    "connection_duration_seconds": 127.60176753997803,
+    "cost": 0.021266961256663004,
+    "timestamp": "2026-01-25T12:20:07.119525"
+  }
+}

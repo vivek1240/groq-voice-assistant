@@ -66,7 +66,7 @@ class MetricsAnalyzer:
         stt_costs = [call['total_stt_cost'] for call in self.calls]
         llm_costs = [call['total_llm_cost'] for call in self.calls]
         tts_costs = [call['total_tts_cost'] for call in self.calls]
-        vapi_costs = [call['total_vapi_cost'] for call in self.calls]
+        livekit_costs = [call.get('total_livekit_cost', call.get('total_vapi_cost', 0)) for call in self.calls]
         
         print(f"\nTotal Calls: {len(self.calls)}")
         print(f"\nAGGREGATE COSTS:")
@@ -77,10 +77,10 @@ class MetricsAnalyzer:
         print(f"  Max per call: ${max(total_costs):.4f}")
         
         print(f"\nCOST BREAKDOWN (Average per call):")
-        print(f"  STT:  ${statistics.mean(stt_costs):.4f} ({statistics.mean(stt_costs)/statistics.mean(total_costs)*100:.1f}%)")
-        print(f"  LLM:  ${statistics.mean(llm_costs):.4f} ({statistics.mean(llm_costs)/statistics.mean(total_costs)*100:.1f}%)")
-        print(f"  TTS:  ${statistics.mean(tts_costs):.4f} ({statistics.mean(tts_costs)/statistics.mean(total_costs)*100:.1f}%)")
-        print(f"  VAPI: ${statistics.mean(vapi_costs):.4f} ({statistics.mean(vapi_costs)/statistics.mean(total_costs)*100:.1f}%)")
+        print(f"  STT:     ${statistics.mean(stt_costs):.4f} ({statistics.mean(stt_costs)/statistics.mean(total_costs)*100:.1f}%)")
+        print(f"  LLM:     ${statistics.mean(llm_costs):.4f} ({statistics.mean(llm_costs)/statistics.mean(total_costs)*100:.1f}%)")
+        print(f"  TTS:     ${statistics.mean(tts_costs):.4f} ({statistics.mean(tts_costs)/statistics.mean(total_costs)*100:.1f}%)")
+        print(f"  LiveKit: ${statistics.mean(livekit_costs):.4f} ({statistics.mean(livekit_costs)/statistics.mean(total_costs)*100:.1f}%)")
         
         # Find most expensive call
         most_expensive = max(self.calls, key=lambda c: c['total_cost'])

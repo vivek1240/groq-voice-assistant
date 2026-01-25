@@ -1,0 +1,58 @@
+{
+  "call_id": "call_voice_assistant_room_4059_79d4266f",
+  "timestamp": "2026-01-25T15:47:41.204652",
+  "duration_seconds": 110.21869540214539,
+  "total_cost": 0.0476569792336909,
+  "core_metrics": {
+    "user_sentiment": "neutral",
+    "call_summary": "The user initially asked about the services offered by Mercola Health Coach, but then suddenly changed the topic to Lord Krishna. The assistant provided a brief description and then wrapped up the conversation, inviting the user to return with any questions about at-home lab testing. The user ended the call without resolving any specific query related to Mercola's services.",
+    "query_resolved": false,
+    "escalation_required": false
+  },
+  "domain_metrics": {
+    "query_category": "general_inquiry",
+    "testing_phase": "unknown"
+  },
+  "compliance_metrics": {
+    "medical_boundary_maintained": true,
+    "proper_disclaimer_given": null
+  },
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Hey Max!  Can you just describe me about yourself, what services you are offering to the customers?"
+    },
+    {
+      "role": "user",
+      "content": " Okay, let's stop for a while. Can you just tell me about Lord Krishna? Who is he?"
+    },
+    {
+      "role": "user",
+      "content": " Okay.  Thank you. Good one. Good one."
+    },
+    {
+      "role": "user",
+      "content": " When the girl.  Bye-bye.  Goodbye.  Technically, it's good."
+    },
+    {
+      "role": "assistant",
+      "content": "It was nice chatting with you, even if it was a bit of a detour from the original topic. If you have any questions about Mercola's at-home lab testing or need help with anything else, feel free to come back and ask. Have a great day! Bye for now!"
+    },
+    {
+      "role": "assistant",
+      "content": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+    }
+  ],
+  "additional_info": {
+    "total_turns": 6,
+    "avg_latency_ms": 5857.295910517375,
+    "evaluation_method": "llm",
+    "evaluation_version": "1.0"
+  },
+  "notes": "The conversation was unusual, with the user quickly changing topics and not pursuing any specific inquiry about Mercola's services. The assistant handled the detour professionally and maintained the medical boundary by not providing any medical advice.",
+  "flags": []
+}

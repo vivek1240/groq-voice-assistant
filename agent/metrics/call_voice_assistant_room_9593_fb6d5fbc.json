@@ -1,0 +1,184 @@
+{
+  "call_id": "call_voice_assistant_room_9593_fb6d5fbc",
+  "start_timestamp": "2026-01-25T16:03:00.526698",
+  "end_timestamp": "2026-01-25T16:04:44.582090",
+  "duration_seconds": 104.05539155006409,
+  "responses": [
+    {
+      "response_id": "call_voice_assistant_room_9593_fb6d5fbc_response_1",
+      "timestamp": "2026-01-25T16:03:02.541864",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 18,
+        "total_tokens": 2018,
+        "input_cost": 0.00118,
+        "output_cost": 1.422e-05,
+        "total_cost": 0.00119422,
+        "latency_ms": 0.0,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-25T16:03:02.541864",
+        "response_text": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 641.9735999952536,
+        "latency_ms": 6540.351390838623,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T16:03:09.083350"
+      },
+      "ttft_ms": 641.9735999952536,
+      "total_cost": 0.0055942200000000004
+    },
+    {
+      "response_id": "call_voice_assistant_room_9593_fb6d5fbc_response_6",
+      "timestamp": "2026-01-25T16:03:35.069499",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 72,
+        "cost": 0.001584,
+        "ttfb_ms": 872.7220999862766,
+        "latency_ms": 15018.056869506836,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T16:03:35.522456"
+      },
+      "ttft_ms": 872.7220999862766,
+      "total_cost": 0.001584
+    },
+    {
+      "response_id": "call_voice_assistant_room_9593_fb6d5fbc_response_8",
+      "timestamp": "2026-01-25T16:04:11.738993",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 863.1252000050154,
+        "latency_ms": 27289.801836013794,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T16:04:12.188935"
+      },
+      "ttft_ms": 863.1252000050154,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_9593_fb6d5fbc_response_9",
+      "timestamp": "2026-01-25T16:04:13.367783",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 4.4,
+        "cost": 0.0014666666666666667,
+        "latency_ms": 6180.424451828003,
+        "transcript_length": 67,
+        "timestamp": "2026-01-25T16:04:19.549204",
+        "transcript": " Thank you. You are...  Thank you. You crossed your limit. Goodbye."
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 40,
+        "total_tokens": 2040,
+        "input_cost": 0.00118,
+        "output_cost": 3.16e-05,
+        "total_cost": 0.0012116,
+        "latency_ms": 31491.66774749756,
+        "ttft_ms": 316.59610000497196,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-25T16:04:17.971424",
+        "response_text": "It was nice chatting with you. Have a great day and feel free to reach out if you have any more questions about the Energy Panel or anything else. Goodbye!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 435.67959999199957,
+        "latency_ms": 13980.568647384644,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T16:04:31.952878"
+      },
+      "ttft_ms": 752.2756999969715,
+      "total_cost": 0.007078266666666667
+    },
+    {
+      "response_id": "call_voice_assistant_room_9593_fb6d5fbc_response_10",
+      "timestamp": "2026-01-25T16:04:33.185939",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 24,
+        "total_tokens": 2024,
+        "input_cost": 0.00118,
+        "output_cost": 1.896e-05,
+        "total_cost": 0.00119896,
+        "latency_ms": 13636.735439300537,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-25T16:04:33.186941",
+        "response_text": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 155,
+        "cost": 0.00341,
+        "ttfb_ms": 374.5463999948697,
+        "latency_ms": 7264.769077301025,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T16:04:40.452715"
+      },
+      "ttft_ms": 374.5463999948697,
+      "total_cost": 0.00460896
+    }
+  ],
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Hey Packs!  Can you just go through your project  How the product  that you are offering to the people in general"
+    },
+    {
+      "role": "user",
+      "content": " Can you just briefly describe what are these biomarkers?  I could not understand term biomarker."
+    },
+    {
+      "role": "user",
+      "content": " Thank you. You are...  Thank you. You crossed your limit. Goodbye."
+    },
+    {
+      "role": "assistant",
+      "content": "It was nice chatting with you. Have a great day and feel free to reach out if you have any more questions about the Energy Panel or anything else. Goodbye!"
+    },
+    {
+      "role": "assistant",
+      "content": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+    }
+  ],
+  "total_stt_cost": 0.0014666666666666667,
+  "total_llm_cost": 0.00360478,
+  "total_tts_cost": 0.018194000000000002,
+  "total_livekit_cost": 0.017342565258344014,
+  "total_cost": 0.04060801192501068,
+  "total_stt_duration": 4.4,
+  "total_llm_input_tokens": 6000,
+  "total_llm_output_tokens": 82,
+  "total_tts_characters": 827,
+  "avg_stt_latency_ms": 6180.424451828003,
+  "avg_llm_ttft_ms": 316.59610000497196,
+  "avg_tts_ttfb_ms": 637.609379994683,
+  "avg_ttft_ms": 700.9285999956774,
+  "livekit": {
+    "connection_duration_seconds": 104.05539155006409,
+    "cost": 0.017342565258344014,
+    "timestamp": "2026-01-25T16:04:44.582090"
+  }
+}

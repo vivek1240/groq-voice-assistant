@@ -1,0 +1,54 @@
+{
+  "call_id": "call_voice_assistant_room_3084_db920c68",
+  "timestamp": "2026-01-25T12:03:22.078998",
+  "duration_seconds": 79.80443572998047,
+  "total_cost": 0.027116112621663413,
+  "core_metrics": {
+    "user_sentiment": "neutral",
+    "call_summary": "The user inquired about biomarkers and their relation to heart diseases, and the assistant provided information. The user then ended the call without further questions. The conversation was brief and to the point.",
+    "query_resolved": true,
+    "escalation_required": false
+  },
+  "domain_metrics": {
+    "query_category": "biomarker_explanation",
+    "testing_phase": "unknown"
+  },
+  "compliance_metrics": {
+    "medical_boundary_maintained": true,
+    "proper_disclaimer_given": null
+  },
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Thank you.  tell me about biomarkers"
+    },
+    {
+      "role": "user",
+      "content": " And  Can they give idea about heart diseases?"
+    },
+    {
+      "role": "user",
+      "content": " Thank you.  okay  Goodbye."
+    },
+    {
+      "role": "assistant",
+      "content": "It was a pleasure assisting you. If you have any more questions or concerns, feel free to reach out anytime. Have a great day and thanks for choosing Mercola's at-home lab testing! Bye for now!"
+    },
+    {
+      "role": "assistant",
+      "content": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+    }
+  ],
+  "additional_info": {
+    "total_turns": 5,
+    "avg_latency_ms": 5052.688312530518,
+    "evaluation_method": "llm",
+    "evaluation_version": "1.0"
+  },
+  "notes": "The user did not express any concerns or ask for medical advice, and the assistant did not provide any. The conversation was within the boundaries of general information about biomarkers.",
+  "flags": []
+}

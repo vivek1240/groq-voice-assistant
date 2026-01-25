@@ -1,0 +1,27 @@
+Call ID: call_voice_assistant_room_3839_d39fed72
+Duration: 81.94 seconds
+Total Turns: 5
+User Sentiment: neutral
+Query Category: general_inquiry
+================================================================================
+
+[Turn 1] ASSISTANT:
+Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?
+
+[Turn 2] USER:
+ Yeah, I want to know the products that you are providing to customer. What actually those products mean and how they help people in general.
+
+[Turn 3] USER:
+ Okay, goodbye. Thank you so much. Goodbye.
+
+[Turn 4] ASSISTANT:
+It was nice chatting with you. If you have any more questions about the Energy Panel or at-home lab testing in the future, don't hesitate to reach out. Have a great day and take care of yourself! Goodbye!
+
+[Turn 5] ASSISTANT:
+Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!
+
+================================================================================
+CALL SUMMARY:
+The user inquired about the products offered by Mercola Health Coach and their general benefits, but didn't receive a direct response before ending the call. The assistant attempted to provide a general greeting and farewell. The user's question was not fully addressed during the call.
+
+Notes: The call was cut short by the user, and the assistant didn't have the opportunity to provide a detailed response or address any specific concerns. The user's question was quite broad, and it's unclear what specific information they were seeking.

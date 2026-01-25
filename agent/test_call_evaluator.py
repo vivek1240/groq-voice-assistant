@@ -105,8 +105,8 @@ class TestCallEvaluator(unittest.TestCase):
             "total_stt_cost": 0.0018,
             "total_llm_cost": 0.0026323,
             "total_tts_cost": 0.0063,
-            "total_vapi_cost": 0.275,
-            "total_cost": 0.2857323,
+            "total_livekit_cost": 0.055,
+            "total_cost": 0.0657323,
             "total_stt_duration": 5.5,
             "total_llm_input_tokens": 4100,
             "total_llm_output_tokens": 270,
@@ -115,9 +115,9 @@ class TestCallEvaluator(unittest.TestCase):
             "avg_llm_latency_ms": 1150.0,
             "avg_tts_latency_ms": 750.0,
             "avg_end_to_end_latency_ms": 2375.0,
-            "vapi": {
+            "livekit": {
                 "connection_duration_seconds": 330.0,
-                "cost": 0.275,
+                "cost": 0.055,
                 "timestamp": "2026-01-24T10:05:30.000000",
             }
         }

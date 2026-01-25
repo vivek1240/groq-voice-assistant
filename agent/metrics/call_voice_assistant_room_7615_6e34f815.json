@@ -1,0 +1,245 @@
+{
+  "call_id": "call_voice_assistant_room_7615_6e34f815",
+  "start_timestamp": "2026-01-25T16:12:47.685815",
+  "end_timestamp": "2026-01-25T16:14:51.287338",
+  "duration_seconds": 123.60152316093445,
+  "responses": [
+    {
+      "response_id": "call_voice_assistant_room_7615_6e34f815_response_1",
+      "timestamp": "2026-01-25T16:12:49.728298",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 18,
+        "total_tokens": 2018,
+        "input_cost": 0.00118,
+        "output_cost": 1.422e-05,
+        "total_cost": 0.00119422,
+        "latency_ms": 0.0,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-25T16:12:49.729296",
+        "response_text": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 570.0120999972569,
+        "latency_ms": 6557.20067024231,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T16:12:56.287502"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 570.0120999972569,
+      "total_cost": 0.0055942200000000004
+    },
+    {
+      "response_id": "call_voice_assistant_room_7615_6e34f815_response_6",
+      "timestamp": "2026-01-25T16:13:05.103942",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 5.6,
+        "cost": 0.0018666666666666664,
+        "latency_ms": 4841.3379192352295,
+        "transcript_length": 77,
+        "timestamp": "2026-01-25T16:13:09.945280",
+        "transcript": " Hey, Pax.  Can you just deliver that  advocate  at home kit.  at my address."
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 89,
+        "total_tokens": 2089,
+        "input_cost": 0.00118,
+        "output_cost": 7.031e-05,
+        "total_cost": 0.0012503100000000001,
+        "latency_ms": 0.0,
+        "ttft_ms": 368.22839999513235,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-25T16:13:08.391704",
+        "response_text": "The Energy Panel kit will be shipped to your address, and you should receive it in around 2 to 5 business days. Once it arrives, you can register it in the Mercola Health Coach app, and then you'll be all set to collect your sample and send it back to the lab. Would you like me to walk you through the registration process when your kit arrives?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 72,
+        "cost": 0.001584,
+        "ttfb_ms": 888.4711000137031,
+        "latency_ms": 19757.861375808716,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T16:13:28.149566"
+      },
+      "eou_delay_ms": 920.2376000030199,
+      "ttft_ms": 2176.9371000118554,
+      "total_cost": 0.004700976666666667
+    },
+    {
+      "response_id": "call_voice_assistant_room_7615_6e34f815_response_7",
+      "timestamp": "2026-01-25T16:13:29.258611",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 100,
+        "total_tokens": 2100,
+        "input_cost": 0.00118,
+        "output_cost": 7.900000000000001e-05,
+        "total_cost": 0.0012590000000000001,
+        "latency_ms": 19653.393983840942,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-25T16:13:29.599671",
+        "response_text": ""
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 346,
+        "cost": 0.007612,
+        "ttfb_ms": 776.4718000107678,
+        "latency_ms": 102.97465324401855,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T16:13:29.703645"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 776.4718000107678,
+      "total_cost": 0.008871
+    },
+    {
+      "response_id": "call_voice_assistant_room_7615_6e34f815_response_9",
+      "timestamp": "2026-01-25T16:14:17.596265",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 734.1631000017514,
+        "latency_ms": 38021.51274681091,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T16:14:17.960294"
+      },
+      "eou_delay_ms": 951.1063999962062,
+      "ttft_ms": 1685.2694999979576,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_7615_6e34f815_response_10",
+      "timestamp": "2026-01-25T16:14:19.143438",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 0.8,
+        "cost": 0.0002666666666666667,
+        "latency_ms": 4406.995058059692,
+        "transcript_length": 16,
+        "timestamp": "2026-01-25T16:14:23.550433",
+        "transcript": " Okay.  Goodbye."
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 60,
+        "total_tokens": 2060,
+        "input_cost": 0.00118,
+        "output_cost": 4.74e-05,
+        "total_cost": 0.0012274,
+        "latency_ms": 40428.15375328064,
+        "ttft_ms": 354.09449999860954,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-25T16:14:21.975531",
+        "response_text": "It was nice chatting with you. If you have any more questions or need help with your Energy Panel kit, feel free to reach out to me anytime. Have a great day, and I hope you get some valuable insights from your test results! Goodbye!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 417.83970000687987,
+        "latency_ms": 16391.076803207397,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T16:14:38.367607"
+      },
+      "eou_delay_ms": 899.9158999940846,
+      "ttft_ms": 1671.850099999574,
+      "total_cost": 0.005894066666666667
+    },
+    {
+      "response_id": "call_voice_assistant_room_7615_6e34f815_response_11",
+      "timestamp": "2026-01-25T16:14:39.923721",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 24,
+        "total_tokens": 2024,
+        "input_cost": 0.00118,
+        "output_cost": 1.896e-05,
+        "total_cost": 0.00119896,
+        "latency_ms": 16371.273756027222,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-25T16:14:39.923721",
+        "response_text": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 233,
+        "cost": 0.0051259999999999995,
+        "ttfb_ms": 384.172000005492,
+        "latency_ms": 7272.626161575317,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T16:14:47.197361"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 384.172000005492,
+      "total_cost": 0.006324959999999999
+    }
+  ],
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Hey, Pax.  Can you just deliver that  advocate  at home kit.  at my address."
+    },
+    {
+      "role": "assistant",
+      "content": "The Energy Panel kit will be shipped to your address, and you should receive it in around 2 to 5 business days. Once it arrives, you can register it in the Mercola Health Coach app, and then you'll be all set to collect your sample and send it back to the lab. Would you like me to walk you through the registration process when your kit arrives?"
+    },
+    {
+      "role": "user",
+      "content": " Can you just go through what is the process and how a person at home utilizes that kit to get all the biomarkers that are provided by you?"
+    },
+    {
+      "role": "user",
+      "content": " Okay.  Goodbye."
+    },
+    {
+      "role": "assistant",
+      "content": "It was nice chatting with you. If you have any more questions or need help with your Energy Panel kit, feel free to reach out to me anytime. Have a great day, and I hope you get some valuable insights from your test results! Goodbye!"
+    },
+    {
+      "role": "assistant",
+      "content": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+    }
+  ],
+  "total_stt_cost": 0.002133333333333333,
+  "total_llm_cost": 0.00612989,
+  "total_tts_cost": 0.027522,
+  "total_livekit_cost": 0.02060025386015574,
+  "total_cost": 0.056385477193489075,
+  "total_stt_duration": 6.3999999999999995,
+  "total_llm_input_tokens": 10000,
+  "total_llm_output_tokens": 291,
+  "total_tts_characters": 1251,
+  "avg_eou_delay_ms": 923.7532999977702,
+  "avg_llm_ttft_ms": 361.16144999687094,
+  "avg_tts_ttfb_ms": 628.5216333393086,
+  "avg_ttft_ms": 1210.7854333371506,
+  "livekit": {
+    "connection_duration_seconds": 123.60152316093445,
+    "cost": 0.02060025386015574,
+    "timestamp": "2026-01-25T16:14:51.287338"
+  }
+}

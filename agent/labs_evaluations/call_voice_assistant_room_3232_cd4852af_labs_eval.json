@@ -1,0 +1,58 @@
+{
+  "call_id": "call_voice_assistant_room_3232_cd4852af",
+  "timestamp": "2026-01-25T14:33:39.206166",
+  "duration_seconds": 106.47800350189209,
+  "total_cost": 0.03849512058364868,
+  "core_metrics": {
+    "user_sentiment": "neutral",
+    "call_summary": "The user inquired about Mercola, a health and wellness company, and its at-home lab testing kits. The assistant provided a brief overview of the company and its products. The user thanked the assistant and ended the call.",
+    "query_resolved": true,
+    "escalation_required": false
+  },
+  "domain_metrics": {
+    "query_category": "test_kit_info",
+    "testing_phase": "pre_purchase"
+  },
+  "compliance_metrics": {
+    "medical_boundary_maintained": true,
+    "proper_disclaimer_given": null
+  },
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Apex.  Can you just give me some brief idea about  on Mariko Le Company."
+    },
+    {
+      "role": "assistant",
+      "content": "I think you meant Mercola, not Mariko. Mercola is a well-known health and wellness company founded by Dr. Joseph Mercola. They offer a range of products and services, including at-home lab testing kits, to help people take control of their health. Their goal is to provide education and tools to support optimal wellness. Would you like to know more about their at-home lab testing or something specific?"
+    },
+    {
+      "role": "user",
+      "content": " Yeah, can you just share me something about their at-home lab test?"
+    },
+    {
+      "role": "user",
+      "content": " Okay.  Thank you. Thank you.  Goodbye."
+    },
+    {
+      "role": "assistant",
+      "content": "You're welcome. Goodbye."
+    },
+    {
+      "role": "assistant",
+      "content": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+    }
+  ],
+  "additional_info": {
+    "total_turns": 6,
+    "avg_latency_ms": 6766.340613365173,
+    "evaluation_method": "llm",
+    "evaluation_version": "1.0"
+  },
+  "notes": "The user seemed to be seeking general information about Mercola and its at-home lab testing kits. The assistant provided a helpful response without crossing any medical boundaries or requiring further escalation.",
+  "flags": []
+}

@@ -1,0 +1,54 @@
+{
+  "call_id": "call_voice_assistant_room_9593_fb6d5fbc",
+  "timestamp": "2026-01-25T16:04:44.582090",
+  "duration_seconds": 104.05539155006409,
+  "total_cost": 0.04060801192501068,
+  "core_metrics": {
+    "user_sentiment": "frustrated",
+    "call_summary": "The user asked for a general description of the product and an explanation of biomarkers, but the conversation ended abruptly with the user stating that the assistant had 'crossed its limit'. The user's question about biomarkers was not fully addressed before they ended the call. The assistant attempted to provide a helpful response but was cut off.",
+    "query_resolved": false,
+    "escalation_required": true
+  },
+  "domain_metrics": {
+    "query_category": "general_inquiry",
+    "testing_phase": "pre_purchase"
+  },
+  "compliance_metrics": {
+    "medical_boundary_maintained": true,
+    "proper_disclaimer_given": null
+  },
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Hey Packs!  Can you just go through your project  How the product  that you are offering to the people in general"
+    },
+    {
+      "role": "user",
+      "content": " Can you just briefly describe what are these biomarkers?  I could not understand term biomarker."
+    },
+    {
+      "role": "user",
+      "content": " Thank you. You are...  Thank you. You crossed your limit. Goodbye."
+    },
+    {
+      "role": "assistant",
+      "content": "It was nice chatting with you. Have a great day and feel free to reach out if you have any more questions about the Energy Panel or anything else. Goodbye!"
+    },
+    {
+      "role": "assistant",
+      "content": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+    }
+  ],
+  "additional_info": {
+    "total_turns": 5,
+    "avg_latency_ms": 0.0,
+    "evaluation_method": "llm",
+    "evaluation_version": "1.0"
+  },
+  "notes": "The user's frustration and abrupt ending of the call suggest that their concerns were not fully addressed. The assistant's response was cut off, and it's unclear if the user's questions were fully resolved. Further follow-up may be necessary to ensure the user's concerns are addressed.",
+  "flags": []
+}

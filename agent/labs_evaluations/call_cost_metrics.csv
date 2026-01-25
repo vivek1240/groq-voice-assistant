@@ -1,0 +1,2 @@
+call_id,timestamp,duration_seconds,total_cost,total_stt_cost,total_llm_cost,total_tts_cost,total_livekit_cost,total_stt_duration,total_llm_input_tokens,total_llm_output_tokens,total_tts_characters,avg_eou_delay_ms,avg_llm_ttft_ms,avg_tts_ttfb_ms,avg_ttft_ms
+call_voice_assistant_room_4608_5810b1f7,2026-01-25T16:26:31.840713,93.03,0.052947,0.004933,0.006153,0.026356,0.015505,14.80,10000,320,1198,873.69,301.56,551.54,1021.65

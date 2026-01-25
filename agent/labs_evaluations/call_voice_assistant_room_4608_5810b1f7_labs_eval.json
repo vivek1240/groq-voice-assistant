@@ -1,0 +1,54 @@
+{
+  "call_id": "call_voice_assistant_room_4608_5810b1f7",
+  "timestamp": "2026-01-25T16:26:31.840713",
+  "duration_seconds": 93.02799224853516,
+  "total_cost": 0.052946798708089195,
+  "core_metrics": {
+    "user_sentiment": "neutral",
+    "call_summary": "The user asked about the process for helping someone who hasn't received their kit. The assistant explained the steps to check order status and offered support team assistance if needed. The user thanked the assistant and ended the call.",
+    "query_resolved": true,
+    "escalation_required": false
+  },
+  "domain_metrics": {
+    "query_category": "delivery_shipping",
+    "testing_phase": "post_order"
+  },
+  "compliance_metrics": {
+    "medical_boundary_maintained": true,
+    "proper_disclaimer_given": null
+  },
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Hey, Pax.  Can you just give me an idea that when a person has ordered your kit  but didn't receive that, then in that case, how you would help him?"
+    },
+    {
+      "role": "assistant",
+      "content": "If someone's kit hasn't arrived, I'd first ask them to check their order status in the app under their order history to see the tracking information. If that doesn't help, I'd offer to have our support team help track it down. Sometimes, kits can get delayed or lost in shipping, and we can send a replacement if needed. I'd say something like, \"Kit delivery usually takes 2 to 5 business days. If it's been longer than that, let's take a look at your order status together. If something seems off, our support team can help figure out what's going on. Would you like me to guide you through that\"? Does that make sense?"
+    },
+    {
+      "role": "user",
+      "content": " No, thank you so much. Goodbye.  Goodbye."
+    },
+    {
+      "role": "assistant",
+      "content": "It was nice assisting you. Have a great day and feel free to reach out if you need anything else. Goodbye!"
+    },
+    {
+      "role": "assistant",
+      "content": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+    }
+  ],
+  "additional_info": {
+    "total_turns": 5,
+    "avg_latency_ms": 0.0,
+    "evaluation_method": "llm",
+    "evaluation_version": "1.0"
+  },
+  "notes": "The call was straightforward and the assistant provided a clear explanation of the process. The user didn't express any frustration or concern, and the call ended with a positive tone.",
+  "flags": []
+}

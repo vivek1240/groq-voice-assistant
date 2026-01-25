@@ -80,13 +80,13 @@ def visualize_cost_breakdown(calls: List[Dict[str, Any]]):
     avg_stt = sum(c['total_stt_cost'] for c in calls) / len(calls)
     avg_llm = sum(c['total_llm_cost'] for c in calls) / len(calls)
     avg_tts = sum(c['total_tts_cost'] for c in calls) / len(calls)
-    avg_vapi = sum(c['total_vapi_cost'] for c in calls) / len(calls)
+    avg_livekit = sum(c.get('total_livekit_cost', c.get('total_vapi_cost', 0)) for c in calls) / len(calls)
     
     data = [
         ("STT", avg_stt),
         ("LLM", avg_llm),
         ("TTS", avg_tts),
-        ("VAPI", avg_vapi),
+        ("LiveKit", avg_livekit),
     ]
     
     create_bar_chart(data, "AVERAGE COST BREAKDOWN (per call)")

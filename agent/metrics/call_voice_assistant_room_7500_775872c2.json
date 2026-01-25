@@ -1,0 +1,218 @@
+{
+  "call_id": "call_voice_assistant_room_7500_775872c2",
+  "start_timestamp": "2026-01-25T15:59:01.606446",
+  "end_timestamp": "2026-01-25T16:00:19.284346",
+  "duration_seconds": 77.67790007591248,
+  "responses": [
+    {
+      "response_id": "call_voice_assistant_room_7500_775872c2_response_1",
+      "timestamp": "2026-01-25T15:59:03.682358",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 18,
+        "total_tokens": 2018,
+        "input_cost": 0.00118,
+        "output_cost": 1.422e-05,
+        "total_cost": 0.00119422,
+        "latency_ms": 0.0,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-25T15:59:03.684185",
+        "response_text": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 0,
+        "latency_ms": 6561.541318893433,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T15:59:10.257342"
+      },
+      "ttft_ms": 0,
+      "total_cost": 0.0055942200000000004
+    },
+    {
+      "response_id": "call_voice_assistant_room_7500_775872c2_response_5",
+      "timestamp": "2026-01-25T15:59:18.198613",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 4.4,
+        "cost": 0.0014666666666666667,
+        "latency_ms": 5325.006484985352,
+        "transcript_length": 54,
+        "timestamp": "2026-01-25T15:59:23.523619",
+        "transcript": " Hey, Max.  Sorry, Apex.  How are you?  How fine I am."
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 82,
+        "total_tokens": 2082,
+        "input_cost": 0.00118,
+        "output_cost": 6.478e-05,
+        "total_cost": 0.00124478,
+        "latency_ms": 0.0,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-25T15:59:21.858655",
+        "response_text": "No worries about the name mix-up. I'm Pax, actually, but I'm here to help you with any questions about Mercola's at-home lab testing. I'm doing great, thanks for asking. It sounds like you're feeling fine, which is terrific. What brings you here today? Are you looking to learn more about our test kits, or do you have questions about the testing process?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 72,
+        "cost": 0.001584,
+        "ttfb_ms": 0,
+        "latency_ms": 25343.894720077515,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T15:59:47.203552"
+      },
+      "ttft_ms": 0,
+      "total_cost": 0.004295446666666666
+    },
+    {
+      "response_id": "call_voice_assistant_room_7500_775872c2_response_6",
+      "timestamp": "2026-01-25T15:59:48.603763",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 100,
+        "total_tokens": 2100,
+        "input_cost": 0.00118,
+        "output_cost": 7.900000000000001e-05,
+        "total_cost": 0.0012590000000000001,
+        "latency_ms": 25282.00054168701,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-25T15:59:48.806619",
+        "response_text": ""
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 355,
+        "cost": 0.00781,
+        "ttfb_ms": 0,
+        "latency_ms": 242.48671531677246,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T15:59:49.050107"
+      },
+      "ttft_ms": 0,
+      "total_cost": 0.009069
+    },
+    {
+      "response_id": "call_voice_assistant_room_7500_775872c2_response_7",
+      "timestamp": "2026-01-25T15:59:49.973941",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 1.2,
+        "cost": 0.0004,
+        "latency_ms": 4477.627992630005,
+        "transcript_length": 23,
+        "timestamp": "2026-01-25T15:59:54.453085",
+        "transcript": " No question.  Goodbye."
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 50,
+        "total_tokens": 2050,
+        "input_cost": 0.00118,
+        "output_cost": 3.9500000000000005e-05,
+        "total_cost": 0.0012195,
+        "latency_ms": 29379.995346069336,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-25T15:59:52.904614",
+        "response_text": "It was nice chatting with you, even if it was just a quick hello. If you do have any questions or need help with anything in the future, don't hesitate to reach out. Have a great day! Goodbye!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 0,
+        "latency_ms": 13976.849794387817,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T16:00:06.891431"
+      },
+      "ttft_ms": 0,
+      "total_cost": 0.0060195000000000005
+    },
+    {
+      "response_id": "call_voice_assistant_room_7500_775872c2_response_8",
+      "timestamp": "2026-01-25T16:00:07.918449",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 24,
+        "total_tokens": 2024,
+        "input_cost": 0.00118,
+        "output_cost": 1.896e-05,
+        "total_cost": 0.00119896,
+        "latency_ms": 13464.36357498169,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-25T16:00:07.918449",
+        "response_text": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 192,
+        "cost": 0.004224,
+        "ttfb_ms": 0,
+        "latency_ms": 7274.025440216064,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T16:00:15.193456"
+      },
+      "ttft_ms": 0,
+      "total_cost": 0.00542296
+    }
+  ],
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Hey, Max.  Sorry, Apex.  How are you?  How fine I am."
+    },
+    {
+      "role": "assistant",
+      "content": "No worries about the name mix-up. I'm Pax, actually, but I'm here to help you with any questions about Mercola's at-home lab testing. I'm doing great, thanks for asking. It sounds like you're feeling fine, which is terrific. What brings you here today? Are you looking to learn more about our test kits, or do you have questions about the testing process?"
+    },
+    {
+      "role": "user",
+      "content": " No question.  Goodbye."
+    },
+    {
+      "role": "assistant",
+      "content": "It was nice chatting with you, even if it was just a quick hello. If you do have any questions or need help with anything in the future, don't hesitate to reach out. Have a great day! Goodbye!"
+    },
+    {
+      "role": "assistant",
+      "content": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+    }
+  ],
+  "total_stt_cost": 0.0018666666666666666,
+  "total_llm_cost": 0.00611646,
+  "total_tts_cost": 0.022418,
+  "total_livekit_cost": 0.012946316679318746,
+  "total_cost": 0.04334744334598541,
+  "total_stt_duration": 5.6000000000000005,
+  "total_llm_input_tokens": 10000,
+  "total_llm_output_tokens": 274,
+  "total_tts_characters": 1019,
+  "avg_stt_latency_ms": 4901.317238807678,
+  "avg_llm_ttft_ms": 0.0,
+  "avg_tts_ttfb_ms": 0.0,
+  "avg_ttft_ms": 0.0,
+  "livekit": {
+    "connection_duration_seconds": 77.67790007591248,
+    "cost": 0.012946316679318746,
+    "timestamp": "2026-01-25T16:00:19.284346"
+  }
+}

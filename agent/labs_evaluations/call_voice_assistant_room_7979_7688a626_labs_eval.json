@@ -1,0 +1,62 @@
+{
+  "call_id": "call_voice_assistant_room_7979_7688a626",
+  "timestamp": "2026-01-25T12:20:07.119525",
+  "duration_seconds": 127.60176753997803,
+  "total_cost": 0.040335494589996336,
+  "core_metrics": {
+    "user_sentiment": "neutral",
+    "call_summary": "The user inquired about biomarkers and the time it takes to receive test panels, then expressed concern about not receiving their kit. The assistant provided general information but did not fully address the user's concern about the missing kit. The call ended with the user thanking the assistant and hanging up.",
+    "query_resolved": false,
+    "escalation_required": true
+  },
+  "domain_metrics": {
+    "query_category": "delivery_shipping",
+    "testing_phase": "post_order"
+  },
+  "compliance_metrics": {
+    "medical_boundary_maintained": true,
+    "proper_disclaimer_given": null
+  },
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " I  Tell me about biomarkers."
+    },
+    {
+      "role": "user",
+      "content": " Tell me about how much time it will take to reach to get those panels."
+    },
+    {
+      "role": "user",
+      "content": " Okay, what should I do if I don't get those kit within a particular amount of time?"
+    },
+    {
+      "role": "user",
+      "content": " I'm finding,  I'm finding that they are out of the office, but they haven't reached my home."
+    },
+    {
+      "role": "user",
+      "content": " Okay. Goodbye. Thank you."
+    },
+    {
+      "role": "assistant",
+      "content": "Have a great day, and I hope you get your kit soon. Feel free to reach out if you have any other questions or need help with anything else. Take care!"
+    },
+    {
+      "role": "assistant",
+      "content": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+    }
+  ],
+  "additional_info": {
+    "total_turns": 7,
+    "avg_latency_ms": 2964.198384966169,
+    "evaluation_method": "llm",
+    "evaluation_version": "1.0"
+  },
+  "notes": "The user's concern about not receiving their kit was not fully addressed, and they seemed to be looking for more specific assistance. The assistant's responses were general and did not provide a clear solution to the user's problem, which may have led to the user's neutral sentiment and the need for escalation.",
+  "flags": []
+}

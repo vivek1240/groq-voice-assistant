@@ -1,0 +1,86 @@
+{
+  "call_id": "call_voice_assistant_room_9421_039a3b72",
+  "timestamp": "2026-01-25T12:09:59.068386",
+  "duration_seconds": 218.29214763641357,
+  "total_cost": 0.07427418460606892,
+  "core_metrics": {
+    "user_sentiment": "confused",
+    "call_summary": "The user asked about biomarkers for heart-related disease, but then diverged into unrelated topics such as the Bhagavad Gita, Donald Trump, Lord Krishna, and Pakistan. The assistant attempted to refocus the conversation on health and wellness, but the user continued to introduce new, unrelated topics. The call ultimately ended with the user thanking the assistant and ending the chat.",
+    "query_resolved": false,
+    "escalation_required": false
+  },
+  "domain_metrics": {
+    "query_category": "general_inquiry",
+    "testing_phase": "unknown"
+  },
+  "compliance_metrics": {
+    "medical_boundary_maintained": true,
+    "proper_disclaimer_given": null
+  },
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Give me some idea about the biomarker that you are providing.  providing to the users"
+    },
+    {
+      "role": "user",
+      "content": " Okay.  What are the biomarkers for a heart-related disease?"
+    },
+    {
+      "role": "user",
+      "content": " What are the problems that  the heart patient phase in the future"
+    },
+    {
+      "role": "user",
+      "content": " Can you just give me some idea about Bhagavad Gita, how it is related and how it can help  more mental, physical health"
+    },
+    {
+      "role": "user",
+      "content": " Hello, can you just tell me about Donald Trump, how he is influencing America and how he is leading  to destruction of America"
+    },
+    {
+      "role": "assistant",
+      "content": "I can provide general information, but I won't be able to engage in discussions about politics that involve personal opinions or biases. As your Mercola Health Coach, I'd like to focus on health and wellness. Would you like to discuss how stress can impact your health or how to reduce stress?"
+    },
+    {
+      "role": "user",
+      "content": " No, no, no, no, no. Let me know about Lord Krishna.  who is God himself, the Supreme Personality of Godhead. Why he came to this material world?"
+    },
+    {
+      "role": "user",
+      "content": " Can you just tell me about why Pakistan is going to ruin his whole population? He is going to die after some time. Can you give just idea about me?"
+    },
+    {
+      "role": "assistant",
+      "content": "I can't help with that. If you are looking for more general information, I can help with that."
+    },
+    {
+      "role": "user",
+      "content": " Okay, give me some idea about yourself."
+    },
+    {
+      "role": "user",
+      "content": " Okay.  Stop the chat now. Thank you so much. Goodbye."
+    },
+    {
+      "role": "assistant",
+      "content": "It was a pleasure helping you. Have a great day and good health. Goodbye!"
+    },
+    {
+      "role": "assistant",
+      "content": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+    }
+  ],
+  "additional_info": {
+    "total_turns": 11,
+    "avg_latency_ms": 4459.667574275623,
+    "evaluation_method": "llm",
+    "evaluation_version": "1.0"
+  },
+  "notes": "The user's questions and topics were disjointed and unrelated to the Mercola Health Coach's primary function. The assistant handled the conversation professionally, but was unable to provide meaningful assistance due to the user's lack of focus. No medical advice or diagnosis was provided, and the assistant maintained a neutral, informative tone throughout the call.",
+  "flags": []
+}

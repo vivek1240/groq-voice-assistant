@@ -1,0 +1,208 @@
+{
+  "call_id": "call_voice_assistant_room_3232_cd4852af",
+  "start_timestamp": "2026-01-25T14:31:52.728163",
+  "end_timestamp": "2026-01-25T14:33:39.206166",
+  "duration_seconds": 106.47800350189209,
+  "responses": [
+    {
+      "response_id": "call_voice_assistant_room_3232_cd4852af_response_1",
+      "timestamp": "2026-01-25T14:31:58.195211",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 18,
+        "total_tokens": 2018,
+        "input_cost": 0.00118,
+        "output_cost": 1.422e-05,
+        "total_cost": 0.00119422,
+        "latency_ms": 0.0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-25T14:31:58.196207",
+        "response_text": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+      },
+      "tts": {
+        "model": "tts-1",
+        "characters_processed": 200,
+        "cost": 0.003,
+        "latency_ms": 4041.8076515197754,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T14:32:02.238015"
+      },
+      "end_to_end_latency_ms": 4043.806314468384,
+      "total_cost": 0.00419422
+    },
+    {
+      "response_id": "call_voice_assistant_room_3232_cd4852af_response_4",
+      "timestamp": "2026-01-25T14:32:09.600980",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 5.6,
+        "cost": 0.0018666666666666664,
+        "latency_ms": 6476.931095123291,
+        "transcript_length": 73,
+        "timestamp": "2026-01-25T14:32:16.077912",
+        "transcript": " Apex.  Can you just give me some brief idea about  on Mariko Le Company."
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 89,
+        "total_tokens": 2089,
+        "input_cost": 0.00118,
+        "output_cost": 7.031e-05,
+        "total_cost": 0.0012503100000000001,
+        "latency_ms": 0.0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-25T14:32:14.494974",
+        "response_text": "I think you meant Mercola, not Mariko. Mercola is a well-known health and wellness company founded by Dr. Joseph Mercola. They offer a range of products and services, including at-home lab testing kits, to help people take control of their health. Their goal is to provide education and tools to support optimal wellness. Would you like to know more about their at-home lab testing or something specific?"
+      },
+      "tts": {
+        "model": "tts-1",
+        "characters_processed": 72,
+        "cost": 0.00108,
+        "latency_ms": 23819.217443466187,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T14:32:38.316195"
+      },
+      "end_to_end_latency_ms": 28715.214014053345,
+      "total_cost": 0.004196976666666667
+    },
+    {
+      "response_id": "call_voice_assistant_room_3232_cd4852af_response_6",
+      "timestamp": "2026-01-25T14:33:15.201940",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "tts-1",
+        "characters_processed": 404,
+        "cost": 0.00606,
+        "latency_ms": 29459.87367630005,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T14:33:15.640848"
+      },
+      "end_to_end_latency_ms": 438.9076232910156,
+      "total_cost": 0.00606
+    },
+    {
+      "response_id": "call_voice_assistant_room_3232_cd4852af_response_9",
+      "timestamp": "2026-01-25T14:33:25.955352",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "tts-1",
+        "characters_processed": 200,
+        "cost": 0.003,
+        "latency_ms": 4036.0963344573975,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T14:33:26.409940"
+      },
+      "end_to_end_latency_ms": 456.59589767456055,
+      "total_cost": 0.003
+    },
+    {
+      "response_id": "call_voice_assistant_room_3232_cd4852af_response_10",
+      "timestamp": "2026-01-25T14:33:29.164967",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 4,
+        "total_tokens": 2004,
+        "input_cost": 0.00118,
+        "output_cost": 3.1600000000000002e-06,
+        "total_cost": 0.0011831600000000002,
+        "latency_ms": 4927.3741245269775,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-25T14:33:29.169491",
+        "response_text": "You're welcome. Goodbye."
+      },
+      "tts": {
+        "model": "tts-1",
+        "characters_processed": 200,
+        "cost": 0.003,
+        "latency_ms": 1318.3460235595703,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T14:33:30.489349"
+      },
+      "end_to_end_latency_ms": 1325.944423675537,
+      "total_cost": 0.00418316
+    },
+    {
+      "response_id": "call_voice_assistant_room_3232_cd4852af_response_11",
+      "timestamp": "2026-01-25T14:33:30.562426",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 24,
+        "total_tokens": 2024,
+        "input_cost": 0.00118,
+        "output_cost": 1.896e-05,
+        "total_cost": 0.00119896,
+        "latency_ms": 6324.832439422607,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-25T14:33:30.563439",
+        "response_text": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+      },
+      "tts": {
+        "model": "tts-1",
+        "characters_processed": 24,
+        "cost": 0.00036,
+        "latency_ms": 5606.950044631958,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T14:33:36.178977"
+      },
+      "end_to_end_latency_ms": 5617.575407028198,
+      "total_cost": 0.00155896
+    }
+  ],
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Apex.  Can you just give me some brief idea about  on Mariko Le Company."
+    },
+    {
+      "role": "assistant",
+      "content": "I think you meant Mercola, not Mariko. Mercola is a well-known health and wellness company founded by Dr. Joseph Mercola. They offer a range of products and services, including at-home lab testing kits, to help people take control of their health. Their goal is to provide education and tools to support optimal wellness. Would you like to know more about their at-home lab testing or something specific?"
+    },
+    {
+      "role": "user",
+      "content": " Yeah, can you just share me something about their at-home lab test?"
+    },
+    {
+      "role": "user",
+      "content": " Okay.  Thank you. Thank you.  Goodbye."
+    },
+    {
+      "role": "assistant",
+      "content": "You're welcome. Goodbye."
+    },
+    {
+      "role": "assistant",
+      "content": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+    }
+  ],
+  "total_stt_cost": 0.0018666666666666664,
+  "total_llm_cost": 0.00238212,
+  "total_tts_cost": 0.016499999999999997,
+  "total_livekit_cost": 0.017746333916982018,
+  "total_cost": 0.03849512058364868,
+  "total_stt_duration": 5.6,
+  "total_llm_input_tokens": 4000,
+  "total_llm_output_tokens": 28,
+  "total_tts_characters": 1100,
+  "avg_stt_latency_ms": 6476.931095123291,
+  "avg_llm_latency_ms": 5626.1032819747925,
+  "avg_tts_latency_ms": 11380.381862322489,
+  "avg_end_to_end_latency_ms": 6766.340613365173,
+  "livekit": {
+    "connection_duration_seconds": 106.47800350189209,
+    "cost": 0.017746333916982018,
+    "timestamp": "2026-01-25T14:33:39.206166"
+  }
+}
