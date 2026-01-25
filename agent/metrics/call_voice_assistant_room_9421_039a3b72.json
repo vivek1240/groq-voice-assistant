@@ -1,0 +1,344 @@
+{
+  "call_id": "call_voice_assistant_room_9421_039a3b72",
+  "start_timestamp": "2026-01-25T12:06:20.776238",
+  "end_timestamp": "2026-01-25T12:09:59.068386",
+  "duration_seconds": 218.29214763641357,
+  "responses": [
+    {
+      "response_id": "call_voice_assistant_room_9421_039a3b72_response_1",
+      "timestamp": "2026-01-25T12:06:23.608013",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.1-8b-instant",
+        "input_tokens": 2000,
+        "output_tokens": 18,
+        "total_tokens": 2018,
+        "input_cost": 0.0001,
+        "output_cost": 1.44e-06,
+        "total_cost": 0.00010144,
+        "latency_ms": 1769322983608.0132,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-25T12:06:23.609015",
+        "response_text": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+      },
+      "tts": {
+        "model": "tts-1",
+        "characters_processed": 200,
+        "cost": 0.003,
+        "latency_ms": 3500.5922317504883,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T12:06:27.110607"
+      },
+      "end_to_end_latency_ms": 3503.605604171753,
+      "total_cost": 0.00310144
+    },
+    {
+      "response_id": "call_voice_assistant_room_9421_039a3b72_response_4",
+      "timestamp": "2026-01-25T12:06:44.973889",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "tts-1",
+        "characters_processed": 72,
+        "cost": 0.00108,
+        "latency_ms": 7749.59659576416,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T12:06:45.420839"
+      },
+      "end_to_end_latency_ms": 447.9525089263916,
+      "total_cost": 0.00108
+    },
+    {
+      "response_id": "call_voice_assistant_room_9421_039a3b72_response_6",
+      "timestamp": "2026-01-25T12:07:05.522775",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "tts-1",
+        "characters_processed": 200,
+        "cost": 0.003,
+        "latency_ms": 11772.873163223267,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T12:07:05.983133"
+      },
+      "end_to_end_latency_ms": 461.8649482727051,
+      "total_cost": 0.003
+    },
+    {
+      "response_id": "call_voice_assistant_room_9421_039a3b72_response_8",
+      "timestamp": "2026-01-25T12:07:28.859040",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "tts-1",
+        "characters_processed": 200,
+        "cost": 0.003,
+        "latency_ms": 14575.396299362183,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T12:07:29.294598"
+      },
+      "end_to_end_latency_ms": 437.06607818603516,
+      "total_cost": 0.003
+    },
+    {
+      "response_id": "call_voice_assistant_room_9421_039a3b72_response_10",
+      "timestamp": "2026-01-25T12:07:57.650956",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "tts-1",
+        "characters_processed": 200,
+        "cost": 0.003,
+        "latency_ms": 16431.443214416504,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T12:07:58.095853"
+      },
+      "end_to_end_latency_ms": 445.7426071166992,
+      "total_cost": 0.003
+    },
+    {
+      "response_id": "call_voice_assistant_room_9421_039a3b72_response_11",
+      "timestamp": "2026-01-25T12:08:05.790698",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 9.2,
+        "cost": 0.0030666666666666663,
+        "latency_ms": 6007.351636886597,
+        "transcript_length": 127,
+        "timestamp": "2026-01-25T12:08:11.799069",
+        "transcript": " Hello, can you just tell me about Donald Trump, how he is influencing America and how he is leading  to destruction of America"
+      },
+      "llm": {
+        "model": "llama-3.1-8b-instant",
+        "input_tokens": 2000,
+        "output_tokens": 68,
+        "total_tokens": 2068,
+        "input_cost": 0.0001,
+        "output_cost": 5.4400000000000004e-06,
+        "total_cost": 0.00010544000000000001,
+        "latency_ms": 26720.680952072144,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-25T12:08:10.130815",
+        "response_text": "I can provide general information, but I won't be able to engage in discussions about politics that involve personal opinions or biases. As your Mercola Health Coach, I'd like to focus on health and wellness. Would you like to discuss how stress can impact your health or how to reduce stress?"
+      },
+      "tts": {
+        "model": "tts-1",
+        "characters_processed": 200,
+        "cost": 0.003,
+        "latency_ms": 17577.160120010376,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T12:08:27.709981"
+      },
+      "end_to_end_latency_ms": 21920.280694961548,
+      "total_cost": 0.0061721066666666664
+    },
+    {
+      "response_id": "call_voice_assistant_room_9421_039a3b72_response_14",
+      "timestamp": "2026-01-25T12:09:03.534124",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "tts-1",
+        "characters_processed": 293,
+        "cost": 0.0043950000000000005,
+        "latency_ms": 19399.439096450806,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T12:09:03.985411"
+      },
+      "end_to_end_latency_ms": 452.79645919799805,
+      "total_cost": 0.0043950000000000005
+    },
+    {
+      "response_id": "call_voice_assistant_room_9421_039a3b72_response_15",
+      "timestamp": "2026-01-25T12:09:16.810548",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 12.0,
+        "cost": 0.004,
+        "latency_ms": 14921.38957977295,
+        "transcript_length": 148,
+        "timestamp": "2026-01-25T12:09:18.455514",
+        "transcript": " Can you just tell me about why Pakistan is going to ruin his whole population? He is going to die after some time. Can you give just idea about me?"
+      },
+      "llm": {
+        "model": "llama-3.1-8b-instant",
+        "input_tokens": 2000,
+        "output_tokens": 24,
+        "total_tokens": 2024,
+        "input_cost": 0.0001,
+        "output_cost": 1.9200000000000003e-06,
+        "total_cost": 0.00010192,
+        "latency_ms": 30574.650287628174,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-25T12:09:16.810548",
+        "response_text": "I can't help with that. If you are looking for more general information, I can help with that."
+      },
+      "tts": {
+        "model": "tts-1",
+        "characters_processed": 200,
+        "cost": 0.003,
+        "latency_ms": 5439.943313598633,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T12:09:22.251485"
+      },
+      "end_to_end_latency_ms": 5440.937519073486,
+      "total_cost": 0.00710192
+    },
+    {
+      "response_id": "call_voice_assistant_room_9421_039a3b72_response_17",
+      "timestamp": "2026-01-25T12:09:36.082857",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "tts-1",
+        "characters_processed": 94,
+        "cost": 0.00141,
+        "latency_ms": 6241.312265396118,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T12:09:36.534257"
+      },
+      "end_to_end_latency_ms": 452.4264335632324,
+      "total_cost": 0.00141
+    },
+    {
+      "response_id": "call_voice_assistant_room_9421_039a3b72_response_18",
+      "timestamp": "2026-01-25T12:09:37.170963",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 4.0,
+        "cost": 0.0013333333333333333,
+        "latency_ms": 7237.558841705322,
+        "transcript_length": 54,
+        "timestamp": "2026-01-25T12:09:44.409523",
+        "transcript": " Okay.  Stop the chat now. Thank you so much. Goodbye."
+      },
+      "llm": {
+        "model": "llama-3.1-8b-instant",
+        "input_tokens": 2000,
+        "output_tokens": 18,
+        "total_tokens": 2018,
+        "input_cost": 0.0001,
+        "output_cost": 1.44e-06,
+        "total_cost": 0.00010144,
+        "latency_ms": 11106.810808181763,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-25T12:09:42.903831",
+        "response_text": "It was a pleasure helping you. Have a great day and good health. Goodbye!"
+      },
+      "tts": {
+        "model": "tts-1",
+        "characters_processed": 200,
+        "cost": 0.003,
+        "latency_ms": 3768.2740688323975,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T12:09:46.673093"
+      },
+      "end_to_end_latency_ms": 9502.688884735107,
+      "total_cost": 0.0044347733333333335
+    },
+    {
+      "response_id": "call_voice_assistant_room_9421_039a3b72_response_19",
+      "timestamp": "2026-01-25T12:09:48.641854",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.1-8b-instant",
+        "input_tokens": 2000,
+        "output_tokens": 24,
+        "total_tokens": 2024,
+        "input_cost": 0.0001,
+        "output_cost": 1.9200000000000003e-06,
+        "total_cost": 0.00010192,
+        "latency_ms": 4231.297492980957,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-25T12:09:48.642852",
+        "response_text": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+      },
+      "tts": {
+        "model": "tts-1",
+        "characters_processed": 73,
+        "cost": 0.001095,
+        "latency_ms": 5988.967180252075,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T12:09:54.631820"
+      },
+      "end_to_end_latency_ms": 5990.981578826904,
+      "total_cost": 0.00119692
+    }
+  ],
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Give me some idea about the biomarker that you are providing.  providing to the users"
+    },
+    {
+      "role": "user",
+      "content": " Okay.  What are the biomarkers for a heart-related disease?"
+    },
+    {
+      "role": "user",
+      "content": " What are the problems that  the heart patient phase in the future"
+    },
+    {
+      "role": "user",
+      "content": " Can you just give me some idea about Bhagavad Gita, how it is related and how it can help  more mental, physical health"
+    },
+    {
+      "role": "user",
+      "content": " Hello, can you just tell me about Donald Trump, how he is influencing America and how he is leading  to destruction of America"
+    },
+    {
+      "role": "assistant",
+      "content": "I can provide general information, but I won't be able to engage in discussions about politics that involve personal opinions or biases. As your Mercola Health Coach, I'd like to focus on health and wellness. Would you like to discuss how stress can impact your health or how to reduce stress?"
+    },
+    {
+      "role": "user",
+      "content": " No, no, no, no, no. Let me know about Lord Krishna.  who is God himself, the Supreme Personality of Godhead. Why he came to this material world?"
+    },
+    {
+      "role": "user",
+      "content": " Can you just tell me about why Pakistan is going to ruin his whole population? He is going to die after some time. Can you give just idea about me?"
+    },
+    {
+      "role": "assistant",
+      "content": "I can't help with that. If you are looking for more general information, I can help with that."
+    },
+    {
+      "role": "user",
+      "content": " Okay, give me some idea about yourself."
+    },
+    {
+      "role": "user",
+      "content": " Okay.  Stop the chat now. Thank you so much. Goodbye."
+    },
+    {
+      "role": "assistant",
+      "content": "It was a pleasure helping you. Have a great day and good health. Goodbye!"
+    },
+    {
+      "role": "assistant",
+      "content": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+    }
+  ],
+  "total_stt_cost": 0.0084,
+  "total_llm_cost": 0.00051216,
+  "total_tts_cost": 0.02898,
+  "total_livekit_cost": 0.03638202460606893,
+  "total_cost": 0.07427418460606892,
+  "total_stt_duration": 25.2,
+  "total_llm_input_tokens": 10000,
+  "total_llm_output_tokens": 152,
+  "total_tts_characters": 1932,
+  "avg_stt_latency_ms": 9388.766686121622,
+  "avg_llm_latency_ms": 353864611248.2906,
+  "avg_tts_latency_ms": 10222.272504459728,
+  "avg_end_to_end_latency_ms": 4459.667574275623,
+  "livekit": {
+    "connection_duration_seconds": 218.29214763641357,
+    "cost": 0.03638202460606893,
+    "timestamp": "2026-01-25T12:09:59.068386"
+  }
+}

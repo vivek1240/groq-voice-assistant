@@ -68,7 +68,7 @@ def test_basic_tracking():
     print(f"  - STT:  ${summary['total_stt_cost']:.6f}")
     print(f"  - LLM:  ${summary['total_llm_cost']:.6f}")
     print(f"  - TTS:  ${summary['total_tts_cost']:.6f}")
-    print(f"  - VAPI: ${summary['total_vapi_cost']:.6f}")
+    print(f"  - LiveKit: ${summary.get('total_livekit_cost', summary.get('total_vapi_cost', 0.0)):.6f}")
     print(f"\nAverage Latencies:")
     print(f"  - STT: {summary['avg_stt_latency_ms']:.0f}ms")
     print(f"  - LLM: {summary['avg_llm_latency_ms']:.0f}ms")

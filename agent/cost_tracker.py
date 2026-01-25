@@ -2,7 +2,7 @@
 Cost and Latency Tracking System for Groq Voice Assistant
 
 This module tracks:
-1. Cost metrics for STT, LLM, TTS, and VAPI platform usage
+1. Cost metrics for STT, LLM, TTS, and LiveKit platform usage
 2. Latency metrics for end-to-end performance monitoring
 3. Per-response and per-call summaries
 """
@@ -24,7 +24,7 @@ class ComponentType(Enum):
     STT = "speech_to_text"
     LLM = "large_language_model"
     TTS = "text_to_speech"
-    VAPI = "voice_platform"
+    LIVEKIT = "livekit_platform"
 
 
 # ============================================================================
@@ -60,8 +60,8 @@ def load_pricing_config():
             "canopylabs/orpheus-v1-english": 0.000010,
             "playai-tts": 0.000010,
         },
-        "vapi": {
-            "platform_per_minute": 0.05,
+        "livekit": {
+            "platform_per_minute": 0.01,  # LiveKit Cloud: $0.01 per agent session minute
         }
     }
     
@@ -77,7 +77,7 @@ def load_pricing_config():
                     "stt": {},
                     "llm": {},
                     "tts": {},
-                    "vapi": {}
+                    "livekit": {}
                 }
                 
                 # STT pricing
@@ -95,9 +95,9 @@ def load_pricing_config():
                 for model, data in pricing_data.get("tts", {}).items():
                     pricing["tts"][model] = data.get("price_per_character", default_pricing["tts"].get(model, 0.00001))
                 
-                # VAPI pricing
-                vapi_data = pricing_data.get("vapi", {}).get("platform_cost", {})
-                pricing["vapi"]["platform_per_minute"] = vapi_data.get("price_per_minute", 0.05)
+                # LiveKit pricing
+                livekit_data = pricing_data.get("livekit", {}).get("platform_cost", {})
+                pricing["livekit"]["platform_per_minute"] = livekit_data.get("price_per_minute", 0.05)
                 
                 logger.info(f"Loaded pricing config from {config_file}")
                 return pricing
@@ -126,6 +126,12 @@ class LatencyMetrics:
     
     def end(self):
         """Mark the end of an operation and calculate duration"""
+        if self.start_time <= 0:
+            # Guard against missing start() calls to avoid epoch-scale latencies
+            logger.warning("LatencyMetrics.end called without start(); returning 0ms")
+            self.duration_ms = 0.0
+            return self.duration_ms
+
         self.end_time = time.time()
         self.duration_ms = (self.end_time - self.start_time) * 1000
         return self.duration_ms
@@ -160,7 +166,8 @@ class LLMMetrics:
     input_cost: float = 0.0
     output_cost: float = 0.0
     total_cost: float = 0.0
-    latency_ms: float = 0.0  # Time to first token
+    latency_ms: float = 0.0  # Total latency (legacy)
+    ttft_ms: float = 0.0  # Time to First Token - key metric!
     total_generation_time_ms: float = 0.0
     timestamp: str = ""
     response_text: str = ""  # Actual LLM response text
@@ -181,6 +188,7 @@ class TTSMetrics:
     model: str = ""
     characters_processed: int = 0
     cost: float = 0.0
+    ttfb_ms: float = 0.0  # Time to First Byte - key metric!
     latency_ms: float = 0.0
     audio_duration_seconds: float = 0.0
     timestamp: str = ""
@@ -193,8 +201,8 @@ class TTSMetrics:
 
 
 @dataclass
-class VAPIMetrics:
-    """Voice Platform (VAPI/LiveKit) metrics"""
+class LiveKitMetrics:
+    """Voice Platform (LiveKit) metrics"""
     connection_duration_seconds: float = 0.0
     cost: float = 0.0
     timestamp: str = ""
@@ -202,7 +210,7 @@ class VAPIMetrics:
     def calculate_cost(self):
         """Calculate cost based on connection duration"""
         duration_minutes = self.connection_duration_seconds / 60.0
-        price_per_minute = PRICING["vapi"]["platform_per_minute"]
+        price_per_minute = PRICING["livekit"]["platform_per_minute"]
         self.cost = duration_minutes * price_per_minute
         return self.cost
 
@@ -218,8 +226,9 @@ class ResponseMetrics:
     llm: Optional[LLMMetrics] = None
     tts: Optional[TTSMetrics] = None
     
-    # End-to-end latency
-    end_to_end_latency_ms: float = 0.0
+    # Key latency metrics
+    eou_delay_ms: float = 0.0  # End-of-Utterance delay (VAD + transcription)
+    ttft_ms: float = 0.0  # Time to First Token = EOU + LLM TTFT + TTS TTFB
     
     # Costs
     total_cost: float = 0.0
@@ -254,7 +263,7 @@ class CallMetrics:
     total_stt_cost: float = 0.0
     total_llm_cost: float = 0.0
     total_tts_cost: float = 0.0
-    total_vapi_cost: float = 0.0
+    total_livekit_cost: float = 0.0
     total_cost: float = 0.0
     
     # Aggregated usage
@@ -263,14 +272,14 @@ class CallMetrics:
     total_llm_output_tokens: int = 0
     total_tts_characters: int = 0
     
-    # Latency statistics
-    avg_stt_latency_ms: float = 0.0
-    avg_llm_latency_ms: float = 0.0
-    avg_tts_latency_ms: float = 0.0
-    avg_end_to_end_latency_ms: float = 0.0
+    # Latency statistics (Time to First Token metrics)
+    avg_eou_delay_ms: float = 0.0  # Average End-of-Utterance delay (VAD + transcription)
+    avg_llm_ttft_ms: float = 0.0  # Average LLM Time to First Token
+    avg_tts_ttfb_ms: float = 0.0  # Average TTS Time to First Byte
+    avg_ttft_ms: float = 0.0  # Average overall TTFT = EOU + LLM TTFT + TTS TTFB
     
-    # VAPI metrics
-    vapi: Optional[VAPIMetrics] = None
+    # LiveKit metrics
+    livekit: Optional[LiveKitMetrics] = None
     
     def add_response(self, response: ResponseMetrics):
         """Add a response to this call"""
@@ -282,56 +291,60 @@ class CallMetrics:
         self.total_stt_cost = 0.0
         self.total_llm_cost = 0.0
         self.total_tts_cost = 0.0
-        self.total_vapi_cost = 0.0
+        self.total_livekit_cost = 0.0
         
         self.total_stt_duration = 0.0
         self.total_llm_input_tokens = 0
         self.total_llm_output_tokens = 0
         self.total_tts_characters = 0
         
-        stt_latencies = []
-        llm_latencies = []
-        tts_latencies = []
-        e2e_latencies = []
+        eou_delay_list = []
+        llm_ttft_list = []
+        tts_ttfb_list = []
+        ttft_list = []
         
         # Aggregate from all responses
         for response in self.responses:
             if response.stt:
                 self.total_stt_cost += response.stt.cost
                 self.total_stt_duration += response.stt.duration_seconds
-                stt_latencies.append(response.stt.latency_ms)
             
             if response.llm:
                 self.total_llm_cost += response.llm.total_cost
                 self.total_llm_input_tokens += response.llm.input_tokens
                 self.total_llm_output_tokens += response.llm.output_tokens
-                llm_latencies.append(response.llm.latency_ms)
+                if response.llm.ttft_ms > 0:
+                    llm_ttft_list.append(response.llm.ttft_ms)
             
             if response.tts:
                 self.total_tts_cost += response.tts.cost
                 self.total_tts_characters += response.tts.characters_processed
-                tts_latencies.append(response.tts.latency_ms)
+                if response.tts.ttfb_ms > 0:
+                    tts_ttfb_list.append(response.tts.ttfb_ms)
             
-            if response.end_to_end_latency_ms > 0:
-                e2e_latencies.append(response.end_to_end_latency_ms)
+            if response.eou_delay_ms > 0:
+                eou_delay_list.append(response.eou_delay_ms)
+            
+            if response.ttft_ms > 0:
+                ttft_list.append(response.ttft_ms)
         
-        # Calculate VAPI cost
-        if self.vapi:
-            self.total_vapi_cost = self.vapi.cost
+        # Calculate LiveKit cost
+        if self.livekit:
+            self.total_livekit_cost = self.livekit.cost
         
         # Calculate total cost
         self.total_cost = (
             self.total_stt_cost +
             self.total_llm_cost +
             self.total_tts_cost +
-            self.total_vapi_cost
+            self.total_livekit_cost
         )
         
-        # Calculate average latencies
-        self.avg_stt_latency_ms = sum(stt_latencies) / len(stt_latencies) if stt_latencies else 0.0
-        self.avg_llm_latency_ms = sum(llm_latencies) / len(llm_latencies) if llm_latencies else 0.0
-        self.avg_tts_latency_ms = sum(tts_latencies) / len(tts_latencies) if tts_latencies else 0.0
-        self.avg_end_to_end_latency_ms = sum(e2e_latencies) / len(e2e_latencies) if e2e_latencies else 0.0
+        # Calculate average latencies (Time to First Token metrics)
+        self.avg_eou_delay_ms = sum(eou_delay_list) / len(eou_delay_list) if eou_delay_list else 0.0
+        self.avg_llm_ttft_ms = sum(llm_ttft_list) / len(llm_ttft_list) if llm_ttft_list else 0.0
+        self.avg_tts_ttfb_ms = sum(tts_ttfb_list) / len(tts_ttfb_list) if tts_ttfb_list else 0.0
+        self.avg_ttft_ms = sum(ttft_list) / len(ttft_list) if ttft_list else 0.0
 
 
 # ============================================================================
@@ -409,18 +422,21 @@ class CostTracker:
         logger.debug(f"Started tracking response: {response_id}")
         return response_id
     
-    def end_response(self):
+    def end_response(self, eou_delay_ms: float = 0.0):
         """End tracking current response and calculate metrics"""
         if not self.current_response:
             logger.warning("end_response called but no response in progress")
             return
         
-        # Calculate end-to-end latency
-        if self.current_response_start_time > 0:
-            end_time = time.time()
-            self.current_response.end_to_end_latency_ms = (
-                (end_time - self.current_response_start_time) * 1000
-            )
+        # Store EOU delay
+        self.current_response.eou_delay_ms = eou_delay_ms
+        
+        # Calculate TTFT (Time to First Token/Byte)
+        # TTFT = EOU Delay + LLM TTFT + TTS TTFB (full user-perceived latency)
+        eou = self.current_response.eou_delay_ms
+        llm_ttft = self.current_response.llm.ttft_ms if self.current_response.llm else 0
+        tts_ttfb = self.current_response.tts.ttfb_ms if self.current_response.tts else 0
+        self.current_response.ttft_ms = eou + llm_ttft + tts_ttfb
         
         # Calculate total cost for this response
         self.current_response.calculate_total_cost()
@@ -491,7 +507,7 @@ class CostTracker:
         self.llm_latency.start()
         logger.debug("LLM tracking started")
     
-    def end_llm(self, input_tokens: int, output_tokens: int, model: str, response_text: str = ""):
+    def end_llm(self, input_tokens: int, output_tokens: int, model: str, response_text: str = "", ttft_ms: float = 0.0):
         """
         End LLM tracking and record metrics
         
@@ -500,6 +516,7 @@ class CostTracker:
             output_tokens: Number of output tokens
             model: LLM model used
             response_text: Actual LLM response text (optional)
+            ttft_ms: Time to First Token in milliseconds (from pipeline metrics)
         """
         latency = self.llm_latency.end()
         
@@ -511,6 +528,7 @@ class CostTracker:
             input_tokens=input_tokens,
             output_tokens=output_tokens,
             latency_ms=latency,
+            ttft_ms=ttft_ms,  # Time to First Token - key metric!
             response_text=response_text,  # Store actual response
             timestamp=datetime.now().isoformat()
         )
@@ -523,7 +541,7 @@ class CostTracker:
         
         logger.debug(
             f"LLM completed: in={input_tokens} out={output_tokens} tokens, "
-            f"latency={latency:.0f}ms, cost=${llm_metrics.total_cost:.6f}, model={model}"
+            f"ttft={ttft_ms:.0f}ms, cost=${llm_metrics.total_cost:.6f}, model={model}"
         )
     
     # ========================================================================
@@ -535,7 +553,7 @@ class CostTracker:
         self.tts_latency.start()
         logger.debug("TTS tracking started")
     
-    def end_tts(self, characters: int, model: str, audio_duration: float = 0.0):
+    def end_tts(self, characters: int, model: str, audio_duration: float = 0.0, ttfb_ms: float = 0.0):
         """
         End TTS tracking and record metrics
         
@@ -543,6 +561,7 @@ class CostTracker:
             characters: Number of characters processed
             model: TTS model used
             audio_duration: Duration of generated audio in seconds
+            ttfb_ms: Time to First Byte in milliseconds (from pipeline metrics)
         """
         latency = self.tts_latency.end()
         
@@ -553,6 +572,7 @@ class CostTracker:
             model=model,
             characters_processed=characters,
             latency_ms=latency,
+            ttfb_ms=ttfb_ms,  # Time to First Byte - key metric!
             audio_duration_seconds=audio_duration,
             timestamp=datetime.now().isoformat()
         )
@@ -561,7 +581,7 @@ class CostTracker:
         self.current_response.tts = tts_metrics
         
         logger.debug(
-            f"TTS completed: chars={characters}, latency={latency:.0f}ms, "
+            f"TTS completed: chars={characters}, ttfb={ttfb_ms:.0f}ms, "
             f"cost=${tts_metrics.cost:.6f}, model={model}"
         )
     
@@ -575,13 +595,13 @@ class CostTracker:
         self.call_metrics.duration_seconds = call_end_time - self.call_start_time
         self.call_metrics.end_timestamp = datetime.now().isoformat()
         
-        # Calculate VAPI cost
-        vapi_metrics = VAPIMetrics(
+        # Calculate LiveKit cost
+        livekit_metrics = LiveKitMetrics(
             connection_duration_seconds=self.call_metrics.duration_seconds,
             timestamp=datetime.now().isoformat()
         )
-        vapi_metrics.calculate_cost()
-        self.call_metrics.vapi = vapi_metrics
+        livekit_metrics.calculate_cost()
+        self.call_metrics.livekit = livekit_metrics
         
         # Calculate all totals
         self.call_metrics.calculate_totals()
@@ -619,18 +639,20 @@ class CostTracker:
         if response.llm:
             logger.info(
                 f"  LLM: {response.llm.input_tokens} in / {response.llm.output_tokens} out tokens, "
-                f"{response.llm.latency_ms:.0f}ms latency, "
+                f"TTFT={response.llm.ttft_ms:.0f}ms, "
                 f"${response.llm.total_cost:.6f}"
             )
         
         if response.tts:
             logger.info(
                 f"  TTS: {response.tts.characters_processed} chars, "
-                f"{response.tts.latency_ms:.0f}ms latency, "
+                f"TTFB={response.tts.ttfb_ms:.0f}ms, "
                 f"${response.tts.cost:.6f}"
             )
         
-        logger.info(f"  End-to-End: {response.end_to_end_latency_ms:.0f}ms")
+        if response.eou_delay_ms > 0:
+            logger.info(f"  EOU Delay: {response.eou_delay_ms:.0f}ms (VAD + transcription)")
+        logger.info(f"  TTFT: {response.ttft_ms:.0f}ms  <-- User-perceived latency")
         logger.info(f"  Total Cost: ${response.total_cost:.6f}")
         logger.info("=" * 80)
     
@@ -657,16 +679,16 @@ class CostTracker:
         logger.info(f"  STT:  ${self.call_metrics.total_stt_cost:.6f}")
         logger.info(f"  LLM:  ${self.call_metrics.total_llm_cost:.6f}")
         logger.info(f"  TTS:  ${self.call_metrics.total_tts_cost:.6f}")
-        logger.info(f"  VAPI: ${self.call_metrics.total_vapi_cost:.6f}")
+        logger.info(f"  LiveKit: ${self.call_metrics.total_livekit_cost:.6f}")
         logger.info(f"  --------------")
         logger.info(f"  TOTAL: ${self.call_metrics.total_cost:.6f}")
         logger.info("")
         
-        logger.info("AVERAGE LATENCIES:")
-        logger.info(f"  STT: {self.call_metrics.avg_stt_latency_ms:.0f}ms")
-        logger.info(f"  LLM: {self.call_metrics.avg_llm_latency_ms:.0f}ms")
-        logger.info(f"  TTS: {self.call_metrics.avg_tts_latency_ms:.0f}ms")
-        logger.info(f"  End-to-End: {self.call_metrics.avg_end_to_end_latency_ms:.0f}ms")
+        logger.info("AVERAGE LATENCIES (Time to First Token):")
+        logger.info(f"  EOU Delay: {self.call_metrics.avg_eou_delay_ms:.0f}ms (VAD + transcription)")
+        logger.info(f"  LLM TTFT: {self.call_metrics.avg_llm_ttft_ms:.0f}ms")
+        logger.info(f"  TTS TTFB: {self.call_metrics.avg_tts_ttfb_ms:.0f}ms")
+        logger.info(f"  TTFT (Total): {self.call_metrics.avg_ttft_ms:.0f}ms  <-- User wait time")
         logger.info("=" * 80 + "\n")
     
     # ========================================================================

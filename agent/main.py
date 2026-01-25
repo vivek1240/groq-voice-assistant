@@ -99,7 +99,30 @@ END_CALL_CONFIG = {
 
 
 def prewarm(proc: JobProcess):
+    """Prewarm models to reduce cold start latency."""
+    logger.info("Prewarming models...")
+    
+    # Load VAD model
     proc.userdata["vad"] = silero.VAD.load()
+    
+    # Pre-initialize Groq clients to establish connections early
+    # This reduces first-request latency
+    
+    # STT: Groq Whisper Large V3 Turbo (fastest, best quality)
+    proc.userdata["stt"] = groq.STT(model="whisper-large-v3-turbo")
+    
+    # LLM: Llama 3.3 70B (best quality, Groq makes it fast)
+    # Groq's inference is so fast that 70B has negligible latency cost vs 8B
+    proc.userdata["llm"] = groq.LLM(model="llama-3.3-70b-versatile")
+    
+    # TTS: Groq Orpheus
+    # Available voices: autumn, diana, hannah, austin, daniel, troy
+    proc.userdata["tts"] = groq.TTS(
+        model="canopylabs/orpheus-v1-english",
+        voice="autumn"
+    )
+    
+    logger.info("Models prewarmed successfully")
 
 
 async def entrypoint(ctx: JobContext):
@@ -244,11 +267,12 @@ async def entrypoint(ctx: JobContext):
         participant = await ctx.wait_for_participant()
         logger.info(f"starting voice assistant for participant {participant.identity}")
 
+        # Use prewarmed models for faster startup
         agent = VoicePipelineAgent(
             vad=ctx.proc.userdata["vad"],
-            stt=groq.STT(model="whisper-large-v3-turbo"),
-            llm=groq.LLM(model="llama-3.3-70b-versatile"),
-            tts=groq.TTS(model="canopylabs/orpheus-v1-english", voice="autumn"),
+            stt=ctx.proc.userdata.get("stt") or groq.STT(model="whisper-large-v3-turbo"),
+            llm=ctx.proc.userdata.get("llm") or groq.LLM(model="llama-3.3-70b-versatile"),
+            tts=ctx.proc.userdata.get("tts") or groq.TTS(model="canopylabs/orpheus-v1-english", voice="autumn"),
             chat_ctx=initial_ctx,
         )
 
@@ -272,11 +296,6 @@ async def entrypoint(ctx: JobContext):
                     return True
             return False
 
-        # Event handler for metrics collection
-        @agent.on("metrics_collected")
-        def _on_metrics_collected(mtrcs: metrics.AgentMetrics):
-            metrics.log_metrics(mtrcs)
-        
         # Cost tracking state
         tracking_state = {
             'current_user_text': '',
@@ -284,20 +303,64 @@ async def entrypoint(ctx: JobContext):
             'stt_start_time': 0,
             'llm_start_time': 0,
             'tts_start_time': 0,
+            'eou_delay_ms': 0,  # End-of-Utterance delay (VAD + transcription)
+            'llm_ttft_ms': 0,  # LLM Time to First Token
+            'tts_ttfb_ms': 0,  # TTS Time to First Byte
         }
         
-        # Cost tracking event handlers
+        # Event handler for metrics collection - capture EOU, TTFT, TTFB
+        @agent.on("metrics_collected")
+        def _on_metrics_collected(mtrcs):
+            """Capture pipeline metrics including EOU delay, TTFT and TTFB"""
+            # mtrcs is the metrics object directly (e.g., PipelineLLMMetrics, PipelineTTSMetrics, PipelineEOUMetrics)
+            # Log the metrics using the built-in logger
+            metrics.log_metrics(mtrcs)
+            
+            # Check for EOU (End-of-Utterance) metrics - this is the VAD + transcription delay
+            if hasattr(mtrcs, 'end_of_utterance_delay') and mtrcs.end_of_utterance_delay is not None:
+                tracking_state['eou_delay_ms'] = mtrcs.end_of_utterance_delay * 1000  # Convert to ms
+                logger.info(f"Captured EOU Delay: {tracking_state['eou_delay_ms']:.0f}ms")
+            
+            # Check for LLM metrics (has ttft attribute)
+            if hasattr(mtrcs, 'ttft') and mtrcs.ttft is not None and mtrcs.ttft > 0:
+                tracking_state['llm_ttft_ms'] = mtrcs.ttft * 1000  # Convert to ms
+                logger.info(f"Captured LLM TTFT: {tracking_state['llm_ttft_ms']:.0f}ms")
+            
+            # Check for TTS metrics (has ttfb attribute)
+            if hasattr(mtrcs, 'ttfb') and mtrcs.ttfb is not None and mtrcs.ttfb > 0:
+                tracking_state['tts_ttfb_ms'] = mtrcs.ttfb * 1000  # Convert to ms
+                logger.info(f"Captured TTS TTFB: {tracking_state['tts_ttfb_ms']:.0f}ms")
+        
+        # Event handlers (consolidated for cost tracking + call logic)
         @agent.on("user_started_speaking")
         def _on_user_started_speaking():
-            """User started speaking - start tracking response"""
-            logger.debug("User started speaking - starting response tracking")
+            """User started speaking - start tracking response and reset activity timer"""
+            nonlocal last_activity_time
+            
+            # CRITICAL: Reset activity timer immediately when user starts speaking
+            # This prevents premature disconnection if user_speech_committed fails to fire
+            last_activity_time = time.time()
+            logger.info("USER STARTED SPEAKING - activity timer reset")
+            
+            logger.debug("Starting response tracking")
             cost_tracker.start_response()
             cost_tracker.start_stt()
             tracking_state['stt_start_time'] = time.time()
         
         @agent.on("user_speech_committed")
-        def _on_user_speech_committed_for_cost(msg):
-            """STT completed - track STT metrics"""
+        def _on_user_speech_committed(msg):
+            """STT completed - track metrics and check for farewell intent"""
+            nonlocal last_activity_time, farewell_detected
+            
+            # If farewell already detected and we're in the process of ending, ignore new speech
+            if farewell_detected:
+                logger.info("Ignoring user speech - farewell already detected, ending call")
+                return
+            
+            # Update activity time (also done in user_started_speaking for redundancy)
+            last_activity_time = time.time()
+            logger.info("USER SPEECH COMMITTED - activity timer refreshed")
+            
             try:
                 # Extract transcript text
                 user_text = ""
@@ -309,6 +372,12 @@ async def entrypoint(ctx: JobContext):
                     user_text = msg
                 
                 tracking_state['current_user_text'] = user_text
+                logger.info(f"USER SPOKE: {user_text[:80] if user_text else 'N/A'}...")
+                
+                # Check for farewell intent in user's message
+                if user_text and detect_farewell_intent(user_text):
+                    farewell_detected = True
+                    logger.info(f"FAREWELL DETECTED in: '{user_text}' - will end call after farewell message")
                 
                 # Estimate audio duration based on text length
                 # Average speaking rate: ~150 words per minute, ~2.5 words per second
@@ -327,11 +396,15 @@ async def entrypoint(ctx: JobContext):
                 tracking_state['llm_start_time'] = time.time()
                 
             except Exception as e:
-                logger.error(f"Error tracking STT metrics: {e}")
+                logger.error(f"Error in user_speech_committed handler: {e}")
         
         @agent.on("agent_started_speaking")
-        def _on_agent_started_speaking_for_cost():
-            """Agent started speaking - this means LLM has responded"""
+        def _on_agent_started_speaking():
+            """Agent started speaking - track LLM completion and start TTS tracking"""
+            nonlocal agent_is_speaking
+            agent_is_speaking = True
+            logger.info("AGENT STARTED SPEAKING")
+            
             try:
                 # Estimate token usage based on text length
                 # Rough approximation: 1 token ≈ 0.75 words (4 characters)
@@ -350,7 +423,8 @@ async def entrypoint(ctx: JobContext):
                 cost_tracker.end_llm(
                     input_tokens=estimated_input_tokens,
                     output_tokens=estimated_output_tokens,
-                    model="llama-3.3-70b-versatile"
+                    model="llama-3.3-70b-versatile",
+                    ttft_ms=tracking_state.get('llm_ttft_ms', 0)
                 )
                 
                 # Start TTS tracking
@@ -358,11 +432,19 @@ async def entrypoint(ctx: JobContext):
                 tracking_state['tts_start_time'] = time.time()
                 
             except Exception as e:
-                logger.error(f"Error tracking LLM metrics: {e}")
+                logger.error(f"Error in agent_started_speaking handler: {e}")
         
         @agent.on("agent_stopped_speaking")
-        def _on_agent_stopped_speaking_for_cost():
+        def _on_agent_stopped_speaking():
             """Agent stopped speaking - TTS completed"""
+            nonlocal agent_is_speaking
+            agent_is_speaking = False
+            
+            # NOTE: Do NOT reset last_activity_time here!
+            # Only USER speech should reset the inactivity timer.
+            # If agent stops speaking and user doesn't respond, we want inactivity timeout to trigger.
+            logger.info("AGENT STOPPED SPEAKING")
+            
             try:
                 # Get the agent's response text if available
                 agent_text = tracking_state.get('current_agent_text', '')
@@ -373,18 +455,24 @@ async def entrypoint(ctx: JobContext):
                 
                 cost_tracker.end_tts(
                     characters=estimated_characters,
-                    model="canopylabs/orpheus-v1-english"
+                    model="canopylabs/orpheus-v1-english",
+                    ttfb_ms=tracking_state.get('tts_ttfb_ms', 0)
                 )
                 
-                # End response tracking
-                cost_tracker.end_response()
+                # End response tracking with EOU delay
+                cost_tracker.end_response(
+                    eou_delay_ms=tracking_state.get('eou_delay_ms', 0)
+                )
                 
-                # Reset tracking state
+                # Reset tracking state for next response
                 tracking_state['current_user_text'] = ''
                 tracking_state['current_agent_text'] = ''
+                tracking_state['eou_delay_ms'] = 0
+                tracking_state['llm_ttft_ms'] = 0
+                tracking_state['tts_ttfb_ms'] = 0
                 
             except Exception as e:
-                logger.error(f"Error tracking TTS metrics: {e}")
+                logger.error(f"Error in agent_stopped_speaking handler: {e}")
         
         # Try to capture agent's text responses
         @agent.on("agent_speech_committed")
@@ -444,56 +532,6 @@ async def entrypoint(ctx: JobContext):
                 
             except Exception as e:
                 logger.error(f"Error capturing agent speech: {e}", exc_info=True)
-        
-        # Event handler for user speech to track activity and detect farewells
-        @agent.on("user_speech_committed")
-        def _on_user_speech(msg):
-            nonlocal last_activity_time, farewell_detected
-            
-            # If farewell already detected and we're in the process of ending, ignore new speech
-            # This prevents user speech during farewell from restarting conversation
-            if farewell_detected:
-                logger.info("Ignoring user speech - farewell already detected, ending call")
-                return
-            
-            last_activity_time = time.time()
-            
-            # Try to get text from different possible attributes
-            user_text = None
-            if hasattr(msg, 'text'):
-                user_text = msg.text
-            elif hasattr(msg, 'content'):
-                user_text = msg.content
-            elif isinstance(msg, str):
-                user_text = msg
-            
-            logger.info(f"USER SPOKE: {user_text[:80] if user_text else 'N/A'}...")
-            
-            # Check for farewell intent in user's message
-            # Note: We only set farewell_detected flag, NOT call_ended
-            # The monitor loop will handle ending the call after farewell message
-            if user_text and detect_farewell_intent(user_text):
-                farewell_detected = True
-                logger.info(f"FAREWELL DETECTED in: '{user_text}' - will end call after farewell message")
-        
-        # Track when agent starts speaking
-        @agent.on("agent_started_speaking")
-        def _on_agent_started():
-            nonlocal agent_is_speaking
-            agent_is_speaking = True
-            logger.info("AGENT STARTED SPEAKING")
-        
-        # Track when agent stops speaking and reset timer
-        @agent.on("agent_stopped_speaking")
-        def _on_agent_stopped():
-            nonlocal agent_is_speaking, last_activity_time
-            agent_is_speaking = False
-            # Don't reset timer if farewell was detected - we want to end the call
-            if not farewell_detected:
-                last_activity_time = time.time()
-                logger.info("AGENT STOPPED SPEAKING - timer reset")
-            else:
-                logger.info("AGENT STOPPED SPEAKING - farewell mode, not resetting timer")
 
         agent.start(ctx.room, participant)
         
@@ -551,17 +589,17 @@ async def entrypoint(ctx: JobContext):
                     # Record time before saying goodbye message
                     time_before_goodbye = last_activity_time
                     
-                    # Play inactivity message (don't allow interruptions to ensure it completes)
+                    # Play inactivity message (allow interruptions so user can respond)
                     await agent.say(END_CALL_CONFIG["inactivity_message"], allow_interruptions=True)
                     
-                    # Wait for inactivity message to finish speaking first
+                    # Wait for the TTS to finish playing + extra time for user to respond
+                    # Don't check agent_is_speaking here - we KNOW the agent is speaking our message!
                     logger.info("Waiting for inactivity message to complete...")
-                    await asyncio.sleep(10)  # Wait for message to be spoken
+                    await asyncio.sleep(12)  # Wait for message to play out
                     
-                    # Now check if user spoke DURING the message (their speech would update last_activity_time)
+                    # Now check if user responded (last_activity_time would be updated)
                     if last_activity_time > time_before_goodbye:
-                        logger.info("User responded during inactivity message, cancelling disconnect")
-                        # Reset the timer since conversation is continuing
+                        logger.info("User responded during/after inactivity message, cancelling disconnect")
                         last_activity_time = time.time()
                         continue
                     
@@ -582,11 +620,10 @@ async def entrypoint(ctx: JobContext):
         monitor_task = asyncio.create_task(monitor_call())
         
         # The agent should be polite and greet the user when it joins
-        # The agent_speech_committed event will reset the timer after this completes
+        # Shorter greeting = faster TTS processing
         await agent.say(
-            "Hey there! I'm Pax, your guide to Mercola's at-home lab testing. "
-            "I can help you with ordering test kits, collecting your sample, or understanding your results. "
-            "What can I help you with today?",
+            "Hey there! I'm Pax, your Mercola Health Coach. "
+            "How can I help you today?",
             allow_interruptions=True
         )
         
@@ -608,13 +645,8 @@ async def entrypoint(ctx: JobContext):
             logger.info("Inactivity timeout - message already played, proceeding to disconnect")
             await asyncio.sleep(2)
         
-        # Disconnect from the room - this should trigger onDisconnected on client
-        logger.info("Disconnecting from room NOW")
-        try:
-            await ctx.room.disconnect()
-            logger.info("Room disconnected successfully")
-        except Exception as disconnect_error:
-            logger.warning(f"Disconnect error (may be expected): {disconnect_error}")
+        # IMPORTANT: Finalize tracking and evaluation BEFORE disconnect
+        # The disconnect causes the job to shut down, so we must do this first
         
         # End call tracking and generate summary
         try:
@@ -640,7 +672,7 @@ async def entrypoint(ctx: JobContext):
             logger.info(f"  - STT:  ${summary['total_stt_cost']:.6f}")
             logger.info(f"  - LLM:  ${summary['total_llm_cost']:.6f}")
             logger.info(f"  - TTS:  ${summary['total_tts_cost']:.6f}")
-            logger.info(f"  - VAPI: ${summary['total_vapi_cost']:.6f}")
+            logger.info(f"  - LiveKit: ${summary['total_livekit_cost']:.6f}")
             logger.info(f"Metrics saved to: {metrics_file}")
             logger.info("=" * 80 + "\n")
             
@@ -699,6 +731,14 @@ async def entrypoint(ctx: JobContext):
             
         except Exception as tracking_error:
             logger.error(f"Error finalizing cost tracking: {tracking_error}")
+        
+        # Disconnect from the room AFTER finalization - this triggers job shutdown
+        logger.info("Disconnecting from room NOW")
+        try:
+            await ctx.room.disconnect()
+            logger.info("Room disconnected successfully")
+        except Exception as disconnect_error:
+            logger.warning(f"Disconnect error (may be expected): {disconnect_error}")
 
 
     except Exception as e:

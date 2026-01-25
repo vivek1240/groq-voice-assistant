@@ -1,0 +1,50 @@
+{
+  "call_id": "call_voice_assistant_room_5691_535f4db2",
+  "timestamp": "2026-01-25T11:53:40.827770",
+  "duration_seconds": 58.20015263557434,
+  "total_cost": 0.02081480543926239,
+  "core_metrics": {
+    "user_sentiment": "positive",
+    "call_summary": "The user inquired about the different products offered by Mercola Health Coach, but didn't receive a response before ending the call. The assistant attempted to provide a farewell message and invitation for future inquiries. The call was brief and ended abruptly by the user.",
+    "query_resolved": false,
+    "escalation_required": false
+  },
+  "domain_metrics": {
+    "query_category": "general_inquiry",
+    "testing_phase": "pre_purchase"
+  },
+  "compliance_metrics": {
+    "medical_boundary_maintained": true,
+    "proper_disclaimer_given": null
+  },
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Oh, can you just tell me the  different products you are offering to people"
+    },
+    {
+      "role": "user",
+      "content": " Okay.  Good bye. Thank you so much. Good bye."
+    },
+    {
+      "role": "assistant",
+      "content": "You're welcome. It was nice assisting you. Have a great day and feel free to reach out if you have any more questions or need help with anything else. Goodbye!"
+    },
+    {
+      "role": "assistant",
+      "content": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+    }
+  ],
+  "additional_info": {
+    "total_turns": 4,
+    "avg_latency_ms": 5881.48558139801,
+    "evaluation_method": "llm",
+    "evaluation_version": "1.0"
+  },
+  "notes": "The user didn't receive a response to their question before ending the call, which may indicate a technical issue or a missed opportunity to provide information. However, the assistant's responses were polite and inviting.",
+  "flags": []
+}

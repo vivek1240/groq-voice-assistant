@@ -1,0 +1,54 @@
+{
+  "call_id": "call_voice_assistant_room_7500_775872c2",
+  "timestamp": "2026-01-25T16:00:19.284346",
+  "duration_seconds": 77.67790007591248,
+  "total_cost": 0.04334744334598541,
+  "core_metrics": {
+    "user_sentiment": "neutral",
+    "call_summary": "The user initiated a call with the Mercola Health Coach but didn't have any specific questions or concerns. The conversation was brief and ended with the user saying goodbye. The assistant provided a friendly and helpful tone throughout the interaction.",
+    "query_resolved": "true",
+    "escalation_required": "false"
+  },
+  "domain_metrics": {
+    "query_category": "general_inquiry",
+    "testing_phase": "unknown"
+  },
+  "compliance_metrics": {
+    "medical_boundary_maintained": "true",
+    "proper_disclaimer_given": "null"
+  },
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Hey, Max.  Sorry, Apex.  How are you?  How fine I am."
+    },
+    {
+      "role": "assistant",
+      "content": "No worries about the name mix-up. I'm Pax, actually, but I'm here to help you with any questions about Mercola's at-home lab testing. I'm doing great, thanks for asking. It sounds like you're feeling fine, which is terrific. What brings you here today? Are you looking to learn more about our test kits, or do you have questions about the testing process?"
+    },
+    {
+      "role": "user",
+      "content": " No question.  Goodbye."
+    },
+    {
+      "role": "assistant",
+      "content": "It was nice chatting with you, even if it was just a quick hello. If you do have any questions or need help with anything in the future, don't hesitate to reach out. Have a great day! Goodbye!"
+    },
+    {
+      "role": "assistant",
+      "content": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+    }
+  ],
+  "additional_info": {
+    "total_turns": 5,
+    "avg_latency_ms": 0.0,
+    "evaluation_method": "llm",
+    "evaluation_version": "1.0"
+  },
+  "notes": "The call was very short and didn't involve any specific topics related to health or testing. The user seemed to be just testing the system or saying hello.",
+  "flags": []
+}

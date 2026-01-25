@@ -117,6 +117,9 @@ class LabsCallEvaluation:
     medical_boundary_maintained: bool  # Agent avoided medical diagnosis/advice
     proper_disclaimer_given: Optional[bool]  # Disclaimers when discussing results (null if N/A)
     
+    # Conversation transcript
+    conversation_transcript: List[Dict[str, str]] = field(default_factory=list)  # Full conversation history
+    
     # Additional metadata
     total_turns: int = 0
     avg_latency_ms: float = 0.0
@@ -151,6 +154,7 @@ class LabsCallEvaluator:
         self.output_dir.mkdir(exist_ok=True, parents=True)
         
         self.csv_file = self.output_dir / "labs_call_evaluations.csv"
+        self.cost_csv_file = self.output_dir / "call_cost_metrics.csv"
         self.use_llm = use_llm
         
         # Initialize LLM if requested
@@ -158,6 +162,7 @@ class LabsCallEvaluator:
             self._initialize_llm()
         
         self._ensure_csv_header()
+        self._ensure_cost_csv_header()
     
     def _initialize_llm(self):
         """Initialize Groq LLM for intelligent evaluation"""
@@ -225,9 +230,39 @@ class LabsCallEvaluator:
                     'avg_latency_ms',
                     'evaluation_method',
                     'notes',
-                    'flags'
+                    'flags',
+                    # Conversation transcript
+                    'conversation_transcript'
                 ])
             logger.info(f"Created Labs evaluation CSV at {self.csv_file}")
+    
+    def _ensure_cost_csv_header(self):
+        """Ensure cost metrics CSV file exists with proper header"""
+        if not self.cost_csv_file.exists():
+            with open(self.cost_csv_file, 'w', newline='', encoding='utf-8') as f:
+                writer = csv.writer(f)
+                writer.writerow([
+                    'call_id',
+                    'timestamp',
+                    'duration_seconds',
+                    # Cost breakdown
+                    'total_cost',
+                    'total_stt_cost',
+                    'total_llm_cost',
+                    'total_tts_cost',
+                    'total_livekit_cost',
+                    # Usage metrics
+                    'total_stt_duration',
+                    'total_llm_input_tokens',
+                    'total_llm_output_tokens',
+                    'total_tts_characters',
+                    # Latency metrics (Time to First Token)
+                    'avg_eou_delay_ms',
+                    'avg_llm_ttft_ms',
+                    'avg_tts_ttfb_ms',
+                    'avg_ttft_ms'
+                ])
+            logger.info(f"Created cost metrics CSV at {self.cost_csv_file}")
     
     def evaluate_call(self, call_metrics: Dict[str, Any],
                      conversation_data: Optional[Dict[str, Any]] = None) -> LabsCallEvaluation:
@@ -336,6 +371,9 @@ Provide your evaluation in JSON format with these exact fields:
             
             logger.info("LLM evaluation successful")
             
+            # Extract conversation transcript from call_metrics or conversation_data
+            conversation_transcript = self._extract_conversation_transcript(call_metrics, conversation_data)
+            
             # Create evaluation from LLM results
             evaluation = LabsCallEvaluation(
                 call_id=call_id,
@@ -350,6 +388,7 @@ Provide your evaluation in JSON format with these exact fields:
                 testing_phase=TestingPhase(llm_result.get('testing_phase', 'unknown')),
                 medical_boundary_maintained=llm_result.get('medical_boundary_maintained', True),
                 proper_disclaimer_given=llm_result.get('proper_disclaimer_given'),
+                conversation_transcript=conversation_transcript,
                 total_turns=len(call_metrics.get('responses', [])),
                 avg_latency_ms=call_metrics.get('avg_end_to_end_latency_ms', 0.0),
                 evaluation_method="llm",
@@ -403,6 +442,9 @@ Provide your evaluation in JSON format with these exact fields:
         medical_boundary_maintained = True  # Conservative assumption
         proper_disclaimer_given = None  # Cannot determine without transcript
         
+        # Extract conversation transcript
+        conversation_transcript = self._extract_conversation_transcript(call_metrics, conversation_data)
+        
         evaluation = LabsCallEvaluation(
             call_id=call_id,
             timestamp=timestamp,
@@ -416,6 +458,7 @@ Provide your evaluation in JSON format with these exact fields:
             testing_phase=testing_phase,
             medical_boundary_maintained=medical_boundary_maintained,
             proper_disclaimer_given=proper_disclaimer_given,
+            conversation_transcript=conversation_transcript,
             total_turns=total_turns,
             avg_latency_ms=avg_latency,
             evaluation_method="heuristic",
@@ -611,6 +654,28 @@ Respond in JSON format with all fields."""
         
         return "Transcript extraction not available - using heuristic analysis"
     
+    def _extract_conversation_transcript(self, call_metrics: Dict, 
+                                         conversation_data: Optional[Dict]) -> List[Dict[str, str]]:
+        """
+        Extract the raw conversation transcript as a list of message objects.
+        
+        Returns a list of dicts with 'role' and 'content' keys.
+        """
+        # First check conversation_data (passed explicitly)
+        if conversation_data:
+            if 'messages' in conversation_data and conversation_data['messages']:
+                return conversation_data['messages']
+            if 'conversation_transcript' in conversation_data and conversation_data['conversation_transcript']:
+                return conversation_data['conversation_transcript']
+        
+        # Then check call_metrics directly
+        if call_metrics:
+            if 'conversation_transcript' in call_metrics and call_metrics['conversation_transcript']:
+                return call_metrics['conversation_transcript']
+        
+        # No transcript available
+        return []
+    
     def _parse_llm_response(self, response_text: str) -> Dict:
         """Parse LLM JSON response"""
         try:
@@ -624,14 +689,18 @@ Respond in JSON format with all fields."""
             logger.error(f"Failed to parse LLM response: {e}")
             return {}
     
-    def save_evaluation(self, evaluation: LabsCallEvaluation):
+    def save_evaluation(self, evaluation: LabsCallEvaluation, call_metrics: Optional[Dict[str, Any]] = None):
         """
         Save evaluation to CSV and JSON.
         
         Args:
             evaluation: LabsCallEvaluation object to save
+            call_metrics: Optional call metrics dict for cost data
         """
         try:
+            # Format conversation transcript as JSON string for CSV storage
+            transcript_json = json.dumps(evaluation.conversation_transcript) if evaluation.conversation_transcript else ''
+            
             # Save to CSV
             with open(self.csv_file, 'a', newline='', encoding='utf-8') as f:
                 writer = csv.writer(f)
@@ -656,7 +725,9 @@ Respond in JSON format with all fields."""
                     f"{evaluation.avg_latency_ms:.1f}",
                     evaluation.evaluation_method,
                     evaluation.notes,
-                    ';'.join(evaluation.flags) if evaluation.flags else ''
+                    ';'.join(evaluation.flags) if evaluation.flags else '',
+                    # Conversation transcript as JSON
+                    transcript_json
                 ])
             
             logger.info(f"Labs evaluation saved to CSV: {evaluation.call_id}")
@@ -683,6 +754,7 @@ Respond in JSON format with all fields."""
                         'medical_boundary_maintained': evaluation.medical_boundary_maintained,
                         'proper_disclaimer_given': evaluation.proper_disclaimer_given,
                     },
+                    'conversation_transcript': evaluation.conversation_transcript,
                     'additional_info': {
                         'total_turns': evaluation.total_turns,
                         'avg_latency_ms': evaluation.avg_latency_ms,
@@ -696,6 +768,10 @@ Respond in JSON format with all fields."""
             
             logger.info(f"Detailed Labs evaluation saved to JSON: {json_file}")
             
+            # Save cost metrics to separate CSV (if call_metrics provided)
+            if call_metrics:
+                self._save_cost_metrics(evaluation.call_id, evaluation.timestamp, call_metrics)
+            
             # Log compliance flags if any
             if evaluation.flags:
                 logger.warning(f"COMPLIANCE FLAGS for {evaluation.call_id}:")
@@ -705,6 +781,43 @@ Respond in JSON format with all fields."""
         except Exception as e:
             logger.error(f"Error saving Labs evaluation: {e}", exc_info=True)
             raise
+    
+    def _save_cost_metrics(self, call_id: str, timestamp: str, call_metrics: Dict[str, Any]):
+        """
+        Save cost metrics to separate CSV file.
+        
+        Args:
+            call_id: Call identifier
+            timestamp: Call timestamp
+            call_metrics: Call metrics dictionary with cost data
+        """
+        try:
+            with open(self.cost_csv_file, 'a', newline='', encoding='utf-8') as f:
+                writer = csv.writer(f)
+                writer.writerow([
+                    call_id,
+                    timestamp,
+                    f"{call_metrics.get('duration_seconds', 0.0):.2f}",
+                    # Cost breakdown
+                    f"{call_metrics.get('total_cost', 0.0):.6f}",
+                    f"{call_metrics.get('total_stt_cost', 0.0):.6f}",
+                    f"{call_metrics.get('total_llm_cost', 0.0):.6f}",
+                    f"{call_metrics.get('total_tts_cost', 0.0):.6f}",
+                    f"{call_metrics.get('total_livekit_cost', 0.0):.6f}",
+                    # Usage metrics
+                    f"{call_metrics.get('total_stt_duration', 0.0):.2f}",
+                    call_metrics.get('total_llm_input_tokens', 0),
+                    call_metrics.get('total_llm_output_tokens', 0),
+                    call_metrics.get('total_tts_characters', 0),
+                    # Latency metrics (Time to First Token)
+                    f"{call_metrics.get('avg_eou_delay_ms', 0.0):.2f}",
+                    f"{call_metrics.get('avg_llm_ttft_ms', 0.0):.2f}",
+                    f"{call_metrics.get('avg_tts_ttfb_ms', 0.0):.2f}",
+                    f"{call_metrics.get('avg_ttft_ms', 0.0):.2f}"
+                ])
+            logger.info(f"Cost metrics saved to CSV: {call_id}")
+        except Exception as e:
+            logger.error(f"Error saving cost metrics: {e}", exc_info=True)
     
     def evaluate_from_file(self, metrics_file: str) -> LabsCallEvaluation:
         """
@@ -721,7 +834,7 @@ Respond in JSON format with all fields."""
                 call_metrics = json.load(f)
             
             evaluation = self.evaluate_call(call_metrics)
-            self.save_evaluation(evaluation)
+            self.save_evaluation(evaluation, call_metrics)
             
             return evaluation
             
@@ -900,7 +1013,7 @@ def evaluate_labs_call_automatically(call_metrics: Dict[str, Any],
         evaluator = LabsCallEvaluator(use_llm=use_llm)
     
     evaluation = evaluator.evaluate_call(call_metrics, conversation_data)
-    evaluator.save_evaluation(evaluation)
+    evaluator.save_evaluation(evaluation, call_metrics)
     
     return evaluation
 

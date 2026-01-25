@@ -1,0 +1,223 @@
+{
+  "call_id": "call_voice_assistant_room_4608_5810b1f7",
+  "start_timestamp": "2026-01-25T16:24:58.812721",
+  "end_timestamp": "2026-01-25T16:26:31.840713",
+  "duration_seconds": 93.02799224853516,
+  "responses": [
+    {
+      "response_id": "call_voice_assistant_room_4608_5810b1f7_response_1",
+      "timestamp": "2026-01-25T16:25:00.587185",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 18,
+        "total_tokens": 2018,
+        "input_cost": 0.00118,
+        "output_cost": 1.422e-05,
+        "total_cost": 0.00119422,
+        "latency_ms": 0.0,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-25T16:25:00.588695",
+        "response_text": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 594.4037000008393,
+        "latency_ms": 6541.681289672852,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T16:25:07.132146"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 594.4037000008393,
+      "total_cost": 0.0055942200000000004
+    },
+    {
+      "response_id": "call_voice_assistant_room_4608_5810b1f7_response_4",
+      "timestamp": "2026-01-25T16:25:15.678408",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 12.0,
+        "cost": 0.004,
+        "latency_ms": 8251.351594924927,
+        "transcript_length": 149,
+        "timestamp": "2026-01-25T16:25:23.930751",
+        "transcript": " Hey, Pax.  Can you just give me an idea that when a person has ordered your kit  but didn't receive that, then in that case, how you would help him?"
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 150,
+        "total_tokens": 2150,
+        "input_cost": 0.00118,
+        "output_cost": 0.0001185,
+        "total_cost": 0.0012985,
+        "latency_ms": 0.0,
+        "ttft_ms": 298.75750000064727,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-25T16:25:22.321219",
+        "response_text": "If someone's kit hasn't arrived, I'd first ask them to check their order status in the app under their order history to see the tracking information. If that doesn't help, I'd offer to have our support team help track it down. Sometimes, kits can get delayed or lost in shipping, and we can send a replacement if needed. I'd say something like, \"Kit delivery usually takes 2 to 5 business days. If it's been longer than that, let's take a look at your order status together. If something seems off, our support team can help figure out what's going on. Would you like me to guide you through that\"? Does that make sense?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 72,
+        "cost": 0.001584,
+        "ttfb_ms": 666.4934000000358,
+        "latency_ms": 43022.41110801697,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T16:26:05.344639"
+      },
+      "eou_delay_ms": 926.2979000050109,
+      "ttft_ms": 1891.548800005694,
+      "total_cost": 0.0068825
+    },
+    {
+      "response_id": "call_voice_assistant_room_4608_5810b1f7_response_5",
+      "timestamp": "2026-01-25T16:26:06.299212",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 100,
+        "total_tokens": 2100,
+        "input_cost": 0.00118,
+        "output_cost": 7.900000000000001e-05,
+        "total_cost": 0.0012590000000000001,
+        "latency_ms": 42618.54648590088,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-25T16:26:06.550310",
+        "response_text": ""
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 620,
+        "cost": 0.01364,
+        "ttfb_ms": 714.4930000067689,
+        "latency_ms": 496.6421127319336,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T16:26:07.055971"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 714.4930000067689,
+      "total_cost": 0.014898999999999999
+    },
+    {
+      "response_id": "call_voice_assistant_room_4608_5810b1f7_response_6",
+      "timestamp": "2026-01-25T16:26:08.904784",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 2.8,
+        "cost": 0.0009333333333333332,
+        "latency_ms": 3994.4050312042236,
+        "transcript_length": 42,
+        "timestamp": "2026-01-25T16:26:12.899189",
+        "transcript": " No, thank you so much. Goodbye.  Goodbye."
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 28,
+        "total_tokens": 2028,
+        "input_cost": 0.00118,
+        "output_cost": 2.212e-05,
+        "total_cost": 0.00120212,
+        "latency_ms": 47337.86344528198,
+        "ttft_ms": 304.3630000029225,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-25T16:26:11.269627",
+        "response_text": "It was nice assisting you. Have a great day and feel free to reach out if you need anything else. Goodbye!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 407.0802000060212,
+        "latency_ms": 7914.703369140625,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T16:26:19.185330"
+      },
+      "eou_delay_ms": 821.091299992986,
+      "ttft_ms": 1532.5345000019297,
+      "total_cost": 0.006535453333333333
+    },
+    {
+      "response_id": "call_voice_assistant_room_4608_5810b1f7_response_7",
+      "timestamp": "2026-01-25T16:26:20.453057",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 24,
+        "total_tokens": 2024,
+        "input_cost": 0.00118,
+        "output_cost": 1.896e-05,
+        "total_cost": 0.00119896,
+        "latency_ms": 7552.488565444946,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-25T16:26:20.454189",
+        "response_text": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 106,
+        "cost": 0.002332,
+        "ttfb_ms": 375.2459999959683,
+        "latency_ms": 7293.362140655518,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-25T16:26:27.747551"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 375.2459999959683,
+      "total_cost": 0.0035309599999999997
+    }
+  ],
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Hey, Pax.  Can you just give me an idea that when a person has ordered your kit  but didn't receive that, then in that case, how you would help him?"
+    },
+    {
+      "role": "assistant",
+      "content": "If someone's kit hasn't arrived, I'd first ask them to check their order status in the app under their order history to see the tracking information. If that doesn't help, I'd offer to have our support team help track it down. Sometimes, kits can get delayed or lost in shipping, and we can send a replacement if needed. I'd say something like, \"Kit delivery usually takes 2 to 5 business days. If it's been longer than that, let's take a look at your order status together. If something seems off, our support team can help figure out what's going on. Would you like me to guide you through that\"? Does that make sense?"
+    },
+    {
+      "role": "user",
+      "content": " No, thank you so much. Goodbye.  Goodbye."
+    },
+    {
+      "role": "assistant",
+      "content": "It was nice assisting you. Have a great day and feel free to reach out if you need anything else. Goodbye!"
+    },
+    {
+      "role": "assistant",
+      "content": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+    }
+  ],
+  "total_stt_cost": 0.004933333333333333,
+  "total_llm_cost": 0.0061528,
+  "total_tts_cost": 0.026356,
+  "total_livekit_cost": 0.015504665374755859,
+  "total_cost": 0.052946798708089195,
+  "total_stt_duration": 14.8,
+  "total_llm_input_tokens": 10000,
+  "total_llm_output_tokens": 320,
+  "total_tts_characters": 1198,
+  "avg_eou_delay_ms": 873.6945999989985,
+  "avg_llm_ttft_ms": 301.5602500017849,
+  "avg_tts_ttfb_ms": 551.5432600019267,
+  "avg_ttft_ms": 1021.64520000224,
+  "livekit": {
+    "connection_duration_seconds": 93.02799224853516,
+    "cost": 0.015504665374755859,
+    "timestamp": "2026-01-25T16:26:31.840713"
+  }
+}

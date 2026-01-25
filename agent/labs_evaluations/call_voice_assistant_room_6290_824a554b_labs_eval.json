@@ -1,0 +1,70 @@
+{
+  "call_id": "call_voice_assistant_room_6290_824a554b",
+  "timestamp": "2026-01-25T11:49:59.205918",
+  "duration_seconds": 220.57916402816772,
+  "total_cost": 0.07670553400469463,
+  "core_metrics": {
+    "user_sentiment": "frustrated",
+    "call_summary": "The user asked about the Energy Panel and its biomarkers, and the assistant provided information on the various biomarkers included in the test. However, the user became frustrated and asked the assistant to stop, eventually ending the call. The assistant attempted to provide helpful information but missed the user's cue to stop.",
+    "query_resolved": false,
+    "escalation_required": true
+  },
+  "domain_metrics": {
+    "query_category": "test_kit_info",
+    "testing_phase": "pre_purchase"
+  },
+  "compliance_metrics": {
+    "medical_boundary_maintained": true,
+    "proper_disclaimer_given": true
+  },
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Hey, Pax.  Can you just let me go through your project?  the work you are going through."
+    },
+    {
+      "role": "assistant",
+      "content": "I'd be happy to walk you through the project. I'm a voice assistant for Mercola Health Coach, and my main goal is to guide users through the at-home lab testing process. This includes helping with ordering test kits, registering kits, collecting samples, and understanding lab results. I can assist with explaining what each test measures, troubleshooting common issues, and providing general wellness education. However, I always remind users that I'm not a healthcare provider, and if they have any serious health concerns or questions, they should consult with their doctor. Some of the specific topics I can help with include navigating the testing process, understanding biomarkers and reference ranges, and explaining the color-coding system used in the results. I can also provide tips on how to collect a good sample, what to expect during the testing process, and how to interpret the results. Would you like me to go through the testing process step by step, or is there a specific area you'd like me to focus on?"
+    },
+    {
+      "role": "user",
+      "content": " Yeah.  I'm here only.  So let me give you please let me know what are the different biomarkers are there in energy panel?"
+    },
+    {
+      "role": "assistant",
+      "content": "The Energy Panel is a comprehensive at-home blood test that measures around 20 different biomarkers. These biomarkers cover several areas, including heart and lipid health, blood sugar and metabolism, thyroid function, iron and energy, inflammation, vitamin levels, and kidney and liver function. Some of the specific biomarkers included in the Energy Panel are total cholesterol, HDL, LDL, triglycerides, glucose, hemoglobin A1C, insulin, TSH, free T3, free T4, thyroid antibodies, iron, ferritin, TIBC, transferrin saturation, high-sensitivity CRP, vitamin D, vitamin B12, BUN, creatinine, and bilirubin. Would you like me to explain what any of these biomarkers measure, or is there a specific area you're interested in learning more about?"
+    },
+    {
+      "role": "user",
+      "content": " Yeah, can you just tell me heart related biomarkers?"
+    },
+    {
+      "role": "user",
+      "content": " Okay.  I'll learn to stop.  Good luck."
+    },
+    {
+      "role": "user",
+      "content": " I told you stop.  Goodbye."
+    },
+    {
+      "role": "assistant",
+      "content": "It seems I missed your cue to stop. Goodbye, and feel free to reach out if you need any assistance in the future. Have a great day!"
+    },
+    {
+      "role": "assistant",
+      "content": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+    }
+  ],
+  "additional_info": {
+    "total_turns": 8,
+    "avg_latency_ms": 18277.433574199677,
+    "evaluation_method": "llm",
+    "evaluation_version": "1.0"
+  },
+  "notes": "The user's frustration seemed to stem from the assistant's failure to recognize their cue to stop providing information. The assistant did provide a disclaimer about not being a healthcare provider, which is a positive aspect of the call.",
+  "flags": []
+}

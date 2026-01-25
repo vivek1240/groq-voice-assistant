@@ -31,25 +31,34 @@
       }
     },
     "tts": {
+      "tts-1": {
+        "price_per_character": 0.000015,
+        "description": "OpenAI TTS-1 - $15 per 1M characters"
+      },
+      "tts-1-hd": {
+        "price_per_character": 0.00003,
+        "description": "OpenAI TTS-1-HD - $30 per 1M characters"
+      },
       "canopylabs/orpheus-v1-english": {
-        "price_per_character": 0.00001,
-        "description": "Orpheus v1 English - $0.01 per 1K characters"
+        "price_per_character": 0.000022,
+        "description": "Orpheus v1 English - $22 per 1M characters"
       },
       "playai-tts": {
         "price_per_character": 0.00001,
-        "description": "PlayAI TTS - $0.01 per 1K characters"
+        "description": "PlayAI TTS (DEPRECATED) - $0.01 per 1K characters"
       }
     },
-    "vapi": {
+    "livekit": {
       "platform_cost": {
-        "price_per_minute": 0.05,
-        "description": "LiveKit/VAPI platform cost - Per minute of connection"
+        "price_per_minute": 0.01,
+        "description": "LiveKit Cloud Agent Session - $0.01 per minute of agent connection"
       }
     }
   },
   "notes": {
     "groq_pricing": "Visit https://groq.com/pricing for latest Groq pricing",
-    "livekit_pricing": "Visit https://livekit.io/pricing for latest LiveKit pricing",
+    "livekit_pricing": "Visit https://livekit.io/pricing for latest LiveKit Cloud pricing",
+    "livekit_plans": "Build: 1000 min free, Ship: $50/mo + 5000 min, Scale: $500/mo + 50000 min",
     "update_frequency": "Update this file when pricing changes",
     "token_estimation": "1 token ≈ 0.75 words or 4 characters (approximate)"
   }
