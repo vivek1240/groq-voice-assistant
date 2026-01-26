@@ -1,0 +1,54 @@
+{
+  "call_id": "call_voice_assistant_room_2385_37caeba3",
+  "timestamp": "2026-01-26T19:03:58.059113",
+  "duration_seconds": 86.40630555152893,
+  "total_cost": 0.04184357092525482,
+  "core_metrics": {
+    "user_sentiment": "neutral",
+    "call_summary": "The user inquired about the Energy Panel test, and the assistant provided a brief overview of the test, including the biomarkers it measures. The user declined further information and ended the call. The assistant offered support for future questions or concerns.",
+    "query_resolved": true,
+    "escalation_required": false
+  },
+  "domain_metrics": {
+    "query_category": "test_kit_info",
+    "testing_phase": "pre_purchase"
+  },
+  "compliance_metrics": {
+    "medical_boundary_maintained": true,
+    "proper_disclaimer_given": null
+  },
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Hi, Pax.  Can you just help me to find out my energy panel?"
+    },
+    {
+      "role": "assistant",
+      "content": "The Energy Panel is one of our most popular tests. It's a comprehensive at-home blood test that measures around 20 different biomarkers, covering things like cholesterol, blood sugar, thyroid function, iron levels, and inflammation. This test gives you a really complete picture of what's affecting your energy and overall health. Would you like to know more about what specifically it measures or how to order one?"
+    },
+    {
+      "role": "user",
+      "content": " No, thank you.  That's it."
+    },
+    {
+      "role": "assistant",
+      "content": "If you're ready to learn more about your energy levels and overall wellness, the Energy Panel is a great place to start. If you have any questions or need help with the testing process later on, just let me know. Have a great day!"
+    },
+    {
+      "role": "assistant",
+      "content": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+    }
+  ],
+  "additional_info": {
+    "total_turns": 4,
+    "avg_latency_ms": 0.0,
+    "evaluation_method": "llm",
+    "evaluation_version": "1.0"
+  },
+  "notes": "The call was straightforward, and the assistant provided relevant information without crossing medical boundaries or requiring escalation.",
+  "flags": []
+}

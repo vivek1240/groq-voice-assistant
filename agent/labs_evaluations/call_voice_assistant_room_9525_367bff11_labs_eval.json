@@ -1,0 +1,54 @@
+{
+  "call_id": "call_voice_assistant_room_9525_367bff11",
+  "timestamp": "2026-01-26T19:38:03.102240",
+  "duration_seconds": 85.0121579170227,
+  "total_cost": 0.03627139298617045,
+  "core_metrics": {
+    "user_sentiment": "neutral",
+    "call_summary": "The user initially asked about the Mercola company, and the assistant provided a brief overview of the company's focus on at-home lab testing and wellness. The user then abruptly changed the subject and asked the assistant to say 'Hare Krishna', which the assistant did before ending the call. The user's query was not fully resolved as they did not receive any substantial information about the company or its products.",
+    "query_resolved": false,
+    "escalation_required": false
+  },
+  "domain_metrics": {
+    "query_category": "general_inquiry",
+    "testing_phase": "pre_purchase"
+  },
+  "compliance_metrics": {
+    "medical_boundary_maintained": true,
+    "proper_disclaimer_given": null
+  },
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Hey Becks!  How are you?  Can you give me just briefly some idea regarding  the Markula Company"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm actually Pax, not Becks. I'm doing well, thanks for asking. Regarding the Mercola company, we specialize in at-home lab testing, focusing on wellness and health insights. Our tests, like the Energy Panel, measure various biomarkers to give you a comprehensive picture of your health. Would you like to know more about our tests or the testing process?"
+    },
+    {
+      "role": "user",
+      "content": " No, just tell Hare Krishna to me."
+    },
+    {
+      "role": "assistant",
+      "content": "Hare Krishna!"
+    },
+    {
+      "role": "assistant",
+      "content": "I haven't heard from you in a while. I'll disconnect for now, but feel free to call back if you have any questions. Take care!"
+    }
+  ],
+  "additional_info": {
+    "total_turns": 4,
+    "avg_latency_ms": 0.0,
+    "evaluation_method": "llm",
+    "evaluation_version": "1.0"
+  },
+  "notes": "The user's request to say 'Hare Krishna' seemed unrelated to the initial inquiry about the Mercola company, and the call ended without the user receiving any meaningful information or resolution to their query.",
+  "flags": []
+}

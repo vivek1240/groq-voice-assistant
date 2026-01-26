@@ -1,0 +1,50 @@
+{
+  "call_id": "call_voice_assistant_room_8561_1de98a60",
+  "timestamp": "2026-01-26T19:59:52.353715",
+  "duration_seconds": 56.024210929870605,
+  "total_cost": 0.027603431821645104,
+  "core_metrics": {
+    "user_sentiment": "neutral",
+    "call_summary": "The user initiated a call with the Mercola Health Coach but didn't have any specific questions or concerns. The conversation was brief and ended with the user saying goodbye. The assistant provided a polite closing message.",
+    "query_resolved": "false",
+    "escalation_required": "false"
+  },
+  "domain_metrics": {
+    "query_category": "general_inquiry",
+    "testing_phase": "unknown"
+  },
+  "compliance_metrics": {
+    "medical_boundary_maintained": "true",
+    "proper_disclaimer_given": "null"
+  },
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Thank you. How are you?"
+    },
+    {
+      "role": "user",
+      "content": " No.  Thank you. Bye-bye."
+    },
+    {
+      "role": "assistant",
+      "content": "It was nice chatting with you, even if it was brief. If you have any questions or need help in the future, don't hesitate to reach out. Have a wonderful day! Bye for now!"
+    },
+    {
+      "role": "assistant",
+      "content": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+    }
+  ],
+  "additional_info": {
+    "total_turns": 4,
+    "avg_latency_ms": 0.0,
+    "evaluation_method": "llm",
+    "evaluation_version": "1.0"
+  },
+  "notes": "The call was very brief and didn't involve any specific topic or question related to the health coach services. The user didn't express any frustration or concern.",
+  "flags": []
+}

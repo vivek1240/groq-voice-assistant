@@ -1,0 +1,54 @@
+{
+  "call_id": "call_voice_assistant_room_7505_20d21bad",
+  "timestamp": "2026-01-26T18:39:13.932945",
+  "duration_seconds": 129.74337077140808,
+  "total_cost": 0.06083668179523469,
+  "core_metrics": {
+    "user_sentiment": "neutral",
+    "call_summary": "The user inquired about at-home lab testing and the Energy Panel test kit, which measures various biomarkers for energy levels and overall wellness. The assistant provided information about the test kit, but the user declined further details and ended the call. The user's question was partially addressed, but they did not proceed with ordering or learning more.",
+    "query_resolved": false,
+    "escalation_required": false
+  },
+  "domain_metrics": {
+    "query_category": "test_kit_info",
+    "testing_phase": "pre_purchase"
+  },
+  "compliance_metrics": {
+    "medical_boundary_maintained": true,
+    "proper_disclaimer_given": null
+  },
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "assistant",
+      "content": "You're interested in getting started with at-home lab testing. I can help you with that. We have a comprehensive test kit called the Energy Panel that measures various biomarkers to give you insights into your energy levels, metabolism, and overall wellness. Would you like to know more about what it measures and how the process works?"
+    },
+    {
+      "role": "user",
+      "content": " Yeah.  Sure.  Please go on."
+    },
+    {
+      "role": "assistant",
+      "content": "The Energy Panel is a blood test you can do at home, and it measures over 20 different biomarkers. These biomarkers cover things like cholesterol, blood sugar, thyroid function, iron levels, and inflammation. It's a pretty comprehensive test that gives you a clear picture of what's affecting your energy and overall health. The test is easy to do - it's just a simple finger prick to collect a few drops of blood, which you'll send back to our lab for analysis. Would you like to know more about the specific biomarkers it measures or how to get started with ordering a kit?"
+    },
+    {
+      "role": "user",
+      "content": " No thanks."
+    },
+    {
+      "role": "user",
+      "content": " Thank you. Goodbye."
+    }
+  ],
+  "additional_info": {
+    "total_turns": 6,
+    "avg_latency_ms": 0.0,
+    "evaluation_method": "llm",
+    "evaluation_version": "1.0"
+  },
+  "notes": "The call was brief and the user did not express any concerns or ask follow-up questions. The assistant maintained a neutral tone and provided general information about the test kit without crossing any medical boundaries.",
+  "flags": []
+}

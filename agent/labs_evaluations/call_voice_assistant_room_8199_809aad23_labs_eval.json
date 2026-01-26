@@ -1,0 +1,46 @@
+{
+  "call_id": "call_voice_assistant_room_8199_809aad23",
+  "timestamp": "2026-01-26T19:55:42.060806",
+  "duration_seconds": 60.303972244262695,
+  "total_cost": 0.025433858707377115,
+  "core_metrics": {
+    "user_sentiment": "neutral",
+    "call_summary": "The user initiated a call but didn't require any assistance, and the conversation was brief with no specific questions asked. The assistant responded politely and offered help if needed in the future. The call ended without any resolution or further discussion.",
+    "query_resolved": false,
+    "escalation_required": false
+  },
+  "domain_metrics": {
+    "query_category": "general_inquiry",
+    "testing_phase": "unknown"
+  },
+  "compliance_metrics": {
+    "medical_boundary_maintained": true,
+    "proper_disclaimer_given": null
+  },
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " No need of any help. \u041d\u0443 are youantly"
+    },
+    {
+      "role": "assistant",
+      "content": "It was nice chatting with you, even if it was just a quick hello. If you do have any questions or need help with anything related to at-home lab testing in the future, don't hesitate to reach out. Have a great day!"
+    },
+    {
+      "role": "assistant",
+      "content": "I haven't heard from you in a while. I'll disconnect for now, but feel free to call back if you have any questions. Take care!"
+    }
+  ],
+  "additional_info": {
+    "total_turns": 3,
+    "avg_latency_ms": 0.0,
+    "evaluation_method": "llm",
+    "evaluation_version": "1.0"
+  },
+  "notes": "The user's input seemed incomplete or unclear, but the assistant handled the situation professionally without needing to provide any medical advice or disclaimers.",
+  "flags": []
+}

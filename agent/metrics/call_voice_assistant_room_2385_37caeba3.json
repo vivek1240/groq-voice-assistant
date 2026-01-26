@@ -1,0 +1,192 @@
+{
+  "call_id": "call_voice_assistant_room_2385_37caeba3",
+  "start_timestamp": "2026-01-26T19:02:31.638141",
+  "end_timestamp": "2026-01-26T19:03:58.059113",
+  "duration_seconds": 86.40630555152893,
+  "responses": [
+    {
+      "response_id": "call_voice_assistant_room_2385_37caeba3_response_1",
+      "timestamp": "2026-01-26T19:02:35.032179",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 18,
+        "total_tokens": 2018,
+        "input_cost": 0.00118,
+        "output_cost": 1.422e-05,
+        "total_cost": 0.00119422,
+        "latency_ms": 0.0,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T19:02:35.038167",
+        "response_text": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 1036.918700003298,
+        "latency_ms": 6545.3338623046875,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T19:02:41.590960"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 1036.918700003298,
+      "total_cost": 0.0055942200000000004
+    },
+    {
+      "response_id": "call_voice_assistant_room_2385_37caeba3_response_3",
+      "timestamp": "2026-01-26T19:02:46.708212",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 5.2,
+        "cost": 0.0017333333333333335,
+        "latency_ms": 7644.198417663574,
+        "transcript_length": 60,
+        "timestamp": "2026-01-26T19:02:54.353420",
+        "transcript": " Hi, Pax.  Can you just help me to find out my energy panel?"
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 88,
+        "total_tokens": 2088,
+        "input_cost": 0.00118,
+        "output_cost": 6.952e-05,
+        "total_cost": 0.00124952,
+        "latency_ms": 0.0,
+        "ttft_ms": 345.8866000000853,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T19:02:52.815599",
+        "response_text": "The Energy Panel is one of our most popular tests. It's a comprehensive at-home blood test that measures around 20 different biomarkers, covering things like cholesterol, blood sugar, thyroid function, iron levels, and inflammation. This test gives you a really complete picture of what's affecting your energy and overall health. Would you like to know more about what specifically it measures or how to order one?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 72,
+        "cost": 0.001584,
+        "ttfb_ms": 906.5219000040088,
+        "latency_ms": 28150.113582611084,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T19:03:20.965713"
+      },
+      "eou_delay_ms": 1138.665200007381,
+      "ttft_ms": 2391.073700011475,
+      "total_cost": 0.004566853333333334
+    },
+    {
+      "response_id": "call_voice_assistant_room_2385_37caeba3_response_5",
+      "timestamp": "2026-01-26T19:03:27.380587",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 2.0,
+        "cost": 0.0006666666666666666,
+        "latency_ms": 4552.969455718994,
+        "transcript_length": 27,
+        "timestamp": "2026-01-26T19:03:31.935070",
+        "transcript": " No, thank you.  That's it."
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 58,
+        "total_tokens": 2058,
+        "input_cost": 0.00118,
+        "output_cost": 4.5820000000000005e-05,
+        "total_cost": 0.00122582,
+        "latency_ms": 36062.289237976074,
+        "ttft_ms": 345.2091000217479,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T19:03:30.419255",
+        "response_text": "If you're ready to learn more about your energy levels and overall wellness, the Energy Panel is a great place to start. If you have any questions or need help with the testing process later on, just let me know. Have a great day!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 415,
+        "cost": 0.00913,
+        "ttfb_ms": 552.0587000064552,
+        "latency_ms": 15106.907606124878,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T19:03:45.527632"
+      },
+      "eou_delay_ms": 932.8184000041801,
+      "ttft_ms": 1830.0862000323832,
+      "total_cost": 0.011022486666666666
+    },
+    {
+      "response_id": "call_voice_assistant_room_2385_37caeba3_response_6",
+      "timestamp": "2026-01-26T19:03:46.720644",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 24,
+        "total_tokens": 2024,
+        "input_cost": 0.00118,
+        "output_cost": 1.896e-05,
+        "total_cost": 0.00119896,
+        "latency_ms": 14784.574270248413,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T19:03:46.722159",
+        "response_text": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 230,
+        "cost": 0.00506,
+        "ttfb_ms": 437.84329999471083,
+        "latency_ms": 7277.353286743164,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T19:03:54.000542"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 437.84329999471083,
+      "total_cost": 0.00625896
+    }
+  ],
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Hi, Pax.  Can you just help me to find out my energy panel?"
+    },
+    {
+      "role": "assistant",
+      "content": "The Energy Panel is one of our most popular tests. It's a comprehensive at-home blood test that measures around 20 different biomarkers, covering things like cholesterol, blood sugar, thyroid function, iron levels, and inflammation. This test gives you a really complete picture of what's affecting your energy and overall health. Would you like to know more about what specifically it measures or how to order one?"
+    },
+    {
+      "role": "user",
+      "content": " No, thank you.  That's it."
+    },
+    {
+      "role": "assistant",
+      "content": "If you're ready to learn more about your energy levels and overall wellness, the Energy Panel is a great place to start. If you have any questions or need help with the testing process later on, just let me know. Have a great day!"
+    },
+    {
+      "role": "assistant",
+      "content": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+    }
+  ],
+  "total_stt_cost": 0.0024000000000000002,
+  "total_llm_cost": 0.0048685199999999994,
+  "total_tts_cost": 0.020173999999999997,
+  "total_livekit_cost": 0.014401050925254821,
+  "total_cost": 0.04184357092525482,
+  "total_stt_duration": 7.2,
+  "total_llm_input_tokens": 8000,
+  "total_llm_output_tokens": 188,
+  "total_tts_characters": 917,
+  "avg_eou_delay_ms": 1035.7418000057805,
+  "avg_llm_ttft_ms": 345.5478500109166,
+  "avg_tts_ttfb_ms": 733.3356500021182,
+  "avg_ttft_ms": 1423.9804750104668,
+  "livekit": {
+    "connection_duration_seconds": 86.40630555152893,
+    "cost": 0.014401050925254821,
+    "timestamp": "2026-01-26T19:03:58.059113"
+  }
+}

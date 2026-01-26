@@ -1,0 +1,42 @@
+{
+  "call_id": "call_voice_assistant_room_8060_af783ca4",
+  "timestamp": "2026-01-26T20:02:46.981978",
+  "duration_seconds": 55.9318790435791,
+  "total_cost": 0.02363929984059652,
+  "core_metrics": {
+    "user_sentiment": "neutral",
+    "call_summary": "The user did not engage with the assistant, and the conversation consisted of the assistant's introductory and closing messages. No specific question or topic was discussed. The call ended without any resolution or further interaction.",
+    "query_resolved": false,
+    "escalation_required": false
+  },
+  "domain_metrics": {
+    "query_category": "general_inquiry",
+    "testing_phase": "unknown"
+  },
+  "compliance_metrics": {
+    "medical_boundary_maintained": true,
+    "proper_disclaimer_given": null
+  },
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "assistant",
+      "content": "It was nice chatting with you, even if it was just for a moment. Feel free to come back and talk to me anytime you have questions about at-home lab testing or just need some guidance. Have a great day! Bye for now!"
+    },
+    {
+      "role": "assistant",
+      "content": "I haven't heard from you in a while. I'll disconnect for now, but feel free to call back if you have any questions. Take care!"
+    }
+  ],
+  "additional_info": {
+    "total_turns": 3,
+    "avg_latency_ms": 0.0,
+    "evaluation_method": "llm",
+    "evaluation_version": "1.0"
+  },
+  "notes": "The call was very short and did not involve any substantial conversation or inquiry from the user. The assistant's messages were generic and did not provide any specific information or guidance.",
+  "flags": []
+}

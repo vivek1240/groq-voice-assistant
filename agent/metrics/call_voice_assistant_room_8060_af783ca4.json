@@ -1,0 +1,133 @@
+{
+  "call_id": "call_voice_assistant_room_8060_af783ca4",
+  "start_timestamp": "2026-01-26T20:01:51.050099",
+  "end_timestamp": "2026-01-26T20:02:46.981978",
+  "duration_seconds": 55.9318790435791,
+  "responses": [
+    {
+      "response_id": "call_voice_assistant_room_8060_af783ca4_response_1",
+      "timestamp": "2026-01-26T20:01:53.084883",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 18,
+        "total_tokens": 2018,
+        "input_cost": 0.00118,
+        "output_cost": 1.422e-05,
+        "total_cost": 0.00119422,
+        "latency_ms": 0.0,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T20:01:53.085792",
+        "response_text": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 562.573799979873,
+        "latency_ms": 6554.248332977295,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T20:01:59.640040"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 562.573799979873,
+      "total_cost": 0.0055942200000000004
+    },
+    {
+      "response_id": "call_voice_assistant_room_8060_af783ca4_response_2",
+      "timestamp": "2026-01-26T20:02:01.574529",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 57,
+        "total_tokens": 2057,
+        "input_cost": 0.00118,
+        "output_cost": 4.503e-05,
+        "total_cost": 0.00122503,
+        "latency_ms": 0.0,
+        "ttft_ms": 376.74219999462366,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T20:02:04.994520",
+        "response_text": "It was nice chatting with you, even if it was just for a moment. Feel free to come back and talk to me anytime you have questions about at-home lab testing or just need some guidance. Have a great day! Bye for now!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 72,
+        "cost": 0.001584,
+        "ttfb_ms": 667.5509999913629,
+        "latency_ms": 14473.675012588501,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T20:02:19.468195"
+      },
+      "eou_delay_ms": 1394.6491999959107,
+      "ttft_ms": 2438.9423999818973,
+      "total_cost": 0.0028090299999999997
+    },
+    {
+      "response_id": "call_voice_assistant_room_8060_af783ca4_response_3",
+      "timestamp": "2026-01-26T20:02:35.835848",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 33,
+        "total_tokens": 2033,
+        "input_cost": 0.00118,
+        "output_cost": 2.6070000000000003e-05,
+        "total_cost": 0.00120607,
+        "latency_ms": 0.0,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T20:02:35.838252",
+        "response_text": "I haven't heard from you in a while. I'll disconnect for now, but feel free to call back if you have any questions. Take care!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 214,
+        "cost": 0.0047079999999999995,
+        "ttfb_ms": 393.73879999038763,
+        "latency_ms": 9984.266996383667,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T20:02:45.822519"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 393.73879999038763,
+      "total_cost": 0.00591407
+    }
+  ],
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "assistant",
+      "content": "It was nice chatting with you, even if it was just for a moment. Feel free to come back and talk to me anytime you have questions about at-home lab testing or just need some guidance. Have a great day! Bye for now!"
+    },
+    {
+      "role": "assistant",
+      "content": "I haven't heard from you in a while. I'll disconnect for now, but feel free to call back if you have any questions. Take care!"
+    }
+  ],
+  "total_stt_cost": 0.0,
+  "total_llm_cost": 0.00362532,
+  "total_tts_cost": 0.010692,
+  "total_livekit_cost": 0.009321979840596517,
+  "total_cost": 0.02363929984059652,
+  "total_stt_duration": 0.0,
+  "total_llm_input_tokens": 6000,
+  "total_llm_output_tokens": 108,
+  "total_tts_characters": 486,
+  "avg_eou_delay_ms": 1394.6491999959107,
+  "avg_llm_ttft_ms": 376.74219999462366,
+  "avg_tts_ttfb_ms": 541.2878666538745,
+  "avg_ttft_ms": 1131.7516666507192,
+  "livekit": {
+    "connection_duration_seconds": 55.9318790435791,
+    "cost": 0.009321979840596517,
+    "timestamp": "2026-01-26T20:02:46.981978"
+  }
+}

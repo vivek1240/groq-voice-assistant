@@ -1,0 +1,192 @@
+{
+  "call_id": "call_voice_assistant_room_9525_367bff11",
+  "start_timestamp": "2026-01-26T19:36:38.083802",
+  "end_timestamp": "2026-01-26T19:38:03.102240",
+  "duration_seconds": 85.0121579170227,
+  "responses": [
+    {
+      "response_id": "call_voice_assistant_room_9525_367bff11_response_1",
+      "timestamp": "2026-01-26T19:36:40.192304",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 18,
+        "total_tokens": 2018,
+        "input_cost": 0.00118,
+        "output_cost": 1.422e-05,
+        "total_cost": 0.00119422,
+        "latency_ms": 0.0,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T19:36:40.192304",
+        "response_text": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 545.2474000048824,
+        "latency_ms": 6534.28840637207,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T19:36:46.729343"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 545.2474000048824,
+      "total_cost": 0.0055942200000000004
+    },
+    {
+      "response_id": "call_voice_assistant_room_9525_367bff11_response_5",
+      "timestamp": "2026-01-26T19:36:54.972556",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 6.8,
+        "cost": 0.0022666666666666664,
+        "latency_ms": 5269.4666385650635,
+        "transcript_length": 96,
+        "timestamp": "2026-01-26T19:37:00.244951",
+        "transcript": " Hey Becks!  How are you?  Can you give me just briefly some idea regarding  the Markula Company"
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 77,
+        "total_tokens": 2077,
+        "input_cost": 0.00118,
+        "output_cost": 6.083e-05,
+        "total_cost": 0.00124083,
+        "latency_ms": 0.0,
+        "ttft_ms": 313.79119999473915,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T19:36:58.619744",
+        "response_text": "I'm actually Pax, not Becks. I'm doing well, thanks for asking. Regarding the Mercola company, we specialize in at-home lab testing, focusing on wellness and health insights. Our tests, like the Energy Panel, measure various biomarkers to give you a comprehensive picture of your health. Would you like to know more about our tests or the testing process?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 72,
+        "cost": 0.001584,
+        "ttfb_ms": 914.2156000016257,
+        "latency_ms": 26245.973825454712,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T19:37:24.867229"
+      },
+      "eou_delay_ms": 1083.1729999918025,
+      "ttft_ms": 2311.1797999881674,
+      "total_cost": 0.005091496666666666
+    },
+    {
+      "response_id": "call_voice_assistant_room_9525_367bff11_response_6",
+      "timestamp": "2026-01-26T19:37:27.048040",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 2.8,
+        "cost": 0.0009333333333333332,
+        "latency_ms": 7856.834888458252,
+        "transcript_length": 34,
+        "timestamp": "2026-01-26T19:37:34.904875",
+        "transcript": " No, just tell Hare Krishna to me."
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 2,
+        "total_tokens": 2002,
+        "input_cost": 0.00118,
+        "output_cost": 1.5800000000000001e-06,
+        "total_cost": 0.00118158,
+        "latency_ms": 33136.59071922302,
+        "ttft_ms": 481.44519998459145,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T19:37:33.382548",
+        "response_text": "Hare Krishna!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 355,
+        "cost": 0.00781,
+        "ttfb_ms": 1178.6212000006344,
+        "latency_ms": 2627.690315246582,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T19:37:36.010238"
+      },
+      "eou_delay_ms": 1386.0716999915894,
+      "ttft_ms": 3046.1380999768153,
+      "total_cost": 0.009924913333333334
+    },
+    {
+      "response_id": "call_voice_assistant_room_9525_367bff11_response_7",
+      "timestamp": "2026-01-26T19:37:52.260073",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 33,
+        "total_tokens": 2033,
+        "input_cost": 0.00118,
+        "output_cost": 2.6070000000000003e-05,
+        "total_cost": 0.00120607,
+        "latency_ms": 17355.19814491272,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T19:37:52.260073",
+        "response_text": "I haven't heard from you in a while. I'll disconnect for now, but feel free to call back if you have any questions. Take care!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 13,
+        "cost": 0.000286,
+        "ttfb_ms": 448.1699999887496,
+        "latency_ms": 9979.832887649536,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T19:38:02.243214"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 448.1699999887496,
+      "total_cost": 0.00149207
+    }
+  ],
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Hey Becks!  How are you?  Can you give me just briefly some idea regarding  the Markula Company"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm actually Pax, not Becks. I'm doing well, thanks for asking. Regarding the Mercola company, we specialize in at-home lab testing, focusing on wellness and health insights. Our tests, like the Energy Panel, measure various biomarkers to give you a comprehensive picture of your health. Would you like to know more about our tests or the testing process?"
+    },
+    {
+      "role": "user",
+      "content": " No, just tell Hare Krishna to me."
+    },
+    {
+      "role": "assistant",
+      "content": "Hare Krishna!"
+    },
+    {
+      "role": "assistant",
+      "content": "I haven't heard from you in a while. I'll disconnect for now, but feel free to call back if you have any questions. Take care!"
+    }
+  ],
+  "total_stt_cost": 0.0031999999999999997,
+  "total_llm_cost": 0.0048227,
+  "total_tts_cost": 0.01408,
+  "total_livekit_cost": 0.014168692986170451,
+  "total_cost": 0.03627139298617045,
+  "total_stt_duration": 9.6,
+  "total_llm_input_tokens": 8000,
+  "total_llm_output_tokens": 130,
+  "total_tts_characters": 640,
+  "avg_eou_delay_ms": 1234.622349991696,
+  "avg_llm_ttft_ms": 397.6181999896653,
+  "avg_tts_ttfb_ms": 771.563549998973,
+  "avg_ttft_ms": 1587.6838249896537,
+  "livekit": {
+    "connection_duration_seconds": 85.0121579170227,
+    "cost": 0.014168692986170451,
+    "timestamp": "2026-01-26T19:38:03.102240"
+  }
+}

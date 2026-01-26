@@ -1,0 +1,207 @@
+{
+  "call_id": "call_voice_assistant_room_7505_20d21bad",
+  "start_timestamp": "2026-01-26T18:37:04.184477",
+  "end_timestamp": "2026-01-26T18:39:13.932945",
+  "duration_seconds": 129.74337077140808,
+  "responses": [
+    {
+      "response_id": "call_voice_assistant_room_7505_20d21bad_response_1",
+      "timestamp": "2026-01-26T18:37:07.222563",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 18,
+        "total_tokens": 2018,
+        "input_cost": 0.00118,
+        "output_cost": 1.422e-05,
+        "total_cost": 0.00119422,
+        "latency_ms": 0.0,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T18:37:07.224579",
+        "response_text": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 563.8394999841694,
+        "latency_ms": 6555.850505828857,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T18:37:13.782613"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 563.8394999841694,
+      "total_cost": 0.0055942200000000004
+    },
+    {
+      "response_id": "call_voice_assistant_room_7505_20d21bad_response_2",
+      "timestamp": "2026-01-26T18:37:18.844854",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 74,
+        "total_tokens": 2074,
+        "input_cost": 0.00118,
+        "output_cost": 5.846e-05,
+        "total_cost": 0.00123846,
+        "latency_ms": 0.0,
+        "ttft_ms": 560.8299000014085,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T18:37:22.111873",
+        "response_text": "You're interested in getting started with at-home lab testing. I can help you with that. We have a comprehensive test kit called the Energy Panel that measures various biomarkers to give you insights into your energy levels, metabolism, and overall wellness. Would you like to know more about what it measures and how the process works?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 72,
+        "cost": 0.001584,
+        "ttfb_ms": 1129.6437999990303,
+        "latency_ms": 23261.908054351807,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T18:37:45.374770"
+      },
+      "eou_delay_ms": 1328.1243000237737,
+      "ttft_ms": 3018.5980000242125,
+      "total_cost": 0.0028224599999999997
+    },
+    {
+      "response_id": "call_voice_assistant_room_7505_20d21bad_response_5",
+      "timestamp": "2026-01-26T18:37:49.475939",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 2.0,
+        "cost": 0.0006666666666666666,
+        "latency_ms": 4748.17156791687,
+        "transcript_length": 28,
+        "timestamp": "2026-01-26T18:37:54.224110",
+        "transcript": " Yeah.  Sure.  Please go on."
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 136,
+        "total_tokens": 2136,
+        "input_cost": 0.00118,
+        "output_cost": 0.00010744000000000001,
+        "total_cost": 0.0012874400000000002,
+        "latency_ms": 0.0,
+        "ttft_ms": 505.5020999861881,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T18:37:52.562054",
+        "response_text": "The Energy Panel is a blood test you can do at home, and it measures over 20 different biomarkers. These biomarkers cover things like cholesterol, blood sugar, thyroid function, iron levels, and inflammation. It's a pretty comprehensive test that gives you a clear picture of what's affecting your energy and overall health. The test is easy to do - it's just a simple finger prick to collect a few drops of blood, which you'll send back to our lab for analysis. Would you like to know more about the specific biomarkers it measures or how to get started with ordering a kit?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 336,
+        "cost": 0.007392,
+        "ttfb_ms": 846.9317999843042,
+        "latency_ms": 40462.81862258911,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T18:38:33.025872"
+      },
+      "eou_delay_ms": 946.6615999990609,
+      "ttft_ms": 2299.095499969553,
+      "total_cost": 0.009346106666666666
+    },
+    {
+      "response_id": "call_voice_assistant_room_7505_20d21bad_response_7",
+      "timestamp": "2026-01-26T18:38:47.874919",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 575,
+        "cost": 0.01265,
+        "ttfb_ms": 665.3457999927923,
+        "latency_ms": 8588.281869888306,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T18:38:48.319069"
+      },
+      "eou_delay_ms": 920.9230999986175,
+      "ttft_ms": 1586.2688999914099,
+      "total_cost": 0.01265
+    },
+    {
+      "response_id": "call_voice_assistant_room_7505_20d21bad_response_9",
+      "timestamp": "2026-01-26T18:39:01.480555",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 460.6581999978516,
+        "latency_ms": 10552.802324295044,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T18:39:01.915640"
+      },
+      "eou_delay_ms": 1035.754900018219,
+      "ttft_ms": 1496.4131000160705,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_7505_20d21bad_response_11",
+      "timestamp": "2026-01-26T18:39:05.855613",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 934.1738999937661,
+        "latency_ms": 2178.8012981414795,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T18:39:06.306806"
+      },
+      "eou_delay_ms": 1034.924299980048,
+      "ttft_ms": 1969.0981999738142,
+      "total_cost": 0.0044
+    }
+  ],
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "assistant",
+      "content": "You're interested in getting started with at-home lab testing. I can help you with that. We have a comprehensive test kit called the Energy Panel that measures various biomarkers to give you insights into your energy levels, metabolism, and overall wellness. Would you like to know more about what it measures and how the process works?"
+    },
+    {
+      "role": "user",
+      "content": " Yeah.  Sure.  Please go on."
+    },
+    {
+      "role": "assistant",
+      "content": "The Energy Panel is a blood test you can do at home, and it measures over 20 different biomarkers. These biomarkers cover things like cholesterol, blood sugar, thyroid function, iron levels, and inflammation. It's a pretty comprehensive test that gives you a clear picture of what's affecting your energy and overall health. The test is easy to do - it's just a simple finger prick to collect a few drops of blood, which you'll send back to our lab for analysis. Would you like to know more about the specific biomarkers it measures or how to get started with ordering a kit?"
+    },
+    {
+      "role": "user",
+      "content": " No thanks."
+    },
+    {
+      "role": "user",
+      "content": " Thank you. Goodbye."
+    }
+  ],
+  "total_stt_cost": 0.0006666666666666666,
+  "total_llm_cost": 0.0037201200000000004,
+  "total_tts_cost": 0.034826,
+  "total_livekit_cost": 0.02162389512856801,
+  "total_cost": 0.06083668179523469,
+  "total_stt_duration": 2.0,
+  "total_llm_input_tokens": 6000,
+  "total_llm_output_tokens": 228,
+  "total_tts_characters": 1583,
+  "avg_eou_delay_ms": 1053.2776400039438,
+  "avg_llm_ttft_ms": 533.1659999937983,
+  "avg_tts_ttfb_ms": 766.7654999919856,
+  "avg_ttft_ms": 1822.2188666598715,
+  "livekit": {
+    "connection_duration_seconds": 129.74337077140808,
+    "cost": 0.02162389512856801,
+    "timestamp": "2026-01-26T18:39:13.932945"
+  }
+}

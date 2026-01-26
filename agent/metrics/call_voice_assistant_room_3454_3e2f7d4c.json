@@ -1,0 +1,167 @@
+{
+  "call_id": "call_voice_assistant_room_3454_3e2f7d4c",
+  "start_timestamp": "2026-01-26T20:07:43.311402",
+  "end_timestamp": "2026-01-26T20:09:23.089029",
+  "duration_seconds": 99.77762722969055,
+  "responses": [
+    {
+      "response_id": "call_voice_assistant_room_3454_3e2f7d4c_response_1",
+      "timestamp": "2026-01-26T20:07:45.300759",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 18,
+        "total_tokens": 2018,
+        "input_cost": 0.00118,
+        "output_cost": 1.422e-05,
+        "total_cost": 0.00119422,
+        "latency_ms": 0.0,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T20:07:45.303303",
+        "response_text": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 572.3079000017606,
+        "latency_ms": 6568.6609745025635,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T20:07:51.874006"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 572.3079000017606,
+      "total_cost": 0.0055942200000000004
+    },
+    {
+      "response_id": "call_voice_assistant_room_3454_3e2f7d4c_response_7",
+      "timestamp": "2026-01-26T20:08:51.317892",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 72,
+        "cost": 0.001584,
+        "ttfb_ms": 909.0022000018507,
+        "latency_ms": 44055.31859397888,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T20:08:51.769163"
+      },
+      "eou_delay_ms": 1085.4220000037458,
+      "ttft_ms": 1994.4242000055965,
+      "total_cost": 0.001584
+    },
+    {
+      "response_id": "call_voice_assistant_room_3454_3e2f7d4c_response_8",
+      "timestamp": "2026-01-26T20:08:53.297655",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 1.2,
+        "cost": 0.0004,
+        "latency_ms": 4406.174182891846,
+        "transcript_length": 21,
+        "timestamp": "2026-01-26T20:08:57.704847",
+        "transcript": " Thank you.  Goodbye."
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 48,
+        "total_tokens": 2048,
+        "input_cost": 0.00118,
+        "output_cost": 3.792e-05,
+        "total_cost": 0.0012179200000000002,
+        "latency_ms": 46735.1291179657,
+        "ttft_ms": 323.4204000036698,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T20:08:56.111280",
+        "response_text": "It was nice chatting with you. Feel better soon, and don't hesitate to reach out if you have any other questions or need further assistance with the Energy Panel or anything else. Take care, and goodbye!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 733.0977999954484,
+        "latency_ms": 14623.923540115356,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T20:09:10.736209"
+      },
+      "eou_delay_ms": 1073.1291999982204,
+      "ttft_ms": 2129.6473999973387,
+      "total_cost": 0.00601792
+    },
+    {
+      "response_id": "call_voice_assistant_room_3454_3e2f7d4c_response_9",
+      "timestamp": "2026-01-26T20:09:11.783510",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 24,
+        "total_tokens": 2024,
+        "input_cost": 0.00118,
+        "output_cost": 1.896e-05,
+        "total_cost": 0.00119896,
+        "latency_ms": 14078.663110733032,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T20:09:11.784522",
+        "response_text": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 203,
+        "cost": 0.0044659999999999995,
+        "ttfb_ms": 411.1902999866288,
+        "latency_ms": 7264.260292053223,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T20:09:19.048782"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 411.1902999866288,
+      "total_cost": 0.005664959999999999
+    }
+  ],
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Hi P honors  Can you just help me to find out?  how I can get cure  through this coffin cold.  by using your energy panel"
+    },
+    {
+      "role": "user",
+      "content": " Thank you.  Goodbye."
+    },
+    {
+      "role": "assistant",
+      "content": "It was nice chatting with you. Feel better soon, and don't hesitate to reach out if you have any other questions or need further assistance with the Energy Panel or anything else. Take care, and goodbye!"
+    },
+    {
+      "role": "assistant",
+      "content": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+    }
+  ],
+  "total_stt_cost": 0.0004,
+  "total_llm_cost": 0.0036111,
+  "total_tts_cost": 0.01485,
+  "total_livekit_cost": 0.01662960453828176,
+  "total_cost": 0.03549070453828176,
+  "total_stt_duration": 1.2,
+  "total_llm_input_tokens": 6000,
+  "total_llm_output_tokens": 90,
+  "total_tts_characters": 675,
+  "avg_eou_delay_ms": 1079.275600000983,
+  "avg_llm_ttft_ms": 323.4204000036698,
+  "avg_tts_ttfb_ms": 656.3995499964221,
+  "avg_ttft_ms": 1276.8924499978311,
+  "livekit": {
+    "connection_duration_seconds": 99.77762722969055,
+    "cost": 0.01662960453828176,
+    "timestamp": "2026-01-26T20:09:23.089029"
+  }
+}

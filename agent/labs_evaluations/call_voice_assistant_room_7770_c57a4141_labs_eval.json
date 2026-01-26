@@ -1,0 +1,46 @@
+{
+  "call_id": "call_voice_assistant_room_7770_c57a4141",
+  "timestamp": "2026-01-26T19:46:32.090758",
+  "duration_seconds": 100.44316935539246,
+  "total_cost": 0.05178426822589875,
+  "core_metrics": {
+    "user_sentiment": "confused",
+    "call_summary": "The user initiated the call but struggled to communicate effectively, using unclear language and phrases. The assistant attempted to refocus the conversation but ultimately ended the call due to lack of clear communication. The user's query was not resolved.",
+    "query_resolved": false,
+    "escalation_required": true
+  },
+  "domain_metrics": {
+    "query_category": "general_inquiry",
+    "testing_phase": "unknown"
+  },
+  "compliance_metrics": {
+    "medical_boundary_maintained": true,
+    "proper_disclaimer_given": null
+  },
+  "conversation_transcript": [
+    {
+      "role": "user",
+      "content": " No, I approve.  All right.  Next.  This means companies don't continue to be\u044b\u0432\u0430\u0442\u044cable Dous  Do  Hoy es cerimo  No, sorry, brother.  I worse I could say .  Matko kvinik Annaya  father boot\u0430\u043d\u043e"
+    },
+    {
+      "role": "user",
+      "content": " Loose problem, Neymar.  I know one of them.  I was looking at it, but I didn't do it.  How can everything do you tell us to study?  Okay, very well."
+    },
+    {
+      "role": "assistant",
+      "content": "It seems like we've had a bit of a rough start to our conversation. Let's take a deep breath and begin again, shall we? I'm Pax, your guide to Mercola's at-home lab testing. I can help you with ordering test kits, collecting your sample, or understanding your results. What can I help you with today?"
+    },
+    {
+      "role": "assistant",
+      "content": "I haven't heard from you in a while. I'll disconnect for now, but feel free to call back if you have any questions. Take care!"
+    }
+  ],
+  "additional_info": {
+    "total_turns": 6,
+    "avg_latency_ms": 0.0,
+    "evaluation_method": "llm",
+    "evaluation_version": "1.0"
+  },
+  "notes": "The user's language and phrases were unclear, making it difficult to determine their specific query or concern. The assistant's response was polite and attempted to refocus the conversation, but the call ultimately ended without resolution.",
+  "flags": []
+}

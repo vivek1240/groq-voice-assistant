@@ -1,0 +1,53 @@
+{
+  "call_id": "call_voice_assistant_room_3454_3e2f7d4c",
+  "timestamp": "2026-01-26T20:09:23.089029",
+  "duration_seconds": 99.77762722969055,
+  "total_cost": 0.03549070453828176,
+  "core_metrics": {
+    "user_sentiment": "anxious",
+    "call_summary": "The user asked for help with curing a cold using the Energy Panel, but the conversation was cut short as the user thanked the assistant and ended the call. The assistant provided a general farewell message and invitation to reach out for further assistance. The user's question was not fully addressed.",
+    "query_resolved": false,
+    "escalation_required": true
+  },
+  "domain_metrics": {
+    "query_category": "medical_advice_request",
+    "testing_phase": "unknown"
+  },
+  "compliance_metrics": {
+    "medical_boundary_maintained": false,
+    "proper_disclaimer_given": false
+  },
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Hi P honors  Can you just help me to find out?  how I can get cure  through this coffin cold.  by using your energy panel"
+    },
+    {
+      "role": "user",
+      "content": " Thank you.  Goodbye."
+    },
+    {
+      "role": "assistant",
+      "content": "It was nice chatting with you. Feel better soon, and don't hesitate to reach out if you have any other questions or need further assistance with the Energy Panel or anything else. Take care, and goodbye!"
+    },
+    {
+      "role": "assistant",
+      "content": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+    }
+  ],
+  "additional_info": {
+    "total_turns": 4,
+    "avg_latency_ms": 0.0,
+    "evaluation_method": "llm",
+    "evaluation_version": "1.0"
+  },
+  "notes": "The user's question about curing a cold using the Energy Panel falls outside the scope of the assistant's capabilities, and the assistant did not provide a clear disclaimer or maintain medical boundaries. The conversation was also very brief, and the user's anxiety and need for medical advice were not adequately addressed, requiring escalation to a human representative.",
+  "flags": [
+    "CRITICAL: Medical boundary violated - agent may have provided diagnosis/advice",
+    "IMPORTANT: Required disclaimer missing for health-related query"
+  ]
+}

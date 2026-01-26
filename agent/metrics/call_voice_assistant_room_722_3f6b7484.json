@@ -1,0 +1,192 @@
+{
+  "call_id": "call_voice_assistant_room_722_3f6b7484",
+  "start_timestamp": "2026-01-26T18:51:32.913622",
+  "end_timestamp": "2026-01-26T18:53:16.481772",
+  "duration_seconds": 103.55906629562378,
+  "responses": [
+    {
+      "response_id": "call_voice_assistant_room_722_3f6b7484_response_1",
+      "timestamp": "2026-01-26T18:51:35.445490",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 18,
+        "total_tokens": 2018,
+        "input_cost": 0.00118,
+        "output_cost": 1.422e-05,
+        "total_cost": 0.00119422,
+        "latency_ms": 0.0,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T18:51:35.446489",
+        "response_text": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 595.4711000085808,
+        "latency_ms": 7376.540660858154,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T18:51:42.824542"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 595.4711000085808,
+      "total_cost": 0.0055942200000000004
+    },
+    {
+      "response_id": "call_voice_assistant_room_722_3f6b7484_response_3",
+      "timestamp": "2026-01-26T18:51:45.829607",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 12.0,
+        "cost": 0.004,
+        "latency_ms": 15149.700403213501,
+        "transcript_length": 178,
+        "timestamp": "2026-01-26T18:52:00.980318",
+        "transcript": " Hey, Pax.  Can you just tell me about your product, what offerings you are doing at different people, different biomarkers that you have, how they are helping people in general?"
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 140,
+        "total_tokens": 2140,
+        "input_cost": 0.00118,
+        "output_cost": 0.00011060000000000002,
+        "total_cost": 0.0012906,
+        "latency_ms": 0.0,
+        "ttft_ms": 333.6348999873735,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T18:51:59.350452",
+        "response_text": "We offer the Energy Panel, a comprehensive at-home blood test that measures around 20 different biomarkers. These biomarkers cover a range of areas, including heart and lipid health, blood sugar and metabolism, thyroid function, iron and energy, inflammation, vitamin levels, and kidney and liver function. The test is designed to give you a complete picture of what's affecting your energy and overall health. By understanding these biomarkers, you can identify areas where you might need to make some adjustments to optimize your health. Would you like me to walk you through some of the specific biomarkers we measure and how they can impact your health?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 72,
+        "cost": 0.001584,
+        "ttfb_ms": 875.2568000054453,
+        "latency_ms": 45193.07017326355,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T18:52:44.544534"
+      },
+      "eou_delay_ms": 2296.603900002083,
+      "ttft_ms": 3505.4955999949016,
+      "total_cost": 0.0068746
+    },
+    {
+      "response_id": "call_voice_assistant_room_722_3f6b7484_response_5",
+      "timestamp": "2026-01-26T18:52:49.568698",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 3.2,
+        "cost": 0.0010666666666666667,
+        "latency_ms": 4343.839406967163,
+        "transcript_length": 40,
+        "timestamp": "2026-01-26T18:52:53.913536",
+        "transcript": " No, thank you. That is all.  That's it."
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 48,
+        "total_tokens": 2048,
+        "input_cost": 0.00118,
+        "output_cost": 3.792e-05,
+        "total_cost": 0.0012179200000000002,
+        "latency_ms": 51407.628774642944,
+        "ttft_ms": 412.28819999378175,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T18:52:52.388954",
+        "response_text": "It was a brief but nice chat. If you have any other questions or need help with anything in the future, don't hesitate to reach out. Have a great day and take care of your health!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 657,
+        "cost": 0.014454,
+        "ttfb_ms": 656.2213999859523,
+        "latency_ms": 11268.643140792847,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T18:53:03.659112"
+      },
+      "eou_delay_ms": 995.7395999808796,
+      "ttft_ms": 2064.2491999606136,
+      "total_cost": 0.016738586666666666
+    },
+    {
+      "response_id": "call_voice_assistant_room_722_3f6b7484_response_6",
+      "timestamp": "2026-01-26T18:53:05.139770",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 24,
+        "total_tokens": 2024,
+        "input_cost": 0.00118,
+        "output_cost": 1.896e-05,
+        "total_cost": 0.00119896,
+        "latency_ms": 11225.230932235718,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T18:53:05.141293",
+        "response_text": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 179,
+        "cost": 0.003938,
+        "ttfb_ms": 470.5506000027526,
+        "latency_ms": 7260.822772979736,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T18:53:12.403137"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 470.5506000027526,
+      "total_cost": 0.0051369599999999994
+    }
+  ],
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Hey, Pax.  Can you just tell me about your product, what offerings you are doing at different people, different biomarkers that you have, how they are helping people in general?"
+    },
+    {
+      "role": "assistant",
+      "content": "We offer the Energy Panel, a comprehensive at-home blood test that measures around 20 different biomarkers. These biomarkers cover a range of areas, including heart and lipid health, blood sugar and metabolism, thyroid function, iron and energy, inflammation, vitamin levels, and kidney and liver function. The test is designed to give you a complete picture of what's affecting your energy and overall health. By understanding these biomarkers, you can identify areas where you might need to make some adjustments to optimize your health. Would you like me to walk you through some of the specific biomarkers we measure and how they can impact your health?"
+    },
+    {
+      "role": "user",
+      "content": " No, thank you. That is all.  That's it."
+    },
+    {
+      "role": "assistant",
+      "content": "It was a brief but nice chat. If you have any other questions or need help with anything in the future, don't hesitate to reach out. Have a great day and take care of your health!"
+    },
+    {
+      "role": "assistant",
+      "content": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+    }
+  ],
+  "total_stt_cost": 0.005066666666666667,
+  "total_llm_cost": 0.0049017,
+  "total_tts_cost": 0.024376,
+  "total_livekit_cost": 0.017259844382603966,
+  "total_cost": 0.05160421104927063,
+  "total_stt_duration": 15.2,
+  "total_llm_input_tokens": 8000,
+  "total_llm_output_tokens": 230,
+  "total_tts_characters": 1108,
+  "avg_eou_delay_ms": 1646.1717499914812,
+  "avg_llm_ttft_ms": 372.9615499905776,
+  "avg_tts_ttfb_ms": 649.3749750006828,
+  "avg_ttft_ms": 1658.9416249917122,
+  "livekit": {
+    "connection_duration_seconds": 103.55906629562378,
+    "cost": 0.017259844382603966,
+    "timestamp": "2026-01-26T18:53:16.481772"
+  }
+}
