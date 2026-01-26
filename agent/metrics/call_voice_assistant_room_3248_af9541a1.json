@@ -1,0 +1,215 @@
+{
+  "call_id": "call_voice_assistant_room_3248_af9541a1",
+  "start_timestamp": "2026-01-26T13:52:18.278649",
+  "end_timestamp": "2026-01-26T13:55:56.948091",
+  "duration_seconds": 218.66944241523743,
+  "responses": [
+    {
+      "response_id": "call_voice_assistant_room_3248_af9541a1_response_1",
+      "timestamp": "2026-01-26T13:52:20.537665",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 18,
+        "total_tokens": 2018,
+        "input_cost": 0.00118,
+        "output_cost": 1.422e-05,
+        "total_cost": 0.00119422,
+        "latency_ms": 0.0,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T13:52:20.537665",
+        "response_text": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 551.457900000969,
+        "latency_ms": 6538.502931594849,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T13:52:27.077677"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 551.457900000969,
+      "total_cost": 0.0055942200000000004
+    },
+    {
+      "response_id": "call_voice_assistant_room_3248_af9541a1_response_6",
+      "timestamp": "2026-01-26T13:53:51.267059",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 72,
+        "cost": 0.001584,
+        "ttfb_ms": 763.2366000034381,
+        "latency_ms": 69203.26018333435,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T13:53:51.717318"
+      },
+      "eou_delay_ms": 949.3337000021711,
+      "ttft_ms": 1712.5703000056092,
+      "total_cost": 0.001584
+    },
+    {
+      "response_id": "call_voice_assistant_room_3248_af9541a1_response_8",
+      "timestamp": "2026-01-26T13:54:00.966312",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 12.4,
+        "cost": 0.0041333333333333335,
+        "latency_ms": 7654.579639434814,
+        "transcript_length": 192,
+        "timestamp": "2026-01-26T13:54:08.622094",
+        "transcript": " Yeah.  Yeah, I have a question regarding how people who have no knowledge regarding the testing or biomarkers  How would they understand the results that are coming through that energy panel?"
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 204,
+        "total_tokens": 2204,
+        "input_cost": 0.00118,
+        "output_cost": 0.00016115999999999998,
+        "total_cost": 0.00134116,
+        "latency_ms": 82830.05213737488,
+        "ttft_ms": 324.77549999020994,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T13:54:06.969405",
+        "response_text": "That's a great question. We've designed the Energy Panel to be user-friendly, even for those with no prior knowledge of biomarkers or lab testing. The results are presented in a clear and easy-to-understand format, with a color-coding system to help you quickly see where you're doing well and where there might be room for improvement. Green indicates that your biomarker is within the optimal range, yellow means it's slightly outside the optimal range, and red indicates that it's significantly outside the normal range. We also provide explanations for each biomarker, so you can understand what it measures and why it's important for your health. Additionally, I'm here to help you understand your results and answer any questions you may have. I can explain the biomarkers, the reference ranges, and what the results mean in simple terms, so you can feel confident and empowered to take control of your health. Does that make sense?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 689.2512000049464,
+        "latency_ms": 64064.38612937927,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T13:55:11.034791"
+      },
+      "eou_delay_ms": 1067.0866000000387,
+      "ttft_ms": 2081.113299995195,
+      "total_cost": 0.009874493333333335
+    },
+    {
+      "response_id": "call_voice_assistant_room_3248_af9541a1_response_10",
+      "timestamp": "2026-01-26T13:55:18.817223",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 938,
+        "cost": 0.020635999999999998,
+        "ttfb_ms": 411.19159999652766,
+        "latency_ms": 5895.821571350098,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T13:55:19.268449"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 411.19159999652766,
+      "total_cost": 0.020635999999999998
+    },
+    {
+      "response_id": "call_voice_assistant_room_3248_af9541a1_response_12",
+      "timestamp": "2026-01-26T13:55:25.217152",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 4.4,
+        "cost": 0.0014666666666666667,
+        "latency_ms": 4076.7524242401123,
+        "transcript_length": 70,
+        "timestamp": "2026-01-26T13:55:29.294856",
+        "transcript": " No, no, no, no need to disconnect.  while getting disconnected.  Huh?"
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 50,
+        "total_tokens": 2050,
+        "input_cost": 0.00118,
+        "output_cost": 3.9500000000000005e-05,
+        "total_cost": 0.0012195,
+        "latency_ms": 79066.75410270691,
+        "ttft_ms": 519.8319000191987,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T13:55:27.689851",
+        "response_text": "No need to disconnect then. Let's continue our conversation. We were discussing how to understand the results of the Energy Panel. Would you like me to elaborate on any specific aspect of the results or the testing process?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 840.477199992165,
+        "latency_ms": 16464.828729629517,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T13:55:44.154680"
+      },
+      "eou_delay_ms": 919.3031000031624,
+      "ttft_ms": 2279.612200014526,
+      "total_cost": 0.007086166666666667
+    },
+    {
+      "response_id": "call_voice_assistant_room_3248_af9541a1_response_14",
+      "timestamp": "2026-01-26T13:55:46.215489",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 223,
+        "cost": 0.004906,
+        "ttfb_ms": 668.790199997602,
+        "latency_ms": 1059.2384338378906,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T13:55:46.659315"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 668.790199997602,
+      "total_cost": 0.004906
+    }
+  ],
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Yeah.  How are you Pax?  Can you just let me know about your  profession or the products that you are offering to people"
+    },
+    {
+      "role": "user",
+      "content": " Yeah.  Yeah, I have a question regarding how people who have no knowledge regarding the testing or biomarkers  How would they understand the results that are coming through that energy panel?"
+    },
+    {
+      "role": "assistant",
+      "content": "That's a great question. We've designed the Energy Panel to be user-friendly, even for those with no prior knowledge of biomarkers or lab testing. The results are presented in a clear and easy-to-understand format, with a color-coding system to help you quickly see where you're doing well and where there might be room for improvement. Green indicates that your biomarker is within the optimal range, yellow means it's slightly outside the optimal range, and red indicates that it's significantly outside the normal range. We also provide explanations for each biomarker, so you can understand what it measures and why it's important for your health. Additionally, I'm here to help you understand your results and answer any questions you may have. I can explain the biomarkers, the reference ranges, and what the results mean in simple terms, so you can feel confident and empowered to take control of your health. Does that make sense?"
+    },
+    {
+      "role": "user",
+      "content": " No, no, no, no need to disconnect.  while getting disconnected.  Huh?"
+    },
+    {
+      "role": "assistant",
+      "content": "No need to disconnect then. Let's continue our conversation. We were discussing how to understand the results of the Energy Panel. Would you like me to elaborate on any specific aspect of the results or the testing process?"
+    }
+  ],
+  "total_stt_cost": 0.0056,
+  "total_llm_cost": 0.0037548800000000004,
+  "total_tts_cost": 0.040326,
+  "total_livekit_cost": 0.03644490706920624,
+  "total_cost": 0.08612578706920623,
+  "total_stt_duration": 16.8,
+  "total_llm_input_tokens": 6000,
+  "total_llm_output_tokens": 272,
+  "total_tts_characters": 1833,
+  "avg_eou_delay_ms": 978.5744666684574,
+  "avg_llm_ttft_ms": 422.3037000047043,
+  "avg_tts_ttfb_ms": 654.0674499992747,
+  "avg_ttft_ms": 1284.1225833350716,
+  "livekit": {
+    "connection_duration_seconds": 218.66944241523743,
+    "cost": 0.03644490706920624,
+    "timestamp": "2026-01-26T13:55:56.948091"
+  }
+}

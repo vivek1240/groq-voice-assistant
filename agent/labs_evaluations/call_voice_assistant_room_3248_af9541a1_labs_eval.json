@@ -1,0 +1,54 @@
+{
+  "call_id": "call_voice_assistant_room_3248_af9541a1",
+  "timestamp": "2026-01-26T13:55:56.948091",
+  "duration_seconds": 218.66944241523743,
+  "total_cost": 0.08612578706920623,
+  "core_metrics": {
+    "user_sentiment": "neutral",
+    "call_summary": "The user inquired about the profession and products offered by Mercola Health Coach, and then asked how individuals with no prior knowledge of biomarkers or lab testing could understand the results of the Energy Panel. The assistant explained the user-friendly format of the results and offered to help answer any questions. The conversation was mostly informational, with some minor technical issues due to disconnection concerns.",
+    "query_resolved": true,
+    "escalation_required": false
+  },
+  "domain_metrics": {
+    "query_category": "test_kit_info",
+    "testing_phase": "pre_purchase"
+  },
+  "compliance_metrics": {
+    "medical_boundary_maintained": true,
+    "proper_disclaimer_given": null
+  },
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Yeah.  How are you Pax?  Can you just let me know about your  profession or the products that you are offering to people"
+    },
+    {
+      "role": "user",
+      "content": " Yeah.  Yeah, I have a question regarding how people who have no knowledge regarding the testing or biomarkers  How would they understand the results that are coming through that energy panel?"
+    },
+    {
+      "role": "assistant",
+      "content": "That's a great question. We've designed the Energy Panel to be user-friendly, even for those with no prior knowledge of biomarkers or lab testing. The results are presented in a clear and easy-to-understand format, with a color-coding system to help you quickly see where you're doing well and where there might be room for improvement. Green indicates that your biomarker is within the optimal range, yellow means it's slightly outside the optimal range, and red indicates that it's significantly outside the normal range. We also provide explanations for each biomarker, so you can understand what it measures and why it's important for your health. Additionally, I'm here to help you understand your results and answer any questions you may have. I can explain the biomarkers, the reference ranges, and what the results mean in simple terms, so you can feel confident and empowered to take control of your health. Does that make sense?"
+    },
+    {
+      "role": "user",
+      "content": " No, no, no, no need to disconnect.  while getting disconnected.  Huh?"
+    },
+    {
+      "role": "assistant",
+      "content": "No need to disconnect then. Let's continue our conversation. We were discussing how to understand the results of the Energy Panel. Would you like me to elaborate on any specific aspect of the results or the testing process?"
+    }
+  ],
+  "additional_info": {
+    "total_turns": 6,
+    "avg_latency_ms": 0.0,
+    "evaluation_method": "llm",
+    "evaluation_version": "1.0"
+  },
+  "notes": "The assistant provided clear explanations and maintained a neutral tone, but did not provide any disclaimers as they were not necessary for this specific conversation. The user's sentiment remained neutral throughout the call, with no signs of frustration or anxiety.",
+  "flags": []
+}

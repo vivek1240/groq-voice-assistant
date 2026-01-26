@@ -1,0 +1,192 @@
+{
+  "call_id": "call_voice_assistant_room_3825_b823b35d",
+  "start_timestamp": "2026-01-26T15:30:28.191750",
+  "end_timestamp": "2026-01-26T15:32:10.889255",
+  "duration_seconds": 102.69750499725342,
+  "responses": [
+    {
+      "response_id": "call_voice_assistant_room_3825_b823b35d_response_1",
+      "timestamp": "2026-01-26T15:30:30.006847",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 18,
+        "total_tokens": 2018,
+        "input_cost": 0.00118,
+        "output_cost": 1.422e-05,
+        "total_cost": 0.00119422,
+        "latency_ms": 0.0,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T15:30:30.007930",
+        "response_text": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 560.9681000059936,
+        "latency_ms": 6550.982475280762,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T15:30:36.560926"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 560.9681000059936,
+      "total_cost": 0.0055942200000000004
+    },
+    {
+      "response_id": "call_voice_assistant_room_3825_b823b35d_response_2",
+      "timestamp": "2026-01-26T15:30:39.411316",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 2.4,
+        "cost": 0.0008,
+        "latency_ms": 6167.892932891846,
+        "transcript_length": 25,
+        "timestamp": "2026-01-26T15:30:45.579209",
+        "transcript": " I'm fine. Or so out you."
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 92,
+        "total_tokens": 2092,
+        "input_cost": 0.00118,
+        "output_cost": 7.268e-05,
+        "total_cost": 0.0012526800000000002,
+        "latency_ms": 0.0,
+        "ttft_ms": 520.7662000029813,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T15:30:43.991849",
+        "response_text": "It can be a bit unclear how you're doing when we just start chatting. If you're feeling unsure about your health or have questions about our at-home lab testing, I'm here to listen and help in any way I can. We offer a comprehensive test called the Energy Panel that measures various biomarkers to give you insights into your overall wellness. Would you like to know more about it?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 72,
+        "cost": 0.001584,
+        "ttfb_ms": 487.1543000044767,
+        "latency_ms": 24237.690448760986,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T15:31:08.229539"
+      },
+      "eou_delay_ms": 1606.425500009209,
+      "ttft_ms": 2614.346000016667,
+      "total_cost": 0.00363668
+    },
+    {
+      "response_id": "call_voice_assistant_room_3825_b823b35d_response_4",
+      "timestamp": "2026-01-26T15:31:11.373688",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 0.8,
+        "cost": 0.0002666666666666667,
+        "latency_ms": 3994.2245483398438,
+        "transcript_length": 19,
+        "timestamp": "2026-01-26T15:31:15.367913",
+        "transcript": " Yeah.  Definitely."
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 90,
+        "total_tokens": 2090,
+        "input_cost": 0.00118,
+        "output_cost": 7.11e-05,
+        "total_cost": 0.0012511,
+        "latency_ms": 28269.991636276245,
+        "ttft_ms": 285.4718999878969,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T15:31:13.850707",
+        "response_text": "The Energy Panel is a great place to start. It's a simple, at-home blood test that measures around 20 different biomarkers, covering things like cholesterol, blood sugar, thyroid function, iron levels, and inflammation. This test can give you a really complete picture of what's affecting your energy and overall health. Would you like to know more about what specifically it measures, or maybe how the testing process works?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 381,
+        "cost": 0.008382,
+        "ttfb_ms": 853.0991000006907,
+        "latency_ms": 29522.141456604004,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T15:31:43.373908"
+      },
+      "eou_delay_ms": 927.1886000060476,
+      "ttft_ms": 2065.759599994635,
+      "total_cost": 0.009899766666666667
+    },
+    {
+      "response_id": "call_voice_assistant_room_3825_b823b35d_response_5",
+      "timestamp": "2026-01-26T15:31:59.667925",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 33,
+        "total_tokens": 2033,
+        "input_cost": 0.00118,
+        "output_cost": 2.6070000000000003e-05,
+        "total_cost": 0.00120607,
+        "latency_ms": 44299.01146888733,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T15:31:59.668929",
+        "response_text": "I haven't heard from you in a while. I'll disconnect for now, but feel free to call back if you have any questions. Take care!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 425,
+        "cost": 0.009349999999999999,
+        "ttfb_ms": 383.8924000156112,
+        "latency_ms": 9982.224225997925,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T15:32:09.651153"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 383.8924000156112,
+      "total_cost": 0.010556069999999999
+    }
+  ],
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " I'm fine. Or so out you."
+    },
+    {
+      "role": "assistant",
+      "content": "It can be a bit unclear how you're doing when we just start chatting. If you're feeling unsure about your health or have questions about our at-home lab testing, I'm here to listen and help in any way I can. We offer a comprehensive test called the Energy Panel that measures various biomarkers to give you insights into your overall wellness. Would you like to know more about it?"
+    },
+    {
+      "role": "user",
+      "content": " Yeah.  Definitely."
+    },
+    {
+      "role": "assistant",
+      "content": "The Energy Panel is a great place to start. It's a simple, at-home blood test that measures around 20 different biomarkers, covering things like cholesterol, blood sugar, thyroid function, iron levels, and inflammation. This test can give you a really complete picture of what's affecting your energy and overall health. Would you like to know more about what specifically it measures, or maybe how the testing process works?"
+    },
+    {
+      "role": "assistant",
+      "content": "I haven't heard from you in a while. I'll disconnect for now, but feel free to call back if you have any questions. Take care!"
+    }
+  ],
+  "total_stt_cost": 0.0010666666666666667,
+  "total_llm_cost": 0.00490407,
+  "total_tts_cost": 0.023716,
+  "total_livekit_cost": 0.01711625083287557,
+  "total_cost": 0.04680298749954224,
+  "total_stt_duration": 3.2,
+  "total_llm_input_tokens": 8000,
+  "total_llm_output_tokens": 233,
+  "total_tts_characters": 1078,
+  "avg_eou_delay_ms": 1266.8070500076283,
+  "avg_llm_ttft_ms": 403.1190499954391,
+  "avg_tts_ttfb_ms": 571.278475006693,
+  "avg_ttft_ms": 1406.2415250082267,
+  "livekit": {
+    "connection_duration_seconds": 102.69750499725342,
+    "cost": 0.01711625083287557,
+    "timestamp": "2026-01-26T15:32:10.889255"
+  }
+}

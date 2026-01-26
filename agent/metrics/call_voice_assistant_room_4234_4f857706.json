@@ -1,0 +1,98 @@
+{
+  "call_id": "call_voice_assistant_room_4234_4f857706",
+  "start_timestamp": "2026-01-26T16:36:22.466293",
+  "end_timestamp": "2026-01-26T16:36:58.357238",
+  "duration_seconds": 35.89094519615173,
+  "responses": [
+    {
+      "response_id": "call_voice_assistant_room_4234_4f857706_response_1",
+      "timestamp": "2026-01-26T16:36:24.549599",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 18,
+        "total_tokens": 2018,
+        "input_cost": 0.00118,
+        "output_cost": 1.422e-05,
+        "total_cost": 0.00119422,
+        "latency_ms": 0.0,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T16:36:24.549599",
+        "response_text": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 569.5296000048984,
+        "latency_ms": 6538.6810302734375,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:36:31.089282"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 569.5296000048984,
+      "total_cost": 0.0055942200000000004
+    },
+    {
+      "response_id": "call_voice_assistant_room_4234_4f857706_response_2",
+      "timestamp": "2026-01-26T16:36:47.180657",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 33,
+        "total_tokens": 2033,
+        "input_cost": 0.00118,
+        "output_cost": 2.6070000000000003e-05,
+        "total_cost": 0.00120607,
+        "latency_ms": 0.0,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T16:36:47.182665",
+        "response_text": "I haven't heard from you in a while. I'll disconnect for now, but feel free to call back if you have any questions. Take care!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 72,
+        "cost": 0.001584,
+        "ttfb_ms": 387.83500000135973,
+        "latency_ms": 9986.67311668396,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:36:57.169339"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 387.83500000135973,
+      "total_cost": 0.00279007
+    }
+  ],
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "assistant",
+      "content": "I haven't heard from you in a while. I'll disconnect for now, but feel free to call back if you have any questions. Take care!"
+    }
+  ],
+  "total_stt_cost": 0.0,
+  "total_llm_cost": 0.0024002900000000002,
+  "total_tts_cost": 0.005984,
+  "total_livekit_cost": 0.005981824199358622,
+  "total_cost": 0.014366114199358621,
+  "total_stt_duration": 0.0,
+  "total_llm_input_tokens": 4000,
+  "total_llm_output_tokens": 51,
+  "total_tts_characters": 272,
+  "avg_eou_delay_ms": 0.0,
+  "avg_llm_ttft_ms": 0.0,
+  "avg_tts_ttfb_ms": 478.68230000312906,
+  "avg_ttft_ms": 478.68230000312906,
+  "livekit": {
+    "connection_duration_seconds": 35.89094519615173,
+    "cost": 0.005981824199358622,
+    "timestamp": "2026-01-26T16:36:58.357238"
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "call_id": "call_voice_assistant_room_326_9f0270a3",
+  "start_timestamp": "2026-01-26T16:43:39.333880",
+  "end_timestamp": "2026-01-26T16:44:21.853126",
+  "duration_seconds": 42.519245624542236,
+  "responses": [
+    {
+      "response_id": "call_voice_assistant_room_326_9f0270a3_response_1",
+      "timestamp": "2026-01-26T16:43:41.432591",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 18,
+        "total_tokens": 2018,
+        "input_cost": 0.00118,
+        "output_cost": 1.422e-05,
+        "total_cost": 0.00119422,
+        "latency_ms": 0.0,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T16:43:41.433591",
+        "response_text": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 565.9311000199523,
+        "latency_ms": 6549.461841583252,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:43:47.983053"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 565.9311000199523,
+      "total_cost": 0.0055942200000000004
+    },
+    {
+      "response_id": "call_voice_assistant_room_326_9f0270a3_response_2",
+      "timestamp": "2026-01-26T16:43:52.719173",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 1.2,
+        "cost": 0.0004,
+        "latency_ms": 5587.348699569702,
+        "transcript_length": 20,
+        "timestamp": "2026-01-26T16:43:58.308035",
+        "transcript": " Thank you. Goodbye."
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 46,
+        "total_tokens": 2046,
+        "input_cost": 0.00118,
+        "output_cost": 3.634e-05,
+        "total_cost": 0.00121634,
+        "latency_ms": 0.0,
+        "ttft_ms": 393.9012000046205,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T16:43:56.787702",
+        "response_text": "It was nice chatting with you, even if it was brief. If you have any questions about at-home lab testing or need help in the future, don't hesitate to reach out. Have a great day!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 72,
+        "cost": 0.001584,
+        "ttfb_ms": 526.6514999966603,
+        "latency_ms": 12377.419710159302,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:44:09.165121"
+      },
+      "eou_delay_ms": 1888.054099981673,
+      "ttft_ms": 2808.606799982954,
+      "total_cost": 0.00320034
+    },
+    {
+      "response_id": "call_voice_assistant_room_326_9f0270a3_response_3",
+      "timestamp": "2026-01-26T16:44:10.502921",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 24,
+        "total_tokens": 2024,
+        "input_cost": 0.00118,
+        "output_cost": 1.896e-05,
+        "total_cost": 0.00119896,
+        "latency_ms": 12193.883180618286,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T16:44:10.503918",
+        "response_text": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 179,
+        "cost": 0.003938,
+        "ttfb_ms": 393.15849999547936,
+        "latency_ms": 7260.754108428955,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:44:17.764672"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 393.15849999547936,
+      "total_cost": 0.0051369599999999994
+    }
+  ],
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Thank you. Goodbye."
+    },
+    {
+      "role": "assistant",
+      "content": "It was nice chatting with you, even if it was brief. If you have any questions about at-home lab testing or need help in the future, don't hesitate to reach out. Have a great day!"
+    },
+    {
+      "role": "assistant",
+      "content": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+    }
+  ],
+  "total_stt_cost": 0.0004,
+  "total_llm_cost": 0.0036095199999999997,
+  "total_tts_cost": 0.009922,
+  "total_livekit_cost": 0.007086540937423707,
+  "total_cost": 0.021018060937423706,
+  "total_stt_duration": 1.2,
+  "total_llm_input_tokens": 6000,
+  "total_llm_output_tokens": 88,
+  "total_tts_characters": 451,
+  "avg_eou_delay_ms": 1888.054099981673,
+  "avg_llm_ttft_ms": 393.9012000046205,
+  "avg_tts_ttfb_ms": 495.247033337364,
+  "avg_ttft_ms": 1255.8987999994617,
+  "livekit": {
+    "connection_duration_seconds": 42.519245624542236,
+    "cost": 0.007086540937423707,
+    "timestamp": "2026-01-26T16:44:21.853126"
+  }
+}

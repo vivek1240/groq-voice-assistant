@@ -1,0 +1,42 @@
+{
+  "call_id": "call_voice_assistant_room_4545_a29e2472",
+  "timestamp": "2026-01-26T15:20:29.354826",
+  "duration_seconds": 34.9950737953186,
+  "total_cost": 0.022254328965886437,
+  "core_metrics": {
+    "user_sentiment": "neutral",
+    "call_summary": "The user initiated a call but did not engage with the assistant's greeting or prompts, leading to an early disconnection. No specific question or concern was raised during the call. The assistant's attempts to initiate a conversation were met with silence.",
+    "query_resolved": false,
+    "escalation_required": false
+  },
+  "domain_metrics": {
+    "query_category": "general_inquiry",
+    "testing_phase": "unknown"
+  },
+  "compliance_metrics": {
+    "medical_boundary_maintained": true,
+    "proper_disclaimer_given": null
+  },
+  "conversation_transcript": [
+    {
+      "role": "user",
+      "content": " Thank you."
+    },
+    {
+      "role": "assistant",
+      "content": "You're welcome. I'm here to help you with Mercola's at-home lab testing. What can I help you with today? Are you looking to order a test kit, have questions about the testing process, or need help understanding your results?"
+    },
+    {
+      "role": "assistant",
+      "content": "I haven't heard from you in a while. I'll disconnect for now, but feel free to call back if you have any questions. Take care!"
+    }
+  ],
+  "additional_info": {
+    "total_turns": 3,
+    "avg_latency_ms": 0.0,
+    "evaluation_method": "llm",
+    "evaluation_version": "1.0"
+  },
+  "notes": "The call was very brief and lacked any substantial interaction between the user and the assistant, making it difficult to assess the call's purpose or outcome.",
+  "flags": []
+}

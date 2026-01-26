@@ -1,0 +1,46 @@
+{
+  "call_id": "call_voice_assistant_room_2806_ede27008",
+  "timestamp": "2026-01-26T16:32:19.718404",
+  "duration_seconds": 69.02386689186096,
+  "total_cost": 0.029367814481976826,
+  "core_metrics": {
+    "user_sentiment": "frustrated",
+    "call_summary": "The user called to inquire about the voice assistant's response time, expressing frustration with the delay. The assistant apologized and explained its design to provide clear guidance. The call ended without the user's question being fully addressed, as they didn't respond after the assistant's explanation.",
+    "query_resolved": false,
+    "escalation_required": true
+  },
+  "domain_metrics": {
+    "query_category": "technical_issue",
+    "testing_phase": "unknown"
+  },
+  "compliance_metrics": {
+    "medical_boundary_maintained": true,
+    "proper_disclaimer_given": null
+  },
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Hey Pax, why are you taking so much time to speak?"
+    },
+    {
+      "role": "assistant",
+      "content": "I apologize if my response seemed slow. I'm designed to provide clear and concise guidance, and sometimes that means taking a moment to ensure I'm giving you the best possible information. I'll do my best to be more concise while still being helpful. How can I assist you with your at-home lab testing today?"
+    },
+    {
+      "role": "assistant",
+      "content": "I haven't heard from you in a while. I'll disconnect for now, but feel free to call back if you have any questions. Take care!"
+    }
+  ],
+  "additional_info": {
+    "total_turns": 3,
+    "avg_latency_ms": 0.0,
+    "evaluation_method": "llm",
+    "evaluation_version": "1.0"
+  },
+  "notes": "The user's frustration and the lack of resolution suggest that escalation is necessary to address the user's concerns and improve their experience.",
+  "flags": []
+}

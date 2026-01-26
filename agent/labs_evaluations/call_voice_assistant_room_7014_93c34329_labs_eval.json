@@ -1,0 +1,98 @@
+{
+  "call_id": "call_voice_assistant_room_7014_93c34329",
+  "timestamp": "2026-01-26T17:46:47.185508",
+  "duration_seconds": 328.8996534347534,
+  "total_cost": 0.14461759223912557,
+  "core_metrics": {
+    "user_sentiment": "frustrated",
+    "call_summary": "The user expressed dissatisfaction with the Energy Panel test results, stating that the biomarkers were not accurate according to their doctor. The assistant apologized, offered to explain the results, and provided a disclaimer about not being able to provide medical advice. The user declined further assistance and the call ended.",
+    "query_resolved": false,
+    "escalation_required": true
+  },
+  "domain_metrics": {
+    "query_category": "results_concern",
+    "testing_phase": "results_received"
+  },
+  "compliance_metrics": {
+    "medical_boundary_maintained": true,
+    "proper_disclaimer_given": true
+  },
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Nice to meet you back.  Ah.  What products are you offering to the people in general?"
+    },
+    {
+      "role": "assistant",
+      "content": "We currently offer the Energy Panel, which is a comprehensive at-home blood test. It measures around 20 different biomarkers that cover things like cholesterol, blood sugar, thyroid function, iron levels, and inflammation. This test gives you a really complete picture of what's affecting your energy and overall health. Would you like to know more about what specifically it measures?"
+    },
+    {
+      "role": "user",
+      "content": " Actually, I have a complaint regarding that. Once I have taken your energy panel and  I could not get satisfactory result out of that. I was tasting for sugar level in my body.  But when I go through your project,  you can see that energy panel kit.  I found that biomarkers are not correct because when I discussed personally with a doctor, he told me that this energy panel is not working correctly."
+    },
+    {
+      "role": "assistant",
+      "content": "I'm so sorry to hear that you didn't get the satisfactory results from the Energy Panel. I can understand how frustrating that must be, especially when it comes to something as important as your health. I want to help you understand what might have gone wrong. The Energy Panel does measure biomarkers related to blood sugar, such as glucose, hemoglobin A1C, and insulin. However, it's possible that the results may not have been accurate or comprehensive enough for your specific needs. I'm not a doctor, but I can try to help you understand the results you got. Just to be clear, I'm not able to provide medical advice or diagnosis. For any health concerns or if you see red markers in your results, it's best to consult with your healthcare provider who knows your complete health history. Would you like me to explain any specific part of your results, or would you like me to connect you with our support team to look into this further?"
+    },
+    {
+      "role": "user",
+      "content": " No, thank you so much."
+    },
+    {
+      "role": "assistant",
+      "content": "You're welcome. I hope you find the answers and help you need to understand your health and wellness. If you have any other questions or concerns in the future, don't hesitate to reach out. Take care of yourself and have a great day!"
+    },
+    {
+      "role": "user",
+      "content": " I guess it's a little bit."
+    },
+    {
+      "role": "assistant",
+      "content": "Still feeling a bit unsure or concerned? That's completely understandable. If you're willing, I'd like to try and help you a bit more. What's still on your mind about the Energy Panel or your results? Is there something specific you'd like me to explain or help with? I'm here to listen and try to assist in any way I can."
+    },
+    {
+      "role": "user",
+      "content": " you can be seen through."
+    },
+    {
+      "role": "user",
+      "content": " Thank you."
+    },
+    {
+      "role": "assistant",
+      "content": "You're welcome. It was a pleasure chatting with you, even if we didn't quite resolve everything. I hope you have a great day and take care of yourself. If you ever need anything or have any other questions, don't hesitate to reach out. Bye for now!"
+    },
+    {
+      "role": "user",
+      "content": " Okay."
+    },
+    {
+      "role": "assistant",
+      "content": "Have a great day and take care of your health and wellness. If you need anything or have any questions in the future, I'll be here to help. Bye!"
+    },
+    {
+      "role": "user",
+      "content": " So,"
+    },
+    {
+      "role": "assistant",
+      "content": "It seems like we've come full circle. If you're ready to move forward, I can offer some general wellness tips or help answer any other questions you might have. Just let me know what's on your mind!"
+    },
+    {
+      "role": "assistant",
+      "content": "I haven't heard from you in a while. I'll disconnect for now, but feel free to call back if you have any questions. Take care!"
+    }
+  ],
+  "additional_info": {
+    "total_turns": 10,
+    "avg_latency_ms": 0.0,
+    "evaluation_method": "llm",
+    "evaluation_version": "1.0"
+  },
+  "notes": "The user's frustration and dissatisfaction with the test results suggest that escalation to a human support team may be necessary to address their concerns and provide a more satisfactory resolution.",
+  "flags": []
+}

@@ -1,0 +1,54 @@
+{
+  "call_id": "call_voice_assistant_room_3825_b823b35d",
+  "timestamp": "2026-01-26T15:32:10.889255",
+  "duration_seconds": 102.69750499725342,
+  "total_cost": 0.04680298749954224,
+  "core_metrics": {
+    "user_sentiment": "neutral",
+    "call_summary": "The user initiated a conversation with the assistant, expressing a vague interest in their health. The assistant introduced the Energy Panel test and provided an overview of its features. The user showed interest but didn't ask specific questions or proceed with the conversation, leading to the assistant disconnecting the call.",
+    "query_resolved": false,
+    "escalation_required": false
+  },
+  "domain_metrics": {
+    "query_category": "test_kit_info",
+    "testing_phase": "pre_purchase"
+  },
+  "compliance_metrics": {
+    "medical_boundary_maintained": true,
+    "proper_disclaimer_given": null
+  },
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " I'm fine. Or so out you."
+    },
+    {
+      "role": "assistant",
+      "content": "It can be a bit unclear how you're doing when we just start chatting. If you're feeling unsure about your health or have questions about our at-home lab testing, I'm here to listen and help in any way I can. We offer a comprehensive test called the Energy Panel that measures various biomarkers to give you insights into your overall wellness. Would you like to know more about it?"
+    },
+    {
+      "role": "user",
+      "content": " Yeah.  Definitely."
+    },
+    {
+      "role": "assistant",
+      "content": "The Energy Panel is a great place to start. It's a simple, at-home blood test that measures around 20 different biomarkers, covering things like cholesterol, blood sugar, thyroid function, iron levels, and inflammation. This test can give you a really complete picture of what's affecting your energy and overall health. Would you like to know more about what specifically it measures, or maybe how the testing process works?"
+    },
+    {
+      "role": "assistant",
+      "content": "I haven't heard from you in a while. I'll disconnect for now, but feel free to call back if you have any questions. Take care!"
+    }
+  ],
+  "additional_info": {
+    "total_turns": 4,
+    "avg_latency_ms": 0.0,
+    "evaluation_method": "llm",
+    "evaluation_version": "1.0"
+  },
+  "notes": "The conversation was brief and didn't delve into specific health concerns or results. The assistant maintained a neutral tone and provided general information about the Energy Panel test without crossing medical boundaries or requiring escalation.",
+  "flags": []
+}

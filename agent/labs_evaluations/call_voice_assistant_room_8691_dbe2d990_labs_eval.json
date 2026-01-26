@@ -1,0 +1,38 @@
+{
+  "call_id": "call_voice_assistant_room_8691_dbe2d990",
+  "timestamp": "2026-01-26T15:23:58.757412",
+  "duration_seconds": 35.80880641937256,
+  "total_cost": 0.014352424403228758,
+  "core_metrics": {
+    "user_sentiment": "neutral",
+    "call_summary": "The user did not engage with the assistant, and the call ended with no questions asked. The assistant provided a greeting and a closing message. The call was very short and did not involve any specific inquiry or issue.",
+    "query_resolved": false,
+    "escalation_required": false
+  },
+  "domain_metrics": {
+    "query_category": "general_inquiry",
+    "testing_phase": "unknown"
+  },
+  "compliance_metrics": {
+    "medical_boundary_maintained": true,
+    "proper_disclaimer_given": null
+  },
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "assistant",
+      "content": "I haven't heard from you in a while. I'll disconnect for now, but feel free to call back if you have any questions. Take care!"
+    }
+  ],
+  "additional_info": {
+    "total_turns": 2,
+    "avg_latency_ms": 0.0,
+    "evaluation_method": "llm",
+    "evaluation_version": "1.0"
+  },
+  "notes": "The call was extremely brief and did not involve any substantial conversation or inquiry, so there was no opportunity for the assistant to provide disclaimers or maintain medical boundaries in a meaningful way.",
+  "flags": []
+}

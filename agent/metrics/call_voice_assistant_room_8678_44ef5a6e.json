@@ -1,0 +1,1549 @@
+{
+  "call_id": "call_voice_assistant_room_8678_44ef5a6e",
+  "start_timestamp": "2026-01-26T16:45:05.640855",
+  "end_timestamp": "2026-01-26T17:00:03.731318",
+  "duration_seconds": 898.0904631614685,
+  "responses": [
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_1",
+      "timestamp": "2026-01-26T16:45:07.803865",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 18,
+        "total_tokens": 2018,
+        "input_cost": 0.00118,
+        "output_cost": 1.422e-05,
+        "total_cost": 0.00119422,
+        "latency_ms": 0.0,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T16:45:07.804868",
+        "response_text": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 584.3514000007417,
+        "latency_ms": 6545.822858810425,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:45:14.353909"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 584.3514000007417,
+      "total_cost": 0.0055942200000000004
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_2",
+      "timestamp": "2026-01-26T16:45:16.556786",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 1.6,
+        "cost": 0.0005333333333333334,
+        "latency_ms": 5315.871715545654,
+        "transcript_length": 26,
+        "timestamp": "2026-01-26T16:45:21.873660",
+        "transcript": " Tell about your products."
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 73,
+        "total_tokens": 2073,
+        "input_cost": 0.00118,
+        "output_cost": 5.7669999999999995e-05,
+        "total_cost": 0.00123767,
+        "latency_ms": 0.0,
+        "ttft_ms": 348.38919999310747,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T16:45:20.260373",
+        "response_text": "We currently offer the Energy Panel, a comprehensive at-home blood test that measures around 20 different biomarkers. It covers things like cholesterol, blood sugar, thyroid function, iron levels, and inflammation, giving you a really complete picture of what's affecting your energy and overall health. Would you like to know more about what specifically it measures?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 72,
+        "cost": 0.001584,
+        "ttfb_ms": 767.0922999968752,
+        "latency_ms": 24470.419883728027,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:45:44.731879"
+      },
+      "eou_delay_ms": 1291.6392000042833,
+      "ttft_ms": 2407.120699994266,
+      "total_cost": 0.0033550033333333332
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_5",
+      "timestamp": "2026-01-26T16:45:54.290132",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 368,
+        "cost": 0.008095999999999999,
+        "ttfb_ms": 1120.5485000100452,
+        "latency_ms": 1051.1221885681152,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:45:54.740214"
+      },
+      "eou_delay_ms": 886.7037000018172,
+      "ttft_ms": 2007.2522000118624,
+      "total_cost": 0.008095999999999999
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_7",
+      "timestamp": "2026-01-26T16:46:21.582910",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 2179.182599997148,
+        "latency_ms": 25373.471975326538,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:46:22.038202"
+      },
+      "eou_delay_ms": 904.8328000062611,
+      "ttft_ms": 3084.015400003409,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_8",
+      "timestamp": "2026-01-26T16:46:24.794941",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 0.8,
+        "cost": 0.0002666666666666667,
+        "latency_ms": 4879.958391189575,
+        "transcript_length": 11,
+        "timestamp": "2026-01-26T16:46:26.462868",
+        "transcript": " Thank you."
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 37,
+        "total_tokens": 2037,
+        "input_cost": 0.00118,
+        "output_cost": 2.923e-05,
+        "total_cost": 0.0012092300000000002,
+        "latency_ms": 26501.10411643982,
+        "ttft_ms": 432.1623999858275,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T16:46:24.796072",
+        "response_text": "You're welcome. If you have any more questions about the Energy Panel or the testing process, feel free to ask. I'm here to help. Have a great day!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 651.3189999968745,
+        "latency_ms": 10465.569972991943,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:46:35.262655"
+      },
+      "eou_delay_ms": 899.8792999773286,
+      "ttft_ms": 1983.3606999600306,
+      "total_cost": 0.0058758966666666666
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_9",
+      "timestamp": "2026-01-26T16:46:37.645826",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 4.4,
+        "cost": 0.0014666666666666667,
+        "latency_ms": 7928.063631057739,
+        "transcript_length": 56,
+        "timestamp": "2026-01-26T16:46:45.574881",
+        "transcript": " No, no, no. Why are you going? I haven't said anything."
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 52,
+        "total_tokens": 2052,
+        "input_cost": 0.00118,
+        "output_cost": 4.108e-05,
+        "total_cost": 0.00122108,
+        "latency_ms": 17557.642459869385,
+        "ttft_ms": 353.1712000258267,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T16:46:44.020511",
+        "response_text": "I didn't mean to cut our conversation short. I'm still here and happy to chat with you. What's on your mind? Want to talk more about the Energy Panel or is there something else I can help you with?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 147,
+        "cost": 0.003234,
+        "ttfb_ms": 920.0362999981735,
+        "latency_ms": 14880.014896392822,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:46:58.902039"
+      },
+      "eou_delay_ms": 1154.2590000026394,
+      "ttft_ms": 2427.4665000266396,
+      "total_cost": 0.005921746666666667
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_12",
+      "timestamp": "2026-01-26T16:47:24.624719",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 197,
+        "cost": 0.004334,
+        "ttfb_ms": 674.9487000051886,
+        "latency_ms": 10741.456270217896,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:47:25.077242"
+      },
+      "eou_delay_ms": 1440.2547999925446,
+      "ttft_ms": 2115.203499997733,
+      "total_cost": 0.004334
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_13",
+      "timestamp": "2026-01-26T16:47:26.795452",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 100,
+        "total_tokens": 2100,
+        "input_cost": 0.00118,
+        "output_cost": 7.900000000000001e-05,
+        "total_cost": 0.0012590000000000001,
+        "latency_ms": 11120.571851730347,
+        "ttft_ms": 428.52509999647737,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T16:47:27.004439",
+        "response_text": ""
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 691.914099996211,
+        "latency_ms": 243.34096908569336,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:47:27.248840"
+      },
+      "eou_delay_ms": 942.8432999993674,
+      "ttft_ms": 2063.282499992056,
+      "total_cost": 0.005659000000000001
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_15",
+      "timestamp": "2026-01-26T16:47:35.730861",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 461.7046999919694,
+        "latency_ms": 6757.861137390137,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:47:36.179694"
+      },
+      "eou_delay_ms": 888.0694999825209,
+      "ttft_ms": 1349.7741999744903,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_16",
+      "timestamp": "2026-01-26T16:47:37.921745",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 100,
+        "total_tokens": 2100,
+        "input_cost": 0.00118,
+        "output_cost": 7.900000000000001e-05,
+        "total_cost": 0.0012590000000000001,
+        "latency_ms": 7148.204565048218,
+        "ttft_ms": 340.06369998678565,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T16:47:38.253711",
+        "response_text": ""
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 0,
+        "latency_ms": 117.72799491882324,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:47:38.372991"
+      },
+      "eou_delay_ms": 906.2513000098988,
+      "ttft_ms": 1246.3149999966845,
+      "total_cost": 0.005659000000000001
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_18",
+      "timestamp": "2026-01-26T16:47:53.241840",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 667.8603999898769,
+        "latency_ms": 13192.854404449463,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:47:53.681111"
+      },
+      "eou_delay_ms": 919.2708000191487,
+      "ttft_ms": 1587.1312000090256,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_20",
+      "timestamp": "2026-01-26T16:47:57.427746",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 1.6,
+        "cost": 0.0005333333333333334,
+        "latency_ms": 194.15879249572754,
+        "transcript_length": 23,
+        "timestamp": "2026-01-26T16:47:57.622888",
+        "transcript": " That's a bullet point."
+      },
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 827.6470999990124,
+        "latency_ms": 1823.9996433258057,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:47:57.879777"
+      },
+      "eou_delay_ms": 925.6015999999363,
+      "ttft_ms": 1753.2486999989487,
+      "total_cost": 0.004933333333333334
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_24",
+      "timestamp": "2026-01-26T16:48:07.536490",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 636.9053999951575,
+        "latency_ms": 1375.4560947418213,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:48:07.984317"
+      },
+      "eou_delay_ms": 792.972600000212,
+      "ttft_ms": 1429.8779999953695,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_26",
+      "timestamp": "2026-01-26T16:48:12.790162",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 773.4126000141259,
+        "latency_ms": 886.7366313934326,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:48:13.244787"
+      },
+      "eou_delay_ms": 916.5678999852389,
+      "ttft_ms": 1689.9804999993648,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_28",
+      "timestamp": "2026-01-26T16:48:15.563398",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 875.7027999963611,
+        "latency_ms": 517.0056819915771,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:48:16.018740"
+      },
+      "eou_delay_ms": 908.809000015026,
+      "ttft_ms": 1784.511800011387,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_30",
+      "timestamp": "2026-01-26T16:48:21.358089",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 851.5774999978021,
+        "latency_ms": 2633.4307193756104,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:48:21.819512"
+      },
+      "eou_delay_ms": 123.21250000968575,
+      "ttft_ms": 974.7900000074878,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_34",
+      "timestamp": "2026-01-26T16:48:31.057084",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 855.5139999953099,
+        "latency_ms": 2321.4848041534424,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:48:31.510545"
+      },
+      "eou_delay_ms": 799.9988000083249,
+      "ttft_ms": 1655.5128000036348,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_38",
+      "timestamp": "2026-01-26T16:48:39.954839",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 100,
+        "total_tokens": 2100,
+        "input_cost": 0.00118,
+        "output_cost": 7.900000000000001e-05,
+        "total_cost": 0.0012590000000000001,
+        "latency_ms": 9609.98249053955,
+        "ttft_ms": 371.9521999883,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T16:48:40.354739",
+        "response_text": ""
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 825.326500023948,
+        "latency_ms": 46.68855667114258,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:48:40.402685"
+      },
+      "eou_delay_ms": 920.2179000130855,
+      "ttft_ms": 2117.4966000253335,
+      "total_cost": 0.005659000000000001
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_40",
+      "timestamp": "2026-01-26T16:48:52.593854",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 738.9444999862462,
+        "latency_ms": 5337.918281555176,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:48:53.038393"
+      },
+      "eou_delay_ms": 921.2788000004366,
+      "ttft_ms": 1660.2232999866828,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_42",
+      "timestamp": "2026-01-26T16:48:59.153170",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 630.5609999981243,
+        "latency_ms": 4195.803165435791,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:48:59.598541"
+      },
+      "eou_delay_ms": 905.7294999947771,
+      "ttft_ms": 1536.2904999929015,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_45",
+      "timestamp": "2026-01-26T16:49:17.584463",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 839.4749999861233,
+        "latency_ms": 2327.7974128723145,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:49:18.038373"
+      },
+      "eou_delay_ms": 1118.7823000072967,
+      "ttft_ms": 1958.25729999342,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_47",
+      "timestamp": "2026-01-26T16:49:30.254907",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 422.95300000114366,
+        "latency_ms": 10545.997619628906,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:49:30.705473"
+      },
+      "eou_delay_ms": 897.3906000028364,
+      "ttft_ms": 1320.34360000398,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_49",
+      "timestamp": "2026-01-26T16:50:06.579365",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 684.0964999864809,
+        "latency_ms": 16077.10313796997,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:50:07.030512"
+      },
+      "eou_delay_ms": 982.8230999992229,
+      "ttft_ms": 1666.9195999857038,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_51",
+      "timestamp": "2026-01-26T16:50:17.294490",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 864.9254000047222,
+        "latency_ms": 8556.995391845703,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:50:17.748569"
+      },
+      "eou_delay_ms": 897.8497000061907,
+      "ttft_ms": 1762.7751000109129,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_53",
+      "timestamp": "2026-01-26T16:50:30.288163",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 656.702000007499,
+        "latency_ms": 10728.299379348755,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:50:30.736855"
+      },
+      "eou_delay_ms": 932.5968000048306,
+      "ttft_ms": 1589.2988000123296,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_55",
+      "timestamp": "2026-01-26T16:50:35.058564",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 3.6,
+        "cost": 0.0012000000000000001,
+        "latency_ms": 234.44652557373047,
+        "transcript_length": 40,
+        "timestamp": "2026-01-26T16:50:35.294533",
+        "transcript": " So I think you can see that back there."
+      },
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 864.5835999923293,
+        "latency_ms": 1890.0814056396484,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:50:35.509551"
+      },
+      "eou_delay_ms": 930.9007999836467,
+      "ttft_ms": 1795.484399975976,
+      "total_cost": 0.005600000000000001
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_57",
+      "timestamp": "2026-01-26T16:50:40.944417",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 412.7804999880027,
+        "latency_ms": 3851.9270420074463,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:50:41.400274"
+      },
+      "eou_delay_ms": 903.2942999911029,
+      "ttft_ms": 1316.0747999791056,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_59",
+      "timestamp": "2026-01-26T16:50:44.948589",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 100,
+        "total_tokens": 2100,
+        "input_cost": 0.00118,
+        "output_cost": 7.900000000000001e-05,
+        "total_cost": 0.0012590000000000001,
+        "latency_ms": 6082.185745239258,
+        "ttft_ms": 452.79360000859015,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T16:50:45.205769",
+        "response_text": ""
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 620.276899979217,
+        "latency_ms": 192.9612159729004,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:50:45.398730"
+      },
+      "eou_delay_ms": 1036.3150000048336,
+      "ttft_ms": 2109.3854999926407,
+      "total_cost": 0.005659000000000001
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_62",
+      "timestamp": "2026-01-26T16:51:05.298828",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 850.0904999964405,
+        "latency_ms": 1490.6213283538818,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:51:05.749835"
+      },
+      "eou_delay_ms": 828.2064000086393,
+      "ttft_ms": 1678.2969000050798,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_64",
+      "timestamp": "2026-01-26T16:51:08.658261",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 100,
+        "total_tokens": 2100,
+        "input_cost": 0.00118,
+        "output_cost": 7.900000000000001e-05,
+        "total_cost": 0.0012590000000000001,
+        "latency_ms": 29622.967004776,
+        "ttft_ms": 391.21160001377575,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T16:51:08.746550",
+        "response_text": ""
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 603.9959999907296,
+        "latency_ms": 361.5250587463379,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:51:09.109088"
+      },
+      "eou_delay_ms": 905.7374999974854,
+      "ttft_ms": 1900.9451000019908,
+      "total_cost": 0.005659000000000001
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_66",
+      "timestamp": "2026-01-26T16:51:13.754551",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 619.3992999906186,
+        "latency_ms": 699.7923851013184,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:51:14.196922"
+      },
+      "eou_delay_ms": 905.8707000222057,
+      "ttft_ms": 1525.2700000128243,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_70",
+      "timestamp": "2026-01-26T16:51:39.022954",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 543.1897999951616,
+        "latency_ms": 7338.424921035767,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:51:39.472969"
+      },
+      "eou_delay_ms": 951.7131000175141,
+      "ttft_ms": 1494.9029000126757,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_73",
+      "timestamp": "2026-01-26T16:52:04.013490",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 1031.0708999750204,
+        "latency_ms": 3199.7275352478027,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:52:04.464528"
+      },
+      "eou_delay_ms": 1262.1296999859624,
+      "ttft_ms": 2293.200599960983,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_74",
+      "timestamp": "2026-01-26T16:52:04.479395",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 100,
+        "total_tokens": 2100,
+        "input_cost": 0.00118,
+        "output_cost": 7.900000000000001e-05,
+        "total_cost": 0.0012590000000000001,
+        "latency_ms": 30671.29945755005,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T16:52:04.480395",
+        "response_text": ""
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 0,
+        "latency_ms": 19.576311111450195,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:52:04.499972"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 0,
+      "total_cost": 0.005659000000000001
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_76",
+      "timestamp": "2026-01-26T16:52:20.787931",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 862.3901999962982,
+        "latency_ms": 9232.614040374756,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:52:21.234479"
+      },
+      "eou_delay_ms": 845.8828000002541,
+      "ttft_ms": 1708.2729999965522,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_78",
+      "timestamp": "2026-01-26T16:52:44.655037",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 672.6563000120223,
+        "latency_ms": 15534.852027893066,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:52:45.104533"
+      },
+      "eou_delay_ms": 909.7830999817234,
+      "ttft_ms": 1582.4393999937456,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_81",
+      "timestamp": "2026-01-26T16:53:12.302643",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 665.2957999904174,
+        "latency_ms": 6375.9448528289795,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:53:12.753712"
+      },
+      "eou_delay_ms": 1193.0713999900036,
+      "ttft_ms": 1858.367199980421,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_83",
+      "timestamp": "2026-01-26T16:53:25.453005",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 835.2358999836724,
+        "latency_ms": 10674.100637435913,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:53:25.903695"
+      },
+      "eou_delay_ms": 899.484499997925,
+      "ttft_ms": 1734.7203999815974,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_86",
+      "timestamp": "2026-01-26T16:53:55.216949",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 847.1154999861028,
+        "latency_ms": 14527.794122695923,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:53:55.668076"
+      },
+      "eou_delay_ms": 975.3093000035733,
+      "ttft_ms": 1822.424799989676,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_92",
+      "timestamp": "2026-01-26T16:54:15.434915",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 1019.1376000002492,
+        "latency_ms": 1497.6696968078613,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:54:15.885491"
+      },
+      "eou_delay_ms": 967.3626000003424,
+      "ttft_ms": 1986.5002000005916,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_94",
+      "timestamp": "2026-01-26T16:54:37.967040",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 837.79570000479,
+        "latency_ms": 905.8094024658203,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:54:38.414481"
+      },
+      "eou_delay_ms": 1246.8813000014052,
+      "ttft_ms": 2084.677000006195,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_99",
+      "timestamp": "2026-01-26T16:55:00.624825",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 851.3757000037003,
+        "latency_ms": 503.615140914917,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:55:01.077202"
+      },
+      "eou_delay_ms": 909.8935000074562,
+      "ttft_ms": 1761.2692000111565,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_101",
+      "timestamp": "2026-01-26T16:55:25.396188",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 754.7474000020884,
+        "latency_ms": 14947.63731956482,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:55:25.836844"
+      },
+      "eou_delay_ms": 877.9770999972243,
+      "ttft_ms": 1632.7244999993127,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_107",
+      "timestamp": "2026-01-26T16:56:04.366303",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 838.7840999930631,
+        "latency_ms": 3295.92227935791,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:56:04.817513"
+      },
+      "eou_delay_ms": 1016.0384000046179,
+      "ttft_ms": 1854.822499997681,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_109",
+      "timestamp": "2026-01-26T16:56:12.176406",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 0.8,
+        "cost": 0.0002666666666666667,
+        "latency_ms": 246.97041511535645,
+        "transcript_length": 9,
+        "timestamp": "2026-01-26T16:56:12.424336",
+        "transcript": " om  Yes."
+      },
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 842.609099985566,
+        "latency_ms": 1866.7819499969482,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:56:12.628206"
+      },
+      "eou_delay_ms": 916.9976999983191,
+      "ttft_ms": 1759.6067999838851,
+      "total_cost": 0.004666666666666667
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_111",
+      "timestamp": "2026-01-26T16:56:19.793376",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 647.3855999938678,
+        "latency_ms": 5519.70911026001,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:56:20.236871"
+      },
+      "eou_delay_ms": 906.3667999871541,
+      "ttft_ms": 1553.7523999810219,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_113",
+      "timestamp": "2026-01-26T16:56:27.633396",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 515.640199999325,
+        "latency_ms": 4229.596376419067,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:56:28.078864"
+      },
+      "eou_delay_ms": 898.7492000160273,
+      "ttft_ms": 1414.3894000153523,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_115",
+      "timestamp": "2026-01-26T16:56:45.296308",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 507.7629000006709,
+        "latency_ms": 7965.43025970459,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:56:45.744336"
+      },
+      "eou_delay_ms": 868.6164000246208,
+      "ttft_ms": 1376.3793000252917,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_120",
+      "timestamp": "2026-01-26T16:57:02.633670",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 100,
+        "total_tokens": 2100,
+        "input_cost": 0.00118,
+        "output_cost": 7.900000000000001e-05,
+        "total_cost": 0.0012590000000000001,
+        "latency_ms": 23430.81259727478,
+        "ttft_ms": 425.8540000009816,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T16:57:02.723528",
+        "response_text": ""
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 841.2663999770302,
+        "latency_ms": 358.9301109313965,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:57:03.083459"
+      },
+      "eou_delay_ms": 919.2296000255737,
+      "ttft_ms": 2186.3500000035856,
+      "total_cost": 0.005659000000000001
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_122",
+      "timestamp": "2026-01-26T16:57:14.602987",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 830.4775000142399,
+        "latency_ms": 8466.394901275635,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:57:15.054486"
+      },
+      "eou_delay_ms": 898.9330000185873,
+      "ttft_ms": 1729.4105000328273,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_124",
+      "timestamp": "2026-01-26T16:57:23.595538",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 516.8254000018351,
+        "latency_ms": 3227.0591259002686,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:57:24.044579"
+      },
+      "eou_delay_ms": 1080.259800015483,
+      "ttft_ms": 1597.0852000173181,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_126",
+      "timestamp": "2026-01-26T16:57:39.853098",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 406.4287999935914,
+        "latency_ms": 6521.18182182312,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:57:40.302819"
+      },
+      "eou_delay_ms": 873.6797999881674,
+      "ttft_ms": 1280.1085999817587,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_128",
+      "timestamp": "2026-01-26T16:57:51.217503",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 746.1518000054639,
+        "latency_ms": 6503.53479385376,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:57:51.666004"
+      },
+      "eou_delay_ms": 897.9337000055239,
+      "ttft_ms": 1644.0855000109877,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_130",
+      "timestamp": "2026-01-26T16:57:54.996827",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 847.4801999982446,
+        "latency_ms": 1411.9548797607422,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:57:55.433694"
+      },
+      "eou_delay_ms": 1028.953700006241,
+      "ttft_ms": 1876.4339000044856,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_132",
+      "timestamp": "2026-01-26T16:58:01.105345",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 530.1820999884512,
+        "latency_ms": 3297.8835105895996,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:58:01.558140"
+      },
+      "eou_delay_ms": 929.7148000041489,
+      "ttft_ms": 1459.8968999926,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_135",
+      "timestamp": "2026-01-26T16:58:21.962651",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 484.49360000086017,
+        "latency_ms": 8113.729238510132,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:58:22.413618"
+      },
+      "eou_delay_ms": 1003.2616000098642,
+      "ttft_ms": 1487.7552000107244,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_137",
+      "timestamp": "2026-01-26T16:58:33.162669",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 7.6,
+        "cost": 0.002533333333333333,
+        "latency_ms": 175.3542423248291,
+        "transcript_length": 100,
+        "timestamp": "2026-01-26T16:58:33.338023",
+        "transcript": " I think two or three surprise tests will be there, two or three tests will be there and mid-SAM-34."
+      },
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 677.7262999967206,
+        "latency_ms": 1927.9091358184814,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:58:33.613222"
+      },
+      "eou_delay_ms": 1019.2424000124447,
+      "ttft_ms": 1696.9687000091653,
+      "total_cost": 0.006933333333333333
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_139",
+      "timestamp": "2026-01-26T16:58:44.235472",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 640.6806999875698,
+        "latency_ms": 7503.301620483398,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:58:44.685889"
+      },
+      "eou_delay_ms": 1039.3878999748267,
+      "ttft_ms": 1680.0685999623965,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_141",
+      "timestamp": "2026-01-26T16:58:52.433743",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 838.1121000275016,
+        "latency_ms": 1512.5937461853027,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:58:52.878084"
+      },
+      "eou_delay_ms": 909.9180999910459,
+      "ttft_ms": 1748.0302000185475,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_143",
+      "timestamp": "2026-01-26T16:59:13.192974",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 526.985499978764,
+        "latency_ms": 8605.327367782593,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:59:13.643418"
+      },
+      "eou_delay_ms": 1006.3962999847718,
+      "ttft_ms": 1533.3817999635357,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_145",
+      "timestamp": "2026-01-26T16:59:23.883724",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 835.1371999888215,
+        "latency_ms": 8326.321840286255,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:59:24.333448"
+      },
+      "eou_delay_ms": 917.1088000002783,
+      "ttft_ms": 1752.2459999890998,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_147",
+      "timestamp": "2026-01-26T16:59:43.244385",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 831.848199974047,
+        "latency_ms": 12055.347919464111,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:59:43.696699"
+      },
+      "eou_delay_ms": 921.6415999981109,
+      "ttft_ms": 1753.489799972158,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_8678_44ef5a6e_response_149",
+      "timestamp": "2026-01-26T16:59:50.314318",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 484.05080000520684,
+        "latency_ms": 2825.822114944458,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:59:50.764768"
+      },
+      "eou_delay_ms": 908.0697000026703,
+      "ttft_ms": 1392.1205000078771,
+      "total_cost": 0.0044
+    }
+  ],
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Tell about your products."
+    },
+    {
+      "role": "assistant",
+      "content": "We currently offer the Energy Panel, a comprehensive at-home blood test that measures around 20 different biomarkers. It covers things like cholesterol, blood sugar, thyroid function, iron levels, and inflammation, giving you a really complete picture of what's affecting your energy and overall health. Would you like to know more about what specifically it measures?"
+    },
+    {
+      "role": "user",
+      "content": " How much it cost?  for energy panel  Thank you."
+    },
+    {
+      "role": "user",
+      "content": " Thank you."
+    },
+    {
+      "role": "assistant",
+      "content": "You're welcome. If you have any more questions about the Energy Panel or the testing process, feel free to ask. I'm here to help. Have a great day!"
+    },
+    {
+      "role": "user",
+      "content": " No, no, no. Why are you going? I haven't said anything."
+    },
+    {
+      "role": "assistant",
+      "content": "I didn't mean to cut our conversation short. I'm still here and happy to chat with you. What's on your mind? Want to talk more about the Energy Panel or is there something else I can help you with?"
+    },
+    {
+      "role": "user",
+      "content": " Yeah.  The point is that I am asking things but why suddenly say thank you because I didn't say anything related to thank you, right?"
+    },
+    {
+      "role": "user",
+      "content": " Thank you.  Thank you."
+    },
+    {
+      "role": "user",
+      "content": " Yeah.  Ding, ding, ding."
+    },
+    {
+      "role": "user",
+      "content": " That's a bullet point."
+    },
+    {
+      "role": "user",
+      "content": " So...  I'm doing nothing, I'm doing nothing, just special, just  Sitting in the  Huh?  No, no, not in hope. It's in center only.  Hmm.  Huh?  What?"
+    },
+    {
+      "role": "user",
+      "content": " He has nothing. Wife.  AC is what you say that  AI tool.  Thank you."
+    },
+    {
+      "role": "user",
+      "content": " Wonderful.  And  No, no, no, Vanity.  The voice isn't written.  Yeah.  Nothing is better doing time personally."
+    },
+    {
+      "role": "user",
+      "content": " Nothing is personal."
+    },
+    {
+      "role": "user",
+      "content": " trying some time but I am not getting the time for Deatmal DSA.  I'm not sifted towards you guys.  artificial intelligence kind of things. So data I have accepted to it currently."
+    },
+    {
+      "role": "user",
+      "content": " Yeah."
+    },
+    {
+      "role": "user",
+      "content": " Very nice that actually the market that is only in demand and anything else because through that AI only you can perform all other tasks for the DSA writing code everything.  There is no need of writing manual code. Everyone is writing code using the AI URLs."
+    },
+    {
+      "role": "user",
+      "content": " and molding the underscore."
+    },
+    {
+      "role": "user",
+      "content": " Yeah, yeah."
+    },
+    {
+      "role": "user",
+      "content": " So I think you can see that back there."
+    },
+    {
+      "role": "user",
+      "content": " Yeah."
+    },
+    {
+      "role": "user",
+      "content": " right? Distort.  that we must,  asking a long  Yeah, yeah. And in AI also, we do not need to implement the thing from scratch. It's not like that we have to research some models and all that. We have to just how to use those models that are existing currently and to make some business out of that.  That everyone is demanding.  Great.  Yeah.  Increase, yes.  There's a going on such an answer.  It's nice.  these are  I think companies are not coming at all.  I have given only the test for DP and result also has not come in."
+    },
+    {
+      "role": "user",
+      "content": " And  I haven't missed, I could not solve any of the question completely.  In both questions, I was getting TLE. Before 7 minutes, I got the answer for the first question, how to attempt that. That set type question was there.  Obviously, I was just writing, writing but could not complete that.  What can be done?"
+    },
+    {
+      "role": "user",
+      "content": " Most of the companies are related to basically they are demanding core students.  Anna."
+    },
+    {
+      "role": "user",
+      "content": " I don't know.  That  That will go on like that only. Because companies are not coming in bulk. In a previous semester, companies are coming in bulk. Now they will come like that only. One company has come."
+    },
+    {
+      "role": "user",
+      "content": " like the API."
+    },
+    {
+      "role": "user",
+      "content": " I obviously, but now I  I don't go frequently that much in one or two days I go to ERP and check what's going on  And I found that nothing is the same thing. No one is interested in us."
+    },
+    {
+      "role": "user",
+      "content": " so that is the market is also market is also down you should apply for the intensive  You should try for internship.  and through internship you can  then for them then for school what you say  That's that.  Full time.  Because after mid-same we can try for off-campus because after off-campus now every company because this financial year is starting, new financial year is starting now. So companies will demand more employees. So in that way we can get a chance.  now because if we are trying currently then no company every company will demand to join current as soon as possible because they are demanding  that we should join us  as quickly as possible but we can't join the antenna so it's a good to go for intern first  then convert it to full  Hold on.  Currently, I'm not finding any job. Not searching even.  I'm just waiting for the mid-same and then I will try."
+    },
+    {
+      "role": "user",
+      "content": " Ah, obviously not distracted.  Because that will start after when the company audit will be there, the company will be auditing there, whatever happened in the last year, then they will require some employee and in this way they will go for recruiting.  So this will start up as the new financial year start for the particular company.  So and that then only we can get a chance. But if we want the intercept, then it's wonderful that if we go for a first-seeing intercept,  that  it's easy to convert it to full-time."
+    },
+    {
+      "role": "user",
+      "content": " om  Yes."
+    },
+    {
+      "role": "user",
+      "content": " Good."
+    },
+    {
+      "role": "user",
+      "content": " Yeah.  I end it."
+    },
+    {
+      "role": "user",
+      "content": " first introduction class and the last class I attended on Monday.  Last Monday. There's only two classes I have attended."
+    },
+    {
+      "role": "user",
+      "content": " I haven't seen yet that whether he has taken attendance or not because I didn't found  Like that.  So no, no, no attendance.  Diaz de Ano  But she didn't take any attention till now.  is shared.  that you can see."
+    },
+    {
+      "role": "user",
+      "content": " Rob is not a lady.  I'm talking about TA."
+    },
+    {
+      "role": "user",
+      "content": " Khandipatra is who was  Previously was our burden, right?"
+    },
+    {
+      "role": "user",
+      "content": " So you were part of which whole in first year?"
+    },
+    {
+      "role": "user",
+      "content": " with that noise  Okay, okay."
+    },
+    {
+      "role": "user",
+      "content": " probably till  Rob as you can see is a chill and he was telling that we have  fun also and he was not that much and he was sending us a PPT he will send definitely"
+    },
+    {
+      "role": "user",
+      "content": " I think two or three surprise tests will be there, two or three tests will be there and mid-SAM-34."
+    },
+    {
+      "role": "user",
+      "content": " how me"
+    },
+    {
+      "role": "user",
+      "content": " seriously at end times it's not compulsory so nobody is strict in that sense  So...  No need to go, but he told, I think, Adi asked to him that how many tests will be there. He was telling that six tests will be there, four class surprise tests, two and general test."
+    },
+    {
+      "role": "user",
+      "content": " That's a good thing."
+    },
+    {
+      "role": "user",
+      "content": " It may happen because some writers are there and  They are totally surprised."
+    },
+    {
+      "role": "user",
+      "content": " skills, you know,  See ya."
+    }
+  ],
+  "total_stt_cost": 0.0068000000000000005,
+  "total_llm_cost": 0.013675199999999998,
+  "total_tts_cost": 0.27684799999999976,
+  "total_livekit_cost": 0.14968174386024477,
+  "total_cost": 0.4470049438602446,
+  "total_stt_duration": 20.4,
+  "total_llm_input_tokens": 22000,
+  "total_llm_output_tokens": 880,
+  "total_tts_characters": 12584,
+  "avg_eou_delay_ms": 947.3466754115194,
+  "avg_llm_ttft_ms": 393.791444444408,
+  "avg_tts_ttfb_ms": 745.6371704880797,
+  "avg_ttft_ms": 1722.8409290302454,
+  "livekit": {
+    "connection_duration_seconds": 898.0904631614685,
+    "cost": 0.14968174386024477,
+    "timestamp": "2026-01-26T17:00:03.731318"
+  }
+}

@@ -1,0 +1,449 @@
+{
+  "call_id": "call_voice_assistant_room_7014_93c34329",
+  "start_timestamp": "2026-01-26T17:41:18.285855",
+  "end_timestamp": "2026-01-26T17:46:47.185508",
+  "duration_seconds": 328.8996534347534,
+  "responses": [
+    {
+      "response_id": "call_voice_assistant_room_7014_93c34329_response_1",
+      "timestamp": "2026-01-26T17:41:20.290159",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 18,
+        "total_tokens": 2018,
+        "input_cost": 0.00118,
+        "output_cost": 1.422e-05,
+        "total_cost": 0.00119422,
+        "latency_ms": 0.0,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T17:41:20.291159",
+        "response_text": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 570.0462000095285,
+        "latency_ms": 6544.651031494141,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T17:41:26.838347"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 570.0462000095285,
+      "total_cost": 0.0055942200000000004
+    },
+    {
+      "response_id": "call_voice_assistant_room_7014_93c34329_response_4",
+      "timestamp": "2026-01-26T17:41:31.519837",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 6.4,
+        "cost": 0.0021333333333333334,
+        "latency_ms": 6177.560329437256,
+        "transcript_length": 86,
+        "timestamp": "2026-01-26T17:41:37.697397",
+        "transcript": " Nice to meet you back.  Ah.  What products are you offering to the people in general?"
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 78,
+        "total_tokens": 2078,
+        "input_cost": 0.00118,
+        "output_cost": 6.162e-05,
+        "total_cost": 0.0012416200000000001,
+        "latency_ms": 0.0,
+        "ttft_ms": 308.4421000094153,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T17:41:36.039652",
+        "response_text": "We currently offer the Energy Panel, which is a comprehensive at-home blood test. It measures around 20 different biomarkers that cover things like cholesterol, blood sugar, thyroid function, iron levels, and inflammation. This test gives you a really complete picture of what's affecting your energy and overall health. Would you like to know more about what specifically it measures?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 72,
+        "cost": 0.001584,
+        "ttfb_ms": 751.8813999777194,
+        "latency_ms": 25346.935510635376,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T17:42:01.386587"
+      },
+      "eou_delay_ms": 886.0256000189111,
+      "ttft_ms": 1946.3491000060458,
+      "total_cost": 0.0049589533333333335
+    },
+    {
+      "response_id": "call_voice_assistant_room_7014_93c34329_response_9",
+      "timestamp": "2026-01-26T17:42:24.856943",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 29.2,
+        "cost": 0.009733333333333333,
+        "latency_ms": 13639.687061309814,
+        "transcript_length": 402,
+        "timestamp": "2026-01-26T17:42:38.496630",
+        "transcript": " Actually, I have a complaint regarding that. Once I have taken your energy panel and  I could not get satisfactory result out of that. I was tasting for sugar level in my body.  But when I go through your project,  you can see that energy panel kit.  I found that biomarkers are not correct because when I discussed personally with a doctor, he told me that this energy panel is not working correctly."
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 221,
+        "total_tokens": 2221,
+        "input_cost": 0.00118,
+        "output_cost": 0.00017459,
+        "total_cost": 0.0013545900000000001,
+        "latency_ms": 59115.082025527954,
+        "ttft_ms": 331.3645999878645,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T17:42:36.812779",
+        "response_text": "I'm so sorry to hear that you didn't get the satisfactory results from the Energy Panel. I can understand how frustrating that must be, especially when it comes to something as important as your health. I want to help you understand what might have gone wrong. The Energy Panel does measure biomarkers related to blood sugar, such as glucose, hemoglobin A1C, and insulin. However, it's possible that the results may not have been accurate or comprehensive enough for your specific needs. I'm not a doctor, but I can try to help you understand the results you got. Just to be clear, I'm not able to provide medical advice or diagnosis. For any health concerns or if you see red markers in your results, it's best to consult with your healthcare provider who knows your complete health history. Would you like me to explain any specific part of your results, or would you like me to connect you with our support team to look into this further?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 385,
+        "cost": 0.00847,
+        "ttfb_ms": 869.7645000065677,
+        "latency_ms": 60704.61201667786,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T17:43:37.517390"
+      },
+      "eou_delay_ms": 1393.7049999949522,
+      "ttft_ms": 2594.8340999893844,
+      "total_cost": 0.01955792333333333
+    },
+    {
+      "response_id": "call_voice_assistant_room_7014_93c34329_response_10",
+      "timestamp": "2026-01-26T17:43:38.882548",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 2.0,
+        "cost": 0.0006666666666666666,
+        "latency_ms": 6298.152208328247,
+        "transcript_length": 23,
+        "timestamp": "2026-01-26T17:43:45.182699",
+        "transcript": " No, thank you so much."
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 57,
+        "total_tokens": 2057,
+        "input_cost": 0.00118,
+        "output_cost": 4.503e-05,
+        "total_cost": 0.00122503,
+        "latency_ms": 65075.066804885864,
+        "ttft_ms": 382.0723000098951,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T17:43:43.571697",
+        "response_text": "You're welcome. I hope you find the answers and help you need to understand your health and wellness. If you have any other questions or concerns in the future, don't hesitate to reach out. Take care of yourself and have a great day!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 941,
+        "cost": 0.020701999999999998,
+        "ttfb_ms": 753.7521999911405,
+        "latency_ms": 15114.691495895386,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T17:43:58.686388"
+      },
+      "eou_delay_ms": 1715.4295000073034,
+      "ttft_ms": 2851.254000008339,
+      "total_cost": 0.022593696666666666
+    },
+    {
+      "response_id": "call_voice_assistant_room_7014_93c34329_response_11",
+      "timestamp": "2026-01-26T17:44:12.318416",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 2.4,
+        "cost": 0.0008,
+        "latency_ms": 4566.792726516724,
+        "transcript_length": 27,
+        "timestamp": "2026-01-26T17:44:16.886449",
+        "transcript": " I guess it's a little bit."
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 80,
+        "total_tokens": 2080,
+        "input_cost": 0.00118,
+        "output_cost": 6.32e-05,
+        "total_cost": 0.0012432,
+        "latency_ms": 30032.62495994568,
+        "ttft_ms": 459.97820000047795,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T17:44:15.215324",
+        "response_text": "Still feeling a bit unsure or concerned? That's completely understandable. If you're willing, I'd like to try and help you a bit more. What's still on your mind about the Energy Panel or your results? Is there something specific you'd like me to explain or help with? I'm here to listen and try to assist in any way I can."
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 233,
+        "cost": 0.0051259999999999995,
+        "ttfb_ms": 786.1180999898352,
+        "latency_ms": 25750.617027282715,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T17:44:40.966938"
+      },
+      "eou_delay_ms": 1033.7632000155281,
+      "ttft_ms": 2279.8595000058413,
+      "total_cost": 0.0071692
+    },
+    {
+      "response_id": "call_voice_assistant_room_7014_93c34329_response_13",
+      "timestamp": "2026-01-26T17:45:07.927261",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 322,
+        "cost": 0.007084,
+        "ttfb_ms": 854.6880999929272,
+        "latency_ms": 12490.747451782227,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T17:45:08.380543"
+      },
+      "eou_delay_ms": 919.9870000011288,
+      "ttft_ms": 1774.675099994056,
+      "total_cost": 0.007084
+    },
+    {
+      "response_id": "call_voice_assistant_room_7014_93c34329_response_14",
+      "timestamp": "2026-01-26T17:45:10.352360",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 0.8,
+        "cost": 0.0002666666666666667,
+        "latency_ms": 3960.1879119873047,
+        "transcript_length": 11,
+        "timestamp": "2026-01-26T17:45:11.887449",
+        "transcript": " Thank you."
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 61,
+        "total_tokens": 2061,
+        "input_cost": 0.00118,
+        "output_cost": 4.819e-05,
+        "total_cost": 0.00122819,
+        "latency_ms": 12866.581678390503,
+        "ttft_ms": 408.30309997545555,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T17:45:10.353366",
+        "response_text": "You're welcome. It was a pleasure chatting with you, even if we didn't quite resolve everything. I hope you have a great day and take care of yourself. If you ever need anything or have any other questions, don't hesitate to reach out. Bye for now!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 516.3683000137098,
+        "latency_ms": 15672.123908996582,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T17:45:26.025490"
+      },
+      "eou_delay_ms": 919.2791000241414,
+      "ttft_ms": 1843.9505000133067,
+      "total_cost": 0.005894856666666667
+    },
+    {
+      "response_id": "call_voice_assistant_room_7014_93c34329_response_15",
+      "timestamp": "2026-01-26T17:45:37.146810",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 0.5,
+        "cost": 0.00016666666666666666,
+        "latency_ms": 4147.228002548218,
+        "transcript_length": 6,
+        "timestamp": "2026-01-26T17:45:41.295546",
+        "transcript": " Okay."
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 38,
+        "total_tokens": 2038,
+        "input_cost": 0.00118,
+        "output_cost": 3.002e-05,
+        "total_cost": 0.00121002,
+        "latency_ms": 27721.226930618286,
+        "ttft_ms": 377.39050001255237,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T17:45:39.608676",
+        "response_text": "Have a great day and take care of your health and wellness. If you need anything or have any questions in the future, I'll be here to help. Bye!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 248,
+        "cost": 0.005456,
+        "ttfb_ms": 414.6091000002343,
+        "latency_ms": 10156.234979629517,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T17:45:49.765418"
+      },
+      "eou_delay_ms": 913.1302000023425,
+      "ttft_ms": 1705.1298000151291,
+      "total_cost": 0.0068326866666666665
+    },
+    {
+      "response_id": "call_voice_assistant_room_7014_93c34329_response_16",
+      "timestamp": "2026-01-26T17:46:02.427542",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 0.5,
+        "cost": 0.00016666666666666666,
+        "latency_ms": 4258.626699447632,
+        "transcript_length": 4,
+        "timestamp": "2026-01-26T17:46:06.687077",
+        "transcript": " So,"
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 49,
+        "total_tokens": 2049,
+        "input_cost": 0.00118,
+        "output_cost": 3.871e-05,
+        "total_cost": 0.00121871,
+        "latency_ms": 23766.738176345825,
+        "ttft_ms": 447.6761999831069,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T17:46:05.063286",
+        "response_text": "It seems like we've come full circle. If you're ready to move forward, I can offer some general wellness tips or help answer any other questions you might have. Just let me know what's on your mind!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 144,
+        "cost": 0.003168,
+        "ttfb_ms": 542.7986000140663,
+        "latency_ms": 14386.07406616211,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T17:46:19.449361"
+      },
+      "eou_delay_ms": 1022.1077000023797,
+      "ttft_ms": 2012.582499999553,
+      "total_cost": 0.004553376666666667
+    },
+    {
+      "response_id": "call_voice_assistant_room_7014_93c34329_response_17",
+      "timestamp": "2026-01-26T17:46:36.253155",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 33,
+        "total_tokens": 2033,
+        "input_cost": 0.00118,
+        "output_cost": 2.6070000000000003e-05,
+        "total_cost": 0.00120607,
+        "latency_ms": 29566.07723236084,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T17:46:36.253155",
+        "response_text": "I haven't heard from you in a while. I'll disconnect for now, but feel free to call back if you have any questions. Take care!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 198,
+        "cost": 0.004356,
+        "ttfb_ms": 426.75680000684224,
+        "latency_ms": 9981.101989746094,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T17:46:46.235756"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 426.75680000684224,
+      "total_cost": 0.00556207
+    }
+  ],
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Nice to meet you back.  Ah.  What products are you offering to the people in general?"
+    },
+    {
+      "role": "assistant",
+      "content": "We currently offer the Energy Panel, which is a comprehensive at-home blood test. It measures around 20 different biomarkers that cover things like cholesterol, blood sugar, thyroid function, iron levels, and inflammation. This test gives you a really complete picture of what's affecting your energy and overall health. Would you like to know more about what specifically it measures?"
+    },
+    {
+      "role": "user",
+      "content": " Actually, I have a complaint regarding that. Once I have taken your energy panel and  I could not get satisfactory result out of that. I was tasting for sugar level in my body.  But when I go through your project,  you can see that energy panel kit.  I found that biomarkers are not correct because when I discussed personally with a doctor, he told me that this energy panel is not working correctly."
+    },
+    {
+      "role": "assistant",
+      "content": "I'm so sorry to hear that you didn't get the satisfactory results from the Energy Panel. I can understand how frustrating that must be, especially when it comes to something as important as your health. I want to help you understand what might have gone wrong. The Energy Panel does measure biomarkers related to blood sugar, such as glucose, hemoglobin A1C, and insulin. However, it's possible that the results may not have been accurate or comprehensive enough for your specific needs. I'm not a doctor, but I can try to help you understand the results you got. Just to be clear, I'm not able to provide medical advice or diagnosis. For any health concerns or if you see red markers in your results, it's best to consult with your healthcare provider who knows your complete health history. Would you like me to explain any specific part of your results, or would you like me to connect you with our support team to look into this further?"
+    },
+    {
+      "role": "user",
+      "content": " No, thank you so much."
+    },
+    {
+      "role": "assistant",
+      "content": "You're welcome. I hope you find the answers and help you need to understand your health and wellness. If you have any other questions or concerns in the future, don't hesitate to reach out. Take care of yourself and have a great day!"
+    },
+    {
+      "role": "user",
+      "content": " I guess it's a little bit."
+    },
+    {
+      "role": "assistant",
+      "content": "Still feeling a bit unsure or concerned? That's completely understandable. If you're willing, I'd like to try and help you a bit more. What's still on your mind about the Energy Panel or your results? Is there something specific you'd like me to explain or help with? I'm here to listen and try to assist in any way I can."
+    },
+    {
+      "role": "user",
+      "content": " you can be seen through."
+    },
+    {
+      "role": "user",
+      "content": " Thank you."
+    },
+    {
+      "role": "assistant",
+      "content": "You're welcome. It was a pleasure chatting with you, even if we didn't quite resolve everything. I hope you have a great day and take care of yourself. If you ever need anything or have any other questions, don't hesitate to reach out. Bye for now!"
+    },
+    {
+      "role": "user",
+      "content": " Okay."
+    },
+    {
+      "role": "assistant",
+      "content": "Have a great day and take care of your health and wellness. If you need anything or have any questions in the future, I'll be here to help. Bye!"
+    },
+    {
+      "role": "user",
+      "content": " So,"
+    },
+    {
+      "role": "assistant",
+      "content": "It seems like we've come full circle. If you're ready to move forward, I can offer some general wellness tips or help answer any other questions you might have. Just let me know what's on your mind!"
+    },
+    {
+      "role": "assistant",
+      "content": "I haven't heard from you in a while. I'll disconnect for now, but feel free to call back if you have any questions. Take care!"
+    }
+  ],
+  "total_stt_cost": 0.013933333333333336,
+  "total_llm_cost": 0.011121649999999999,
+  "total_tts_cost": 0.064746,
+  "total_livekit_cost": 0.054816608905792236,
+  "total_cost": 0.14461759223912557,
+  "total_stt_duration": 41.8,
+  "total_llm_input_tokens": 18000,
+  "total_llm_output_tokens": 635,
+  "total_tts_characters": 2943,
+  "avg_eou_delay_ms": 1100.428412508336,
+  "avg_llm_ttft_ms": 387.88957142553824,
+  "avg_tts_ttfb_ms": 648.6783300002571,
+  "avg_ttft_ms": 1800.5437600048026,
+  "livekit": {
+    "connection_duration_seconds": 328.8996534347534,
+    "cost": 0.054816608905792236,
+    "timestamp": "2026-01-26T17:46:47.185508"
+  }
+}

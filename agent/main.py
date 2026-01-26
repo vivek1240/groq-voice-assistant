@@ -32,16 +32,55 @@ except ImportError:
 
 load_dotenv()
 
-# Configure logging to suppress DuplexClosed errors on Windows (known issue with IPC watcher)
+# Configure basic logging first (before using Config, in case Config has issues)
+# This ensures we can see errors even if Config fails to load
 logging.basicConfig(
-    level=logging.INFO,
+    level=logging.INFO,  # Start with INFO level, will be updated after Config loads
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    force=True  # Force reconfiguration if logging was already set up
 )
 
+# Now import and use Config
+try:
+    from config import Config
+    
+    # Update logging level from Config if available
+    try:
+        log_level = getattr(logging, Config.LOGGING.LOG_LEVEL.upper(), logging.INFO)
+        logging.getLogger().setLevel(log_level)
+        # Reconfigure with Config's format
+        for handler in logging.getLogger().handlers:
+            handler.setFormatter(logging.Formatter(Config.LOGGING.LOG_FORMAT))
+    except Exception as e:
+        logging.warning(f"Could not configure logging from Config: {e}, using defaults")
+
+except ImportError as e:
+    logging.error(f"Failed to import Config: {e}")
+    logging.error("Please ensure config.py exists in the agent directory")
+    raise
+except Exception as e:
+    logging.error(f"Error initializing Config: {e}")
+    import traceback
+    logging.error(traceback.format_exc())
+    raise
+
 logger = logging.getLogger("voice-agent")
+logger.info("Voice agent logger initialized")
+
+# Ensure output is visible immediately (for better log visibility)
+try:
+    if sys.stdout.isatty() and hasattr(sys.stdout, 'reconfigure'):  # Only if running in a terminal
+        sys.stdout.reconfigure(line_buffering=True)
+except:
+    pass  # Ignore if not supported
 
 # Suppress DuplexClosed errors from LiveKit agents watcher on Windows
-if sys.platform == "win32":
+try:
+    suppress_duplex = Config.LOGGING.SUPPRESS_DUPLEX_CLOSED
+except:
+    suppress_duplex = True  # Default to True if Config not available
+
+if sys.platform == "win32" and suppress_duplex:
     import warnings
     warnings.filterwarnings("ignore", category=RuntimeWarning, module="livekit.agents")
     
@@ -53,228 +92,106 @@ if sys.platform == "win32":
     # Apply filter to livekit.agents loggers
     logging.getLogger("livekit.agents").addFilter(DuplexClosedFilter())
 
-
-# End Call Configuration
-END_CALL_CONFIG = {
-    "inactivity_timeout_seconds": 15,
-    "max_call_duration_minutes": 15,
-    # NOTE: Only explicit farewell phrases - NOT generic "thank you" or "thanks" alone
-    # as users often say these during conversation as acknowledgment
-    "farewell_intents": [
-        # Direct farewells (must contain "bye" or similar)
-        "bye", "goodbye", "good bye", "bye bye", "byebye",
-        # Ending phrases (explicit end intent)
-        "that's all", "thats all", "that is all", "nothing else",
-        "i'm done", "im done", "i am done", "all done",
-        "no more questions", "no questions", "that's it", "thats it",
-        # Explicit endings
-        "end call", "hang up", "disconnect", "end the call",
-        # Casual farewells
-        "see you", "see ya", "talk to you later", "ttyl", 
-        "have a good day", "have a nice day",
-        # Combined with bye (these are clearly ending the call)
-        "okay bye", "ok bye", "thanks bye", "thank you bye", 
-        "thanks goodbye", "thank you goodbye",
-        "okay thank you bye", "ok thank you bye",
-        "take care bye", "take care goodbye"
-    ],
-    "inactivity_message": (
-        "I haven't heard from you in a while. "
-        "I'll disconnect for now, but feel free to call back if you have any questions. Take care!"
-    ),
-    "max_duration_warning_minutes": 1,  # Warn 1 min before cutoff
-    "max_duration_warning_message": (
-        "Just a heads up, we're approaching the maximum call duration. "
-        "Is there anything else I can quickly help you with?"
-    ),
-    "max_duration_end_message": (
-        "We've reached the maximum call duration. "
-        "Thank you for using Mercola Health Coach. Feel free to call back anytime!"
-    ),
-    "farewell_message": (
-        "Thank you for contacting Mercola Health Coach! "
-        "Feel free to reach out anytime you need help. Take care!"
-    )
-}
+# Get call configuration from Config
+try:
+    END_CALL_CONFIG = Config.get_end_call_config()
+    logger.debug("Call configuration loaded successfully")
+except Exception as e:
+    logger.error(f"Failed to load call configuration: {e}")
+    # Fallback to default configuration
+    END_CALL_CONFIG = {
+        "inactivity_timeout_seconds": 15,
+        "max_call_duration_minutes": 15,
+        "farewell_intents": ["bye", "goodbye", "that's all", "i'm done"],
+        "inactivity_message": "I haven't heard from you in a while. I'll disconnect for now.",
+        "max_duration_warning_minutes": 1,
+        "max_duration_warning_message": "Just a heads up, we're approaching the maximum call duration.",
+        "max_duration_end_message": "We've reached the maximum call duration. Thank you!",
+        "farewell_message": "Thank you for contacting Mercola Health Coach! Take care!",
+    }
+    logger.warning("Using fallback call configuration")
 
 
 def prewarm(proc: JobProcess):
     """Prewarm models to reduce cold start latency."""
+    import time
+    prewarm_start = time.time()
     logger.info("Prewarming models...")
     
     # Load VAD model
+    vad_start = time.time()
     proc.userdata["vad"] = silero.VAD.load()
+    logger.info(f"VAD model loaded in {(time.time() - vad_start)*1000:.0f}ms")
     
     # Pre-initialize Groq clients to establish connections early
     # This reduces first-request latency
     
     # STT: Groq Whisper Large V3 Turbo (fastest, best quality)
-    proc.userdata["stt"] = groq.STT(model="whisper-large-v3-turbo")
+    stt_start = time.time()
+    proc.userdata["stt"] = groq.STT(model=Config.MODELS.STT_MODEL)
+    logger.info(f"STT client initialized in {(time.time() - stt_start)*1000:.0f}ms")
     
     # LLM: Llama 3.3 70B (best quality, Groq makes it fast)
     # Groq's inference is so fast that 70B has negligible latency cost vs 8B
-    proc.userdata["llm"] = groq.LLM(model="llama-3.3-70b-versatile")
+    llm_start = time.time()
+    proc.userdata["llm"] = groq.LLM(model=Config.MODELS.LLM_MODEL)
+    logger.info(f"LLM client initialized in {(time.time() - llm_start)*1000:.0f}ms")
     
     # TTS: Groq Orpheus
     # Available voices: autumn, diana, hannah, austin, daniel, troy
+    tts_start = time.time()
     proc.userdata["tts"] = groq.TTS(
-        model="canopylabs/orpheus-v1-english",
-        voice="autumn"
+        model=Config.MODELS.TTS_MODEL,
+        voice=Config.MODELS.TTS_VOICE
     )
+    logger.info(f"TTS client initialized in {(time.time() - tts_start)*1000:.0f}ms")
     
-    logger.info("Models prewarmed successfully")
+    total_prewarm_time = (time.time() - prewarm_start) * 1000
+    logger.info(f"Models prewarmed successfully in {total_prewarm_time:.0f}ms total")
 
 
 async def entrypoint(ctx: JobContext):
     try:
         # Initialize cost tracker for this call
         call_id = f"call_{ctx.room.name}_{uuid.uuid4().hex[:8]}"
+        cost_tracker_start = time.time()
         cost_tracker = CostTracker(call_id=call_id)
+        logger.info(f"CostTracker initialized in {(time.time() - cost_tracker_start)*1000:.0f}ms")
+        
+        # Load system prompt from config
+        prompt_start = time.time()
+        system_prompt = Config.load_system_prompt()
+        logger.info(f"System prompt loaded in {(time.time() - prompt_start)*1000:.0f}ms")
         
         initial_ctx = llm.ChatContext().append(
             role="system",
-            text=(
-                "You are a friendly and knowledgeable voice assistant for Mercola Health Coach, specializing in helping users "
-                "understand and navigate the at-home lab testing features. Your name is 'Pax' and you provide clear, conversational "
-                "guidance about lab test kits, ordering, sample collection, and understanding results.\n\n"
-                
-                "YOUR ROLE:\n"
-                "You help users with:\n"
-                "- Understanding available lab test kits and what they measure\n"
-                "- Navigating the purchase and ordering process\n"
-                "- Registering their test kits after delivery\n"
-                "- Collecting and shipping their samples\n"
-                "- Understanding their lab results and biomarker readings\n"
-                "- Troubleshooting common issues\n\n"
-                
-                "PERSONALITY & COMMUNICATION STYLE:\n"
-                "- Warm & Supportive: Health testing can feel intimidating. Be reassuring and empathetic.\n"
-                "- Clear & Concise: Since this is voice, keep responses brief and easy to follow. Avoid long lists—break information into digestible pieces.\n"
-                "- Conversational: Use natural speech patterns. Say 'you'll' instead of 'you will', 'let me explain' instead of 'I shall elucidate'.\n"
-                "- Proactive: Anticipate follow-up questions and offer relevant next steps.\n"
-                "- Patient: Users may be unfamiliar with health testing. Never make them feel rushed or uninformed.\n\n"
-                
-                "VOICE-SPECIFIC GUIDELINES:\n"
-                "- Brevity: Keep responses under 3-4 sentences when possible. Offer to elaborate if needed.\n"
-                "- Structure: For multi-step processes, offer to go through them one step at a time.\n"
-                "- Confirmation: Periodically check understanding: 'Does that make sense?' or 'Would you like me to explain any part of that?'\n"
-                "- Avoid: Long lists, technical jargon, URLs, complex medical terminology without explanation.\n"
-                "- Numbers: Speak numbers naturally. Say 'around fifty to one hundred' not '50-100'.\n\n"
-                
-                "AVAILABLE LAB TEST KITS:\n"
-                "Energy Panel - Our comprehensive at-home blood test that measures key biomarkers affecting your energy levels, metabolism, and overall wellness.\n"
-                "What It Measures: Heart & Lipid Health (Total Cholesterol, HDL, LDL, Triglycerides), Blood Sugar & Metabolism (Glucose, Hemoglobin A1C, Insulin, HOMA-IR), "
-                "Thyroid Function (TSH, Free T3, Free T4, Thyroid Antibodies), Iron & Energy (Iron, Ferritin, TIBC, Transferrin Saturation), Inflammation (High-Sensitivity CRP), "
-                "Vitamin Levels (Vitamin D, B12), Kidney & Liver (BUN, Creatinine, Bilirubin).\n"
-                "Sample Type: Dried Blood Spot (simple finger prick at home). Fasting Required: Yes, 8-12 hours recommended. Minimum Age: 18 years.\n\n"
-                
-                "THE COMPLETE TESTING JOURNEY:\n"
-                "Phase 1 - Ordering: Browse and select your test kit, add to cart and checkout, kit ships to your address (typically 2-5 business days).\n"
-                "Phase 2 - Kit Delivery & Registration: Kit arrives, open the Mercola Health Coach app, scan the barcode or enter the Kit ID to register.\n"
-                "Phase 3 - Sample Collection: Fast for required hours, follow the step-by-step collection guide in the app, use the lancet for a simple finger prick, "
-                "apply blood drops to the collection card, let it dry completely, package in the prepaid return envelope.\n"
-                "Phase 4 - Shipping & Processing: Drop the sample in any mailbox, sample travels to the certified lab, results typically ready in 5-7 business days.\n"
-                "Phase 5 - Receiving Results: You'll get a notification when results are ready, view results in the app organized by category, "
-                "each biomarker shows your value and optimal range, download your complete PDF report.\n\n"
-                
-                "UNDERSTANDING RESULTS - Color Coding System:\n"
-                "Green (Optimal): Your value is within the ideal healthy range.\n"
-                "Yellow (Below Optimal): Slightly outside optimal, worth monitoring.\n"
-                "Red (Abnormal): Significantly outside normal range, consider consulting a healthcare provider.\n\n"
-                
-                "Key Terms: Biomarker (a measurable indicator of your health), Reference Range (the range of values considered normal or healthy), "
-                "Optimal Range (Dr. Mercola's recommended ideal range for best health), Unit of Measure (how the biomarker is measured).\n\n"
-                
-                "IMPORTANT BOUNDARIES - Medical Advice Disclaimer:\n"
-                "Always remind users when appropriate: 'Just to be clear, I can help you understand your results, but I'm not able to provide medical advice or diagnosis. "
-                "For any health concerns or if you see red markers in your results, it's best to consult with your healthcare provider who knows your complete health history.'\n\n"
-                
-                "What You CAN Help With: Explaining the testing process, describing what biomarkers measure, helping with kit registration, "
-                "explaining result categories and color coding, general wellness education, troubleshooting order and delivery issues, guiding through sample collection steps.\n\n"
-                
-                "What You CANNOT Do: Diagnose medical conditions, recommend treatments or medications, interpret results as a healthcare provider would, "
-                "make predictions about health outcomes, override or change lab result values, access or modify user account information, process payments or refunds.\n\n"
-                
-                "When to Escalate: User expresses serious health concerns, user needs help with billing or refunds, technical issues with the app, "
-                "lost or damaged shipments requiring replacement, user requests to speak with a human. "
-                "Say: 'That's something our support team can help you with better than I can. Would you like me to connect you with them, or I can give you the best way to reach out?'\n\n"
-                
-                "CONVERSATION STARTERS:\n"
-                "When a user initiates conversation, respond warmly: 'Hey there! I'm Coach, your guide to Mercola's at-home lab testing. "
-                "I can help you with ordering test kits, collecting your sample, or understanding your results. What can I help you with today?'\n\n"
-                
-                "HANDLING UNCERTAINTY:\n"
-                "If you're unsure about something: 'That's a great question. I want to make sure I give you accurate information, so let me suggest reaching out to our support team "
-                "for that specific detail. Is there anything else about the testing process I can help clarify in the meantime?' Never make up information about specific medical values, timelines, or policies.\n\n"
-                
-                "COMMON USER SCENARIOS & RESPONSES:\n\n"
-                
-                "Scenario: User asks what tests are available\n"
-                "Response: 'Right now, we offer the Energy Panel, which is a comprehensive blood test you can do at home. It measures over 20 different biomarkers covering things like "
-                "cholesterol, blood sugar, thyroid function, iron levels, and inflammation. It gives you a really complete picture of what's affecting your energy and overall health. "
-                "Would you like to know more about what specifically it measures?'\n\n"
-                
-                "Scenario: User asks about the testing process\n"
-                "Response: 'The process is pretty straightforward. Once you order, the kit arrives in about 2 to 5 days. You'll register it in the app, then do a simple finger prick "
-                "to collect a few drops of blood on a card. After it dries, you mail it back in the prepaid envelope, and your results are usually ready within a week. "
-                "Want me to walk you through any of these steps in more detail?'\n\n"
-                
-                "Scenario: User asks how to register their kit\n"
-                "Response: 'To register your kit, open the Mercola Health Coach app and look for the kit registration option. You can either scan the barcode on your kit or manually "
-                "enter the Kit ID—it's the code printed on the kit packaging. This links the kit to your account so your results come directly to you. Having any trouble finding it?'\n\n"
-                
-                "Scenario: User is confused about fasting\n"
-                "Response: 'Good question! For the most accurate results, you should fast for 8 to 12 hours before collecting your sample. That means no food—but water is totally fine "
-                "and actually encouraged. Most people find it easiest to collect their sample first thing in the morning before breakfast. Does that help?'\n\n"
-                
-                "Scenario: User received results and is concerned\n"
-                "Response: 'I understand seeing your results can bring up questions. The color coding helps you quickly see where you're doing well and where there might be room for improvement. "
-                "Green means optimal, yellow means slightly outside optimal, and red indicates you might want to discuss that marker with your healthcare provider. Remember, these results are "
-                "for wellness insights—they're not a diagnosis. Would you like me to explain any specific result you're looking at?'\n\n"
-                
-                "Scenario: User's kit hasn't arrived\n"
-                "Response: 'Kit delivery usually takes 2 to 5 business days. If it's been longer than that, I'd recommend checking your order status in the app under your order history. "
-                "You can see the tracking information there. If something seems off, our support team can help track it down. Would you like help finding your order status?'\n\n"
-                
-                "Scenario: User asks about sample rejection\n"
-                "Response: 'Sometimes a sample can't be processed—usually because the blood spots weren't quite right or the sample got damaged in shipping. If that happens, we'll notify you "
-                "and typically send a replacement kit at no extra charge. The most important things for a good sample are: make sure the blood drops fully soak through the card, let it dry "
-                "completely for at least 3 hours, and don't touch the collection area. Would tips on collection technique be helpful?'\n\n"
-                
-                "Scenario: User asks about HDL vs LDL cholesterol\n"
-                "Response: 'Great question! Think of HDL as the \"helpful\" cholesterol—it actually helps remove excess cholesterol from your blood and takes it to your liver to be processed. "
-                "Higher HDL is generally better. LDL, on the other hand, can build up in your arteries if there's too much, which is why it's sometimes called the \"lousy\" cholesterol. "
-                "The Energy Panel measures both so you can see the full picture. Does that help explain the difference?'\n\n"
-                
-                "Scenario: User's results show red for ferritin\n"
-                "Response: 'I can see why that might be concerning. Ferritin is basically your body's iron storage—it tells us how much iron you have in reserve. A red indicator means your level "
-                "is significantly outside the typical range, which could mean it's either too low or too high. Low ferritin often relates to feeling tired or fatigued. I'd definitely recommend "
-                "discussing this specific result with your doctor, as they can look at it alongside your other iron markers and your overall health picture. Would you like me to explain what the "
-                "other iron-related markers mean?'\n\n"
-                
-                "Scenario: User asks how to do the finger prick\n"
-                "Response: 'Totally understandable—a lot of people feel that way at first! Here's the good news: it's really quick. The lancet in your kit is designed to be as painless as possible. "
-                "Here's what works best: wash your hands with warm water first, that gets the blood flowing. Then pick your ring finger or middle finger on your non-dominant hand. Press the lancet "
-                "firmly against the side of your fingertip—not the pad, the side—and click. You'll feel a tiny pinch for just a second. Then gently massage your finger to get the drops flowing. "
-                "Want me to walk you through what to do next with the collection card?'"
-            ),
+            text=system_prompt,
         )
 
         logger.info(f"connecting to room {ctx.room.name}")
+        connect_start = time.time()
         await ctx.connect(auto_subscribe=AutoSubscribe.AUDIO_ONLY)
+        logger.info(f"Connected to room in {(time.time() - connect_start)*1000:.0f}ms")
 
         # Wait for the first participant to connect
+        participant_start = time.time()
         participant = await ctx.wait_for_participant()
+        logger.info(f"Participant connected in {(time.time() - participant_start)*1000:.0f}ms")
         logger.info(f"starting voice assistant for participant {participant.identity}")
 
         # Use prewarmed models for faster startup
+        agent_start = time.time()
         agent = VoicePipelineAgent(
             vad=ctx.proc.userdata["vad"],
-            stt=ctx.proc.userdata.get("stt") or groq.STT(model="whisper-large-v3-turbo"),
-            llm=ctx.proc.userdata.get("llm") or groq.LLM(model="llama-3.3-70b-versatile"),
-            tts=ctx.proc.userdata.get("tts") or groq.TTS(model="canopylabs/orpheus-v1-english", voice="autumn"),
+            stt=ctx.proc.userdata.get("stt") or groq.STT(model=Config.MODELS.STT_MODEL),
+            llm=ctx.proc.userdata.get("llm") or groq.LLM(model=Config.MODELS.LLM_MODEL),
+            tts=ctx.proc.userdata.get("tts") or groq.TTS(
+                model=Config.MODELS.TTS_MODEL, 
+                voice=Config.MODELS.TTS_VOICE
+            ),
             chat_ctx=initial_ctx,
         )
+        logger.info(f"VoicePipelineAgent created in {(time.time() - agent_start)*1000:.0f}ms")
 
         # Initialize call tracking variables
         call_start_time = time.time()
@@ -284,6 +201,7 @@ async def entrypoint(ctx: JobContext):
         farewell_detected = False
         inactivity_ended = False  # Track if call ended due to inactivity
         agent_is_speaking = False
+        inactivity_disconnect_in_progress = False  # Track if we're in the middle of disconnecting due to inactivity
         
         # Function to check for farewell intents
         def detect_farewell_intent(text: str) -> bool:
@@ -295,6 +213,63 @@ async def entrypoint(ctx: JobContext):
                 if intent in text_lower:
                     return True
             return False
+        
+        # Function to filter out false-positive transcriptions
+        def is_valid_transcript(text: str) -> bool:
+            """
+            Filter out false-positive transcriptions from background noise or silence.
+            Returns False if transcript should be ignored.
+            """
+            if not text:
+                return False
+            
+            text_stripped = text.strip()
+            
+            # Reject empty or whitespace-only transcripts
+            if not text_stripped:
+                return False
+            
+            # Count meaningful words (excluding very short words that might be noise)
+            words = [w for w in text_stripped.split() if len(w) > 1]
+            word_count = len(words)
+            
+            # Reject transcripts that are too short in character length
+            # Very short transcripts (less than 5 characters) are likely noise
+            if len(text_stripped) < 5:
+                logger.warning(f"REJECTING VERY SHORT TRANSCRIPT ({len(text_stripped)} chars): '{text_stripped}'")
+                return False
+            
+            # Reject transcripts with less than 2 meaningful words
+            # This filters out single words, filler sounds, or very short phrases
+            if word_count < 2:
+                logger.warning(f"REJECTING SHORT TRANSCRIPT (only {word_count} word(s)): '{text_stripped}'")
+                return False
+            
+            # Reject transcripts that are just punctuation or very short phrases
+            # Remove punctuation and check if there's meaningful content
+            import re
+            text_no_punct = re.sub(r'[^\w\s]', '', text_stripped)
+            meaningful_words = [w for w in text_no_punct.split() if len(w) > 1]
+            
+            if len(meaningful_words) < 2:
+                logger.warning(f"REJECTING LOW-QUALITY TRANSCRIPT (mostly punctuation/noise): '{text_stripped}'")
+                return False
+            
+            # Reject transcripts that are just single-word filler sounds (not legitimate responses)
+            # Note: We allow 2-word phrases even if they're common, as they might be legitimate
+            single_word_fillers = [
+                "uh", "um", "ah", "eh", "oh", "hmm", "mm", "mmm",
+                "so", "well", "like", "actually"
+            ]
+            text_lower = text_stripped.lower()
+            
+            # Only reject if it's a single word AND it's a known filler sound
+            if word_count == 1:
+                if text_lower.strip() in single_word_fillers:
+                    logger.warning(f"REJECTING SINGLE-WORD FILLER: '{text_stripped}'")
+                    return False
+            
+            return True
 
         # Cost tracking state
         tracking_state = {
@@ -335,12 +310,18 @@ async def entrypoint(ctx: JobContext):
         @agent.on("user_started_speaking")
         def _on_user_started_speaking():
             """User started speaking - start tracking response and reset activity timer"""
-            nonlocal last_activity_time
+            nonlocal last_activity_time, inactivity_disconnect_in_progress
             
             # CRITICAL: Reset activity timer immediately when user starts speaking
             # This prevents premature disconnection if user_speech_committed fails to fire
             last_activity_time = time.time()
-            logger.info("USER STARTED SPEAKING - activity timer reset")
+            
+            # Cancel any pending inactivity disconnect
+            if inactivity_disconnect_in_progress:
+                inactivity_disconnect_in_progress = False
+                logger.info("USER STARTED SPEAKING - CANCELLING inactivity disconnect")
+            else:
+                logger.info("USER STARTED SPEAKING - activity timer reset")
             
             logger.debug("Starting response tracking")
             cost_tracker.start_response()
@@ -370,6 +351,13 @@ async def entrypoint(ctx: JobContext):
                     user_text = msg.content
                 elif isinstance(msg, str):
                     user_text = msg
+                
+                # Filter out false-positive transcriptions (background noise, silence, etc.)
+                if not is_valid_transcript(user_text):
+                    logger.info(f"IGNORING INVALID TRANSCRIPT: '{user_text}' - likely false positive from noise/silence")
+                    # Don't process this transcript - return early
+                    # But still reset activity timer since VAD detected something
+                    return
                 
                 tracking_state['current_user_text'] = user_text
                 logger.info(f"USER SPOKE: {user_text[:80] if user_text else 'N/A'}...")
@@ -423,7 +411,7 @@ async def entrypoint(ctx: JobContext):
                 cost_tracker.end_llm(
                     input_tokens=estimated_input_tokens,
                     output_tokens=estimated_output_tokens,
-                    model="llama-3.3-70b-versatile",
+                    model=Config.MODELS.LLM_MODEL,
                     ttft_ms=tracking_state.get('llm_ttft_ms', 0)
                 )
                 
@@ -437,13 +425,14 @@ async def entrypoint(ctx: JobContext):
         @agent.on("agent_stopped_speaking")
         def _on_agent_stopped_speaking():
             """Agent stopped speaking - TTS completed"""
-            nonlocal agent_is_speaking
+            nonlocal agent_is_speaking, last_activity_time
             agent_is_speaking = False
             
-            # NOTE: Do NOT reset last_activity_time here!
-            # Only USER speech should reset the inactivity timer.
-            # If agent stops speaking and user doesn't respond, we want inactivity timeout to trigger.
-            logger.info("AGENT STOPPED SPEAKING")
+            # CRITICAL: Reset inactivity timer when agent finishes speaking
+            # The time while agent was speaking should NOT count as user inactivity.
+            # User needs time to process the response and formulate their reply.
+            last_activity_time = time.time()
+            logger.info("AGENT STOPPED SPEAKING - inactivity timer reset (user now has time to respond)")
             
             try:
                 # Get the agent's response text if available
@@ -455,7 +444,7 @@ async def entrypoint(ctx: JobContext):
                 
                 cost_tracker.end_tts(
                     characters=estimated_characters,
-                    model="canopylabs/orpheus-v1-english",
+                    model=Config.MODELS.TTS_MODEL,
                     ttfb_ms=tracking_state.get('tts_ttfb_ms', 0)
                 )
                 
@@ -533,11 +522,21 @@ async def entrypoint(ctx: JobContext):
             except Exception as e:
                 logger.error(f"Error capturing agent speech: {e}", exc_info=True)
 
+        # Start the agent and measure startup time
+        agent_start_time = time.time()
+        logger.info("Starting agent pipeline...")
         agent.start(ctx.room, participant)
+        agent_startup_time = (time.time() - agent_start_time) * 1000
+        logger.info(f"Agent pipeline started in {agent_startup_time:.0f}ms")
         
         # Background task to monitor call duration and inactivity
+
+
+
+
+# 2. FIXED inactivity check - simpler and more reliable
         async def monitor_call():
-            nonlocal call_ended, max_duration_warning_sent, last_activity_time, inactivity_ended
+            nonlocal call_ended, max_duration_warning_sent, inactivity_ended, last_activity_time, farewell_detected, agent_is_speaking
             
             while not call_ended:
                 await asyncio.sleep(1)  # Check every second
@@ -547,16 +546,14 @@ async def entrypoint(ctx: JobContext):
                 call_duration_minutes = call_duration_seconds / 60
                 time_since_last_activity = current_time - last_activity_time
                 
-                # Check for farewell detection - wait for LLM response to complete, then end
-                # This allows the agent to finish its natural response to "goodbye"
+                # Check for farewell detection
                 if farewell_detected and not agent_is_speaking:
                     logger.info("Farewell detected, agent response finished - proceeding to farewell message")
                     call_ended = True
                     break
                 
-                # Skip other checks if agent is currently speaking
+                # Skip all checks while agent is speaking
                 if agent_is_speaking:
-                    logger.debug("Agent is speaking, skipping inactivity check")
                     continue
                 
                 # Check for maximum call duration warning
@@ -573,59 +570,66 @@ async def entrypoint(ctx: JobContext):
                 # Check for maximum call duration reached
                 if call_duration_minutes >= max_duration_minutes:
                     logger.info(f"Maximum call duration reached: {call_duration_minutes:.1f} minutes")
-                    logger.info("Playing max duration message to user")
                     await agent.say(END_CALL_CONFIG["max_duration_end_message"], allow_interruptions=False)
-                    # Wait for the message to be fully spoken
-                    logger.info("Waiting for max duration message to complete")
                     await asyncio.sleep(8)
                     call_ended = True
                     break
                 
-                # Check for inactivity timeout (only when agent is NOT speaking)
-                if time_since_last_activity >= END_CALL_CONFIG["inactivity_timeout_seconds"]:
+                # Check for inactivity timeout
+                inactivity_timeout = END_CALL_CONFIG["inactivity_timeout_seconds"]
+                
+                if time_since_last_activity >= inactivity_timeout:
                     logger.info(f"Inactivity timeout: {time_since_last_activity:.1f}s of silence")
+                    
+                    # Capture the current activity time BEFORE saying anything
+                    activity_time_before_message = last_activity_time
+                    
+                    # Say inactivity message (allow interruptions)
                     logger.info("Playing inactivity message to user")
-                    
-                    # Record time before saying goodbye message
-                    time_before_goodbye = last_activity_time
-                    
-                    # Play inactivity message (allow interruptions so user can respond)
                     await agent.say(END_CALL_CONFIG["inactivity_message"], allow_interruptions=True)
                     
-                    # Wait for the TTS to finish playing + extra time for user to respond
-                    # Don't check agent_is_speaking here - we KNOW the agent is speaking our message!
-                    logger.info("Waiting for inactivity message to complete...")
-                    await asyncio.sleep(12)  # Wait for message to play out
+                    # Check if user spoke during the message
+                    if last_activity_time > activity_time_before_message:
+                        logger.info("User interrupted inactivity message - continuing conversation")
+                        continue  # Go back to monitoring
                     
-                    # Now check if user responded (last_activity_time would be updated)
-                    if last_activity_time > time_before_goodbye:
-                        logger.info("User responded during/after inactivity message, cancelling disconnect")
-                        last_activity_time = time.time()
-                        continue
-                    
-                    # User didn't respond, end the call and disconnect immediately
-                    logger.info("No response detected after inactivity message, disconnecting NOW")
-                    inactivity_ended = True
-                    call_ended = True
-                    
-                    # Disconnect directly from here to ensure it happens
-                    try:
-                        await ctx.room.disconnect()
-                        logger.info("Room disconnected successfully from monitor loop")
-                    except Exception as e:
-                        logger.warning(f"Disconnect error in monitor: {e}")
-                    break
+                    # Wait additional time for user to respond after hearing the message
+                    logger.info("Waiting 10 seconds for user response...")
+                    for i in range(10):
+                        await asyncio.sleep(1)
+                        
+                        # Check if user spoke during wait
+                        if last_activity_time > activity_time_before_message:
+                            logger.info(f"User responded after {i+1}s - continuing conversation")
+                            break  # Exit the wait loop and continue monitoring
+                    else:
+                        # Loop completed without break = user never responded
+                        # Check one final time
+                        if last_activity_time > activity_time_before_message:
+                            logger.info("User responded at last moment - continuing conversation")
+                            continue
+                        
+                        # No response - disconnect
+                        logger.info("No response detected after inactivity message, disconnecting NOW")
+                        inactivity_ended = True
+                        call_ended = True
+                        break  # Exit the while loop immediately
+                
+        # CRITICAL: Send greeting IMMEDIATELY after agent starts
+        # Start TTS generation as fast as possible - don't wait for monitor task
+        greeting_start = time.time()
+        greeting_message = Config.CALL.GREETING_MESSAGE
+        logger.info(f"Starting greeting TTS generation immediately: {greeting_message[:50]}...")
         
-        # Start the monitoring task
+        # Send greeting immediately - this queues TTS generation
+        # The await here is necessary but TTS generation happens asynchronously
+        await agent.say(greeting_message, allow_interruptions=True)
+        
+        greeting_time = (time.time() - greeting_start) * 1000
+        logger.info(f"Greeting queued and TTS generation started in {greeting_time:.0f}ms")
+        
+        # Start the monitoring task AFTER greeting is queued (non-blocking)
         monitor_task = asyncio.create_task(monitor_call())
-        
-        # The agent should be polite and greet the user when it joins
-        # Shorter greeting = faster TTS processing
-        await agent.say(
-            "Hey there! I'm Pax, your Mercola Health Coach. "
-            "How can I help you today?",
-            allow_interruptions=True
-        )
         
         # Wait for the call to end
         await monitor_task
@@ -652,12 +656,8 @@ async def entrypoint(ctx: JobContext):
         try:
             cost_tracker.end_call()
             
-            # Export to file if metrics directory exists
-            metrics_dir = os.path.join(os.path.dirname(__file__), "metrics")
-            if not os.path.exists(metrics_dir):
-                os.makedirs(metrics_dir)
-            
-            metrics_file = os.path.join(metrics_dir, f"{call_id}.json")
+            # Export to file using configured metrics directory
+            metrics_file = os.path.join(Config.PATHS.METRICS_DIR, f"{call_id}.json")
             cost_tracker.export_to_file(metrics_file)
             
             # Print summary to console
@@ -683,7 +683,7 @@ async def entrypoint(ctx: JobContext):
                 # Use Labs-specific evaluator for comprehensive compliance tracking
                 # LLM evaluation provides accurate sentiment, intent, and compliance analysis
                 # Heuristic evaluation is faster but less accurate
-                use_llm = os.getenv("USE_LLM_EVALUATION", "true").lower() == "true"
+                use_llm = Config.EVALUATION.USE_LLM_EVALUATION
                 eval_method = "LLM-based (intelligent)" if use_llm else "Heuristic-based (pattern matching)"
                 logger.info(f"Evaluation method: {eval_method}")
                 
@@ -756,12 +756,83 @@ async def entrypoint(ctx: JobContext):
 
 
 if __name__ == "__main__":
+    # Force unbuffered output immediately
+    import sys
+    if hasattr(sys.stdout, 'reconfigure'):
+        try:
+            sys.stdout.reconfigure(line_buffering=True, encoding='utf-8')
+        except:
+            pass
+    
     try:
+        # CRITICAL: Print to stderr first (usually not buffered) to ensure visibility
+        import sys
+        sys.stderr.write("\n" + "=" * 80 + "\n")
+        sys.stderr.write("STARTING GROQ VOICE ASSISTANT\n")
+        sys.stderr.write("=" * 80 + "\n")
+        sys.stderr.flush()
+        
+        # Also print to stdout
+        print("\n" + "=" * 80, file=sys.stdout, flush=True)
+        print("STARTING GROQ VOICE ASSISTANT", file=sys.stdout, flush=True)
+        print("=" * 80, file=sys.stdout, flush=True)
+        
+        # Log startup information
+        logger.info("=" * 80)
+        logger.info("STARTING GROQ VOICE ASSISTANT")
+        logger.info("=" * 80)
+        logger.info(f"Agent Name: {Config.AGENT.AGENT_NAME}")
+        logger.info(f"STT Model: {Config.MODELS.STT_MODEL}")
+        logger.info(f"LLM Model: {Config.MODELS.LLM_MODEL}")
+        logger.info(f"TTS Model: {Config.MODELS.TTS_MODEL} (voice: {Config.MODELS.TTS_VOICE})")
+        
+        # Print config to both stdout and stderr for maximum visibility
+        config_info = f"""
+Configuration:
+  Agent Name: {Config.AGENT.AGENT_NAME}
+  STT Model: {Config.MODELS.STT_MODEL}
+  LLM Model: {Config.MODELS.LLM_MODEL}
+  TTS Model: {Config.MODELS.TTS_MODEL} (voice: {Config.MODELS.TTS_VOICE})
+"""
+        sys.stderr.write(config_info)
+        sys.stderr.flush()
+        print(config_info, file=sys.stdout, flush=True)
+        
+        # Validate credentials
+        if not Config.LIVEKIT.validate():
+            error_msg = "LiveKit credentials are missing or invalid!"
+            sys.stderr.write(f"ERROR: {error_msg}\n")
+            sys.stderr.flush()
+            print(f"ERROR: {error_msg}", file=sys.stdout, flush=True)
+            logger.error(error_msg)
+            logger.error("Please set LIVEKIT_URL, LIVEKIT_API_KEY, and LIVEKIT_API_SECRET in .env")
+            sys.exit(1)
+        
+        if not Config.GROQ.validate():
+            warning_msg = "Groq API key is missing - some features may not work"
+            sys.stderr.write(f"WARNING: {warning_msg}\n")
+            sys.stderr.flush()
+            print(f"WARNING: {warning_msg}", file=sys.stdout, flush=True)
+            logger.warning(warning_msg)
+            logger.warning("Please set GROQ_API_KEY in .env for full functionality")
+        
+        logger.info("=" * 80)
+        logger.info("Starting agent...")
+        logger.info("=" * 80)
+        
+        sys.stderr.write("=" * 80 + "\n")
+        sys.stderr.write("Starting agent and connecting to LiveKit...\n")
+        sys.stderr.write("=" * 80 + "\n")
+        sys.stderr.flush()
+        print("=" * 80, file=sys.stdout, flush=True)
+        print("Starting agent and connecting to LiveKit...", file=sys.stdout, flush=True)
+        print("=" * 80, file=sys.stdout, flush=True)
+        
         cli.run_app(
             WorkerOptions(
                 entrypoint_fnc=entrypoint,
                 prewarm_fnc=prewarm,
-                agent_name="mercola-health-coach",  # Unique name to identify this agent
+                agent_name=Config.AGENT.AGENT_NAME,  # Unique name to identify this agent
             )
         )
     except KeyboardInterrupt:
@@ -777,4 +848,5 @@ if __name__ == "__main__":
         if sys.platform == "win32" and is_duplex_closed:
             logger.info("Agent stopped (DuplexClosed error is non-fatal on Windows)")
         else:
+            logger.error(f"Agent failed to start: {e}", exc_info=True)
             raise

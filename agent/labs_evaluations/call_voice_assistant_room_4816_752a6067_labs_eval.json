@@ -1,0 +1,42 @@
+{
+  "call_id": "call_voice_assistant_room_4816_752a6067",
+  "timestamp": "2026-01-26T15:32:58.761028",
+  "duration_seconds": 37.68236994743347,
+  "total_cost": 0.028115558324572243,
+  "core_metrics": {
+    "user_sentiment": "neutral",
+    "call_summary": "The user initiated a call but did not ask any questions or seek assistance. The conversation was brief, with the assistant providing a general greeting and farewell. The call ended without any specific topic or query being discussed.",
+    "query_resolved": "true",
+    "escalation_required": "false"
+  },
+  "domain_metrics": {
+    "query_category": "general_inquiry",
+    "testing_phase": "unknown"
+  },
+  "compliance_metrics": {
+    "medical_boundary_maintained": "true",
+    "proper_disclaimer_given": "null"
+  },
+  "conversation_transcript": [
+    {
+      "role": "user",
+      "content": " ASHchaty Er Pushkar  Goodbye."
+    },
+    {
+      "role": "assistant",
+      "content": "It was nice chatting with you, even if it was just a quick hello. If you have any questions about at-home lab testing or need help with anything in the future, feel free to reach out. Have a great day!"
+    },
+    {
+      "role": "assistant",
+      "content": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+    }
+  ],
+  "additional_info": {
+    "total_turns": 4,
+    "avg_latency_ms": 0.0,
+    "evaluation_method": "llm",
+    "evaluation_version": "1.0"
+  },
+  "notes": "The call was very short and did not involve any specific inquiry or issue related to Mercola Health Coach's services. The assistant's responses were generic and did not require any medical advice or disclaimer.",
+  "flags": []
+}

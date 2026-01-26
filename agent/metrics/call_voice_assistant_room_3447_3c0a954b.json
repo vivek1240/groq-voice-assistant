@@ -1,0 +1,326 @@
+{
+  "call_id": "call_voice_assistant_room_3447_3c0a954b",
+  "start_timestamp": "2026-01-26T14:14:27.112078",
+  "end_timestamp": "2026-01-26T14:20:59.231512",
+  "duration_seconds": 392.1194338798523,
+  "responses": [
+    {
+      "response_id": "call_voice_assistant_room_3447_3c0a954b_response_1",
+      "timestamp": "2026-01-26T14:14:29.140042",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 18,
+        "total_tokens": 2018,
+        "input_cost": 0.00118,
+        "output_cost": 1.422e-05,
+        "total_cost": 0.00119422,
+        "latency_ms": 0.0,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T14:14:29.140042",
+        "response_text": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 583.5040000092704,
+        "latency_ms": 6549.87907409668,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T14:14:35.689921"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 583.5040000092704,
+      "total_cost": 0.0055942200000000004
+    },
+    {
+      "response_id": "call_voice_assistant_room_3447_3c0a954b_response_4",
+      "timestamp": "2026-01-26T14:14:46.681196",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 12.0,
+        "cost": 0.004,
+        "latency_ms": 4586.48681640625,
+        "transcript_length": 162,
+        "timestamp": "2026-01-26T14:14:51.268684",
+        "transcript": " Apex.  What are different products your company is offering to people in general? If you briefly can describe to me, it will be a great product.  I think for me."
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 82,
+        "total_tokens": 2082,
+        "input_cost": 0.00118,
+        "output_cost": 6.478e-05,
+        "total_cost": 0.00124478,
+        "latency_ms": 0.0,
+        "ttft_ms": 259.6368000085931,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T14:14:49.635612",
+        "response_text": "We currently offer the Energy Panel, a comprehensive at-home blood test that measures around 20 key biomarkers related to energy, metabolism, and overall wellness. It covers things like cholesterol, blood sugar, thyroid function, iron levels, and inflammation. This test gives you a complete picture of what's affecting your energy and health. Would you like to know more about what it specifically measures?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 72,
+        "cost": 0.001584,
+        "ttfb_ms": 855.8407000091393,
+        "latency_ms": 27663.52939605713,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T14:15:17.299141"
+      },
+      "eou_delay_ms": 791.8967999867164,
+      "ttft_ms": 1907.3743000044487,
+      "total_cost": 0.00682878
+    },
+    {
+      "response_id": "call_voice_assistant_room_3447_3c0a954b_response_7",
+      "timestamp": "2026-01-26T14:15:46.170390",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 16.4,
+        "cost": 0.0054666666666666665,
+        "latency_ms": 6480.133771896362,
+        "transcript_length": 230,
+        "timestamp": "2026-01-26T14:15:52.650524",
+        "transcript": " Yeah, can you tell me about different biomarkers that are available in your energy panel and how they are indicating different degree of, you can say,  kind of danger for a person.  So if you could just elaborately discuss to me."
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 236,
+        "total_tokens": 2236,
+        "input_cost": 0.00118,
+        "output_cost": 0.00018643999999999998,
+        "total_cost": 0.00136644,
+        "latency_ms": 59755.2969455719,
+        "ttft_ms": 298.9917000231799,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T14:15:51.025491",
+        "response_text": "The Energy Panel measures a range of biomarkers, including heart and lipid health, blood sugar and metabolism, thyroid function, iron and energy, inflammation, vitamin levels, and kidney and liver function. Let me break it down for you: we measure things like total cholesterol, HDL, LDL, and triglycerides for heart health, glucose and insulin levels for blood sugar, and TSH, free T3, and free T4 for thyroid function. We also check iron levels, vitamin D, and B12, as well as markers for inflammation and kidney and liver function. These biomarkers are color-coded in your results: green means you're in the optimal range, yellow indicates you're slightly outside that range, and red means you're significantly outside the normal range. Red markers are a sign that you should discuss those results with your healthcare provider, as they may indicate a potential health concern. Just to be clear, I can help you understand your results, but I'm not able to provide medical advice or diagnosis. Does that make sense? Would you like me to explain any specific biomarker in more detail?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 408,
+        "cost": 0.008976,
+        "ttfb_ms": 820.0975000218023,
+        "latency_ms": 80703.69052886963,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T14:17:11.729182"
+      },
+      "eou_delay_ms": 833.1968999991659,
+      "ttft_ms": 1952.286100044148,
+      "total_cost": 0.015809106666666666
+    },
+    {
+      "response_id": "call_voice_assistant_room_3447_3c0a954b_response_9",
+      "timestamp": "2026-01-26T14:17:31.350666",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 1085,
+        "cost": 0.02387,
+        "ttfb_ms": 376.3549000141211,
+        "latency_ms": 3776.0329246520996,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T14:17:31.800848"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 376.3549000141211,
+      "total_cost": 0.02387
+    },
+    {
+      "response_id": "call_voice_assistant_room_3447_3c0a954b_response_13",
+      "timestamp": "2026-01-26T14:18:02.069165",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 28.0,
+        "cost": 0.009333333333333334,
+        "latency_ms": 5169.964790344238,
+        "transcript_length": 372,
+        "timestamp": "2026-01-26T14:18:07.240638",
+        "transcript": " Yeah, I'm here.  Sorry for the inconvenience you face.  And the point is that I was engaged in some other tasks also. So can you just help me to find out that when a person gets some particular result,  Let's say he got some, he find some of biomarkers like for diabetes, it is showing a red color, right? So then how that person should response to that particular  think"
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 205,
+        "total_tokens": 2205,
+        "input_cost": 0.00118,
+        "output_cost": 0.00016195,
+        "total_cost": 0.0013419500000000002,
+        "latency_ms": 132991.31512641907,
+        "ttft_ms": 408.10420000343584,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T14:18:05.643043",
+        "response_text": "No worries at all, I'm here to help. So, if someone receives their results and sees a red marker, let's say for a biomarker related to diabetes, such as glucose or hemoglobin A1C, it means their level is significantly outside the normal range. In this case, it's essential to remember that the results are not a diagnosis, but rather an indication that something may be off. The next step would be to consult with a healthcare provider who can review the results in the context of the person's overall health history. They can help determine the best course of action, which may include further testing, lifestyle changes, or other interventions. It's crucial to discuss the results with a healthcare provider to get a proper understanding of what the red marker means and how to address it. Would you like me to explain more about how to prepare for that conversation with a healthcare provider?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 828.7391999911051,
+        "latency_ms": 59113.42740058899,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T14:19:04.759029"
+      },
+      "eou_delay_ms": 1487.7066999906674,
+      "ttft_ms": 2724.5500999852084,
+      "total_cost": 0.015075283333333335
+    },
+    {
+      "response_id": "call_voice_assistant_room_3447_3c0a954b_response_17",
+      "timestamp": "2026-01-26T14:20:18.553084",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 896,
+        "cost": 0.019712,
+        "ttfb_ms": 858.8430999952834,
+        "latency_ms": 51137.792348861694,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T14:20:19.006165"
+      },
+      "eou_delay_ms": 858.1308000138961,
+      "ttft_ms": 1716.9739000091795,
+      "total_cost": 0.019712
+    },
+    {
+      "response_id": "call_voice_assistant_room_3447_3c0a954b_response_18",
+      "timestamp": "2026-01-26T14:20:20.409351",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 8.8,
+        "cost": 0.0029333333333333334,
+        "latency_ms": 10750.545740127563,
+        "transcript_length": 115,
+        "timestamp": "2026-01-26T14:20:31.160899",
+        "transcript": " That's fine.  This time I am happy to see that you are providing such a nice facility. Thank you so much. Goodbye."
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 64,
+        "total_tokens": 2064,
+        "input_cost": 0.00118,
+        "output_cost": 5.0560000000000004e-05,
+        "total_cost": 0.0012305600000000001,
+        "latency_ms": 60192.00110435486,
+        "ttft_ms": 358.28879999462515,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T14:20:29.617130",
+        "response_text": "It was a pleasure assisting you and providing information about the Energy Panel and how to understand your results. If you have any more questions or need further assistance in the future, don't hesitate to reach out. Have a great day and take care of your health! Goodbye!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 398.12509997864254,
+        "latency_ms": 16872.323989868164,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T14:20:46.490453"
+      },
+      "eou_delay_ms": 963.4114000073168,
+      "ttft_ms": 1719.8252999805845,
+      "total_cost": 0.008563893333333333
+    },
+    {
+      "response_id": "call_voice_assistant_room_3447_3c0a954b_response_19",
+      "timestamp": "2026-01-26T14:20:48.055459",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 24,
+        "total_tokens": 2024,
+        "input_cost": 0.00118,
+        "output_cost": 1.896e-05,
+        "total_cost": 0.00119896,
+        "latency_ms": 16894.559383392334,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T14:20:48.057476",
+        "response_text": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 274,
+        "cost": 0.0060279999999999995,
+        "ttfb_ms": 374.54620000789873,
+        "latency_ms": 7261.738538742065,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T14:20:55.321206"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 374.54620000789873,
+      "total_cost": 0.007226959999999999
+    }
+  ],
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Apex.  What are different products your company is offering to people in general? If you briefly can describe to me, it will be a great product.  I think for me."
+    },
+    {
+      "role": "assistant",
+      "content": "We currently offer the Energy Panel, a comprehensive at-home blood test that measures around 20 key biomarkers related to energy, metabolism, and overall wellness. It covers things like cholesterol, blood sugar, thyroid function, iron levels, and inflammation. This test gives you a complete picture of what's affecting your energy and health. Would you like to know more about what it specifically measures?"
+    },
+    {
+      "role": "user",
+      "content": " Yeah, can you tell me about different biomarkers that are available in your energy panel and how they are indicating different degree of, you can say,  kind of danger for a person.  So if you could just elaborately discuss to me."
+    },
+    {
+      "role": "assistant",
+      "content": "The Energy Panel measures a range of biomarkers, including heart and lipid health, blood sugar and metabolism, thyroid function, iron and energy, inflammation, vitamin levels, and kidney and liver function. Let me break it down for you: we measure things like total cholesterol, HDL, LDL, and triglycerides for heart health, glucose and insulin levels for blood sugar, and TSH, free T3, and free T4 for thyroid function. We also check iron levels, vitamin D, and B12, as well as markers for inflammation and kidney and liver function. These biomarkers are color-coded in your results: green means you're in the optimal range, yellow indicates you're slightly outside that range, and red means you're significantly outside the normal range. Red markers are a sign that you should discuss those results with your healthcare provider, as they may indicate a potential health concern. Just to be clear, I can help you understand your results, but I'm not able to provide medical advice or diagnosis. Does that make sense? Would you like me to explain any specific biomarker in more detail?"
+    },
+    {
+      "role": "user",
+      "content": " Yeah, I'm here.  Sorry for the inconvenience you face.  And the point is that I was engaged in some other tasks also. So can you just help me to find out that when a person gets some particular result,  Let's say he got some, he find some of biomarkers like for diabetes, it is showing a red color, right? So then how that person should response to that particular  think"
+    },
+    {
+      "role": "assistant",
+      "content": "No worries at all, I'm here to help. So, if someone receives their results and sees a red marker, let's say for a biomarker related to diabetes, such as glucose or hemoglobin A1C, it means their level is significantly outside the normal range. In this case, it's essential to remember that the results are not a diagnosis, but rather an indication that something may be off. The next step would be to consult with a healthcare provider who can review the results in the context of the person's overall health history. They can help determine the best course of action, which may include further testing, lifestyle changes, or other interventions. It's crucial to discuss the results with a healthcare provider to get a proper understanding of what the red marker means and how to address it. Would you like me to explain more about how to prepare for that conversation with a healthcare provider?"
+    },
+    {
+      "role": "user",
+      "content": " Yeah, that will be a very nice if you could just provide me the contact details of that particular  healthcare provider so that I can contact to that person.  and get the solution for my problem."
+    },
+    {
+      "role": "user",
+      "content": " That's fine.  This time I am happy to see that you are providing such a nice facility. Thank you so much. Goodbye."
+    },
+    {
+      "role": "assistant",
+      "content": "It was a pleasure assisting you and providing information about the Energy Panel and how to understand your results. If you have any more questions or need further assistance in the future, don't hesitate to reach out. Have a great day and take care of your health! Goodbye!"
+    },
+    {
+      "role": "assistant",
+      "content": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+    }
+  ],
+  "total_stt_cost": 0.021733333333333334,
+  "total_llm_cost": 0.00757691,
+  "total_tts_cost": 0.07337,
+  "total_livekit_cost": 0.06535323897997539,
+  "total_cost": 0.16803348231330872,
+  "total_stt_duration": 65.2,
+  "total_llm_input_tokens": 12000,
+  "total_llm_output_tokens": 629,
+  "total_tts_characters": 3335,
+  "avg_eou_delay_ms": 986.8685199995525,
+  "avg_llm_ttft_ms": 331.2553750074585,
+  "avg_tts_ttfb_ms": 637.0063375034078,
+  "avg_ttft_ms": 1419.4268500068574,
+  "livekit": {
+    "connection_duration_seconds": 392.1194338798523,
+    "cost": 0.06535323897997539,
+    "timestamp": "2026-01-26T14:20:59.231512"
+  }
+}

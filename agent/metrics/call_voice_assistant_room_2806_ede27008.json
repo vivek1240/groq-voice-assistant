@@ -1,0 +1,145 @@
+{
+  "call_id": "call_voice_assistant_room_2806_ede27008",
+  "start_timestamp": "2026-01-26T16:31:10.694537",
+  "end_timestamp": "2026-01-26T16:32:19.718404",
+  "duration_seconds": 69.02386689186096,
+  "responses": [
+    {
+      "response_id": "call_voice_assistant_room_2806_ede27008_response_1",
+      "timestamp": "2026-01-26T16:31:12.805655",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 18,
+        "total_tokens": 2018,
+        "input_cost": 0.00118,
+        "output_cost": 1.422e-05,
+        "total_cost": 0.00119422,
+        "latency_ms": 0.0,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T16:31:12.805655",
+        "response_text": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 541.5293999831192,
+        "latency_ms": 6547.414064407349,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:31:19.358204"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 541.5293999831192,
+      "total_cost": 0.0055942200000000004
+    },
+    {
+      "response_id": "call_voice_assistant_room_2806_ede27008_response_2",
+      "timestamp": "2026-01-26T16:31:23.325239",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 4.4,
+        "cost": 0.0014666666666666667,
+        "latency_ms": 8058.892250061035,
+        "transcript_length": 51,
+        "timestamp": "2026-01-26T16:31:31.386078",
+        "transcript": " Hey Pax, why are you taking so much time to speak?"
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 72,
+        "total_tokens": 2072,
+        "input_cost": 0.00118,
+        "output_cost": 5.688e-05,
+        "total_cost": 0.00123688,
+        "latency_ms": 0.0,
+        "ttft_ms": 283.61189999850467,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T16:31:29.764045",
+        "response_text": "I apologize if my response seemed slow. I'm designed to provide clear and concise guidance, and sometimes that means taking a moment to ensure I'm giving you the best possible information. I'll do my best to be more concise while still being helpful. How can I assist you with your at-home lab testing today?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 72,
+        "cost": 0.001584,
+        "ttfb_ms": 770.9500000055414,
+        "latency_ms": 21984.565258026123,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:31:51.749603"
+      },
+      "eou_delay_ms": 1941.72350000008,
+      "ttft_ms": 2996.285400004126,
+      "total_cost": 0.004287546666666666
+    },
+    {
+      "response_id": "call_voice_assistant_room_2806_ede27008_response_3",
+      "timestamp": "2026-01-26T16:32:08.493025",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 33,
+        "total_tokens": 2033,
+        "input_cost": 0.00118,
+        "output_cost": 2.6070000000000003e-05,
+        "total_cost": 0.00120607,
+        "latency_ms": 37105.947971343994,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T16:32:08.494540",
+        "response_text": "I haven't heard from you in a while. I'll disconnect for now, but feel free to call back if you have any questions. Take care!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 308,
+        "cost": 0.006776,
+        "ttfb_ms": 395.36450000014156,
+        "latency_ms": 9987.54906654358,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T16:32:18.483104"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 395.36450000014156,
+      "total_cost": 0.00798207
+    }
+  ],
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Hey Pax, why are you taking so much time to speak?"
+    },
+    {
+      "role": "assistant",
+      "content": "I apologize if my response seemed slow. I'm designed to provide clear and concise guidance, and sometimes that means taking a moment to ensure I'm giving you the best possible information. I'll do my best to be more concise while still being helpful. How can I assist you with your at-home lab testing today?"
+    },
+    {
+      "role": "assistant",
+      "content": "I haven't heard from you in a while. I'll disconnect for now, but feel free to call back if you have any questions. Take care!"
+    }
+  ],
+  "total_stt_cost": 0.0014666666666666667,
+  "total_llm_cost": 0.0036371700000000003,
+  "total_tts_cost": 0.01276,
+  "total_livekit_cost": 0.01150397781531016,
+  "total_cost": 0.029367814481976826,
+  "total_stt_duration": 4.4,
+  "total_llm_input_tokens": 6000,
+  "total_llm_output_tokens": 123,
+  "total_tts_characters": 580,
+  "avg_eou_delay_ms": 1941.72350000008,
+  "avg_llm_ttft_ms": 283.61189999850467,
+  "avg_tts_ttfb_ms": 569.2812999962674,
+  "avg_ttft_ms": 1311.0597666624624,
+  "livekit": {
+    "connection_duration_seconds": 69.02386689186096,
+    "cost": 0.01150397781531016,
+    "timestamp": "2026-01-26T16:32:19.718404"
+  }
+}

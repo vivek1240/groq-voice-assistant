@@ -1,0 +1,128 @@
+{
+  "call_id": "call_voice_assistant_room_4545_a29e2472",
+  "start_timestamp": "2026-01-26T15:19:54.359752",
+  "end_timestamp": "2026-01-26T15:20:29.354826",
+  "duration_seconds": 34.9950737953186,
+  "responses": [
+    {
+      "response_id": "call_voice_assistant_room_4545_a29e2472_response_2",
+      "timestamp": "2026-01-26T15:19:57.069274",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 569.214400020428,
+        "latency_ms": 1338.4554386138916,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T15:19:57.519241"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 569.214400020428,
+      "total_cost": 0.0044
+    },
+    {
+      "response_id": "call_voice_assistant_room_4545_a29e2472_response_3",
+      "timestamp": "2026-01-26T15:20:00.307882",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 0.8,
+        "cost": 0.0002666666666666667,
+        "latency_ms": 4866.370916366577,
+        "transcript_length": 11,
+        "timestamp": "2026-01-26T15:20:01.935645",
+        "transcript": " Thank you."
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 52,
+        "total_tokens": 2052,
+        "input_cost": 0.00118,
+        "output_cost": 4.108e-05,
+        "total_cost": 0.00122108,
+        "latency_ms": 0.0,
+        "ttft_ms": 294.6732999989763,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T15:20:00.307882",
+        "response_text": "You're welcome. I'm here to help you with Mercola's at-home lab testing. What can I help you with today? Are you looking to order a test kit, have questions about the testing process, or need help understanding your results?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 851.7733000044245,
+        "latency_ms": 16465.963125228882,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T15:20:16.774850"
+      },
+      "eou_delay_ms": 105.87980001582764,
+      "ttft_ms": 1252.3264000192285,
+      "total_cost": 0.005887746666666667
+    },
+    {
+      "response_id": "call_voice_assistant_room_4545_a29e2472_response_4",
+      "timestamp": "2026-01-26T15:20:17.925483",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 33,
+        "total_tokens": 2033,
+        "input_cost": 0.00118,
+        "output_cost": 2.6070000000000003e-05,
+        "total_cost": 0.00120607,
+        "latency_ms": 15989.838361740112,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T15:20:17.925483",
+        "response_text": "I haven't heard from you in a while. I'll disconnect for now, but feel free to call back if you have any questions. Take care!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 224,
+        "cost": 0.004928,
+        "ttfb_ms": 379.5987000048626,
+        "latency_ms": 9979.824781417847,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T15:20:27.906819"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 379.5987000048626,
+      "total_cost": 0.00613407
+    }
+  ],
+  "conversation_transcript": [
+    {
+      "role": "user",
+      "content": " Thank you."
+    },
+    {
+      "role": "assistant",
+      "content": "You're welcome. I'm here to help you with Mercola's at-home lab testing. What can I help you with today? Are you looking to order a test kit, have questions about the testing process, or need help understanding your results?"
+    },
+    {
+      "role": "assistant",
+      "content": "I haven't heard from you in a while. I'll disconnect for now, but feel free to call back if you have any questions. Take care!"
+    }
+  ],
+  "total_stt_cost": 0.0002666666666666667,
+  "total_llm_cost": 0.0024271500000000003,
+  "total_tts_cost": 0.013728,
+  "total_livekit_cost": 0.005832512299219768,
+  "total_cost": 0.022254328965886437,
+  "total_stt_duration": 0.8,
+  "total_llm_input_tokens": 4000,
+  "total_llm_output_tokens": 85,
+  "total_tts_characters": 624,
+  "avg_eou_delay_ms": 105.87980001582764,
+  "avg_llm_ttft_ms": 294.6732999989763,
+  "avg_tts_ttfb_ms": 600.1954666765718,
+  "avg_ttft_ms": 733.7131666815063,
+  "livekit": {
+    "connection_duration_seconds": 34.9950737953186,
+    "cost": 0.005832512299219768,
+    "timestamp": "2026-01-26T15:20:29.354826"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "call_id": "call_voice_assistant_room_4234_4f857706",
+  "timestamp": "2026-01-26T16:36:58.357238",
+  "duration_seconds": 35.89094519615173,
+  "total_cost": 0.014366114199358621,
+  "core_metrics": {
+    "user_sentiment": "neutral",
+    "call_summary": "The user did not engage with the assistant, and the call ended with no questions or concerns raised. The assistant attempted to initiate a conversation but received no response. The call was very short and ended with a polite disconnect message from the assistant.",
+    "query_resolved": false,
+    "escalation_required": false
+  },
+  "domain_metrics": {
+    "query_category": "general_inquiry",
+    "testing_phase": "unknown"
+  },
+  "compliance_metrics": {
+    "medical_boundary_maintained": true,
+    "proper_disclaimer_given": null
+  },
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "assistant",
+      "content": "I haven't heard from you in a while. I'll disconnect for now, but feel free to call back if you have any questions. Take care!"
+    }
+  ],
+  "additional_info": {
+    "total_turns": 2,
+    "avg_latency_ms": 0.0,
+    "evaluation_method": "llm",
+    "evaluation_version": "1.0"
+  },
+  "notes": "The call was extremely brief, with no actual inquiry or issue presented by the user. The assistant's response was appropriate given the lack of input from the user.",
+  "flags": []
+}

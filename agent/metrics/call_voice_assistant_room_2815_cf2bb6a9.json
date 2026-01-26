@@ -1,0 +1,233 @@
+{
+  "call_id": "call_voice_assistant_room_2815_cf2bb6a9",
+  "start_timestamp": "2026-01-26T17:57:49.524979",
+  "end_timestamp": "2026-01-26T18:00:26.561695",
+  "duration_seconds": 157.0367157459259,
+  "responses": [
+    {
+      "response_id": "call_voice_assistant_room_2815_cf2bb6a9_response_1",
+      "timestamp": "2026-01-26T17:57:51.535041",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 18,
+        "total_tokens": 2018,
+        "input_cost": 0.00118,
+        "output_cost": 1.422e-05,
+        "total_cost": 0.00119422,
+        "latency_ms": 0.0,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T17:57:51.535041",
+        "response_text": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 543.3555000054184,
+        "latency_ms": 6536.727666854858,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T17:57:58.071769"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 543.3555000054184,
+      "total_cost": 0.0055942200000000004
+    },
+    {
+      "response_id": "call_voice_assistant_room_2815_cf2bb6a9_response_3",
+      "timestamp": "2026-01-26T17:58:01.713783",
+      "stt": {
+        "model": "whisper-large-v3-turbo",
+        "duration_seconds": 2.4,
+        "cost": 0.0008,
+        "latency_ms": 3997.004985809326,
+        "transcript_length": 30,
+        "timestamp": "2026-01-26T17:58:05.711770",
+        "transcript": " Thank you, Pax.  How are you?"
+      },
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 94,
+        "total_tokens": 2094,
+        "input_cost": 0.00118,
+        "output_cost": 7.426e-05,
+        "total_cost": 0.00125426,
+        "latency_ms": 0.0,
+        "ttft_ms": 331.86610002303496,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T17:58:04.160393",
+        "response_text": "I'm doing great, thanks for asking. I'm here to help you with any questions or concerns you might have about our at-home lab testing. It's totally normal to feel a bit unsure about health testing, but don't worry, I'm here to guide you through it. What's on your mind today? Are you looking to order a test kit, or maybe you've already received your results and have some questions about them?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 72,
+        "cost": 0.001584,
+        "ttfb_ms": 873.0209000059403,
+        "latency_ms": 25182.27505683899,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T17:58:29.343669"
+      },
+      "eou_delay_ms": 957.3127999901772,
+      "ttft_ms": 2162.1998000191525,
+      "total_cost": 0.00363826
+    },
+    {
+      "response_id": "call_voice_assistant_room_2815_cf2bb6a9_response_4",
+      "timestamp": "2026-01-26T17:58:44.044054",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 78,
+        "total_tokens": 2078,
+        "input_cost": 0.00118,
+        "output_cost": 6.162e-05,
+        "total_cost": 0.0012416200000000001,
+        "latency_ms": 41538.30337524414,
+        "ttft_ms": 328.82260001497343,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T17:58:47.251084",
+        "response_text": "That's okay, take your time. We can start with something simple. Are you interested in learning more about our Energy Panel test kit? It's a comprehensive at-home blood test that measures key biomarkers affecting your energy levels, metabolism, and overall wellness. Would you like me to tell you a bit more about what it measures and how it works?"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 393,
+        "cost": 0.008646,
+        "ttfb_ms": 853.1523999990895,
+        "latency_ms": 24314.640522003174,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T17:59:11.565724"
+      },
+      "eou_delay_ms": 909.7187999868765,
+      "ttft_ms": 2091.6938000009395,
+      "total_cost": 0.00988762
+    },
+    {
+      "response_id": "call_voice_assistant_room_2815_cf2bb6a9_response_6",
+      "timestamp": "2026-01-26T17:59:37.134983",
+      "stt": null,
+      "llm": null,
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 348,
+        "cost": 0.007656,
+        "ttfb_ms": 385.7504999905359,
+        "latency_ms": 8722.300291061401,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T17:59:37.585680"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 385.7504999905359,
+      "total_cost": 0.007656
+    },
+    {
+      "response_id": "call_voice_assistant_room_2815_cf2bb6a9_response_7",
+      "timestamp": "2026-01-26T17:59:40.297948",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 60,
+        "total_tokens": 2060,
+        "input_cost": 0.00118,
+        "output_cost": 4.74e-05,
+        "total_cost": 0.0012274,
+        "latency_ms": 94585.16788482666,
+        "ttft_ms": 684.2631999752484,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T17:59:40.297948",
+        "response_text": "It seems like you were about to say something, but it got cut off. Don't worry, we can start fresh. What were you thinking or wanting to ask? I'm all ears and here to help. Take your time, and we can go at your pace."
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 200,
+        "cost": 0.0044,
+        "ttfb_ms": 794.1208999836817,
+        "latency_ms": 18625.78773498535,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T17:59:58.924737"
+      },
+      "eou_delay_ms": 1021.7712000012398,
+      "ttft_ms": 2500.15529996017,
+      "total_cost": 0.0056274
+    },
+    {
+      "response_id": "call_voice_assistant_room_2815_cf2bb6a9_response_8",
+      "timestamp": "2026-01-26T18:00:15.312117",
+      "stt": null,
+      "llm": {
+        "model": "llama-3.3-70b-versatile",
+        "input_tokens": 2000,
+        "output_tokens": 33,
+        "total_tokens": 2033,
+        "input_cost": 0.00118,
+        "output_cost": 2.6070000000000003e-05,
+        "total_cost": 0.00120607,
+        "latency_ms": 129599.33686256409,
+        "ttft_ms": 0,
+        "total_generation_time_ms": 0.0,
+        "timestamp": "2026-01-26T18:00:15.312117",
+        "response_text": "I haven't heard from you in a while. I'll disconnect for now, but feel free to call back if you have any questions. Take care!"
+      },
+      "tts": {
+        "model": "canopylabs/orpheus-v1-english",
+        "characters_processed": 216,
+        "cost": 0.004752,
+        "ttfb_ms": 369.23579999711365,
+        "latency_ms": 9980.205297470093,
+        "audio_duration_seconds": 0.0,
+        "timestamp": "2026-01-26T18:00:25.293321"
+      },
+      "eou_delay_ms": 0,
+      "ttft_ms": 369.23579999711365,
+      "total_cost": 0.00595807
+    }
+  ],
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Thank you, Pax.  How are you?"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm doing great, thanks for asking. I'm here to help you with any questions or concerns you might have about our at-home lab testing. It's totally normal to feel a bit unsure about health testing, but don't worry, I'm here to guide you through it. What's on your mind today? Are you looking to order a test kit, or maybe you've already received your results and have some questions about them?"
+    },
+    {
+      "role": "assistant",
+      "content": "That's okay, take your time. We can start with something simple. Are you interested in learning more about our Energy Panel test kit? It's a comprehensive at-home blood test that measures key biomarkers affecting your energy levels, metabolism, and overall wellness. Would you like me to tell you a bit more about what it measures and how it works?"
+    },
+    {
+      "role": "assistant",
+      "content": "It seems like you were about to say something, but it got cut off. Don't worry, we can start fresh. What were you thinking or wanting to ask? I'm all ears and here to help. Take your time, and we can go at your pace."
+    },
+    {
+      "role": "assistant",
+      "content": "I haven't heard from you in a while. I'll disconnect for now, but feel free to call back if you have any questions. Take care!"
+    }
+  ],
+  "total_stt_cost": 0.0008,
+  "total_llm_cost": 0.00612357,
+  "total_tts_cost": 0.031438,
+  "total_livekit_cost": 0.02617278595765432,
+  "total_cost": 0.06453435595765432,
+  "total_stt_duration": 2.4,
+  "total_llm_input_tokens": 10000,
+  "total_llm_output_tokens": 283,
+  "total_tts_characters": 1429,
+  "avg_eou_delay_ms": 962.9342666594312,
+  "avg_llm_ttft_ms": 448.31730000441894,
+  "avg_tts_ttfb_ms": 636.4393333302966,
+  "avg_ttft_ms": 1342.0651166622217,
+  "livekit": {
+    "connection_duration_seconds": 157.0367157459259,
+    "cost": 0.02617278595765432,
+    "timestamp": "2026-01-26T18:00:26.561695"
+  }
+}

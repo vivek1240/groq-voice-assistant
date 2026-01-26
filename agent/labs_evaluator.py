@@ -184,7 +184,12 @@ class LabsCallEvaluator:
                 return
             
             self.llm_client = Groq(api_key=api_key)
-            self.llm_model = os.getenv("LABS_EVAL_MODEL", "llama-3.3-70b-versatile")
+            # Import config if available, otherwise use env var
+            try:
+                from config import Config
+                self.llm_model = Config.EVALUATION.LABS_EVAL_MODEL
+            except ImportError:
+                self.llm_model = os.getenv("LABS_EVAL_MODEL", "llama-3.3-70b-versatile")
             
             logger.info("=" * 60)
             logger.info("LLM EVALUATION ENABLED")

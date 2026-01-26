@@ -1,0 +1,46 @@
+{
+  "call_id": "call_voice_assistant_room_326_9f0270a3",
+  "timestamp": "2026-01-26T16:44:21.853126",
+  "duration_seconds": 42.519245624542236,
+  "total_cost": 0.021018060937423706,
+  "core_metrics": {
+    "user_sentiment": "neutral",
+    "call_summary": "The user initiated a call with the Mercola Health Coach but ended the conversation immediately after greeting. The assistant responded with a polite closing message, inviting the user to reach out if they needed help in the future. The call was very brief and did not involve any specific inquiry or issue.",
+    "query_resolved": false,
+    "escalation_required": false
+  },
+  "domain_metrics": {
+    "query_category": "general_inquiry",
+    "testing_phase": "unknown"
+  },
+  "compliance_metrics": {
+    "medical_boundary_maintained": true,
+    "proper_disclaimer_given": null
+  },
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Thank you. Goodbye."
+    },
+    {
+      "role": "assistant",
+      "content": "It was nice chatting with you, even if it was brief. If you have any questions about at-home lab testing or need help in the future, don't hesitate to reach out. Have a great day!"
+    },
+    {
+      "role": "assistant",
+      "content": "Thank you for contacting Mercola Health Coach! Feel free to reach out anytime you need help. Take care!"
+    }
+  ],
+  "additional_info": {
+    "total_turns": 3,
+    "avg_latency_ms": 0.0,
+    "evaluation_method": "llm",
+    "evaluation_version": "1.0"
+  },
+  "notes": "The call was extremely short and did not involve any discussion of health topics or concerns, so there was no opportunity for the assistant to either maintain or violate medical boundaries in a meaningful way.",
+  "flags": []
+}

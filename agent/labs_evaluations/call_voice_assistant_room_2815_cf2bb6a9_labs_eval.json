@@ -1,0 +1,54 @@
+{
+  "call_id": "call_voice_assistant_room_2815_cf2bb6a9",
+  "timestamp": "2026-01-26T18:00:26.561695",
+  "duration_seconds": 157.0367157459259,
+  "total_cost": 0.06453435595765432,
+  "core_metrics": {
+    "user_sentiment": "neutral",
+    "call_summary": "The user initiated a call with the Mercola Health Coach but didn't explicitly ask a question or express a concern. The assistant attempted to engage the user by offering information about the Energy Panel test kit, but the user didn't respond. The call ended without the user's query being resolved.",
+    "query_resolved": false,
+    "escalation_required": false
+  },
+  "domain_metrics": {
+    "query_category": "general_inquiry",
+    "testing_phase": "pre_purchase"
+  },
+  "compliance_metrics": {
+    "medical_boundary_maintained": true,
+    "proper_disclaimer_given": null
+  },
+  "conversation_transcript": [
+    {
+      "role": "assistant",
+      "content": "Hey there! I'm Pax, your Mercola Health Coach. How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": " Thank you, Pax.  How are you?"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm doing great, thanks for asking. I'm here to help you with any questions or concerns you might have about our at-home lab testing. It's totally normal to feel a bit unsure about health testing, but don't worry, I'm here to guide you through it. What's on your mind today? Are you looking to order a test kit, or maybe you've already received your results and have some questions about them?"
+    },
+    {
+      "role": "assistant",
+      "content": "That's okay, take your time. We can start with something simple. Are you interested in learning more about our Energy Panel test kit? It's a comprehensive at-home blood test that measures key biomarkers affecting your energy levels, metabolism, and overall wellness. Would you like me to tell you a bit more about what it measures and how it works?"
+    },
+    {
+      "role": "assistant",
+      "content": "It seems like you were about to say something, but it got cut off. Don't worry, we can start fresh. What were you thinking or wanting to ask? I'm all ears and here to help. Take your time, and we can go at your pace."
+    },
+    {
+      "role": "assistant",
+      "content": "I haven't heard from you in a while. I'll disconnect for now, but feel free to call back if you have any questions. Take care!"
+    }
+  ],
+  "additional_info": {
+    "total_turns": 6,
+    "avg_latency_ms": 0.0,
+    "evaluation_method": "llm",
+    "evaluation_version": "1.0"
+  },
+  "notes": "The user didn't provide enough information to determine their specific needs or concerns. The assistant's attempts to engage the user were unsuccessful, resulting in an unresolved query.",
+  "flags": []
+}
