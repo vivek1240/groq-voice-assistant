@@ -764,6 +764,10 @@ if __name__ == "__main__":
         except:
             pass
     
+    # Check if this is a download-files command (used during Docker build)
+    # Skip credential validation for this command since env vars aren't available at build time
+    is_download_files = len(sys.argv) > 1 and sys.argv[1] == "download-files"
+    
     try:
         # CRITICAL: Print to stderr first (usually not buffered) to ensure visibility
         import sys
@@ -798,23 +802,26 @@ Configuration:
         sys.stderr.flush()
         print(config_info, file=sys.stdout, flush=True)
         
-        # Validate credentials
-        if not Config.LIVEKIT.validate():
-            error_msg = "LiveKit credentials are missing or invalid!"
-            sys.stderr.write(f"ERROR: {error_msg}\n")
-            sys.stderr.flush()
-            print(f"ERROR: {error_msg}", file=sys.stdout, flush=True)
-            logger.error(error_msg)
-            logger.error("Please set LIVEKIT_URL, LIVEKIT_API_KEY, and LIVEKIT_API_SECRET in .env")
-            sys.exit(1)
-        
-        if not Config.GROQ.validate():
-            warning_msg = "Groq API key is missing - some features may not work"
-            sys.stderr.write(f"WARNING: {warning_msg}\n")
-            sys.stderr.flush()
-            print(f"WARNING: {warning_msg}", file=sys.stdout, flush=True)
-            logger.warning(warning_msg)
-            logger.warning("Please set GROQ_API_KEY in .env for full functionality")
+        # Validate credentials (skip for download-files command during Docker build)
+        if not is_download_files:
+            if not Config.LIVEKIT.validate():
+                error_msg = "LiveKit credentials are missing or invalid!"
+                sys.stderr.write(f"ERROR: {error_msg}\n")
+                sys.stderr.flush()
+                print(f"ERROR: {error_msg}", file=sys.stdout, flush=True)
+                logger.error(error_msg)
+                logger.error("Please set LIVEKIT_URL, LIVEKIT_API_KEY, and LIVEKIT_API_SECRET in .env")
+                sys.exit(1)
+            
+            if not Config.GROQ.validate():
+                warning_msg = "Groq API key is missing - some features may not work"
+                sys.stderr.write(f"WARNING: {warning_msg}\n")
+                sys.stderr.flush()
+                print(f"WARNING: {warning_msg}", file=sys.stdout, flush=True)
+                logger.warning(warning_msg)
+                logger.warning("Please set GROQ_API_KEY in .env for full functionality")
+        else:
+            logger.info("Running download-files command - skipping credential validation")
         
         logger.info("=" * 80)
         logger.info("Starting agent...")
