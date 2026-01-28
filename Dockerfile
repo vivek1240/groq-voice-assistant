@@ -39,7 +39,14 @@ WORKDIR /home/appuser
 COPY agent/requirements.txt .
 RUN python -m pip install --user --no-cache-dir -r requirements.txt
 
+# Copy all Python modules and config files
 COPY agent/main.py .
+COPY agent/config.py .
+COPY agent/cost_tracker.py .
+COPY agent/call_evaluator.py .
+COPY agent/labs_evaluator.py .
+COPY agent/system_prompt .
+COPY agent/pricing_config.json .
 
 # ensure that any dependent models are downloaded at build-time
 RUN python main.py download-files
